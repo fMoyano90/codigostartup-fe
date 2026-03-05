@@ -1,0 +1,80 @@
+<svg width="200" height="400" viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Marco del teléfono -->
+  <rect x="10" y="10" width="180" height="380" rx="25" fill="#1F2937" stroke="#374151" stroke-width="2"/>
+  
+  <!-- Pantalla -->
+  <rect x="20" y="30" width="160" height="340" rx="15" fill="#FFFFFF"/>
+  
+  <!-- Barra de estado -->
+  <rect x="20" y="30" width="160" height="25" rx="15" fill="#DC2626"/>
+  <text x="30" y="47" font-family="Arial, sans-serif" font-size="10" fill="white">22:56</text>
+  <text x="140" y="47" font-family="Arial, sans-serif" font-size="8" fill="white">100%</text>
+  
+  <!-- Header -->
+  <text x="30" y="75" font-family="Arial, sans-serif" font-size="8" fill="#6B7280">Hola, Andrés</text>
+  
+  <!-- Título principal -->
+  <text x="30" y="95" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1F2937">¡Bienvenido de nuevo, Andrés!</text>
+  <text x="30" y="110" font-family="Arial, sans-serif" font-size="8" fill="#6B7280">Aquí tienes un resumen de tu progreso y próximas</text>
+  <text x="30" y="122" font-family="Arial, sans-serif" font-size="8" fill="#6B7280">actividades.</text>
+  
+  <!-- Sección Escala de Borg -->
+  <text x="30" y="145" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1F2937">Escala de Borg</text>
+  
+  <!-- Botón verde -->
+  <rect x="30" y="155" width="140" height="30" rx="15" fill="#10B981"/>
+  <text x="85" y="175" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">⊕ Registra tu Esfuerzo</text>
+  
+  <!-- Sección Carga de entrenamiento -->
+  <text x="30" y="210" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1F2937">Carga de entrenamiento</text>
+  <text x="30" y="225" font-family="Arial, sans-serif" font-size="8" fill="#6B7280">RPE × Duración - Semana actual</text>
+  
+  <!-- Métricas -->
+  <g transform="translate(30, 235)">
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="8" fill="#6B7280">Carga promedio</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1F2937">500 pts</text>
+    
+    <text x="80" y="15" font-family="Arial, sans-serif" font-size="8" fill="#6B7280">RPE promedio</text>
+    <text x="80" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1F2937">9 😤</text>
+    
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="8" fill="#6B7280">Duración promedio</text>
+    <text x="0" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1F2937">55 min</text>
+    
+    <text x="80" y="55" font-family="Arial, sans-serif" font-size="8" fill="#6B7280">Días entrenados</text>
+    <text x="80" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1F2937">2 de 3</text>
+  </g>
+  
+  <!-- Gráfico de barras -->
+  <g transform="translate(40, 315)">
+    <!-- Eje Y -->
+    <text x="-5" y="5" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">600</text>
+    <text x="-5" y="20" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">540</text>
+    <text x="-5" y="35" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">480</text>
+    <text x="-5" y="50" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">420</text>
+    <text x="-5" y="65" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">360</text>
+    <text x="-5" y="80" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">300</text>
+    <text x="-5" y="95" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">240</text>
+    <text x="-5" y="110" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">180</text>
+    <text x="-5" y="125" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">120</text>
+    <text x="-5" y="140" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">60</text>
+    <text x="-5" y="155" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">0</text>
+    
+    <!-- Barras -->
+    <rect x="10" y="105" width="15" height="50" fill="#F59E0B"/>
+    <text x="17" y="170" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">400</text>
+    
+    <rect x="30" y="55" width="15" height="100" fill="#F59E0B"/>
+    <text x="37" y="170" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">600</text>
+    
+    <!-- Días de la semana -->
+    <text x="17" y="185" font-family="Arial, sans-serif" font-size="6" fill="#6B7280" text-anchor="middle">0</text>
+    <text x="37" y="185" font-family="Arial, sans-serif" font-size="6" fill="#6B7280" text-anchor="middle">0</text>
+    <text x="57" y="185" font-family="Arial, sans-serif" font-size="6" fill="#6B7280" text-anchor="middle">0</text>
+    <text x="77" y="185" font-family="Arial, sans-serif" font-size="6" fill="#6B7280" text-anchor="middle">0</text>
+    <text x="97" y="185" font-family="Arial, sans-serif" font-size="6" fill="#6B7280" text-anchor="middle">0</text>
+    <text x="117" y="185" font-family="Arial, sans-serif" font-size="6" fill="#6B7280" text-anchor="middle">0</text>
+  </g>
+  
+  <!-- Botón home -->
+  <rect x="85" y="385" width="30" height="3" rx="1.5" fill="#6B7280"/>
+</svg>

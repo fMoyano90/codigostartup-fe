@@ -1,0 +1,22 @@
+<svg width="240" height="80" viewBox="0 0 240 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="240" height="80" rx="8" fill="#1a1a2e"/>
+  
+  <!-- Dumbbell Icon -->
+  <g transform="translate(20, 20)">
+    <!-- Left weight -->
+    <rect x="0" y="10" width="8" height="20" rx="2" fill="#ffd700"/>
+    <!-- Right weight -->
+    <rect x="32" y="10" width="8" height="20" rx="2" fill="#ffd700"/>
+    <!-- Bar -->
+    <rect x="8" y="18" width="24" height="4" rx="2" fill="#ffd700"/>
+    <!-- Center grip -->
+    <rect x="16" y="16" width="8" height="8" rx="1" fill="#ffed4e"/>
+  </g>
+  
+  <!-- Entrena Text -->
+  <text x="70" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">Entrena</text>
+  
+  <!-- EDTECH & FITNESS Text -->
+  <text x="70" y="55" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#8b5cf6" letter-spacing="1px">EDTECH &amp; FITNESS</text>
+</svg>
