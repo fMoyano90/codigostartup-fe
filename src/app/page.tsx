@@ -2,36 +2,26 @@
 
 import { useEffect } from 'react'
 
-const stats = [
-  { value: '30+', label: 'Proyectos entregados', note: 'Startups, tiendas online y empresas' },
-  { value: '1', label: 'Producto propio en operación', note: 'De la idea al mercado, en producción real' },
-  { value: 'Chrysalis', label: 'Incubadora PUCV', note: 'Núcleo Gestor, nuestro spin-off, incubado en la PUCV' },
-  { value: 'Cuotas', label: 'Facilidades de pago', note: 'Transbank y cuotas para emprendedores' },
-]
-
 const services = [
   {
-    number: '01',
     category: 'Desarrollo',
     name: 'Construimos',
     description: 'Tu primera tienda online, app web o sistema interno — código sólido, entregas semanales y un producto listo para crecer.',
-    detail: 'Para cuando tienes la idea clara pero no el equipo que la ejecute.',
+    tags: ['Sitios web', 'Landing page', 'E-commerce', 'App web', 'Software a medida'],
     cta: 'Quiero construir →',
   },
   {
-    number: '02',
     category: 'Estrategia',
     name: 'Optimizamos',
     description: 'Revisamos lo que ya tienes, encontramos los cuellos de botella y te decimos qué mejorar antes de que cueste más caro.',
-    detail: 'Para cuando algo ya funciona, pero el costo o la velocidad se están yendo de las manos.',
+    tags: ['Auditorías', 'Arquitectura', 'Asesorías', 'Performance', 'Consultoría técnica'],
     cta: 'Quiero mejorar lo que tengo →',
   },
   {
-    number: '03',
     category: 'Diseño y Marca',
     name: 'Comunicamos',
     description: 'UX/UI, identidad y piezas de comunicación para que tu producto se entienda solo. Sin que tengas que explicar qué hace cada vez que lo muestras.',
-    detail: 'Para cuando el producto funciona pero todavía no se vende como debería.',
+    tags: ['Branding', 'Logos', 'UX / UI', 'Brochure', 'Identidad visual'],
     cta: 'Quiero comunicar mejor →',
   },
 ]
@@ -234,17 +224,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── STATS BAR ── */}
-      <div className="stats-bar">
-        {stats.map((s) => (
-          <div key={s.label} className="stat-item">
-            <span className="stat-val">{s.value}</span>
-            <span className="stat-label">{s.label}</span>
-            <span className="stat-note">{s.note}</span>
-          </div>
-        ))}
-      </div>
-
       {/* ── MARQUEE ── */}
       <div className="marquee-root" aria-hidden="true">
         <div className="marquee-track">
@@ -274,12 +253,15 @@ export default function Home() {
         </div>
         <div className="service-grid" style={{ maxWidth: '1280px', margin: '0 auto' }}>
           {services.map((s) => (
-            <article key={s.number} className="service-card">
-              <span className="service-number">{s.number}</span>
+            <article key={s.name} className="service-card">
               <div className="service-category">{s.category}</div>
               <h3 className="service-name">{s.name}</h3>
               <p className="service-desc">{s.description}</p>
-              <p className="service-detail">{s.detail}</p>
+              <div className="service-tags">
+                {s.tags.map((tag) => (
+                  <span key={tag} className="service-tag">{tag}</span>
+                ))}
+              </div>
               <a href="#cta" className="service-link">{s.cta}</a>
             </article>
           ))}

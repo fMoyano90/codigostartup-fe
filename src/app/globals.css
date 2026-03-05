@@ -683,21 +683,6 @@ a {
   background: rgba(253, 200, 40, 0.025);
 }
 
-.service-number {
-  font-family: var(--font-bebas);
-  font-size: 4rem;
-  line-height: 1;
-  color: var(--divider-l);
-  letter-spacing: -0.03em;
-  transition: color 0.35s;
-  margin-bottom: 1.75rem;
-  display: block;
-}
-
-.service-card:hover .service-number {
-  color: rgba(253, 200, 40, 0.25);
-}
-
 .service-category {
   font-family: var(--font-mono);
   font-size: 0.6rem;
@@ -723,13 +708,21 @@ a {
   margin: 0;
 }
 
-.service-detail {
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--divider);
-  font-size: 0.82rem;
-  line-height: 1.65;
-  color: var(--parch-faint);
+}
+
+.service-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--divider);
+  color: var(--parch-dim);
+  border-radius: 2px;
 }
 
 .service-link {
@@ -757,10 +750,6 @@ a {
 
 .service-card:nth-child(2):hover {
   background: var(--violet-glow);
-}
-
-.service-card:nth-child(2):hover .service-number {
-  color: rgba(124, 58, 237, 0.22);
 }
 
 .service-card:nth-child(2):hover .service-link {
