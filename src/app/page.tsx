@@ -1,27 +1,45 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import LogoLoop from '@/components/LogoLoop'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const techLogos = [
+  { src: '/logos/github.png', alt: 'GitHub' },
+  { src: '/logos/react.png', alt: 'React' },
+  { src: '/logos/nextjs.png', alt: 'Next.js' },
+  { src: '/logos/typescript.png', alt: 'TypeScript' },
+  { src: '/logos/vercel.svg', alt: 'Vercel' },
+  { src: '/logos/NestJS.svg', alt: 'NestJS' },
+  { src: '/logos/docker.png', alt: 'Docker' },
+  { src: '/logos/supabase.png', alt: 'Supabase' },
+  { src: '/logos/figma.png', alt: 'Figma' },
+  { src: '/logos/claude-color.png', alt: 'Claude AI' },
+]
 
 const services = [
   {
     category: 'Desarrollo',
     name: 'Construimos',
-    description: 'Tu primera tienda online, app web o sistema interno — código sólido, entregas semanales y un producto listo para crecer.',
-    tags: ['Sitios web', 'Landing page', 'E-commerce', 'App web', 'Software a medida'],
+    description: 'Creamos soluciones digitales a tu medida, con código sólido, entregas semanales y un producto listo para crecer.',
+    tags: ['Sitios web', 'Landing page', 'Tiendas Online', 'Apps web', 'Apps móviles', 'Software a medida', 'Prototipos'],
     cta: 'Quiero construir →',
   },
   {
     category: 'Estrategia',
     name: 'Optimizamos',
     description: 'Revisamos lo que ya tienes, encontramos los cuellos de botella y te decimos qué mejorar antes de que cueste más caro.',
-    tags: ['Auditorías', 'Arquitectura', 'Asesorías', 'Performance', 'Consultoría técnica'],
+    tags: ['Auditoría', 'Arquitectura', 'Seguridad', 'Asesorías/Consultorias Técnicas', 'Mejora de procesos', 'Roadmap'],
     cta: 'Quiero mejorar lo que tengo →',
   },
   {
     category: 'Diseño y Marca',
     name: 'Comunicamos',
-    description: 'UX/UI, identidad y piezas de comunicación para que tu producto se entienda solo. Sin que tengas que explicar qué hace cada vez que lo muestras.',
-    tags: ['Branding', 'Logos', 'UX / UI', 'Brochure', 'Identidad visual'],
+    description: 'Diseñamos marcas y productos, unimos identidad y estrategia para que tu mensaje sea profesional y conecte con tus usuarios.',
+    tags: ['Experiencia de Usuario', 'Identidad visual', 'Animación digital',  'Brochure y Graficas', 'Marketing y publicidad digital'],
     cta: 'Quiero comunicar mejor →',
   },
 ]
@@ -60,15 +78,15 @@ const clientCases = [
       { val: 'Industrial', label: 'Escala' },
       { val: 'Minería', label: 'Sector' },
     ],
-    logo: '/SS_LOGO_WHITE_H.png',
+    logo: '/SS_LOGO_WHITE.png',
     testimonial: {
-      quote: 'Núcleo Gestor nació por la necesidad real de la minería. Con esta plataforma esperamos eliminar el 100% del papel en operaciones mineras, reducir costos operativos significativamente y transformar auditorías de semanas a horas, cuidando el medio ambiente desde el diseño inicial.',
+      quote: 'Estoy muy contento con el trabajo de Código tanto en desarrollo como su modalidad de trabajo; ágil, limpia y eficaz. El trabajo por parte de Código nos ha permitido validar nuestro MVP, paso crucial para el desarrollo profesional de nuestra Startup.',
       author: 'Christian Solar, Gerente General',
     },
   },
   {
     sector: 'Fitness & Coaching',
-    name: 'Entrena.vip',
+    name: 'Entrena',
     description: 'Plataforma para coaches: gestión de alumnos, seguimiento de progreso y evaluaciones de fuerza, movilidad y carga en un solo lugar.',
     hook: 'Cada sesión queda registrada. El progreso del alumno siempre visible, para el coach y para el atleta.',
     metrics: [
@@ -76,7 +94,7 @@ const clientCases = [
       { val: 'Multi-rol', label: 'Coach + Alumno' },
       { val: 'Fitness', label: 'Industria' },
     ],
-    logo: '/logo-entrena-blanco.png',
+    logo: '/logo-entrena-vip.png',
     testimonial: {
       quote: 'Trabajar con los chicos de código startup ha Sido un gran avance en mi proyecto como coach de entrenamiento debido a que con ellos mejoramos mi sistema completo a través de una app móvil exclusiva para mis alumnos y clientes.',
       author: 'Jaime Valero, Coach & Founder',
@@ -100,13 +118,84 @@ const clientCases = [
   },
 ]
 
-const marqItems = [
-  'Desarrollo web', 'Tiendas online', 'PUCV', 'Núcleo Gestor',
-  'Startups', 'Pago en cuotas', 'DevOps', 'UX / UI',
-  'Código real', '30+ Proyectos', 'Estrategia', 'Producto digital',
+const leftPhrases = [
+  'Desarrollo web', 'Tiendas online', 'Pago en cuotas', 'DevOps', 'Estrategia', 'Producto digital',
+]
+
+const rightPhrases = [
+  'PUCV', 'Núcleo Gestor', 'Startups', 'UX / UI', 'Código real', '30+ Proyectos',
 ]
 
 export default function Home() {
+  const phraseLeftRef = useRef<HTMLDivElement>(null)
+  const phraseRightRef = useRef<HTMLDivElement>(null)
+
+  // Phrase scroll-driven animation
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const left = phraseLeftRef.current
+      const right = phraseRightRef.current
+      if (!left || !right) return
+
+      // Set initial hidden state
+      gsap.set(left, { x: -420, autoAlpha: 0 })
+      gsap.set(right, { x: 420, autoAlpha: 0 })
+
+      // Entry animation: fire once when phrase section enters viewport
+      ScrollTrigger.create({
+        trigger: '#phrase-root',
+        start: 'top 88%',
+        once: true,
+        onEnter: () => {
+          gsap.to(left, {
+            x: 0,
+            autoAlpha: 1,
+            duration: 1.2,
+            ease: 'power3.out',
+          })
+          gsap.to(right, {
+            x: 0,
+            autoAlpha: 1,
+            duration: 1.2,
+            ease: 'power3.out',
+            delay: 0.12,
+          })
+        },
+      })
+
+      // Continuous parallax: rows drift in opposite directions as user scrolls
+      gsap.fromTo(
+        left,
+        { xPercent: 0 },
+        {
+          xPercent: -8,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#servicios',
+            start: 'top bottom',
+            end: 'top top',
+            scrub: 2,
+          },
+        }
+      )
+      gsap.fromTo(
+        right,
+        { xPercent: 0 },
+        {
+          xPercent: 8,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#servicios',
+            start: 'top bottom',
+            end: 'top top',
+            scrub: 2,
+          },
+        }
+      )
+    })
+    return () => ctx.revert()
+  }, [])
+
   // Custom cursor
   useEffect(() => {
     const cursor = document.createElement('div')
@@ -161,8 +250,6 @@ export default function Home() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  const duped = [...marqItems, ...marqItems, ...marqItems]
 
   return (
     <main>
@@ -224,12 +311,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── MARQUEE ── */}
-      <div className="marquee-root" aria-hidden="true">
-        <div className="marquee-track">
-          {duped.map((item, i) => (
-            <span key={i} className="marquee-item">{item}</span>
-          ))}
+      {/* ── PHRASE BANDS ── */}
+      <div id="phrase-root" className="phrase-root">
+        <div className="phrase-overflow">
+          <div ref={phraseLeftRef} className="phrase-track">
+            {[...leftPhrases, ...leftPhrases].map((item, i) => (
+              <span key={i} className="phrase-item">
+                {item}<span className="phrase-sep">✦</span>
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="phrase-overflow">
+          <div ref={phraseRightRef} className="phrase-track">
+            {[...rightPhrases, ...rightPhrases].map((item, i) => (
+              <span key={i} className="phrase-item">
+                {item}<span className="phrase-sep">✦</span>
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -237,18 +337,31 @@ export default function Home() {
       <section id="servicios" className="section-wrap">
         <div className="container">
           <div className="services-header">
-            <div>
+            <div className="services-header-left">
               <div className="section-tag">Servicios</div>
               <h2 className="section-title">
                 DESARROLLO,<br />
                 ESTRATEGIA<br />
                 Y DISEÑO.
               </h2>
+              <p className="services-header-text">
+                Tres servicios diseñados para momentos distintos.
+                Cuéntanos dónde estás y te decimos exactamente cuál encaja.
+              </p>
             </div>
-            <p className="services-header-text">
-              Tres servicios diseñados para momentos distintos.
-              Cuéntanos dónde estás y te decimos exactamente cuál encaja.
-            </p>
+            <div className="tech-loop-wrap">
+              <LogoLoop
+                logos={techLogos}
+                direction="left"
+                speed={55}
+                logoHeight={52}
+                gap={56}
+                hoverSpeed={0}
+                fadeOut
+                fadeOutColor="#0a0a0a"
+                ariaLabel="Tecnologías que usamos"
+              />
+            </div>
           </div>
         </div>
         <div className="service-grid" style={{ maxWidth: '1280px', margin: '0 auto' }}>
@@ -276,9 +389,16 @@ export default function Home() {
         >
           <div className="case-left">
             <span className="case-tag">Caso Insignia</span>
-            <h2 className="case-title">
-              NÚCLEO<br />GESTOR.
-            </h2>
+            <div className="case-title-row">
+              <img
+                src="/isotipo-nucleo.svg"
+                alt="Núcleo Gestor"
+                className="case-title-isotipo"
+              />
+              <h2 className="case-title">
+                NÚCLEO<br />GESTOR.
+              </h2>
+            </div>
             <p className="case-desc">
               Plataforma de gestión de liderazgo y cumplimiento normativo
               del DS44 para la industria minera. IA entrenada en normativa,
@@ -321,6 +441,14 @@ export default function Home() {
               </ul>
             </div>
 
+            <div className="case-chrysalis">
+              <img
+                src="/chrysalis-logo.png"
+                alt="Chrysalis — Incubadora de negocios PUCV"
+                className="case-chrysalis-logo"
+              />
+            </div>
+
             <div className="case-narrative">
               <p className="case-narrative-text">
                 CODIGO STARTUP ES LA FÁBRICA.
@@ -336,41 +464,35 @@ export default function Home() {
       <section id="portafolio" className="section-wrap">
         <div className="container">
           <div className="portfolio-header">
-            <div>
+            <div className="portfolio-header-left">
               <div className="section-tag">Casos de éxito</div>
               <h2 className="section-title">
                 CONSTRUIDO.<br />
                 LANZADO.<br />
                 OPERANDO.
               </h2>
+              <p className="portfolio-header-text">
+                Tres productos en producción real, con clientes activos
+                que los usan todos los días.
+              </p>
             </div>
-            <p className="portfolio-header-text">
-              Tres productos en producción real, con clientes activos
-              que los usan todos los días.
-            </p>
+            <div className="portfolio-client-logos">
+              {clientCases.map((c) => c.logo && (
+                <img
+                  key={c.name}
+                  src={c.logo}
+                  alt={`Logo ${c.name}`}
+                  className="portfolio-client-logo w-44 h-auto"
+                />
+              ))}
+            </div>
           </div>
           <div className="portfolio-grid">
             {clientCases.map((c) => (
               <article key={c.name} className="portfolio-card">
                 <span className="portfolio-sector">{c.sector}</span>
-                {c.logo && (
-                  <img
-                    src={c.logo}
-                    alt={`Logo ${c.name}`}
-                    className="portfolio-logo"
-                  />
-                )}
                 <h3 className="portfolio-name">{c.name}</h3>
                 <p className="portfolio-desc">{c.description}</p>
-                <p className="portfolio-hook">{c.hook}</p>
-                <div className="portfolio-metrics">
-                  {c.metrics.map((m) => (
-                    <div key={m.label} className="portfolio-metric">
-                      <span className="portfolio-metric-val">{m.val}</span>
-                      <span className="portfolio-metric-label">{m.label}</span>
-                    </div>
-                  ))}
-                </div>
                 <div className="portfolio-testimonial">
                   <p className="portfolio-testimonial-quote">{c.testimonial.quote}</p>
                   <span className="portfolio-testimonial-author">{c.testimonial.author}</span>
