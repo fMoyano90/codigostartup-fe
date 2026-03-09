@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import LogoLoop from '@/components/LogoLoop'
+import Galaxy from '@/components/Galaxy'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -129,6 +130,8 @@ const rightPhrases = [
 export default function Home() {
   const phraseLeftRef = useRef<HTMLDivElement>(null)
   const phraseRightRef = useRef<HTMLDivElement>(null)
+  const servicesTitleRef = useRef<HTMLHeadingElement>(null)
+  const servicesSubRef = useRef<HTMLParagraphElement>(null)
 
   // Phrase scroll-driven animation
   useEffect(() => {
@@ -240,6 +243,54 @@ export default function Home() {
     }
   }, [])
 
+  // Services title: word-by-word scrub animation
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const ctx = gsap.context(() => {
+      if (prefersReduced) {
+        gsap.set(servicesTitleRef.current?.querySelectorAll('.title-word') ?? [], { autoAlpha: 1, y: 0 })
+        return
+      }
+
+      const words = servicesTitleRef.current?.querySelectorAll('.title-word')
+      if (words?.length) {
+        // Set initial state hidden
+        gsap.set(words, { autoAlpha: 0.08, y: 28 })
+
+        const tl = gsap.timeline()
+        tl.to(words, {
+          autoAlpha: 1,
+          y: 0,
+          ease: 'power2.out',
+          stagger: 0.5,
+        })
+
+        ScrollTrigger.create({
+          trigger: servicesTitleRef.current,
+          start: 'top 78%',
+          end: 'bottom 60%',
+          scrub: 1.2,
+          animation: tl,
+        })
+      }
+
+      // Subtitle: scrub fade-up
+      if (servicesSubRef.current) {
+        gsap.set(servicesSubRef.current, { autoAlpha: 0, y: 18 })
+        const tlSub = gsap.timeline()
+        tlSub.to(servicesSubRef.current, { autoAlpha: 1, y: 0, ease: 'power2.out' })
+        ScrollTrigger.create({
+          trigger: servicesSubRef.current,
+          start: 'top 82%',
+          end: 'bottom 65%',
+          scrub: 1.2,
+          animation: tlSub,
+        })
+      }
+    })
+    return () => ctx.revert()
+  }, [])
+
   // Nav scroll effect
   useEffect(() => {
     const nav = document.getElementById('main-nav')
@@ -269,6 +320,21 @@ export default function Home() {
 
       {/* ── HERO ── */}
       <section id="hero" className="hero-root">
+        <div className="hero-galaxy">
+          <Galaxy
+            mouseRepulsion
+            mouseInteraction
+            density={1.2}
+            glowIntensity={0.2}
+            saturation={0.8}
+            hueShift={42}
+            twinkleIntensity={0.5}
+            rotationSpeed={0.03}
+            repulsionStrength={1.5}
+            speed={0.8}
+            transparent
+          />
+        </div>
         <span className="hero-watermark" aria-hidden="true">CS</span>
 
         <div className="hero-inner">
@@ -311,27 +377,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PHRASE BANDS ── */}
-      <div id="phrase-root" className="phrase-root">
-        <div className="phrase-overflow">
-          <div ref={phraseLeftRef} className="phrase-track">
-            {[...leftPhrases, ...leftPhrases].map((item, i) => (
-              <span key={i} className="phrase-item">
-                {item}<span className="phrase-sep">✦</span>
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="phrase-overflow">
-          <div ref={phraseRightRef} className="phrase-track">
-            {[...rightPhrases, ...rightPhrases].map((item, i) => (
-              <span key={i} className="phrase-item">
-                {item}<span className="phrase-sep">✦</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* ── PHRASE BANDS ── (hidden) */}
 
       {/* ── SERVICES ── */}
       <section id="servicios" className="section-wrap">
@@ -339,12 +385,13 @@ export default function Home() {
           <div className="services-header">
             <div className="services-header-left">
               <div className="section-tag">Servicios</div>
-              <h2 className="section-title">
-                DESARROLLO,<br />
-                ESTRATEGIA<br />
-                Y DISEÑO.
+              <h2 className="section-title" ref={servicesTitleRef}>
+                <span className="title-word">DESARROLLO,</span><br />
+                <span className="title-word">ESTRATEGIA</span><br />
+                <span className="title-word">Y</span>{' '}
+                <span className="title-word">DISEÑO.</span>
               </h2>
-              <p className="services-header-text">
+              <p className="services-header-text" ref={servicesSubRef}>
                 Tres servicios diseñados para momentos distintos.
                 Cuéntanos dónde estás y te decimos exactamente cuál encaja.
               </p>
@@ -365,9 +412,9 @@ export default function Home() {
           </div>
         </div>
         <div className="service-grid" style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          {services.map((s) => (
+          {services.map((s, i) => (
             <article key={s.name} className="service-card">
-              <div className="service-category">{s.category}</div>
+              <div className="service-category text-[#efc459]">{s.category}</div>
               <h3 className="service-name">{s.name}</h3>
               <p className="service-desc">{s.description}</p>
               <div className="service-tags">
@@ -375,7 +422,10 @@ export default function Home() {
                   <span key={tag} className="service-tag">{tag}</span>
                 ))}
               </div>
-              <a href="#cta" className="service-link">{s.cta}</a>
+              <a
+                href="#cta"
+                className={`service-link ${i === 1 ? 'service-link--center' : 'service-link--outer'}`}
+              >{s.cta}</a>
             </article>
           ))}
         </div>
