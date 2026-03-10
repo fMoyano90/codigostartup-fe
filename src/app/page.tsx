@@ -199,6 +199,26 @@ export default function Home() {
     return () => ctx.revert()
   }, [])
 
+  // Service cards scroll reveal
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards = document.querySelectorAll('.service-card')
+      cards.forEach((card, i) => {
+        gsap.set(card, { y: 50, autoAlpha: 0 })
+        ScrollTrigger.create({
+          trigger: card,
+          start: 'top 88%',
+          end: 'top 15%',
+          onEnter: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.7, ease: 'power3.out', delay: i * 0.1 }),
+          onLeave: () => gsap.to(card, { y: -50, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
+          onEnterBack: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.55, ease: 'power3.out' }),
+          onLeaveBack: () => gsap.to(card, { y: 50, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
+        })
+      })
+    })
+    return () => ctx.revert()
+  }, [])
+
   // Navbar transparent → glass on scroll
   useEffect(() => {
     const nav = document.querySelector('.nav-root')
@@ -439,7 +459,9 @@ export default function Home() {
                 ))}
               </div>
               <a
-                href="#cta"
+                href="https://wa.me/56966073259"
+                target="_blank"
+                rel="noreferrer"
                 className={`service-link ${i === 1 ? 'service-link--center' : 'service-link--outer'}`}
               >{s.cta}</a>
             </article>
