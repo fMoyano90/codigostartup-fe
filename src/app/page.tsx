@@ -4,7 +4,8 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import LogoLoop from '@/components/LogoLoop'
-import Galaxy from '@/components/Galaxy'
+import GradualBlur from '@/components/GradualBlur'
+import Magnet from '@/components/Magnet'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -71,7 +72,7 @@ const steps = [
 const clientCases = [
   {
     sector: 'Minería',
-    name: 'SubTech Solutions',
+    name: 'SubTech',
     description: 'Monitoreo en tiempo real de maquinarias, vehículos y personas dentro de una mina, nivel por nivel. Visibilidad total de lo que ocurre bajo tierra.',
     hook: 'En una emergencia, en segundos sabes exactamente quién y qué activos están en el interior.',
     metrics: [
@@ -88,7 +89,7 @@ const clientCases = [
   {
     sector: 'Fitness & Coaching',
     name: 'Entrena',
-    description: 'Plataforma para coaches: gestión de alumnos, seguimiento de progreso y evaluaciones de fuerza, movilidad y carga en un solo lugar.',
+    description: 'Plataforma para coaches: gestión de alumnos, clases, seguimiento de progreso y evaluaciones de fuerza, movilidad y carga en un solo lugar.',
     hook: 'Cada sesión queda registrada. El progreso del alumno siempre visible, para el coach y para el atleta.',
     metrics: [
       { val: 'SaaS', label: 'Modelo' },
@@ -315,26 +316,11 @@ export default function Home() {
           <a href="#portafolio" className="nav-link">Portafolio</a>
           <a href="#proceso" className="nav-link">Proceso</a>
         </div>
-        <a href="#cta" className="nav-cta">Hablemos</a>
+        <a href="https://wa.me/56966073259" target="_blank" rel="noreferrer" className="nav-cta">Hablemos</a>
       </nav>
 
       {/* ── HERO ── */}
       <section id="hero" className="hero-root">
-        <div className="hero-galaxy">
-          <Galaxy
-            mouseRepulsion
-            mouseInteraction
-            density={1.2}
-            glowIntensity={0.2}
-            saturation={0.8}
-            hueShift={42}
-            twinkleIntensity={0.5}
-            rotationSpeed={0.03}
-            repulsionStrength={1.5}
-            speed={0.8}
-            transparent
-          />
-        </div>
         <span className="hero-watermark" aria-hidden="true">CS</span>
 
         <div className="hero-inner">
@@ -366,11 +352,8 @@ export default function Home() {
               necesitan avanzar.
             </p>
             <div className="hero-actions fadein fadein-d3">
-              <a href="#cta" className="btn-primary">
+              <a href="https://wa.me/56966073259" target="_blank" rel="noreferrer" className="btn-primary">
                 Cuéntanos tu proyecto →
-              </a>
-              <a href="#proceso" className="btn-ghost">
-                Cómo trabajamos
               </a>
             </div>
           </div>
@@ -386,10 +369,10 @@ export default function Home() {
             <div className="services-header-left">
               <div className="section-tag">Servicios</div>
               <h2 className="section-title" ref={servicesTitleRef}>
-                <span className="title-word">DESARROLLO,</span><br />
+                <span className="title-word">DESARROLLO<span className="accent">,</span></span><br />
                 <span className="title-word">ESTRATEGIA</span><br />
                 <span className="title-word">Y</span>{' '}
-                <span className="title-word">DISEÑO.</span>
+                <span className="title-word">DISEÑO<span className="accent">.</span></span>
               </h2>
               <p className="services-header-text" ref={servicesSubRef}>
                 Tres servicios diseñados para momentos distintos.
@@ -416,6 +399,7 @@ export default function Home() {
             <article key={s.name} className="service-card">
               <div className="service-category text-[#efc459]">{s.category}</div>
               <h3 className="service-name">{s.name}</h3>
+              <hr className="service-divider" />
               <p className="service-desc">{s.description}</p>
               <div className="service-tags">
                 {s.tags.map((tag) => (
@@ -431,80 +415,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── NÚCLEO GESTOR CASE ── */}
-      <section id="nucleo">
-        <div
-          className="case-root"
-          style={{ maxWidth: '1280px', margin: '0 auto' }}
-        >
-          <div className="case-left">
-            <span className="case-tag">Caso Insignia</span>
-            <div className="case-title-row">
-              <img
-                src="/isotipo-nucleo.svg"
-                alt="Núcleo Gestor"
-                className="case-title-isotipo"
-              />
-              <h2 className="case-title">
-                NÚCLEO<br />GESTOR.
+      {/* ── LABORATORIO DE IDEAS ── */}
+      <section id="nucleo" className="lab-root">
+        <div className="lab-inner">
+          <div className="lab-content">
+            <div className="lab-text">
+              <div className="section-tag">Laboratorio de Ideas</div>
+              <h2 className="lab-title">
+                CONSTRUIMOS PORQUE<br />
+                SOMOS COMO TÚ:<br />
+                <span className="accent">EMPRENDEDORES.</span>
               </h2>
-            </div>
-            <p className="case-desc">
-              Plataforma de gestión de liderazgo y cumplimiento normativo
-              del DS44 para la industria minera. IA entrenada en normativa,
-              app móvil 100% offline para trabajadores en terreno y firma
-              electrónica simple (FES) según ley 19799. Nació en Código
-              Startup, hoy opera como empresa independiente incubada en
-              Chrysalis PUCV.
-            </p>
-            <div className="case-metrics">
-              <div className="case-metric">
-                <span className="case-metric-val">DS44</span>
-                <span className="case-metric-label">Cumplimiento normativo</span>
-              </div>
-              <div className="case-metric">
-                <span className="case-metric-val">100% Offline</span>
-                <span className="case-metric-label">App móvil en terreno</span>
-              </div>
-              <div className="case-metric">
-                <span className="case-metric-val">FES</span>
-                <span className="case-metric-label">Ley 19799</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="case-right">
-            <div>
-              <div className="section-tag" style={{ marginBottom: '1.75rem' }}>
-                Lo que demuestra
-              </div>
-              <ul className="case-proof-list">
-                <li className="case-proof-item">
-                  De cero a piloto activo: de la idea al producto con usuarios reales confirmando funciones críticas en terreno.
-                </li>
-                <li className="case-proof-item">
-                  Con restricciones reales: normativa exigente, operación sin internet y usuarios que no perdonan fallas.
-                </li>
-                <li className="case-proof-item">
-                  Respaldo institucional: incubado en Chrysalis PUCV, que valida la calidad de lo que construimos.
-                </li>
-              </ul>
-            </div>
-
-            <div className="case-chrysalis">
-              <img
-                src="/chrysalis-logo.png"
-                alt="Chrysalis — Incubadora de negocios PUCV"
-                className="case-chrysalis-logo"
-              />
-            </div>
-
-            <div className="case-narrative">
-              <p className="case-narrative-text">
-                CODIGO STARTUP ES LA FÁBRICA.
-                NÚCLEO GESTOR ES LA EVIDENCIA DE QUE ESA
-                FÁBRICA CONSTRUYE PRODUCTOS QUE OPERAN EN EL MUNDO REAL.
+              <p className="lab-desc">
+                Construir y operar nuestras propias plataformas nos permite entender tu camino.
+                Todo lo aprendido en casa se traduce en beneficios directos para que tu proyecto
+                sea seguro y sólido desde el primer día.
               </p>
+            </div>
+
+            <div className="lab-card">
+              <span className="lab-card-tag">Caso Insignia</span>
+              <div className="lab-card-title-row">
+                <img src="/isotipo-nucleo.svg" alt="Núcleo Gestor" className="lab-card-isotipo" />
+                <h3 className="lab-card-name">NÚCLEO<br />GESTOR.</h3>
+              </div>
+              <p className="lab-card-desc">
+                Plataforma de gestión de liderazgo y cumplimiento normativo del DS44 para la
+                industria minera. IA entrenada en normativa, app móvil 100% offline y firma
+                electrónica simple según ley 19799.
+              </p>
+              <div className="lab-card-metrics">
+                <div className="lab-card-metric">
+                  <span className="lab-card-metric-val">DS44</span>
+                  <span className="lab-card-metric-label">Normativa</span>
+                </div>
+                <div className="lab-card-metric">
+                  <span className="lab-card-metric-val">100%</span>
+                  <span className="lab-card-metric-label">Offline</span>
+                </div>
+                <div className="lab-card-metric">
+                  <span className="lab-card-metric-val">FES</span>
+                  <span className="lab-card-metric-label">Ley 19799</span>
+                </div>
+              </div>
+              <div className="lab-card-footer">
+                <img src="/chrysalis-logo.png" alt="Chrysalis PUCV" className="lab-card-chrysalis" />
+              </div>
             </div>
           </div>
         </div>
@@ -571,15 +527,38 @@ export default function Home() {
               qué sigue y por qué.
             </p>
           </div>
-          <div className="process-grid">
-            {steps.map((s) => (
-              <div key={s.n} className="process-step">
-                <span className="process-n">{s.n}</span>
-                <h3 className="process-title">{s.title}</h3>
-                <p className="process-desc">{s.desc}</p>
-              </div>
-            ))}
+        </div>
+        <div className="process-scroll-wrap">
+          <div className="process-scroll-inner">
+            <div className="process-grid">
+              {steps.map((s) => (
+                <div key={s.n} className="process-step">
+                  <span className="process-n">{s.n}</span>
+                  <h3 className="process-title">{s.title}</h3>
+                  <p className="process-desc">{s.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
+          <GradualBlur
+            position="bottom"
+            height="8rem"
+            strength={2.5}
+            divCount={6}
+            curve="bezier"
+            exponential
+            opacity={1}
+            zIndex={10}
+          />
+          <GradualBlur
+            position="top"
+            height="4rem"
+            strength={1.5}
+            divCount={4}
+            curve="ease-out"
+            opacity={1}
+            zIndex={10}
+          />
         </div>
       </section>
 
@@ -596,18 +575,16 @@ export default function Home() {
           Transbank y tenemos facilidades de pago.
         </p>
         <div className="cta-actions">
-          <a
-            href="mailto:hola@codigostartup.com?subject=Quiero%20agendar%20una%20reunion"
-            className="btn-dark"
-          >
-            Agendar reunión →
-          </a>
-          <a
-            href="mailto:hola@codigostartup.com"
-            className="btn-dark-outline"
-          >
-            Escríbenos
-          </a>
+          <Magnet padding={60} magnetStrength={4}>
+            <a
+              href="https://wa.me/56966073259"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-dark"
+            >
+              Agendar reunión →
+            </a>
+          </Magnet>
         </div>
       </section>
 
