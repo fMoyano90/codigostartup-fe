@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import LogoLoop from '@/components/LogoLoop'
-import GradualBlur from '@/components/GradualBlur'
 import Magnet from '@/components/Magnet'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -196,6 +195,39 @@ export default function Home() {
           },
         }
       )
+    })
+    return () => ctx.revert()
+  }, [])
+
+  // Navbar transparent → glass on scroll
+  useEffect(() => {
+    const nav = document.querySelector('.nav-root')
+    if (!nav) return
+    const onScroll = () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // Process cards scroll reveal
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards = document.querySelectorAll('.process-step')
+      cards.forEach((card, i) => {
+        gsap.set(card, { y: 60, autoAlpha: 0 })
+
+        ScrollTrigger.create({
+          trigger: card,
+          start: 'top 88%',
+          end: 'top 15%',
+          onEnter: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.65, ease: 'power3.out', delay: i * 0.06 }),
+          onLeave: () => gsap.to(card, { y: -60, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
+          onEnterBack: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.55, ease: 'power3.out' }),
+          onLeaveBack: () => gsap.to(card, { y: 60, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
+        })
+      })
     })
     return () => ctx.revert()
   }, [])
@@ -473,9 +505,9 @@ export default function Home() {
             <div className="portfolio-header-left">
               <div className="section-tag">Casos de éxito</div>
               <h2 className="section-title">
-                CONSTRUIDO.<br />
-                LANZADO.<br />
-                OPERANDO.
+                CONSTRUIDO<span className="accent">.</span><br />
+                LANZADO<span className="accent">.</span><br />
+                OPERANDO<span className="accent">.</span>
               </h2>
               <p className="portfolio-header-text">
                 Tres productos en producción real, con clientes activos
@@ -510,55 +542,29 @@ export default function Home() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section id="proceso" className="section-wrap">
+      <section id="proceso" className="section-wrap process-section">
         <div className="container">
           <div className="process-header">
-            <div>
-              <div className="section-tag">Proceso</div>
-              <h2 className="section-title">
-                CUATRO PASOS,<br />
-                SIN CAJAS<br />
-                NEGRAS.
-              </h2>
-            </div>
+            <div className="section-tag">Proceso</div>
+            <h2 className="section-title">
+              SIN SECRETOS<span className="accent">:</span><br />
+              ASÍ CONSTRUIMOS<span className="accent">.</span>
+            </h2>
             <p className="process-desc-text">
-              La mayor fricción no suele ser el precio: es no saber qué pasa
-              después de decir que sí. Aquí siempre sabes en qué estamos,
-              qué sigue y por qué.
+              Aquí trabajamos con las puertas abiertas para que siempre sepas en qué estamos, qué sigue y por qué.
             </p>
           </div>
         </div>
-        <div className="process-scroll-wrap">
-          <div className="process-scroll-inner">
-            <div className="process-grid">
-              {steps.map((s) => (
-                <div key={s.n} className="process-step">
-                  <span className="process-n">{s.n}</span>
-                  <h3 className="process-title">{s.title}</h3>
-                  <p className="process-desc">{s.desc}</p>
-                </div>
-              ))}
+        <div className="process-grid">
+          {steps.map((s) => (
+            <div key={s.n} className="process-step">
+              <div className="process-step-header">
+                <span className="process-n">{s.n}</span>
+                <h3 className="process-title">{s.title}</h3>
+              </div>
+              <p className="process-desc">{s.desc}</p>
             </div>
-          </div>
-          <GradualBlur
-            position="bottom"
-            height="8rem"
-            strength={2.5}
-            divCount={6}
-            curve="bezier"
-            exponential
-            opacity={1}
-            zIndex={10}
-          />
-          <GradualBlur
-            position="top"
-            height="4rem"
-            strength={1.5}
-            divCount={4}
-            curve="ease-out"
-            opacity={1}
-            zIndex={10}
-          />
+          ))}
         </div>
       </section>
 
