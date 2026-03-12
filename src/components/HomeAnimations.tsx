@@ -103,6 +103,98 @@ export default function HomeAnimations() {
     }
   }, [])
 
+  // Lab card flip on hover
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) return
+
+    const wrap = document.querySelector('.lab-card-flip-wrap')
+    const inner = document.querySelector<HTMLElement>('.lab-card-flip-inner')
+    if (!wrap || !inner) return
+
+    // Ensure GSAP preserves the 3D context on the inner container
+    gsap.set(inner, { transformStyle: 'preserve-3d' })
+
+    let tween: gsap.core.Tween | null = null
+
+    const onEnter = () => {
+      tween?.kill()
+      tween = gsap.to(inner, { rotateY: 180, duration: 0.7, ease: 'power2.inOut', transformStyle: 'preserve-3d' })
+    }
+    const onLeave = () => {
+      tween?.kill()
+      tween = gsap.to(inner, { rotateY: 0, duration: 0.7, ease: 'power2.inOut', transformStyle: 'preserve-3d' })
+    }
+
+    wrap.addEventListener('mouseenter', onEnter)
+    wrap.addEventListener('mouseleave', onLeave)
+
+    return () => {
+      tween?.kill()
+      wrap.removeEventListener('mouseenter', onEnter)
+      wrap.removeEventListener('mouseleave', onLeave)
+    }
+  }, [])
+
+  // EMPRENDEDORES typewriter rainbow animation
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const ctx = gsap.context(() => {
+      const letters = document.querySelectorAll('.emp-letter')
+      if (!letters.length) return
+
+      if (prefersReduced) {
+        gsap.set(letters, { autoAlpha: 1, color: '#fdc828' })
+        return
+      }
+
+      const rainbowColors = [
+        '#efc459', '#0a0a0a', '#7c3aed', '#fdc828',
+        '#ede8df', '#0a0a0a', '#5b28a5', '#efc459',
+        '#fdc828', '#7c3aed', '#0a0a0a', '#ede8df',
+        '#efc459', '#fdc828',
+      ]
+
+      gsap.set(letters, { display: 'inline-block', autoAlpha: 0, y: 18, scale: 0.6 })
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.emp-animated',
+          start: 'top 82%',
+          once: true,
+        },
+      })
+
+      letters.forEach((letter, i) => {
+        tl.to(
+          letter,
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            color: rainbowColors[i % rainbowColors.length],
+            duration: 0.13,
+            ease: 'back.out(2.5)',
+          },
+          i * 0.07
+        )
+      })
+
+      // All letters converge to volt yellow
+      tl.to(
+        letters,
+        {
+          color: '#fdc828',
+          duration: 0.55,
+          stagger: 0.025,
+          ease: 'power2.inOut',
+        },
+        letters.length * 0.07 + 0.15
+      )
+    })
+    return () => ctx.revert()
+  }, [])
+
   // Services title word-by-word scrub animation
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -114,6 +206,68 @@ export default function HomeAnimations() {
 
       const titleEl = document.querySelector('#servicios .section-title')
       const subEl = document.querySelector('#servicios .services-header-text')
+      const words = titleEl?.querySelectorAll('.title-word')
+
+      if (words?.length) {
+        gsap.set(words, { autoAlpha: 0.08, y: 28 })
+        const tl = gsap.timeline()
+        tl.to(words, { autoAlpha: 1, y: 0, ease: 'power2.out', stagger: 0.5 })
+        ScrollTrigger.create({
+          trigger: titleEl,
+          start: 'top 78%',
+          end: 'bottom 60%',
+          scrub: 1.2,
+          animation: tl,
+        })
+      }
+
+      if (subEl) {
+        gsap.set(subEl, { autoAlpha: 0, y: 18 })
+        const tlSub = gsap.timeline()
+        tlSub.to(subEl, { autoAlpha: 1, y: 0, ease: 'power2.out' })
+        ScrollTrigger.create({
+          trigger: subEl,
+          start: 'top 82%',
+          end: 'bottom 65%',
+          scrub: 1.2,
+          animation: tlSub,
+        })
+      }
+    })
+    return () => ctx.revert()
+  }, [])
+
+  // Portfolio cards scroll reveal (same as service cards)
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards = document.querySelectorAll('.portfolio-card')
+      cards.forEach((card, i) => {
+        gsap.set(card, { y: 50, autoAlpha: 0 })
+        ScrollTrigger.create({
+          trigger: card,
+          start: 'top 88%',
+          end: 'top 15%',
+          onEnter: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.7, ease: 'power3.out', delay: i * 0.1 }),
+          onLeave: () => gsap.to(card, { y: -50, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
+          onEnterBack: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.55, ease: 'power3.out' }),
+          onLeaveBack: () => gsap.to(card, { y: 50, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
+        })
+      })
+    })
+    return () => ctx.revert()
+  }, [])
+
+  // Portfolio title word-by-word scrub animation (same as services)
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const ctx = gsap.context(() => {
+      if (prefersReduced) {
+        gsap.set(document.querySelectorAll('#portafolio .section-title .title-word'), { autoAlpha: 1, y: 0 })
+        return
+      }
+
+      const titleEl = document.querySelector('#portafolio .section-title')
+      const subEl = document.querySelector('#portafolio .portfolio-header-text')
       const words = titleEl?.querySelectorAll('.title-word')
 
       if (words?.length) {

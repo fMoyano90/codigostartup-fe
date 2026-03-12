@@ -1226,6 +1226,135 @@ a {
   opacity: 0.75;
 }
 
+/* ── Flip card wrapper ── */
+.lab-card-flip-wrap {
+  perspective: 1400px;
+}
+
+.lab-card-flip-inner {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/*
+  overflow: hidden on .lab-card breaks backface-visibility in Chrome/Safari.
+  Override on both faces to allow proper 3D hiding.
+  Visual clipping is handled by child wrappers instead.
+*/
+.lab-card-front {
+  overflow: visible !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+}
+
+/* Back face */
+.lab-card-back {
+  position: absolute !important;
+  inset: 0;
+  overflow: visible !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  justify-content: flex-end;
+}
+
+/* Inner clip wrapper — handles border-radius clipping without breaking 3D */
+.lab-card-back-clip {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.lab-card-back-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center 35%;
+  mix-blend-mode: multiply;
+  transform: scale(1.08);
+}
+
+.lab-card-back-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 10, 70, 0.1) 0%,
+    rgba(30, 10, 70, 0.35) 40%,
+    rgba(15, 5, 35, 0.82) 70%,
+    rgba(10, 2, 25, 0.96) 100%
+  );
+}
+
+.lab-card-back-body {
+  position: relative;
+  z-index: 2;
+  padding: 1.75rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.lab-card-back-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lab-card-back-isotipo {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.lab-card-back-name {
+  font-family: var(--font-bebas);
+  font-size: 1.9rem;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: 0.03em;
+}
+
+.lab-card-back-sub {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.55;
+  max-width: 28ch;
+}
+
+.lab-card-back-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  background: var(--volt);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.lab-card-back-cta:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
 
 .lab-title {
   font-family: var(--font-bebas);

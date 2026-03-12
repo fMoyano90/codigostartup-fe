@@ -236,7 +236,11 @@ export default function Home() {
               <h2 className="lab-title">
                 CONSTRUIMOS PORQUE<br />
                 SOMOS COMO TÚ:<br />
-                <span className="accent">EMPRENDEDORES.</span>
+                <span className="accent emp-animated">
+                  {'EMPRENDEDORES.'.split('').map((letter, i) => (
+                    <span key={i} className="emp-letter">{letter}</span>
+                  ))}
+                </span>
               </h2>
               <p className="lab-desc">
                 Construir y operar nuestras propias plataformas nos permite entender tu camino.
@@ -245,33 +249,57 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="lab-card">
-              <span className="lab-card-tag">Caso Insignia</span>
-              <div className="lab-card-title-row">
-                <img src="/isotipo-nucleo.svg" alt="Núcleo Gestor" className="lab-card-isotipo" />
-                <h3 className="lab-card-name">NÚCLEO<br />GESTOR.</h3>
-              </div>
-              <p className="lab-card-desc">
-                Plataforma de gestión de liderazgo y cumplimiento normativo del DS44 para la
-                industria minera. IA entrenada en normativa, app móvil 100% offline y firma
-                electrónica simple según ley 19799.
-              </p>
-              <div className="lab-card-metrics">
-                <div className="lab-card-metric">
-                  <span className="lab-card-metric-val">DS44</span>
-                  <span className="lab-card-metric-label">Normativa</span>
+            <div className="lab-card-flip-wrap">
+              <div className="lab-card-flip-inner">
+
+                {/* ── FRONT ── */}
+                <div className="lab-card lab-card-front">
+                  <div className="lab-card-title-row">
+                    <img src="/isotipo-nucleo.svg" alt="Núcleo Gestor" className="lab-card-isotipo" />
+                    <h3 className="lab-card-name">NÚCLEO<br />GESTOR.</h3>
+                  </div>
+                  <p className="lab-card-desc">
+                    Plataforma de gestión de liderazgo y cumplimiento normativo del DS44 para la
+                    industria minera. IA entrenada en normativa, app móvil 100% offline y firma
+                    electrónica simple según ley 19799.
+                  </p>
+                  <div className="lab-card-metrics">
+                    <div className="lab-card-metric">
+                      <span className="lab-card-metric-val">DS44</span>
+                      <span className="lab-card-metric-label">Normativa</span>
+                    </div>
+                    <div className="lab-card-metric">
+                      <span className="lab-card-metric-val">100%</span>
+                      <span className="lab-card-metric-label">Offline</span>
+                    </div>
+                    <div className="lab-card-metric">
+                      <span className="lab-card-metric-val">FES</span>
+                      <span className="lab-card-metric-label">Ley 19799</span>
+                    </div>
+                  </div>
+                  <div className="lab-card-footer">
+                    <img src="/chrysalis-logo.png" alt="Chrysalis PUCV" className="lab-card-chrysalis" />
+                  </div>
                 </div>
-                <div className="lab-card-metric">
-                  <span className="lab-card-metric-val">100%</span>
-                  <span className="lab-card-metric-label">Offline</span>
+
+                {/* ── BACK ── */}
+                <div className="lab-card lab-card-back">
+                  <div className="lab-card-back-clip">
+                    <img src="/Adobe Express - file (21).png" alt="Mockup Núcleo Gestor" className="lab-card-back-img" />
+                    <div className="lab-card-back-overlay" />
+                  </div>
+                  <div className="lab-card-back-body">
+                    <div className="lab-card-back-header">
+                      <img src="/isotipo-nucleo.svg" alt="Núcleo" className="lab-card-back-isotipo" />
+                      <h3 className="lab-card-back-name">NÚCLEO<br />GESTOR.</h3>
+                    </div>
+                    <p className="lab-card-back-sub">Gestión de liderazgo y normativa DS44 para la industria minera.</p>
+                    <a href="https://nucleogestor.com/landing" target="_blank" rel="noreferrer" className="lab-card-back-cta">
+                      Conocer Núcleo Gestor →
+                    </a>
+                  </div>
                 </div>
-                <div className="lab-card-metric">
-                  <span className="lab-card-metric-val">FES</span>
-                  <span className="lab-card-metric-label">Ley 19799</span>
-                </div>
-              </div>
-              <div className="lab-card-footer">
-                <img src="/chrysalis-logo.png" alt="Chrysalis PUCV" className="lab-card-chrysalis" />
+
               </div>
             </div>
           </div>
@@ -285,9 +313,9 @@ export default function Home() {
             <div className="portfolio-header-left">
               <div className="section-tag">Casos de éxito</div>
               <h2 className="section-title">
-                CONSTRUIDO<span className="accent">.</span><br />
-                LANZADO<span className="accent">.</span><br />
-                OPERANDO<span className="accent">.</span>
+                <span className="title-word">CONSTRUIDO<span className="accent">.</span></span><br />
+                <span className="title-word">LANZADO<span className="accent">.</span></span><br />
+                <span className="title-word">OPERANDO<span className="accent">.</span></span>
               </h2>
               <p className="portfolio-header-text">
                 Tres productos en producción real, con clientes activos
