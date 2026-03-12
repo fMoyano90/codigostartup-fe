@@ -1,12 +1,6 @@
-'use client'
-
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import LogoLoop from '@/components/LogoLoop'
 import Magnet from '@/components/Magnet'
-
-gsap.registerPlugin(ScrollTrigger)
+import HomeAnimations from '@/components/HomeAnimations'
 
 const techLogos = [
   { src: '/logos/github.png', alt: 'GitHub' },
@@ -40,7 +34,7 @@ const services = [
     category: 'Diseño y Marca',
     name: 'Comunicamos',
     description: 'Diseñamos marcas y productos, unimos identidad y estrategia para que tu mensaje sea profesional y conecte con tus usuarios.',
-    tags: ['Experiencia de Usuario', 'Identidad visual', 'Animación digital',  'Brochure y Graficas', 'Marketing y publicidad digital'],
+    tags: ['Experiencia de Usuario', 'Identidad visual', 'Animación digital', 'Brochure y Graficas', 'Marketing y publicidad digital'],
     cta: 'Quiero comunicar mejor →',
   },
 ]
@@ -119,244 +113,10 @@ const clientCases = [
   },
 ]
 
-const leftPhrases = [
-  'Desarrollo web', 'Tiendas online', 'Pago en cuotas', 'DevOps', 'Estrategia', 'Producto digital',
-]
-
-const rightPhrases = [
-  'PUCV', 'Núcleo Gestor', 'Startups', 'UX / UI', 'Código real', '30+ Proyectos',
-]
-
 export default function Home() {
-  const phraseLeftRef = useRef<HTMLDivElement>(null)
-  const phraseRightRef = useRef<HTMLDivElement>(null)
-  const servicesTitleRef = useRef<HTMLHeadingElement>(null)
-  const servicesSubRef = useRef<HTMLParagraphElement>(null)
-
-  // Phrase scroll-driven animation
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const left = phraseLeftRef.current
-      const right = phraseRightRef.current
-      if (!left || !right) return
-
-      // Set initial hidden state
-      gsap.set(left, { x: -420, autoAlpha: 0 })
-      gsap.set(right, { x: 420, autoAlpha: 0 })
-
-      // Entry animation: fire once when phrase section enters viewport
-      ScrollTrigger.create({
-        trigger: '#phrase-root',
-        start: 'top 88%',
-        once: true,
-        onEnter: () => {
-          gsap.to(left, {
-            x: 0,
-            autoAlpha: 1,
-            duration: 1.2,
-            ease: 'power3.out',
-          })
-          gsap.to(right, {
-            x: 0,
-            autoAlpha: 1,
-            duration: 1.2,
-            ease: 'power3.out',
-            delay: 0.12,
-          })
-        },
-      })
-
-      // Continuous parallax: rows drift in opposite directions as user scrolls
-      gsap.fromTo(
-        left,
-        { xPercent: 0 },
-        {
-          xPercent: -8,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '#servicios',
-            start: 'top bottom',
-            end: 'top top',
-            scrub: 2,
-          },
-        }
-      )
-      gsap.fromTo(
-        right,
-        { xPercent: 0 },
-        {
-          xPercent: 8,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '#servicios',
-            start: 'top bottom',
-            end: 'top top',
-            scrub: 2,
-          },
-        }
-      )
-    })
-    return () => ctx.revert()
-  }, [])
-
-  // Service cards scroll reveal
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const cards = document.querySelectorAll('.service-card')
-      cards.forEach((card, i) => {
-        gsap.set(card, { y: 50, autoAlpha: 0 })
-        ScrollTrigger.create({
-          trigger: card,
-          start: 'top 88%',
-          end: 'top 15%',
-          onEnter: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.7, ease: 'power3.out', delay: i * 0.1 }),
-          onLeave: () => gsap.to(card, { y: -50, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
-          onEnterBack: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.55, ease: 'power3.out' }),
-          onLeaveBack: () => gsap.to(card, { y: 50, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
-        })
-      })
-    })
-    return () => ctx.revert()
-  }, [])
-
-  // Navbar transparent → glass on scroll
-  useEffect(() => {
-    const nav = document.querySelector('.nav-root')
-    if (!nav) return
-    const onScroll = () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20)
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  // Process cards scroll reveal
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const cards = document.querySelectorAll('.process-step')
-      cards.forEach((card, i) => {
-        gsap.set(card, { y: 60, autoAlpha: 0 })
-
-        ScrollTrigger.create({
-          trigger: card,
-          start: 'top 88%',
-          end: 'top 15%',
-          onEnter: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.65, ease: 'power3.out', delay: i * 0.06 }),
-          onLeave: () => gsap.to(card, { y: -60, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
-          onEnterBack: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.55, ease: 'power3.out' }),
-          onLeaveBack: () => gsap.to(card, { y: 60, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
-        })
-      })
-    })
-    return () => ctx.revert()
-  }, [])
-
-  // Custom cursor
-  useEffect(() => {
-    const cursor = document.createElement('div')
-    cursor.id = 'cs-cursor'
-    document.body.appendChild(cursor)
-
-    let raf: number
-    let mx = -100, my = -100
-    let cx = -100, cy = -100
-
-    const onMove = (e: MouseEvent) => {
-      mx = e.clientX
-      my = e.clientY
-    }
-
-    const tick = () => {
-      cx += (mx - cx) * 0.14
-      cy += (my - cy) * 0.14
-      cursor.style.transform = `translate(${cx - 5}px, ${cy - 5}px)`
-      raf = requestAnimationFrame(tick)
-    }
-
-    document.addEventListener('mousemove', onMove)
-    raf = requestAnimationFrame(tick)
-
-    const onEnter = () => cursor.classList.add('hovered')
-    const onLeave = () => cursor.classList.remove('hovered')
-
-    // Re-query after render
-    const t = setTimeout(() => {
-      document.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('mouseenter', onEnter)
-        el.addEventListener('mouseleave', onLeave)
-      })
-    }, 100)
-
-    return () => {
-      clearTimeout(t)
-      document.removeEventListener('mousemove', onMove)
-      cancelAnimationFrame(raf)
-      if (document.body.contains(cursor)) document.body.removeChild(cursor)
-    }
-  }, [])
-
-  // Services title: word-by-word scrub animation
-  useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const ctx = gsap.context(() => {
-      if (prefersReduced) {
-        gsap.set(servicesTitleRef.current?.querySelectorAll('.title-word') ?? [], { autoAlpha: 1, y: 0 })
-        return
-      }
-
-      const words = servicesTitleRef.current?.querySelectorAll('.title-word')
-      if (words?.length) {
-        // Set initial state hidden
-        gsap.set(words, { autoAlpha: 0.08, y: 28 })
-
-        const tl = gsap.timeline()
-        tl.to(words, {
-          autoAlpha: 1,
-          y: 0,
-          ease: 'power2.out',
-          stagger: 0.5,
-        })
-
-        ScrollTrigger.create({
-          trigger: servicesTitleRef.current,
-          start: 'top 78%',
-          end: 'bottom 60%',
-          scrub: 1.2,
-          animation: tl,
-        })
-      }
-
-      // Subtitle: scrub fade-up
-      if (servicesSubRef.current) {
-        gsap.set(servicesSubRef.current, { autoAlpha: 0, y: 18 })
-        const tlSub = gsap.timeline()
-        tlSub.to(servicesSubRef.current, { autoAlpha: 1, y: 0, ease: 'power2.out' })
-        ScrollTrigger.create({
-          trigger: servicesSubRef.current,
-          start: 'top 82%',
-          end: 'bottom 65%',
-          scrub: 1.2,
-          animation: tlSub,
-        })
-      }
-    })
-    return () => ctx.revert()
-  }, [])
-
-  // Nav scroll effect
-  useEffect(() => {
-    const nav = document.getElementById('main-nav')
-    if (!nav) return
-    const onScroll = () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60)
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
     <main>
+      <HomeAnimations />
 
       {/* ── NAV ── */}
       <nav id="main-nav" className="nav-root">
@@ -412,21 +172,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PHRASE BANDS ── (hidden) */}
-
       {/* ── SERVICES ── */}
       <section id="servicios" className="section-wrap">
         <div className="container">
           <div className="services-header">
             <div className="services-header-left">
               <div className="section-tag">Servicios</div>
-              <h2 className="section-title" ref={servicesTitleRef}>
+              <h2 className="section-title">
                 <span className="title-word">DESARROLLO<span className="accent">,</span></span><br />
                 <span className="title-word">ESTRATEGIA</span><br />
                 <span className="title-word">Y</span>{' '}
                 <span className="title-word">DISEÑO<span className="accent">.</span></span>
               </h2>
-              <p className="services-header-text" ref={servicesSubRef}>
+              <p className="services-header-text">
                 Tres servicios diseñados para momentos distintos.
                 Cuéntanos dónde estás y te decimos exactamente cuál encaja.
               </p>

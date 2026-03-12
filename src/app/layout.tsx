@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Codigo Startup" }],
   icons: {
-    icon: "/favicon.svg",
+    icon: "/isotipo.svg",
   },
 };
 

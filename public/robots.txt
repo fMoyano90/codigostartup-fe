@@ -3,11 +3,9 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://climadigital.cl/sitemap.xml
+Sitemap: https://codigostartup.com/sitemap.xml
 
 # Rutas específicas
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.json$
-Disallow: /*?* 
