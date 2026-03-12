@@ -185,8 +185,8 @@ export default function Home() {
                 <span className="title-word">DISEÑO<span className="accent">.</span></span>
               </h2>
               <p className="services-header-text">
-                Tres servicios diseñados para momentos distintos.
-                Cuéntanos dónde estás y te decimos exactamente cuál encaja.
+                Tres líneas de servicio pensadas para ayudarte a
+                avanzar con foco, criterio y soluciones que aporten valor a tu negocio.
               </p>
             </div>
             <div className="tech-loop-wrap">
@@ -316,7 +316,7 @@ export default function Home() {
                 <span className="title-word">OPERANDO<span className="accent">.</span></span>
               </h2>
               <p className="portfolio-header-text">
-                Tres productos en producción real, con clientes activos
+                Tres productos reales en producción, con clientes activos
                 que los usan todos los días.
               </p>
             </div>
