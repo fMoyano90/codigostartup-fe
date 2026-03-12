@@ -158,7 +158,7 @@ export default function Home() {
 
           <div className="hero-bottom">
             <p className="hero-desc fadein fadein-d2">
-              De la primera línea de código al lanzamiento. Somos el
+              Somos el
               equipo técnico que ejecuta contigo: desarrollo, estrategia
               y diseño para emprendedores, startups y empresas que
               necesitan avanzar.
