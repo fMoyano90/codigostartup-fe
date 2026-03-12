@@ -157,13 +157,7 @@ export default function HomeAnimations() {
 
       gsap.set(letters, { display: 'inline-block', autoAlpha: 0, y: 18, scale: 0.6 })
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.emp-animated',
-          start: 'top 82%',
-          once: true,
-        },
-      })
+      const tl = gsap.timeline({ paused: true })
 
       letters.forEach((letter, i) => {
         tl.to(
@@ -191,6 +185,15 @@ export default function HomeAnimations() {
         },
         letters.length * 0.07 + 0.15
       )
+
+      ScrollTrigger.create({
+        trigger: '.emp-animated',
+        start: 'top 82%',
+        onEnter: () => tl.play(),
+        onLeave: () => tl.reverse(),
+        onEnterBack: () => tl.play(),
+        onLeaveBack: () => tl.reverse(),
+      })
     })
     return () => ctx.revert()
   }, [])

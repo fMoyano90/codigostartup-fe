@@ -133,7 +133,7 @@ export default function Home() {
 
       {/* ── HERO ── */}
       <section id="hero" className="hero-root">
-        <span className="hero-watermark" aria-hidden="true">CS</span>
+        <img src="/isotipo-blanco.svg" className="hero-watermark" aria-hidden="true" alt="" />
 
         <div className="hero-inner">
           <div className="hero-eyebrow fadein fadein-d1">
@@ -243,7 +243,7 @@ export default function Home() {
                 </span>
               </h2>
               <p className="lab-desc">
-                Construir y operar nuestras propias plataformas nos permite entender tu camino.
+                Construir y operar nuestra propia plataformas SAAS nos permite entender tu camino.
                 Todo lo aprendido en casa se traduce en beneficios directos para que tu proyecto
                 sea seguro y sólido desde el primer día.
               </p>
@@ -255,8 +255,7 @@ export default function Home() {
                 {/* ── FRONT ── */}
                 <div className="lab-card lab-card-front">
                   <div className="lab-card-title-row">
-                    <img src="/isotipo-nucleo.svg" alt="Núcleo Gestor" className="lab-card-isotipo" />
-                    <h3 className="lab-card-name">NÚCLEO<br />GESTOR.</h3>
+                    <img src="/logo-nucleo-gestor-blanco-naranjo.svg" alt="Núcleo Gestor" className="lab-card-logo-oficial" />
                   </div>
                   <p className="lab-card-desc">
                     Plataforma de gestión de liderazgo y cumplimiento normativo del DS44 para la
@@ -290,8 +289,7 @@ export default function Home() {
                   </div>
                   <div className="lab-card-back-body">
                     <div className="lab-card-back-header">
-                      <img src="/isotipo-nucleo.svg" alt="Núcleo" className="lab-card-back-isotipo" />
-                      <h3 className="lab-card-back-name">NÚCLEO<br />GESTOR.</h3>
+                      <img src="/logo-nucleo-gestor-blanco-naranjo.svg" alt="Núcleo Gestor" className="lab-card-logo-oficial" />
                     </div>
                     <p className="lab-card-back-sub">Gestión de liderazgo y normativa DS44 para la industria minera.</p>
                     <a href="https://nucleogestor.com/landing" target="_blank" rel="noreferrer" className="lab-card-back-cta">
