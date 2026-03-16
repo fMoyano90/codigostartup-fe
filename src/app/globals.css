@@ -365,6 +365,14 @@ a {
   user-select: none;
 }
 
+@media (max-width: 640px) {
+  .hero-watermark {
+    width: 70vw;
+    right: -10%;
+    bottom: -5%;
+  }
+}
+
 .hero-inner {
   position: relative;
   z-index: 1;
