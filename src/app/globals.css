@@ -926,8 +926,6 @@ a {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.10) inset;
   transition: gap 0.25s, background 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
@@ -1952,6 +1950,23 @@ a {
   line-height: 1.75;
   color: var(--parch-dim);
   margin: 0;
+}
+
+@media (max-width: 640px) {
+  .process-step-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .process-n {
+    font-size: 3.5rem;
+    line-height: 0.9;
+  }
+
+  .process-step {
+    padding: 2rem 1.75rem;
+  }
 }
 
 /* ─────────────────────────────────────────
