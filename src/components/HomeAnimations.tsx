@@ -136,64 +136,58 @@ export default function HomeAnimations() {
     }
   }, [])
 
-  // EMPRENDEDORES typewriter rainbow animation
+  // Lab section title word-by-word scrub animation (same as services/portfolio)
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const ctx = gsap.context(() => {
-      const letters = document.querySelectorAll('.emp-letter')
-      if (!letters.length) return
-
       if (prefersReduced) {
-        gsap.set(letters, { autoAlpha: 1, color: '#fdc828' })
+        gsap.set(document.querySelectorAll('#nucleo .lab-title .title-word'), { autoAlpha: 1, y: 0 })
         return
       }
 
-      const rainbowColors = [
-        '#efc459', '#0a0a0a', '#7c3aed', '#fdc828',
-        '#ede8df', '#0a0a0a', '#5b28a5', '#efc459',
-        '#fdc828', '#7c3aed', '#0a0a0a', '#ede8df',
-        '#efc459', '#fdc828',
-      ]
+      const titleEl = document.querySelector('#nucleo .lab-title')
+      const subEl = document.querySelector('#nucleo .lab-desc')
+      const tagEl = document.querySelector('#nucleo .section-tag')
+      const words = titleEl?.querySelectorAll('.title-word')
 
-      gsap.set(letters, { display: 'inline-block', autoAlpha: 0, y: 18, scale: 0.6 })
+      if (tagEl) {
+        gsap.set(tagEl, { autoAlpha: 0, y: 18 })
+        const tlTag = gsap.timeline()
+        tlTag.to(tagEl, { autoAlpha: 1, y: 0, ease: 'power2.out' })
+        ScrollTrigger.create({
+          trigger: tagEl,
+          start: 'top 82%',
+          end: 'bottom 65%',
+          scrub: 1.2,
+          animation: tlTag,
+        })
+      }
 
-      const tl = gsap.timeline({ paused: true })
+      if (words?.length) {
+        gsap.set(words, { autoAlpha: 0.08, y: 28 })
+        const tl = gsap.timeline()
+        tl.to(words, { autoAlpha: 1, y: 0, ease: 'power2.out', stagger: 0.5 })
+        ScrollTrigger.create({
+          trigger: titleEl,
+          start: 'top 78%',
+          end: 'bottom 60%',
+          scrub: 1.2,
+          animation: tl,
+        })
+      }
 
-      letters.forEach((letter, i) => {
-        tl.to(
-          letter,
-          {
-            autoAlpha: 1,
-            y: 0,
-            scale: 1,
-            color: rainbowColors[i % rainbowColors.length],
-            duration: 0.13,
-            ease: 'back.out(2.5)',
-          },
-          i * 0.07
-        )
-      })
-
-      // All letters converge to volt yellow
-      tl.to(
-        letters,
-        {
-          color: '#fdc828',
-          duration: 0.55,
-          stagger: 0.025,
-          ease: 'power2.inOut',
-        },
-        letters.length * 0.07 + 0.15
-      )
-
-      ScrollTrigger.create({
-        trigger: '.emp-animated',
-        start: 'top 82%',
-        onEnter: () => tl.play(),
-        onLeave: () => tl.reverse(),
-        onEnterBack: () => tl.play(),
-        onLeaveBack: () => tl.reverse(),
-      })
+      if (subEl) {
+        gsap.set(subEl, { autoAlpha: 0, y: 18 })
+        const tlSub = gsap.timeline()
+        tlSub.to(subEl, { autoAlpha: 1, y: 0, ease: 'power2.out' })
+        ScrollTrigger.create({
+          trigger: subEl,
+          start: 'top 82%',
+          end: 'bottom 65%',
+          scrub: 1.2,
+          animation: tlSub,
+        })
+      }
     })
     return () => ctx.revert()
   }, [])

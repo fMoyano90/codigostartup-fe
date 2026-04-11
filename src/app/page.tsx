@@ -234,13 +234,9 @@ export default function Home() {
             <div className="lab-text">
               <div className="section-tag">Laboratorio de Ideas</div>
               <h2 className="lab-title">
-                CONSTRUIMOS PORQUE<br />
-                SOMOS COMO TÚ:<br />
-                <span className="accent emp-animated">
-                  {'EMPRENDEDORES.'.split('').map((letter, i) => (
-                    <span key={i} className="emp-letter">{letter}</span>
-                  ))}
-                </span>
+                <span className="title-word">CONSTRUIMOS PORQUE</span><br />
+                <span className="title-word">SOMOS COMO TÚ<span className="accent">:</span></span><br />
+                <span className="title-word">EMPRENDEDORES<span className="accent">.</span></span>
               </h2>
               <p className="lab-desc">
                 Construir y operar nuestra propia plataformas SAAS nos permite entender tu camino.

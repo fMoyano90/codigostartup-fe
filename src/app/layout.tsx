@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, DM_Sans, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -47,6 +48,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PTKLBEZVER"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PTKLBEZVER');
+          `}
+        </Script>
+      </head>
       <body
         className={`${bebasNeue.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased`}
       >
