@@ -56,6 +56,7 @@
         --font-body: "DM Sans", system-ui, sans-serif;
         --font-display: "Bebas Neue", Impact, sans-serif;
         --font-mono: "JetBrains Mono", ui-monospace, monospace;
+        --purple-color: #894CE0;
       }
 
       @supports (linear-gradient(in oklab, white, black)) {
@@ -136,7 +137,7 @@
       }
 
       .brand img {
-        inline-size: clamp(6.5rem, 16vw, 9rem);
+        inline-size: clamp(5.5rem, 14vw, 7rem);
         block-size: auto;
       }
 
@@ -210,37 +211,44 @@
       }
 
       .button.header-cta {
-        display: none;
+        display: inline-flex;
         min-block-size: auto;
         padding-block: 0.6rem;
       }
 
       .hero {
         position: relative;
-        padding-block: clamp(4rem, 9vw, 7.5rem) clamp(2.5rem, 7vw, 5rem);
+        padding-block: clamp(3.5rem, 8vw, 6rem) 0;
+      }
+
+      .hero-content {
+        padding-block-end: clamp(2rem, 6vw, 4rem);
       }
 
       .hero-watermark {
         position: absolute;
-        inset-block-start: 5rem;
-        inset-inline-start: 50%;
-        inline-size: min(22rem, 70vw);
-        opacity: 0.035;
-        translate: -50% 0;
+        bottom: 0;
+        right: 0;
+        width: 36rem;
+        height: auto;
+        opacity: 0.03;
         pointer-events: none;
+        transform-origin: right bottom;
       }
 
       .hero-grid {
         position: relative;
         display: grid;
         grid-template-columns: 1fr;
-        gap: clamp(2.5rem, 6vw, 4.5rem);
+        gap: clamp(2.5rem, 6vw, 3.5rem);
         align-items: end;
       }
 
       .hero-content {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
         gap: 1rem;
       }
 
@@ -254,15 +262,19 @@
         text-transform: uppercase;
       }
 
+      .pricing-card .badge {
+        margin-block-end: 0.25rem;
+      }
+
       .eyebrow {
         margin: 0 0 1.15rem;
       }
 
       .hero h1 {
-        max-inline-size: 18ch;
+        max-inline-size: 28ch;
         margin: 0;
         font-family: var(--font-display);
-        font-size: clamp(3.2rem, 9vw, 6.4rem);
+        font-size: clamp(3.5rem, 8.5vw, 5rem);
         font-weight: 400;
         letter-spacing: -0.035em;
         line-height: 0.92;
@@ -285,7 +297,7 @@
       .hero-copy {
         margin: 0;
         color: var(--muted-color);
-        font-size: clamp(1.05rem, 2vw, 1.28rem);
+        font-size: clamp(1rem, 1.8vw, 1.1rem);
         text-wrap: pretty;
       }
 
@@ -296,7 +308,13 @@
       }
 
       .hero-panel {
+        display: flex;
+        align-items: flex-end;
         position: relative;
+      }
+
+      .hero-panel img {
+        margin-block-end: 0;
       }
 
       .hero-panel::before {
@@ -392,20 +410,23 @@
       }
 
       .pricing {
-        padding-block: clamp(2rem, 6vw, 5rem);
+        padding-block: clamp(2rem, 5vw, 4rem);
       }
 
       .section-heading {
         display: grid;
         gap: 0.8rem;
+        justify-items: center;
+        text-align: center;
         max-inline-size: 56rem;
         margin-block-end: clamp(2rem, 5vw, 3.25rem);
+        margin-inline: auto;
       }
 
       .section-heading h2 {
         margin: 0;
         font-family: var(--font-display);
-        font-size: clamp(3.5rem, 10vw, 7.2rem);
+        font-size: clamp(3rem, 6vw, 3.8rem);
         font-weight: 400;
         letter-spacing: -0.025em;
         line-height: 0.86;
@@ -417,48 +438,36 @@
         max-inline-size: 44rem;
         margin: 0;
         color: var(--muted-color);
-        font-size: 1.08rem;
+        font-size: 0.95rem;
         text-wrap: pretty;
       }
 
       .pricing-grid {
         display: grid;
-        gap: 1rem;
+        gap: 1.5rem;
       }
 
       .pricing-card {
         position: relative;
         display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        gap: 1.45rem;
-        padding: clamp(1.25rem, 3vw, 2rem);
-        border: 1px solid var(--border-color);
+        grid-template-rows: auto auto auto auto;
+        gap: 0.6rem;
+        padding: clamp(0.9rem, 2.5vw, 1.2rem);
+        border: 1px solid var(--border-strong);
         border-radius: var(--radius-xl);
+        text-align: center;
         background:
-          linear-gradient(180deg, rgb(237 232 223 / 7%), transparent 44%),
-          var(--surface-color);
-        box-shadow: var(--shadow-dark);
+          radial-gradient(circle at 80% 0%, rgb(253 200 40 / 16%), transparent 16rem),
+          linear-gradient(180deg, rgb(253 200 40 / 10%), transparent 48%),
+          var(--surface-elevated);
+        box-shadow: var(--shadow-warm), var(--shadow-dark);
         transition:
           translate 180ms ease,
           border-color 180ms ease,
           box-shadow 180ms ease;
       }
 
-      .pricing-card:hover {
-        translate: 0 -0.35rem;
-        border-color: rgb(253 200 40 / 34%);
-        box-shadow: var(--shadow-warm), var(--shadow-dark);
-      }
-
-      .pricing-card.featured {
-        border-color: var(--border-strong);
-        background:
-          radial-gradient(circle at 80% 0%, rgb(253 200 40 / 16%), transparent 16rem),
-          linear-gradient(180deg, rgb(253 200 40 / 10%), transparent 48%),
-          var(--surface-elevated);
-      }
-
-      .pricing-card.featured::before {
+      .pricing-card::before {
         content: "";
         position: absolute;
         inset-block-start: -1px;
@@ -478,24 +487,27 @@
       .plan-name {
         margin: 0;
         font-family: var(--font-display);
-        font-size: clamp(2.8rem, 7vw, 4.3rem);
+        font-size: clamp(3rem, 6vw, 3.5rem);
         font-weight: 400;
         letter-spacing: -0.025em;
         line-height: 0.9;
         text-transform: uppercase;
+        color: var(--text-color);
       }
 
       .plan-focus {
-        margin: 0.8rem 0 0;
+        margin: 0.5rem 0 0;
         color: var(--muted-color);
+        font-size: 0.85rem;
         text-wrap: pretty;
       }
 
       .plan-icon {
         display: grid;
         place-items: center;
-        flex: 0 0 auto;
-        inline-size: 3.2rem;
+        margin-inline: auto;
+        margin-block-end: 0.15rem;
+        inline-size: 2.2rem;
         aspect-ratio: 1;
         border: 1px solid rgb(253 200 40 / 28%);
         border-radius: 999px;
@@ -508,7 +520,7 @@
         gap: 0.25rem;
         margin: 0;
         font-family: var(--font-display);
-        font-size: clamp(3.2rem, 8vw, 5rem);
+        font-size: clamp(2rem, 4vw, 2.2rem);
         font-weight: 400;
         letter-spacing: -0.03em;
         line-height: 0.85;
@@ -529,6 +541,7 @@
         margin: 0;
         padding: 0;
         list-style: none;
+        text-align: left;
       }
 
       .features li {
@@ -536,9 +549,10 @@
         grid-template-columns: auto 1fr;
         gap: 0.8rem;
         align-items: start;
-        padding-block: 0.9rem;
+        padding-block: 0.7rem;
         border-block-start: 1px solid rgb(237 232 223 / 9%);
         color: rgb(237 232 223 / 82%);
+        font-size: 0.85rem;
       }
 
       .check {
@@ -548,7 +562,7 @@
         aspect-ratio: 1;
         border-radius: 999px;
         color: var(--background-color);
-        background: var(--primary-color);
+        background: var(--purple-color);
         font-size: 0.78rem;
         font-weight: 900;
         line-height: 1;
@@ -566,17 +580,52 @@
         inline-size: 100%;
       }
 
+      .booking {
+        padding-block: clamp(2rem, 5vw, 4rem) clamp(0.5rem, 2vw, 1.25rem);
+      }
+
+      .booking-embed {
+        max-inline-size: 52rem;
+        margin-inline: auto;
+        overflow: hidden;
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-xl);
+        background: var(--surface-color);
+        box-shadow: var(--shadow-warm), var(--shadow-dark);
+      }
+
+      .booking-embed iframe {
+        display: block;
+      }
+
+      .booking-whatsapp {
+        display: grid;
+        gap: 0.8rem;
+        place-items: center;
+        text-align: center;
+        margin-block-start: 1.5rem;
+      }
+
+      .booking-whatsapp p {
+        margin: 0;
+        color: var(--muted-color);
+        font-size: 0.9rem;
+      }
+
       .closing {
-        padding-block: clamp(2rem, 6vw, 5rem) clamp(3.5rem, 8vw, 6.5rem);
+        padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 7vw, 5rem);
       }
 
       .closing-box {
         display: grid;
         gap: 1.5rem;
-        align-items: end;
+        place-items: center;
+        text-align: center;
+        max-width: 48rem;
+        margin-inline: auto;
         border: 1px solid var(--border-strong);
         border-radius: var(--radius-xl);
-        padding: clamp(1.5rem, 5vw, 3rem);
+        padding: clamp(1.25rem, 4vw, 2.5rem);
         background:
           radial-gradient(circle at 85% 0%, rgb(253 200 40 / 20%), transparent 18rem),
           linear-gradient(135deg, rgb(237 232 223 / 8%), transparent),
@@ -585,21 +634,23 @@
       }
 
       .closing h2 {
-        max-inline-size: 10ch;
-        margin: 0;
+        max-inline-size: 18ch;
+        margin: 0.5rem auto 0;
         font-family: var(--font-display);
-        font-size: clamp(3.5rem, 10vw, 7rem);
+        font-size: clamp(3.5rem, 8vw, 5rem);
         font-weight: 400;
         letter-spacing: -0.025em;
-        line-height: 0.86;
+        line-height: 0.88;
+        text-align: center;
         text-transform: uppercase;
       }
 
       .closing p {
         max-inline-size: 42rem;
-        margin: 1rem 0 0;
+        margin: 1rem auto 0;
         color: var(--muted-color);
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+        text-align: center;
       }
 
       .site-footer {
@@ -618,20 +669,18 @@
         }
 
         .hero-grid {
-          grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.72fr);
+          grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.55fr);
         }
 
         .pricing-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          align-items: stretch;
+          align-items: start;
+          max-width: 52rem;
+          margin-inline: auto;
         }
 
         .featured {
-          scale: 1.025;
-        }
-
-        .closing-box {
-          grid-template-columns: 1fr auto;
+          scale: 1.012;
         }
       }
 
@@ -662,7 +711,7 @@
           </a>
 
           <a class="button button-primary header-cta" href="https://wa.me/56966073259?text=Hola%2C%20quiero%20cotizar%20una%20web%20para%20mi%20Pet%20Shop">
-            Hablemos
+            Agendar Asesoría
           </a>
         </nav>
       </header>
@@ -707,44 +756,48 @@
 
             <div class="pricing-grid">
               <article class="pricing-card" aria-labelledby="plan-vitrina-title">
+                <div class="plan-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 9h16l-1 10H5L4 9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                    <path d="M7 9V7a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <p class="badge">Empieza rápido</p>
+
                 <div class="plan-top">
                   <div>
                     <h3 class="plan-name" id="plan-vitrina-title">Vitrina Digital</h3>
-                    <p class="plan-focus">Web informativa + catálogo para empezar rápido y captar clientes por WhatsApp.</p>
-                  </div>
-                  <div class="plan-icon" aria-hidden="true">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                      <path d="M4 9h16l-1 10H5L4 9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-                      <path d="M7 9V7a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    </svg>
+                    <p class="plan-focus">Landing page o sitio web de hasta 3 páginas para mostrar tu negocio y captar clientes por WhatsApp.</p>
                   </div>
                 </div>
 
                 <p class="price">$250.000 <small>Pago único</small></p>
 
                 <ul class="features" aria-label="Características del plan Vitrina Digital">
-                  <li><span class="check" aria-hidden="true">✓</span><span>Diseño Web Premium adaptado a tu marca de mascotas.</span></li>
-                  <li><span class="check" aria-hidden="true">✓</span><span>Catálogo Digital interactivo para mostrar alimentos, accesorios y productos destacados.</span></li>
-                  <li><span class="check" aria-hidden="true">✓</span><span>Botón flotante y directo a WhatsApp para ventas rápidas.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Diseño Web Premium siguiendo el lineamiento gráfico de tu marca: colores, formas y experiencia de usuario.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Landing page profesional o sitio web de hasta 3 páginas informativas.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Catálogo Digital interactivo para mostrar hasta 20 productos destacados para mascotas.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Botón flotante y directo a WhatsApp para ventas y respuestas rápidas.</span></li>
                   <li><span class="check" aria-hidden="true">✓</span><span>Enlaces a tus Redes Sociales: Instagram, Facebook y otros canales.</span></li>
-                  <li><span class="check" aria-hidden="true">✓</span><span>Sección "Quiénes Somos" y horarios de atención.</span></li>
-                  <li><span class="check" aria-hidden="true">✓</span><span>Soporte inicial y hosting por 1 año.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Hosting incluido sin costo adicional.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Dominio .CL: lo gestionas tú; te ayudamos con el proceso de creación.</span></li>
+                  <li class="key-point"><span class="check" aria-hidden="true">✓</span><span><strong>100% Escalable:</strong> agrega más funciones cuando quieras. Tu sitio es flexible y crece contigo.</span></li>
                 </ul>
               </article>
 
               <article class="pricing-card featured" aria-labelledby="plan-ecommerce-title">
+                <div class="plan-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 5h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M10 21h.01M18 21h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                  </svg>
+                </div>
                 <p class="badge">Ideal para automatizar</p>
 
                 <div class="plan-top">
                   <div>
                     <h3 class="plan-name" id="plan-ecommerce-title">E-commerce Inicia</h3>
                     <p class="plan-focus">Tienda online completa para vender, cobrar y gestionar pedidos sin fricción.</p>
-                  </div>
-                  <div class="plan-icon" aria-hidden="true">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                      <path d="M3 5h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      <path d="M10 21h.01M18 21h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
-                    </svg>
                   </div>
                 </div>
 
@@ -763,19 +816,42 @@
           </div>
         </section>
 
+        <section class="booking" id="agendar" aria-labelledby="booking-title">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-kicker">Sin compromiso</p>
+              <h2 id="booking-title">Agenda tu asesoría <span>gratuita<span style="color:var(--primary-color)">.</span></span></h2>
+              <p>Elige el horario que mejor te acomode y conversemos sobre tu proyecto web para mascotas.</p>
+            </div>
+            <div class="booking-embed">
+              <iframe
+                src="https://reservas.codigostartup.com/r/agendar-reunion/embed"
+                width="100%"
+                height="900"
+                style="border: 0"
+                loading="lazy"
+                title="Calendario de agendamiento Código Startup"
+              ></iframe>
+            </div>
+            <div class="booking-whatsapp">
+              <p>¿Prefieres escribirnos directo?</p>
+              <a class="button button-primary" href="https://wa.me/56966073259?text=Hola%2C%20quiero%20agendar%20una%20asesoria%20para%20mi%20Pet%20Shop">
+                Escribir por WhatsApp
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section class="closing" id="escalabilidad" aria-labelledby="closing-title">
           <div class="container">
             <div class="closing-box">
               <div>
                 <p class="section-kicker">Sin contratos forzosos</p>
-                <h2 id="closing-title">Empieza hoy. <span>Escala mañana.</span></h2>
+                <h2 id="closing-title">Empieza hoy.<br><span>Escala mañana<span style="color:var(--primary-color)">.</span></span></h2>
                 <p>
-                  Nuestro software crece al mismo ritmo que tus ventas. Partes con lo que necesitas, mantienes tu información y evolucionas sin rehacer todo desde cero.
+                  Hacemos que tu solución crezca al ritmo de tu negocio. Partes con una vitrina de servicios y evolucionas a una plataforma de reservas y ventas sin rehacer todo desde cero.
                 </p>
               </div>
-              <a class="button button-primary" href="https://wa.me/56966073259?text=Hola%2C%20quiero%20empezar%20mi%20proyecto%20web%20para%20Pet%20Shop">
-                Agendar reunión
-              </a>
             </div>
           </div>
         </section>
