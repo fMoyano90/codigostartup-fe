@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Propuesta Piscinas | Codigo Startup</title>
+    <meta
+      name="description"
+      content="Planes de desarrollo web para empresas de piscinas: vitrina digital con catálogo de servicios o plataforma completa con reservas, pagos y agenda."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.codigostartup.com/propuestapiscinas" />
+    <link rel="preconnect" href="https://i.ibb.co" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a0a0a'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%23fdc828'/%3E%3C/svg%3E"
+    />
+    <meta property="og:title" content="Propuesta Piscinas | Codigo Startup" />
+    <meta
+      property="og:description"
+      content="Soluciones web escalables para empresas de piscinas: empieza con catálogo de servicios y crece hacia reservas y ventas online cuando lo necesites."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.codigostartup.com/propuestapiscinas" />
+
+    <style>
+      /*
+        Guía rápida de edición:
+        1. Cambia los colores de marca en :root.
+        2. Reemplaza [Insertar Precio] por tus valores reales.
+        3. Actualiza los enlaces de WhatsApp si cambia el número.
+        4. El logo usa el asset oficial de codigostartup.com/logo.svg.
+      */
+
+      :root {
+        --primary-color: #fdc828;
+        --secondary-color: #ede8df;
+        --background-color: #0a0a0a;
+        --surface-color: #11100f;
+        --surface-elevated: #171512;
+        --text-color: #ede8df;
+        --muted-color: #8a8278;
+        --border-color: rgb(237 232 223 / 14%);
+        --border-strong: rgb(253 200 40 / 52%);
+        --shadow-warm: 0 1.5rem 4rem rgb(253 200 40 / 10%);
+        --shadow-dark: 0 1.25rem 3rem rgb(0 0 0 / 45%);
+        --container: 74rem;
+        --radius-lg: 1.25rem;
+        --radius-xl: 2rem;
+        --font-body: "DM Sans", system-ui, sans-serif;
+        --font-display: "Bebas Neue", Impact, sans-serif;
+        --font-mono: "JetBrains Mono", ui-monospace, monospace;
+        --purple-color: #894CE0;
+      }
+
+      @supports (linear-gradient(in oklab, white, black)) {
+        :root {
+          --gradient-space: in oklab;
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--background-color);
+      }
+
+      body {
+        margin: 0;
+        min-block-size: 100dvb;
+        font-family: var(--font-body);
+        color: var(--text-color);
+        background:
+          radial-gradient(circle at 18% 8%, rgb(253 200 40 / 11%), transparent 22rem),
+          radial-gradient(circle at 85% 18%, rgb(237 232 223 / 7%), transparent 26rem),
+          linear-gradient(180deg, #0a0a0a 0%, #10100f 44%, #0a0a0a 100%);
+        line-height: 1.55;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-inline-size: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page-shell {
+        position: relative;
+        overflow: clip;
+      }
+
+      .page-shell::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.36;
+        background-image: linear-gradient(rgb(237 232 223 / 5%) 1px, transparent 1px), linear-gradient(90deg, rgb(237 232 223 / 4%) 1px, transparent 1px);
+        background-size: 5rem 5rem;
+        mask-image: linear-gradient(to bottom, black, transparent 82%);
+      }
+
+      .container {
+        inline-size: min(100% - 2rem, var(--container));
+        margin-inline: auto;
+      }
+
+      .site-header {
+        position: sticky;
+        inset-block-start: 0;
+        z-index: 10;
+        border-block-end: 1px solid rgb(237 232 223 / 8%);
+        background: rgb(10 10 10 / 78%);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-block: 1rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .brand img {
+        inline-size: clamp(5.5rem, 14vw, 7rem);
+        block-size: auto;
+      }
+
+      .nav-links {
+        display: none;
+        align-items: center;
+        gap: 1.5rem;
+        color: var(--muted-color);
+        font-family: var(--font-mono);
+        font-size: 0.66rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        color: var(--text-color);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-block-size: 2.5rem;
+        padding: 0.55rem 1.1rem;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        line-height: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition:
+          translate 160ms ease,
+          border-color 160ms ease,
+          background 160ms ease,
+          color 160ms ease;
+      }
+
+      .button:hover {
+        translate: 0 -0.16rem;
+      }
+
+      .button:focus-visible {
+        outline: 3px solid var(--primary-color);
+        outline-offset: 4px;
+      }
+
+      .button-primary {
+        color: var(--background-color);
+        background: linear-gradient(180deg, #ffe070, var(--primary-color));
+        box-shadow:
+          inset 0 2px 0 rgb(255 255 255 / 35%),
+          0 0.9rem 2.5rem rgb(253 200 40 / 20%);
+      }
+
+      .button-secondary {
+        color: var(--text-color);
+        border-color: var(--border-color);
+        background: rgb(237 232 223 / 4%);
+      }
+
+      .button-secondary:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+      }
+
+      .button.header-cta {
+        display: inline-flex;
+        min-block-size: auto;
+        padding-block: 0.6rem;
+      }
+
+      .hero {
+        position: relative;
+        padding-block: clamp(3.5rem, 8vw, 6rem) 0;
+      }
+
+      .hero-content {
+        padding-block-end: clamp(2rem, 6vw, 4rem);
+      }
+
+      .hero-watermark {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 36rem;
+        height: auto;
+        opacity: 0.03;
+        pointer-events: none;
+        transform-origin: right bottom;
+      }
+
+      .hero-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(2.5rem, 6vw, 3.5rem);
+        align-items: end;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .eyebrow,
+      .section-kicker,
+      .badge {
+        color: var(--primary-color);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .pricing-card .badge {
+        margin-block-end: 0.25rem;
+      }
+
+      .eyebrow {
+        margin: 0 0 1.15rem;
+      }
+
+      .hero h1 {
+        max-inline-size: 28ch;
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: clamp(3.5rem, 8.5vw, 5rem);
+        font-weight: 400;
+        letter-spacing: -0.035em;
+        line-height: 0.92;
+        text-transform: uppercase;
+        text-wrap: balance;
+      }
+
+      .hero h1 span,
+      .section-heading h2 span,
+      .closing h2 span {
+        color: var(--primary-color);
+      }
+
+      .hero-copy-wrap {
+        display: grid;
+        gap: 1.3rem;
+        max-inline-size: 38rem;
+      }
+
+      .hero-copy {
+        margin: 0;
+        color: var(--muted-color);
+        font-size: clamp(1rem, 1.8vw, 1.1rem);
+        text-wrap: pretty;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+      }
+
+      .hero-panel {
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+      }
+
+      .hero-panel img {
+        margin-block-end: 0;
+      }
+
+      .hero-panel::before {
+        content: none;
+      }
+
+      .browser-card {
+        overflow: hidden;
+        border: 1px solid rgb(237 232 223 / 12%);
+        border-radius: 1.35rem;
+        background: #0c0c0b;
+      }
+
+      .hero-preview-image {
+        inline-size: 100%;
+        block-size: auto;
+        border-radius: 1.35rem;
+        filter: drop-shadow(0 1.25rem 2.5rem rgb(0 0 0 / 42%));
+      }
+
+      .browser-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.85rem 1rem;
+        border-block-end: 1px solid rgb(237 232 223 / 10%);
+        color: var(--muted-color);
+        font-family: var(--font-mono);
+        font-size: 0.66rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .browser-dots {
+        display: flex;
+        gap: 0.38rem;
+      }
+
+      .browser-dots span {
+        inline-size: 0.56rem;
+        aspect-ratio: 1;
+        border-radius: 999px;
+        background: var(--primary-color);
+      }
+
+      .mock-shop {
+        display: grid;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .mock-hero {
+        min-block-size: 13rem;
+        border-radius: 1rem;
+        padding: 1.2rem;
+        background:
+          radial-gradient(circle at 20% 10%, rgb(253 200 40 / 25%), transparent 12rem),
+          linear-gradient(135deg, rgb(237 232 223 / 10%), rgb(237 232 223 / 2%));
+      }
+
+      .mock-hero strong {
+        display: block;
+        max-inline-size: 8ch;
+        font-family: var(--font-display);
+        font-size: 3.2rem;
+        font-weight: 400;
+        line-height: 0.88;
+        text-transform: uppercase;
+      }
+
+      .mock-hero span {
+        display: inline-block;
+        margin-block-start: 1rem;
+        color: var(--primary-color);
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .mock-products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.7rem;
+      }
+
+      .mock-product {
+        min-block-size: 5rem;
+        border: 1px solid rgb(237 232 223 / 10%);
+        border-radius: 0.9rem;
+        background: rgb(237 232 223 / 5%);
+      }
+
+      .pricing {
+        padding-block: clamp(2rem, 5vw, 4rem);
+      }
+
+      .section-heading {
+        display: grid;
+        gap: 0.8rem;
+        justify-items: center;
+        text-align: center;
+        max-inline-size: 56rem;
+        margin-block-end: clamp(2rem, 5vw, 3.25rem);
+        margin-inline: auto;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: clamp(3rem, 6vw, 3.8rem);
+        font-weight: 400;
+        letter-spacing: -0.025em;
+        line-height: 0.86;
+        text-transform: uppercase;
+        text-wrap: balance;
+      }
+
+      .section-heading p {
+        max-inline-size: 44rem;
+        margin: 0;
+        color: var(--muted-color);
+        font-size: 0.95rem;
+        text-wrap: pretty;
+      }
+
+      .pricing-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .pricing-card {
+        position: relative;
+        display: grid;
+        grid-template-rows: auto auto auto auto;
+        gap: 0.6rem;
+        padding: clamp(0.9rem, 2.5vw, 1.2rem);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-xl);
+        text-align: center;
+        background:
+          radial-gradient(circle at 80% 0%, rgb(253 200 40 / 16%), transparent 16rem),
+          linear-gradient(180deg, rgb(253 200 40 / 10%), transparent 48%),
+          var(--surface-elevated);
+        box-shadow: var(--shadow-warm), var(--shadow-dark);
+        transition:
+          translate 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .pricing-card::before {
+        content: "";
+        position: absolute;
+        inset-block-start: -1px;
+        inset-inline: 2rem;
+        block-size: 2px;
+        background: var(--primary-color);
+        box-shadow: 0 0 2rem rgb(253 200 40 / 70%);
+      }
+
+      .plan-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .plan-name {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: clamp(3rem, 6vw, 3.5rem);
+        font-weight: 400;
+        letter-spacing: -0.025em;
+        line-height: 0.9;
+        text-transform: uppercase;
+        color: var(--text-color);
+      }
+
+      .plan-focus {
+        margin: 0.5rem 0 0;
+        color: var(--muted-color);
+        font-size: 0.85rem;
+        text-wrap: pretty;
+      }
+
+      .plan-icon {
+        display: grid;
+        place-items: center;
+        margin-inline: auto;
+        margin-block-end: 0.15rem;
+        inline-size: 2.2rem;
+        aspect-ratio: 1;
+        border: 1px solid rgb(253 200 40 / 28%);
+        border-radius: 999px;
+        color: var(--primary-color);
+        background: rgb(253 200 40 / 8%);
+      }
+
+      .price {
+        display: grid;
+        gap: 0.25rem;
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 4vw, 2.2rem);
+        font-weight: 400;
+        letter-spacing: -0.03em;
+        line-height: 0.85;
+        text-transform: uppercase;
+      }
+
+      .price small {
+        color: var(--muted-color);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+      }
+
+      .features {
+        display: grid;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: left;
+      }
+
+      .features li {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.8rem;
+        align-items: start;
+        padding-block: 0.7rem;
+        border-block-start: 1px solid rgb(237 232 223 / 9%);
+        color: rgb(237 232 223 / 82%);
+        font-size: 0.85rem;
+      }
+
+      .check {
+        display: inline-grid;
+        place-items: center;
+        inline-size: 1.25rem;
+        aspect-ratio: 1;
+        border-radius: 999px;
+        color: var(--background-color);
+        background: var(--purple-color);
+        font-size: 0.78rem;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .key-point {
+        margin-block-start: 0.65rem;
+        padding: 1rem;
+        border: 1px solid rgb(253 200 40 / 34%);
+        border-radius: 1rem;
+        background: rgb(253 200 40 / 8%);
+      }
+
+      .pricing-card .button {
+        inline-size: 100%;
+      }
+
+      .booking {
+        padding-block: clamp(2rem, 5vw, 4rem);
+      }
+
+      .booking-embed {
+        max-inline-size: 52rem;
+        margin-inline: auto;
+        overflow: hidden;
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-xl);
+        background: var(--surface-color);
+        box-shadow: var(--shadow-warm), var(--shadow-dark);
+      }
+
+      .booking-embed iframe {
+        display: block;
+      }
+
+      .booking-whatsapp {
+        display: grid;
+        gap: 0.8rem;
+        place-items: center;
+        text-align: center;
+        margin-block-start: 1.5rem;
+      }
+
+      .booking-whatsapp p {
+        margin: 0;
+        color: var(--muted-color);
+        font-size: 0.9rem;
+      }
+
+      .closing {
+        padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 7vw, 5rem);
+      }
+
+      .closing-box {
+        display: grid;
+        gap: 1.5rem;
+        place-items: center;
+        text-align: center;
+        max-width: 48rem;
+        margin-inline: auto;
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-xl);
+        padding: clamp(1.25rem, 4vw, 2.5rem);
+        background:
+          radial-gradient(circle at 85% 0%, rgb(253 200 40 / 20%), transparent 18rem),
+          linear-gradient(135deg, rgb(237 232 223 / 8%), transparent),
+          var(--surface-color);
+        box-shadow: var(--shadow-warm), var(--shadow-dark);
+      }
+
+      .closing h2 {
+        max-inline-size: 18ch;
+        margin: 0.5rem auto 0;
+        font-family: var(--font-display);
+        font-size: clamp(3.5rem, 8vw, 5rem);
+        font-weight: 400;
+        letter-spacing: -0.025em;
+        line-height: 0.88;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .closing p {
+        max-inline-size: 42rem;
+        margin: 1rem auto 0;
+        color: var(--muted-color);
+        font-size: 0.95rem;
+        text-align: center;
+      }
+
+      .site-footer {
+        border-block-start: 1px solid rgb(237 232 223 / 8%);
+        padding-block: 1.25rem;
+        color: var(--muted-color);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+      }
+
+      @media (min-width: 48rem) {
+        .button.header-cta,
+        .nav-links {
+          display: inline-flex;
+        }
+
+        .hero-grid {
+          grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.55fr);
+        }
+
+        .pricing-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          align-items: start;
+          max-width: 52rem;
+          margin-inline: auto;
+        }
+
+        .featured {
+          scale: 1.012;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .button,
+        .pricing-card {
+          transition: none;
+        }
+
+        .button:hover,
+        .pricing-card:hover {
+          translate: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-shell">
+      <header class="site-header" aria-label="Encabezado principal">
+        <nav class="nav container" aria-label="Navegación principal">
+          <a class="brand" href="https://www.codigostartup.com" aria-label="Codigo Startup">
+            <img src="https://codigostartup.com/logo.svg" width="300" height="80" alt="Codigo Startup" />
+          </a>
+
+          <a class="button button-primary header-cta" href="https://wa.me/56966073259?text=Hola%2C%20quiero%20agendar%20una%20asesoria%20para%20mi%20empresa%20de%20piscinas">
+            Agendar Asesoría
+          </a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <img class="hero-watermark" src="https://codigostartup.com/isotipo-blanco.svg" width="168" height="150" alt="" aria-hidden="true" />
+
+          <div class="hero-grid container">
+            <div class="hero-content">
+              <p class="eyebrow">Desarrollo web para Empresas de Piscinas</p>
+              <h1 id="hero-title">Muchos buscan "mantención de piscinas" en Google. <span>¿Te están encontrando a ti<span style="color:var(--primary-color)">?</span></span></h1>
+              <div class="hero-copy-wrap">
+                <p class="hero-copy">
+                  Tienes una reputación excelente en la zona, pero sin una web estás perdiendo clientes frente a la compencia. Asegura tu temporada alta con una Vitrina Digital y escala cuando estés listo.
+                </p>
+              </div>
+            </div>
+
+            <aside class="hero-panel" aria-label="Vista previa visual de sitio web para empresas de piscinas">
+              <img
+                class="hero-preview-image"
+                src="https://i.ibb.co/NgkLgbmr/imagen-hero-piscina.png"
+                width="1080"
+                height="1254"
+                alt="Vista previa de sitio web para servicios de piscinas con catálogo de mantención, construcción y productos"
+                fetchpriority="high"
+              />
+            </aside>
+          </div>
+        </section>
+
+        <section class="pricing" id="planes" aria-labelledby="pricing-title">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-kicker">Planes claros. Crecimiento real.</p>
+              <h2 id="pricing-title">Elige el punto de partida de tu <span>empresa de piscinas.</span></h2>
+              <p>
+                Dos opciones para avanzar sin sobreinvertir: una vitrina comercial para captar clientes rápido o una plataforma completa con reservas y venta de productos.
+              </p>
+            </div>
+
+            <div class="pricing-grid">
+              <article class="pricing-card" aria-labelledby="plan-vitrina-title">
+                <div class="plan-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 9h16l-1 10H5L4 9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                    <path d="M7 9V7a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <p class="badge">Empieza rápido</p>
+
+                <div class="plan-top">
+                  <div>
+                    <h3 class="plan-name" id="plan-vitrina-title">Vitrina Digital</h3>
+                    <p class="plan-focus">Landing page o sitio web de hasta 3 páginas para mostrar tu negocio y captar clientes por WhatsApp.</p>
+                  </div>
+                </div>
+
+                <p class="price">$250.000 <small>Pago único</small></p>
+
+                <ul class="features" aria-label="Características del plan Vitrina Digital">
+                  <li><span class="check" aria-hidden="true">✓</span><span>Diseño Web Premium siguiendo el lineamiento gráfico de tu marca: colores, formas y experiencia de usuario.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Landing page profesional o sitio web de hasta 3 páginas informativas.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Catálogo Digital interactivo para mostrar servicios de mantención, construcción o reparación destacada.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Botón flotante y directo a WhatsApp para ventas y respuestas rápidas.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Enlaces a tus Redes Sociales: Instagram, Facebook y otros canales.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Hosting incluido sin costo adicional.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Dominio .CL: lo gestionas tú; te ayudamos con el proceso de creación.</span></li>
+                  <li class="key-point"><span class="check" aria-hidden="true">✓</span><span><strong>100% Escalable:</strong> agrega más funciones cuando quieras. Tu sitio es flexible y crece contigo.</span></li>
+                </ul>
+              </article>
+
+              <article class="pricing-card featured" aria-labelledby="plan-ecommerce-title">
+                <div class="plan-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 5h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M10 21h.01M18 21h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <p class="badge">Ideal para automatizar</p>
+
+                <div class="plan-top">
+                  <div>
+                    <h3 class="plan-name" id="plan-ecommerce-title">E-commerce Inicia</h3>
+                    <p class="plan-focus">Plataforma completa con reservas, venta de productos y pagos integrados.</p>
+                  </div>
+                </div>
+
+                <p class="price">$600.000 <small>Pago único</small></p>
+
+                <ul class="features" aria-label="Características del plan Platinum Web">
+                  <li><span class="check" aria-hidden="true">✓</span><span>Todo lo incluido en el Plan Vitrina Digital.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Planes de mantención mensual: tú configuras los planes disponibles y tus clientes los contratan directamente desde el sitio con pasarela de pago integrada.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Pasarela de pagos integrada para membresías o venta de productos.</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Gestión de stock de productos para piscinas (químicos, bombas, accesorios).</span></li>
+                  <li><span class="check" aria-hidden="true">✓</span><span>Configuración de cobertura y zonas de servicio.</span></li>
+                  <li class="key-point"><span class="check" aria-hidden="true">✓</span><span><strong>100% Escalable:</strong> Si empezaste con el Plan Vitrina, migramos a este plan manteniendo toda tu información.</span></li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="booking" id="agendar" aria-labelledby="booking-title">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-kicker">Sin compromiso</p>
+              <h2 id="booking-title">Agenda tu asesoría <span>gratuita<span style="color:var(--primary-color)">.</span></span></h2>
+              <p>Elige el horario que mejor te acomode y conversemos sobre tu proyecto web para piscinas.</p>
+            </div>
+            <div class="booking-embed">
+              <iframe
+                src="https://reservas.codigostartup.com/r/agendar-reunion/embed"
+                width="100%"
+                height="900"
+                style="border: 0"
+                loading="lazy"
+                title="Calendario de agendamiento Código Startup"
+              ></iframe>
+            </div>
+            <div class="booking-whatsapp">
+              <p>¿Prefieres escribirnos directo?</p>
+              <a class="button button-secondary" href="https://wa.me/56966073259?text=Hola%2C%20quiero%20agendar%20una%20asesoria%20para%20mi%20empresa%20de%20piscinas">
+                Escribir por WhatsApp
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="closing" id="escalabilidad" aria-labelledby="closing-title">
+          <div class="container">
+            <div class="closing-box">
+              <div>
+                <p class="section-kicker">Sin contratos forzosos</p>
+                <h2 id="closing-title">Empieza hoy.<br><span>Escala mañana<span style="color:var(--primary-color)">.</span></span></h2>
+                <p>
+                  Hacemos que tu solución crezca al ritmo de tu negocio. Partes con una vitrina de servicios y evolucionas a una plataforma de reservas y ventas sin rehacer todo desde cero.
+                </p>
+              </div>
+              <a class="button button-primary" href="https://wa.me/56966073259?text=Hola%2C%20quiero%20empezar%20mi%20proyecto%20web%20para%20mi%20empresa%20de%20piscinas">
+                Agendar reunión
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">© 2026 Codigo Startup — Desarrollo, estrategia y diseño para emprendedores, startups y empresas.</div>
+      </footer>
+    </div>
+  </body>
+</html>
