@@ -65,12 +65,7 @@
 
     nav:hover { border-color: var(--divider-l); }
 
-    .nav-logo {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
-
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
     .nav-logo img { display: block; }
 
     .nav-links {
@@ -92,16 +87,6 @@
     }
 
     .nav-links a:hover { color: var(--parchment); }
-
-    .nav-cta {
-      background: var(--volt) !important;
-      color: var(--ink) !important;
-      padding: 8px 20px !important;
-      border-radius: 999px;
-      font-weight: 500;
-    }
-
-    .nav-cta:hover { background: var(--volt-dim) !important; }
 
     /* Sections */
     section {
@@ -142,11 +127,6 @@
       display: block;
     }
 
-    .section-label em {
-      font-style: normal;
-      color: var(--parch-dim);
-    }
-
     h1, h2, h3, h4 {
       font-family: var(--font-heading);
       font-weight: 400;
@@ -168,12 +148,6 @@
 
     h2 .line { display: block; }
     h2 .highlight { color: var(--volt); }
-
-    h3 {
-      font-size: clamp(28px, 4vw, 48px);
-      line-height: 1;
-      text-transform: uppercase;
-    }
 
     .hero {
       padding-top: 80px;
@@ -212,13 +186,6 @@
       line-height: 1.7;
     }
 
-    .hero-actions {
-      margin-top: 40px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -234,25 +201,6 @@
       transition: all 0.3s ease;
       cursor: pointer;
       border: none;
-    }
-
-    .btn-primary {
-      background: var(--volt);
-      color: var(--ink);
-    }
-    .btn-primary:hover {
-      background: var(--volt-dim);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--parchment);
-      border: 1px solid var(--parch-faint);
-    }
-    .btn-outline:hover {
-      border-color: var(--parch-dim);
-      transform: translateY(-2px);
     }
 
     /* Cards grid */
@@ -292,12 +240,6 @@
     }
 
     .card:hover::before { background: var(--violet); }
-
-    .card-icon {
-      font-size: 32px;
-      margin-bottom: 16px;
-      display: block;
-    }
 
     .card h4 {
       font-family: var(--font-heading);
@@ -387,40 +329,12 @@
     }
 
     /* Timeline */
-    .timeline {
-      margin-top: 48px;
-      position: relative;
-    }
+    .timeline { max-width: 700px; width: 100%; margin-top: 48px; }
 
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 20px;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: var(--divider-l);
-    }
-
-    .timeline-item {
-      padding-left: 56px;
-      position: relative;
-      padding-bottom: 40px;
-    }
-
-    .timeline-item:last-child { padding-bottom: 0; }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 12px;
-      top: 4px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: var(--ink);
-      border: 2px solid var(--volt);
-    }
+    #cronograma .timeline::before,
+    #cronograma .timeline-item::before { display: none; }
+    #cronograma .timeline-item { padding-bottom: 56px; }
+    #cronograma .timeline-item:last-child { padding-bottom: 0; }
 
     .timeline-item .tl-phase {
       font-family: var(--font-mono);
@@ -446,17 +360,12 @@
       margin-bottom: 12px;
     }
 
-    .timeline-item p {
-      font-size: 15px;
-      color: var(--parch-dim);
-      line-height: 1.7;
-    }
-
     .timeline-item .tl-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 12px;
+      justify-content: center;
     }
 
     .timeline-item .tl-tags span {
@@ -479,61 +388,13 @@
       transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
     .reveal-delay-5 { transition-delay: 0.5s; }
-
-    /* CTA final */
-    .cta-section {
-      text-align: center;
-      position: relative;
-      padding-top: 120px;
-      padding-bottom: 100px;
-      background:
-        radial-gradient(circle at center, rgba(253, 200, 40, 0.15) 0%, transparent 60%),
-        var(--ink);
-    }
-
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 10%;
-      right: 10%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--volt), transparent);
-    }
-
-    .cta-section h2 { margin-bottom: 16px; }
-
-    .cta-section p {
-      font-size: 16px;
-      color: var(--parch-dim);
-      max-width: 600px;
-      margin: 0 auto 32px;
-      line-height: 1.7;
-    }
-
-    .cta-section .contact-info {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--parch-dim);
-      margin-top: 20px;
-    }
-
-    .cta-section .contact-info a {
-      color: var(--volt);
-      text-decoration: none;
-    }
-
-    .cta-section .contact-info a:hover { text-decoration: underline; }
 
     /* Footer */
     footer {
@@ -546,111 +407,39 @@
       border-top: 1px solid var(--divider);
     }
 
-    footer a {
-      color: var(--parch-dim);
-      text-decoration: none;
-    }
-
+    footer a { color: var(--parch-dim); text-decoration: none; }
     footer a:hover { color: var(--parchment); }
-
-    /* Summary / total investment */
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .summary-card {
-      background: var(--card);
-      border: 1px solid var(--divider);
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
-    }
-
-    .summary-card .sum-label {
-      font-family: var(--font-mono);
-      font-size: 8px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--parch-dim);
-      margin-bottom: 8px;
-    }
-
-    .summary-card .sum-value {
-      font-family: var(--font-heading);
-      font-size: 40px;
-      color: var(--volt);
-      letter-spacing: 1px;
-    }
-
-    .summary-card .sum-sub {
-      font-family: var(--font-mono);
-      font-size: 8px;
-      color: var(--parch-faint);
-      margin-top: 4px;
-    }
-
-    .summary-card.total {
-      border-color: var(--volt);
-    }
-
-    .summary-card.total .sum-value { font-size: 52px; }
-
-    /* Dividers */
-    .section-divider {
-      width: 100%;
-      height: 1px;
-      background: var(--divider);
-      margin: 24px 0;
-    }
 
     /* Responsive */
     @media (max-width: 768px) {
       section { padding: 100px 20px 60px; }
-
       nav { padding: 12px 20px; }
-
       .nav-links { gap: 12px; }
       .nav-links a { font-size: 9px; letter-spacing: 0.8px; }
-      .nav-links .nav-cta { padding: 6px 14px !important; font-size: 9px !important; }
-
       .hero h1 { font-size: clamp(40px, 12vw, 60px); }
-
       .cards-grid { grid-template-columns: 1fr; }
-
-      .pago-container { padding: 24px 20px !important; }
-      .pago-grid { gap: 10px !important; }
-
-      .summary-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 480px) {
       .nav-links .nav-hide { display: none; }
-      .hero-actions { flex-direction: column; }
-      .hero-actions .btn { justify-content: center; }
       .hero { padding-top: 150px !important; padding-bottom: 60px !important; min-height: auto !important; }
       .hero .section-inner { padding: 0; }
-
-      .pago-container { padding: 20px 12px !important; border-radius: 14px !important; }
-      .pago-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
-
       h1 { font-size: clamp(32px, 14vw, 48px); }
       h2 { font-size: clamp(28px, 10vw, 36px); }
+      .pago-container { padding: 20px 12px !important; border-radius: 14px !important; }
+      .pago-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+      .pago-card .monto { font-size: 20px !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav>
     <a href="#hero" class="nav-logo"><img src="logo.svg" alt="Código Startup" style="height:28px;width:auto;display:block;"></a>
     <ul class="nav-links">
-      <li class="nav-hide"><a href="#resumen">Resumen</a></li>
-      <li class="nav-hide"><a href="#productos">Productos</a></li>
+      <li class="nav-hide"><a href="#cronograma">Cronograma</a></li>
+      <li class="nav-hide"><a href="#trabajo">Metodología</a></li>
       <li class="nav-hide"><a href="#productos">Inversión</a></li>
-
     </ul>
   </nav>
 
@@ -659,19 +448,18 @@
     <div class="section-inner" style="position:relative;">
       <img src="isotipo-blanco.svg" alt="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(200px,40vw,500px);opacity:0.04;pointer-events:none;z-index:0;">
       <div style="position:relative;z-index:1;">
-      <div class="reveal" style="margin-bottom:24px;text-align:center;">
-        <img src="https://i.ibb.co/ynbbxkjp/logo-physical.png" alt="Physical Sport Club" style="height:80px;width:auto;display:inline-block;">
-      </div>
-      <div class="hero-tagline reveal" style="text-align:center;">Propuesta Comercial</div>
-      <h1 class="reveal reveal-delay-1" style="text-align:center;">
-        <span>Ecosistema Digital</span>
-        <span class="accent">Physical Sport Club</span>
-      </h1>
-      <p class="reveal reveal-delay-2" style="text-align:center;margin-left:auto;margin-right:auto;">
-        Una plataforma integral compuesta por sitio web público, panel administrativo y aplicación móvil.
-        Diseñada para modernizar la operación del gimnasio y transformar la experiencia de socios y entrenadores.
-      </p>
-    </div>
+        <div class="reveal" style="margin-bottom:24px;text-align:center;">
+          <img src="logo-physical.png" alt="Physical Sport Club" style="height:80px;width:auto;display:inline-block;">
+        </div>
+        <div class="hero-tagline reveal" style="text-align:center;">Propuesta Comercial</div>
+        <h1 class="reveal reveal-delay-1" style="text-align:center;">
+          <span>Ecosistema Digital</span>
+          <span class="accent">Physical Sport Club</span>
+        </h1>
+        <p class="reveal reveal-delay-2" style="text-align:center;margin-left:auto;margin-right:auto;">
+          Una plataforma integral compuesta por sitio web público, panel administrativo y aplicación móvil.
+          Diseñada para modernizar la operación del gimnasio y transformar la experiencia de socios y entrenadores.
+        </p>
       </div>
     </div>
   </section>
@@ -685,18 +473,12 @@
         <span class="line highlight">su plataforma.</span>
       </h2>
 
-      <div class="timeline" style="max-width:700px;width:100%;margin-top:48px;">
-        <style>
-          #cronograma .timeline::before { display: none; }
-          #cronograma .timeline-item::before { display: none; }
-          #cronograma .timeline-item { padding-bottom: 56px; }
-          #cronograma .timeline-item:last-child { padding-bottom: 0; }
-        </style>
+      <div class="timeline">
         <div class="timeline-item reveal" style="text-align:center;padding-left:0;">
           <div class="tl-phase">Fase 1 · 2 semanas</div>
           <h4>Levantamiento y Alcance</h4>
           <div class="tl-duration">Validación de flujos, reglas de negocio, roles y datos de socios</div>
-          <div class="tl-tags" style="justify-content:center;">
+          <div class="tl-tags">
             <span>Reglas de negocio</span>
             <span>Roles y permisos</span>
             <span>Reservas</span>
@@ -707,7 +489,7 @@
           <div class="tl-phase">Fase 2 · 2-3 semanas</div>
           <h4>Diseño UX/UI y Frontend</h4>
           <div class="tl-duration">Wireframes, diseño de interfaz, sistema de diseño, desarrollo de componentes frontend y maquetación de todas las pantallas</div>
-          <div class="tl-tags" style="justify-content:center;">
+          <div class="tl-tags">
             <span>UX/UI</span>
             <span>Wireframes</span>
             <span>Design System</span>
@@ -720,7 +502,7 @@
           <div class="tl-phase">Fase 3 · 3-5 semanas</div>
           <h4>Backend y Base de Datos</h4>
           <div class="tl-duration">Creación de API central, modelos de datos, autenticación, usuarios, planes, clases y reservas</div>
-          <div class="tl-tags" style="justify-content:center;">
+          <div class="tl-tags">
             <span>API REST</span>
             <span>Base de datos</span>
             <span>Autenticación</span>
@@ -732,7 +514,7 @@
           <div class="tl-phase">Fase 4 · 2-3 semanas</div>
           <h4>Integración Web · Admin · App</h4>
           <div class="tl-duration">Conexión de los tres módulos con backend, estados reales de membresía y reservas</div>
-          <div class="tl-tags" style="justify-content:center;">
+          <div class="tl-tags">
             <span>Admin + Backend</span>
             <span>App + Backend</span>
             <span>Membresía real</span>
@@ -743,7 +525,7 @@
           <div class="tl-phase">Fase 5 · 2-3 semanas</div>
           <h4>QA, Deploy y Lanzamiento</h4>
           <div class="tl-duration">Pruebas funcionales, corrección de bugs, deploy web + admin y builds móviles</div>
-          <div class="tl-tags" style="justify-content:center;">
+          <div class="tl-tags">
             <span>QA</span>
             <span>Deploy</span>
             <span>Builds móviles</span>
@@ -767,7 +549,7 @@
         <span class="line highlight">con ustedes.</span>
       </h2>
       <p class="reveal reveal-delay-2" style="font-size:15px;color:var(--parch-dim);max-width:650px;line-height:1.8;margin-bottom:32px;">
-        Usamos metodología ágil <strong style="color:var(--parchment);">Scrum</strong> para entregar resultados rápido, con total transparencia y adaptándonos a tus necesidades.
+        Usamos metodología ágil <strong style="color:var(--parchment);">Scrum</strong> para entregar resultados rápido, con total transparencia y adaptándonos a sus necesidades.
       </p>
 
       <div style="display:flex;flex-direction:column;gap:16px;max-width:650px;width:100%;">
@@ -775,14 +557,14 @@
           <div style="flex-shrink:0;width:48px;height:48px;border-radius:50%;background:rgba(124,58,237,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(124,58,237,0.25);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--violet);">⚡</div>
           <div>
             <h4 style="font-size:18px;margin-bottom:6px;">Sprints quincenales</h4>
-            <p style="font-size:13px;margin:0;">Trabajamos en ciclos de 2 semanas con entregas funcionales. Al final de cada sprint verás avances reales, no promesas.</p>
+            <p style="font-size:13px;margin:0;">Trabajamos en ciclos de 2 semanas con entregas funcionales. Al final de cada sprint verán avances reales, no promesas.</p>
           </div>
         </div>
         <div class="card reveal reveal-delay-1" style="display:flex;align-items:flex-start;gap:20px;text-align:left;padding:24px 28px;">
           <div style="flex-shrink:0;width:48px;height:48px;border-radius:50%;background:rgba(124,58,237,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(124,58,237,0.25);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--violet);">🎯</div>
           <div>
             <h4 style="font-size:18px;margin-bottom:6px;">Champion o contraparte</h4>
-            <p style="font-size:13px;margin:0;">Designamos una persona de su equipo como champion. Es nuestro contacto directo y el responsable de tomar decisiones rápidas durante el proyecto.</p>
+            <p style="font-size:13px;margin:0;">Ustedes designan una persona de su equipo como champion. Es nuestro contacto directo y el responsable de tomar decisiones rápidas durante el proyecto.</p>
           </div>
         </div>
         <div class="card reveal reveal-delay-2" style="display:flex;align-items:flex-start;gap:20px;text-align:left;padding:24px 28px;">
@@ -809,7 +591,7 @@
       <span class="section-label reveal">Inversión por producto</span>
       <h2 class="reveal reveal-delay-1">
         <span class="line">Elige lo que</span>
-        <span class="line highlight">necesitas hoy.</span>
+        <span class="line highlight">necesitan hoy.</span>
       </h2>
       <p class="reveal reveal-delay-2" style="font-size:15px;color:var(--parch-dim);max-width:650px;line-height:1.8;margin-left:auto;margin-right:auto;">
         Todo está desarrollado desde cero con tecnología moderna de vanguardia. Nada de WordPress ni plantillas genéricas — cada componente es 100% personalizado y hecho a la medida de su negocio.
@@ -876,9 +658,7 @@
             <li>App nativa iOS y Android</li>
             <li>Reserva de clases y cardio</li>
             <li>Rutina semanal y perfil</li>
-            <li>Historial de reservas y pagos</li>
-            <li>Notificaciones push</li>
-            <li>Modo offline para rutinas</li>
+            <li>Historial de reservas</li>
             <li>Bloqueo por membresía vencida</li>
             <li>Tema dark/light</li>
             <li>Publicación en Google Play y App Store</li>
@@ -908,50 +688,40 @@
       </div>
 
       <div class="reveal pago-container" style="margin-top:32px;background:var(--card);border:1px solid var(--divider);border-radius:20px;padding:36px 40px;text-align:center;">
-        <style>
-          @media (max-width: 600px) {
-            .pago-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
-            .pago-card { padding: 14px 8px !important; }
-            .pago-card .monto { font-size: 20px !important; }
-            .pago-card .pct { font-size: 12px !important; }
-            .pago-card .mes { font-size: 12px !important; }
-            .pago-container { padding: 24px 16px !important; }
-            .pago-label { font-size: 10px !important; }
-          }
-        </style>
         <span class="pago-label" style="font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--parch-dim);display:block;margin-bottom:20px;">Forma de pago</span>
 
         <div style="margin-bottom:24px;">
-          <span class="pago-label" style="font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--parch-dim);display:block;margin-bottom:16px;">Transferencia directa a nuestra cuenta — hasta 4 cuotas</span>
+          <span class="pago-label" style="font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--parch-dim);display:block;margin-bottom:16px;">Pago por hitos — transferencia directa a nuestra cuenta</span>
           <div class="pago-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:600px;margin:0 auto;">
             <div class="pago-card" style="background:rgba(253,200,40,0.08);border-radius:14px;padding:20px 12px;">
               <span class="pct" style="font-family:var(--font-mono);font-size:14px;color:var(--volt);font-weight:600;">25%</span><br>
               <span class="monto" style="font-family:var(--font-heading);font-size:26px;color:var(--volt);">$1.575.000</span><br>
-              <span class="mes" style="font-size:14px;color:var(--parch-dim);">Mes 1</span>
+              <span style="font-size:12px;color:var(--parch-dim);">Hito 1 · Fases 1 y 2</span>
             </div>
             <div class="pago-card" style="background:rgba(253,200,40,0.08);border-radius:14px;padding:20px 12px;">
               <span class="pct" style="font-family:var(--font-mono);font-size:14px;color:var(--volt);font-weight:600;">25%</span><br>
               <span class="monto" style="font-family:var(--font-heading);font-size:26px;color:var(--volt);">$1.575.000</span><br>
-              <span class="mes" style="font-size:14px;color:var(--parch-dim);">Mes 2</span>
+              <span style="font-size:12px;color:var(--parch-dim);">Hito 2 · Fase 3</span>
             </div>
             <div class="pago-card" style="background:rgba(253,200,40,0.08);border-radius:14px;padding:20px 12px;">
               <span class="pct" style="font-family:var(--font-mono);font-size:14px;color:var(--volt);font-weight:600;">25%</span><br>
               <span class="monto" style="font-family:var(--font-heading);font-size:26px;color:var(--volt);">$1.575.000</span><br>
-              <span class="mes" style="font-size:14px;color:var(--parch-dim);">Mes 3</span>
+              <span style="font-size:12px;color:var(--parch-dim);">Hito 3 · Fase 4</span>
             </div>
             <div class="pago-card" style="background:rgba(253,200,40,0.08);border-radius:14px;padding:20px 12px;">
               <span class="pct" style="font-family:var(--font-mono);font-size:14px;color:var(--volt);font-weight:600;">25%</span><br>
               <span class="monto" style="font-family:var(--font-heading);font-size:26px;color:var(--volt);">$1.575.000</span><br>
-              <span class="mes" style="font-size:14px;color:var(--parch-dim);">Mes 4</span>
+              <span style="font-size:12px;color:var(--parch-dim);">Hito 4 · Fase 5</span>
             </div>
           </div>
+          <p style="font-family:var(--font-mono);font-size:10px;color:var(--parch-faint);margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto;">Cada hito se factura al completar las fases correspondientes.</p>
         </div>
 
         <div style="border-top:1px solid var(--divider);padding-top:20px;">
           <div style="display:inline-block;background:rgba(124,58,237,0.1);border:1px solid var(--violet);border-radius:14px;padding:16px 32px;">
             <span style="font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--violet);display:block;margin-bottom:6px;">También aceptamos</span>
             <span style="font-family:var(--font-heading);font-size:28px;color:var(--violet);letter-spacing:1px;">Transbank</span>
-            <span style="font-family:var(--font-mono);font-size:11px;color:var(--parch-dim);display:block;margin-top:6px;">3 cuotas precio contado</span>
+            <span style="font-family:var(--font-mono);font-size:11px;color:var(--parch-dim);display:block;margin-top:6px;">3 cuotas precio contado + 3% de recargo</span>
           </div>
         </div>
       </div>
@@ -965,21 +735,16 @@
   </footer>
 
   <script>
-    // Intersection Observer for reveal animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -60px 0px'
-    });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
