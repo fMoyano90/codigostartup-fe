@@ -19,11 +19,11 @@ export function SiteFooter() {
       <div className="site-footer-main">
         <div className="site-footer-brand">
           <Link href="/" prefetch={false} aria-label="Código Startup, inicio">
-            <Image src="/logo.svg" alt="" width={210} height={36} />
+            <Image src="/isotipo.svg" alt="Código Startup" width={48} height={43} />
           </Link>
           <p>Construimos productos digitales que perduran.</p>
           <Link href="/contacto" className="site-footer-evaluate">
-            Evaluar proyecto <span aria-hidden="true">→</span>
+            Evaluar proyecto
           </Link>
         </div>
 
@@ -54,6 +54,16 @@ export function SiteFooter() {
           >
             WhatsApp
           </TrackedLink>
+          {siteConfig.social.linkedin && (
+            <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+          )}
+          {siteConfig.social.instagram && (
+            <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+          )}
         </div>
       </div>
 

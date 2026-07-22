@@ -43,5 +43,7 @@ describe("global site shell", () => {
     expect(html).toContain('href="/proceso"');
     expect(html).toContain('href="/contacto"');
     expect(html).toContain("hola@codigostartup.com");
+    expect(html).toContain("LinkedIn");
+    expect(html).toContain("Instagram");
   });
 });

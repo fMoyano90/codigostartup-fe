@@ -23,6 +23,28 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
 
+  const mouseLeaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (mouseLeaveTimeoutRef.current) {
+      clearTimeout(mouseLeaveTimeoutRef.current);
+      mouseLeaveTimeoutRef.current = null;
+    }
+    setSolutionsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    mouseLeaveTimeoutRef.current = setTimeout(() => {
+      setSolutionsOpen(false);
+    }, 200);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (mouseLeaveTimeoutRef.current) clearTimeout(mouseLeaveTimeoutRef.current);
+    };
+  }, []);
+
   useEffect(() => {
     setSolutionsOpen(false);
     setMobileOpen(false);
@@ -119,12 +141,14 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
     >
       <div className="site-header-bar">
         <Link href="/" prefetch={false} className="site-header-logo" aria-label="Código Startup, inicio">
-          <Image src="/logo.svg" alt="" width={180} height={30} priority />
+          <Image src="/logo.svg" alt="" width={140} height={24} priority />
         </Link>
 
         <nav className="site-nav-desktop" aria-label="Navegación principal">
           <div
             className="site-nav-solutions"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             onBlur={(event) => {
               if (!event.currentTarget.contains(event.relatedTarget)) setSolutionsOpen(false);
             }}
@@ -138,7 +162,11 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
               onClick={() => setSolutionsOpen((open) => !open)}
             >
               Soluciones
-              <span className="site-nav-chevron" aria-hidden="true">⌄</span>
+              <span className="site-nav-chevron" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2.5 4.5L6 8L9.5 4.5" />
+                </svg>
+              </span>
             </button>
             <div id="solutions-menu" className="site-solutions-menu" hidden={!solutionsOpen}>
               <div className="site-solutions-intro">
@@ -246,7 +274,7 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
             {link.label}
           </Link>
         ))}
-        <Link href="/contacto" className="site-mobile-cta">Evaluar proyecto →</Link>
+        <Link href="/contacto" className="site-mobile-cta">Evaluar proyecto</Link>
       </nav>
     </header>
   );

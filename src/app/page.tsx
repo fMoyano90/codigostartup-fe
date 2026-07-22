@@ -128,7 +128,7 @@ export default function Home() {
               ordenar tu operación, lanzar un producto o evolucionar un sistema existente.
             </p>
             <div className="hero-actions fadein fadein-d3">
-              <Link href="/contacto" className="btn-primary">Evaluar mi proyecto →</Link>
+              <Link href="/contacto" className="btn-primary">Evaluar mi proyecto</Link>
               <Link href="/soluciones" className="home-text-link">Explorar soluciones</Link>
             </div>
           </div>
@@ -217,7 +217,7 @@ export default function Home() {
                 <hr className="service-divider" />
                 <p className="service-desc">{service.shortDescription}</p>
                 <Link href={`/soluciones/${service.slug}`} prefetch={false} className="service-link service-link--outer">
-                  Ver solución <span aria-hidden="true">→</span>
+                  Ver solución
                 </Link>
               </article>
             ))}
@@ -358,7 +358,7 @@ export default function Home() {
         <h2 className="cta-title">CUÉNTANOS QUÉ<br />NECESITAS RESOLVER.</h2>
         <p className="cta-desc">Revisamos tu situación y te respondemos con una ruta clara, sin propuestas genéricas ni una solución definida de antemano.</p>
         <div className="cta-actions">
-          <Link href="/contacto" className="btn-dark">Evaluar mi proyecto →</Link>
+          <Link href="/contacto" className="btn-dark">Evaluar mi proyecto</Link>
         </div>
       </section>
     </main>

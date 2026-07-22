@@ -2834,7 +2834,8 @@ a {
 }
 
 .service-problem-number {
-  color: rgba(253, 200, 40, 0.3);
+  /* alpha 0.5 = ~3.78:1 sobre --ink, cumple el mínimo WCAG de 3:1 para texto grande (40px) */
+  color: rgba(253, 200, 40, 0.5);
   font-family: var(--font-bebas);
   font-size: 2.5rem;
   line-height: 0.9;
@@ -4996,7 +4997,7 @@ a {
   min-height: 76px;
   margin-inline: auto;
   display: grid;
-  grid-template-columns: 200px 1fr auto;
+  grid-template-columns: 170px 1fr auto;
   align-items: center;
   gap: 2rem;
 }
@@ -5008,7 +5009,7 @@ a {
 }
 
 .site-header-logo img {
-  width: 160px;
+  width: 130px;
   height: auto;
 }
 
@@ -5070,10 +5071,21 @@ a {
 }
 
 .site-nav-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--volt);
-  font-size: 0.9rem;
-  line-height: 1;
-  transition: transform 0.2s;
+  width: 0.65rem;
+  height: 0.65rem;
+  margin-top: -2px;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.site-nav-chevron svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .site-nav-link--button[aria-expanded="true"] .site-nav-chevron {
@@ -5196,23 +5208,13 @@ a {
   color: var(--parch-dim);
   font-size: 0.88rem;
   line-height: 1.4;
-  transition: color 0.2s, padding-left 0.2s;
+  transition: color 0.2s ease;
 }
 
 .site-solutions-group a:hover,
 .site-solutions-group a:focus-visible,
 .site-solutions-group a.is-active {
-  padding-left: 0.75rem;
-  color: var(--parchment);
-}
-
-.site-solutions-group a:hover::before,
-.site-solutions-group a:focus-visible::before,
-.site-solutions-group a.is-active::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--volt);
+  color: #ffffff;
 }
 
 .site-menu-toggle,
@@ -5244,7 +5246,7 @@ a {
 }
 
 .site-footer-brand img {
-  width: 190px;
+  width: 48px;
   height: auto;
 }
 
@@ -6057,7 +6059,7 @@ a {
   }
 
   .site-header-logo img {
-    width: 132px;
+    width: 112px;
   }
 
   .site-header-cta {
