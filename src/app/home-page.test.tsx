@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 import { capabilities, homeClientProjects, services } from "@/data/commercial";
 import Home from "./page";
 
-vi.mock("@/components/HomeAnimations", () => ({ default: () => null }));
+vi.mock("@/components/HomeAnimationsLoader", () => ({ default: () => null }));
 
 describe("home distributor", () => {
   it("renders one clear hero and the complete commercial journey", () => {

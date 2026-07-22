@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import HomeAnimations from "@/components/HomeAnimations";
+import HomeAnimationsLoader from "@/components/HomeAnimationsLoader";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ArticleCard } from "@/components/blog/ArticleCard";
 import { ProjectCard } from "@/components/projects/ProjectCard";
@@ -101,7 +101,7 @@ export default function Home() {
 
   return (
     <main className="home">
-      <HomeAnimations />
+      <HomeAnimationsLoader />
 
       <section id="hero" className="hero-root">
         <Image
@@ -193,7 +193,7 @@ export default function Home() {
           <ol className="service-problem-list">
             {homeProblems.map((problem, index) => (
               <li key={problem}>
-                <span className="service-problem-number">{String(index + 1).padStart(2, "0")}</span>
+                <span className="service-problem-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                 <span>{problem}</span>
               </li>
             ))}
