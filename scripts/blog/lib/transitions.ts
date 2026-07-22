@@ -44,6 +44,7 @@ export function applyApproval(
     ...frontmatter,
     status: "approved",
     approvedAt: today,
+    publishedAt: null,
     updatedAt: today,
   };
 }
@@ -54,6 +55,9 @@ export function canPublish(
 ): TransitionCheck {
   if (frontmatter.status !== "approved") {
     return { ok: false, reason: `El artículo está en estado "${frontmatter.status}", no "approved".` };
+  }
+  if (!frontmatter.approvedAt) {
+    return { ok: false, reason: "El artículo aprobado no tiene fecha de aprobación." };
   }
   if (hasBlockingErrors(issues)) {
     return { ok: false, reason: "El artículo tiene errores de validación bloqueantes." };
@@ -80,6 +84,8 @@ export function applyRejection(
   return {
     ...frontmatter,
     status: "rejected",
+    approvedAt: null,
+    publishedAt: null,
     updatedAt: today,
   };
 }

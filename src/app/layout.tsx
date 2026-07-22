@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 import { Bebas_Neue, DM_Sans, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/seo/structured-data";
 import "./globals.css";
+
+const DEFAULT_TITLE = `${siteConfig.name} | Productos digitales que perduran`;
+const DEFAULT_DESCRIPTION =
+  "Desarrollo, estrategia y diseño para startups y empresas que necesitan ejecutar con claridad. Tu equipo técnico completo, sin contratar de planta.";
 
 const bebasNeue = Bebas_Neue({
   variable: "--font-bebas",
@@ -26,40 +34,50 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
-  title: "Codigo Startup | Productos digitales que perduran",
-  description:
-    "Desarrollo, estrategia y diseño para startups y empresas que necesitan ejecutar con claridad. Tu equipo técnico completo, sin contratar de planta.",
+  title: {
+    default: DEFAULT_TITLE,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: DEFAULT_DESCRIPTION,
   keywords: [
-    "Codigo Startup",
+    siteConfig.name,
     "desarrollo web",
     "desarrollo de software",
-    "Nucleo Gestor",
-    "consultoria digital",
-    "diseno UX UI",
+    "Núcleo Gestor",
+    "consultoría digital",
+    "diseño UX UI",
   ],
-  authors: [{ name: "Codigo Startup" }],
+  authors: [{ name: siteConfig.name }],
   icons: {
     icon: "/isotipo.svg",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   alternates: {
     canonical: siteConfig.baseUrl,
+    types: { "application/rss+xml": `${siteConfig.baseUrl}/rss.xml` },
   },
   openGraph: {
-    title: "Codigo Startup | Productos digitales que perduran",
-    description:
-      "Desarrollo, estrategia y diseño para startups y empresas que necesitan ejecutar con claridad. Tu equipo técnico completo, sin contratar de planta.",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     url: siteConfig.baseUrl,
-    siteName: "Codigo Startup",
-    images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
+    siteName: siteConfig.name,
     locale: "es_CL",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Codigo Startup | Productos digitales que perduran",
-    description:
-      "Desarrollo, estrategia y diseño para startups y empresas que necesitan ejecutar con claridad.",
-    images: ["/og-image.svg"],
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
   },
 };
 
@@ -83,11 +101,15 @@ export default function RootLayout({
             gtag('config', 'G-PTKLBEZVER');
           `}
         </Script>
+        <JsonLd data={buildOrganizationSchema()} />
+        <JsonLd data={buildWebSiteSchema()} />
       </head>
       <body
         className={`${bebasNeue.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        {children}
+        <SiteHeader />
+        <div className="site-content">{children}</div>
+        <SiteFooter />
       </body>
     </html>
   );

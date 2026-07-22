@@ -1,300 +1,95 @@
-'use client'
+"use client";
 
-import { useEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
+
+const REVEAL_SELECTOR = [
+  ".home-need-card",
+  ".service-card",
+  ".project-card",
+  ".process-step",
+  ".article-card",
+].join(", ");
 
 export default function HomeAnimations() {
-  // Service cards scroll reveal
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const ctx = gsap.context(() => {
-      const cards = document.querySelectorAll('.service-card')
-      cards.forEach((card, i) => {
-        gsap.set(card, { y: 50, autoAlpha: 0 })
-        ScrollTrigger.create({
-          trigger: card,
-          start: 'top 88%',
-          end: 'top 15%',
-          onEnter: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.7, ease: 'power3.out', delay: i * 0.1 }),
-          onLeave: () => gsap.to(card, { y: -50, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
-          onEnterBack: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.55, ease: 'power3.out' }),
-          onLeaveBack: () => gsap.to(card, { y: 50, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
-        })
-      })
-    })
-    return () => ctx.revert()
-  }, [])
+      document.querySelectorAll(REVEAL_SELECTOR).forEach((card) => {
+        gsap.fromTo(
+          card,
+          { y: 36, autoAlpha: 0 },
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.7,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 90%",
+              once: true,
+            },
+          },
+        );
+      });
+    });
 
-  // Process cards scroll reveal
+    return () => ctx.revert();
+  }, []);
+
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const cards = document.querySelectorAll('.process-step')
-      cards.forEach((card, i) => {
-        gsap.set(card, { y: 60, autoAlpha: 0 })
-        ScrollTrigger.create({
-          trigger: card,
-          start: 'top 88%',
-          end: 'top 15%',
-          onEnter: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.65, ease: 'power3.out', delay: i * 0.06 }),
-          onLeave: () => gsap.to(card, { y: -60, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
-          onEnterBack: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.55, ease: 'power3.out' }),
-          onLeaveBack: () => gsap.to(card, { y: 60, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
-        })
-      })
-    })
-    return () => ctx.revert()
-  }, [])
+    const pointerIsPrecise = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!pointerIsPrecise || prefersReducedMotion) return;
 
-  // Navbar transparent → glass on scroll
-  useEffect(() => {
-    const onScroll = () => {
-      const nav = document.querySelector('.nav-root')
-      if (nav) nav.classList.toggle('scrolled', window.scrollY > 20)
-      const mainNav = document.getElementById('main-nav')
-      if (mainNav) mainNav.classList.toggle('scrolled', window.scrollY > 60)
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    document.body.classList.add("home-cursor-active");
+    const cursor = document.createElement("div");
+    cursor.id = "cs-cursor";
+    document.body.appendChild(cursor);
 
-  // Custom cursor
-  useEffect(() => {
-    const cursor = document.createElement('div')
-    cursor.id = 'cs-cursor'
-    document.body.appendChild(cursor)
+    let frame: number;
+    let mouseX = -100;
+    let mouseY = -100;
+    let cursorX = -100;
+    let cursorY = -100;
 
-    let raf: number
-    let mx = -100, my = -100
-    let cx = -100, cy = -100
-
-    const onMove = (e: MouseEvent) => {
-      mx = e.clientX
-      my = e.clientY
-    }
+    const onMove = (event: MouseEvent) => {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+    };
+    const onEnter = () => cursor.classList.add("hovered");
+    const onLeave = () => cursor.classList.remove("hovered");
+    const interactiveElements = document.querySelectorAll("a, button, summary");
 
     const tick = () => {
-      cx += (mx - cx) * 0.14
-      cy += (my - cy) * 0.14
-      cursor.style.transform = `translate(${cx - 5}px, ${cy - 5}px)`
-      raf = requestAnimationFrame(tick)
-    }
+      cursorX += (mouseX - cursorX) * 0.14;
+      cursorY += (mouseY - cursorY) * 0.14;
+      cursor.style.transform = `translate(${cursorX - 5}px, ${cursorY - 5}px)`;
+      frame = requestAnimationFrame(tick);
+    };
 
-    document.addEventListener('mousemove', onMove)
-    raf = requestAnimationFrame(tick)
-
-    const onEnter = () => cursor.classList.add('hovered')
-    const onLeave = () => cursor.classList.remove('hovered')
-
-    const t = setTimeout(() => {
-      document.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('mouseenter', onEnter)
-        el.addEventListener('mouseleave', onLeave)
-      })
-    }, 100)
+    document.addEventListener("mousemove", onMove);
+    interactiveElements.forEach((element) => {
+      element.addEventListener("mouseenter", onEnter);
+      element.addEventListener("mouseleave", onLeave);
+    });
+    frame = requestAnimationFrame(tick);
 
     return () => {
-      clearTimeout(t)
-      document.removeEventListener('mousemove', onMove)
-      cancelAnimationFrame(raf)
-      if (document.body.contains(cursor)) document.body.removeChild(cursor)
-    }
-  }, [])
+      document.removeEventListener("mousemove", onMove);
+      interactiveElements.forEach((element) => {
+        element.removeEventListener("mouseenter", onEnter);
+        element.removeEventListener("mouseleave", onLeave);
+      });
+      cancelAnimationFrame(frame);
+      cursor.remove();
+      document.body.classList.remove("home-cursor-active");
+    };
+  }, []);
 
-  // Lab card flip on hover
-  useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReduced) return
-
-    const wrap = document.querySelector('.lab-card-flip-wrap')
-    const inner = document.querySelector<HTMLElement>('.lab-card-flip-inner')
-    if (!wrap || !inner) return
-
-    // Ensure GSAP preserves the 3D context on the inner container
-    gsap.set(inner, { transformStyle: 'preserve-3d' })
-
-    let tween: gsap.core.Tween | null = null
-
-    const onEnter = () => {
-      tween?.kill()
-      tween = gsap.to(inner, { rotateY: 180, duration: 0.7, ease: 'power2.inOut', transformStyle: 'preserve-3d' })
-    }
-    const onLeave = () => {
-      tween?.kill()
-      tween = gsap.to(inner, { rotateY: 0, duration: 0.7, ease: 'power2.inOut', transformStyle: 'preserve-3d' })
-    }
-
-    wrap.addEventListener('mouseenter', onEnter)
-    wrap.addEventListener('mouseleave', onLeave)
-
-    return () => {
-      tween?.kill()
-      wrap.removeEventListener('mouseenter', onEnter)
-      wrap.removeEventListener('mouseleave', onLeave)
-    }
-  }, [])
-
-  // Lab section title word-by-word scrub animation (same as services/portfolio)
-  useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const ctx = gsap.context(() => {
-      if (prefersReduced) {
-        gsap.set(document.querySelectorAll('#nucleo .lab-title .title-word'), { autoAlpha: 1, y: 0 })
-        return
-      }
-
-      const titleEl = document.querySelector('#nucleo .lab-title')
-      const subEl = document.querySelector('#nucleo .lab-desc')
-      const tagEl = document.querySelector('#nucleo .section-tag')
-      const words = titleEl?.querySelectorAll('.title-word')
-
-      if (tagEl) {
-        gsap.set(tagEl, { autoAlpha: 0, y: 18 })
-        const tlTag = gsap.timeline()
-        tlTag.to(tagEl, { autoAlpha: 1, y: 0, ease: 'power2.out' })
-        ScrollTrigger.create({
-          trigger: tagEl,
-          start: 'top 82%',
-          end: 'bottom 65%',
-          scrub: 1.2,
-          animation: tlTag,
-        })
-      }
-
-      if (words?.length) {
-        gsap.set(words, { autoAlpha: 0.08, y: 28 })
-        const tl = gsap.timeline()
-        tl.to(words, { autoAlpha: 1, y: 0, ease: 'power2.out', stagger: 0.5 })
-        ScrollTrigger.create({
-          trigger: titleEl,
-          start: 'top 78%',
-          end: 'bottom 60%',
-          scrub: 1.2,
-          animation: tl,
-        })
-      }
-
-      if (subEl) {
-        gsap.set(subEl, { autoAlpha: 0, y: 18 })
-        const tlSub = gsap.timeline()
-        tlSub.to(subEl, { autoAlpha: 1, y: 0, ease: 'power2.out' })
-        ScrollTrigger.create({
-          trigger: subEl,
-          start: 'top 82%',
-          end: 'bottom 65%',
-          scrub: 1.2,
-          animation: tlSub,
-        })
-      }
-    })
-    return () => ctx.revert()
-  }, [])
-
-  // Services title word-by-word scrub animation
-  useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const ctx = gsap.context(() => {
-      if (prefersReduced) {
-        gsap.set(document.querySelectorAll('#servicios .section-title .title-word'), { autoAlpha: 1, y: 0 })
-        return
-      }
-
-      const titleEl = document.querySelector('#servicios .section-title')
-      const subEl = document.querySelector('#servicios .services-header-text')
-      const words = titleEl?.querySelectorAll('.title-word')
-
-      if (words?.length) {
-        gsap.set(words, { autoAlpha: 0.08, y: 28 })
-        const tl = gsap.timeline()
-        tl.to(words, { autoAlpha: 1, y: 0, ease: 'power2.out', stagger: 0.5 })
-        ScrollTrigger.create({
-          trigger: titleEl,
-          start: 'top 78%',
-          end: 'bottom 60%',
-          scrub: 1.2,
-          animation: tl,
-        })
-      }
-
-      if (subEl) {
-        gsap.set(subEl, { autoAlpha: 0, y: 18 })
-        const tlSub = gsap.timeline()
-        tlSub.to(subEl, { autoAlpha: 1, y: 0, ease: 'power2.out' })
-        ScrollTrigger.create({
-          trigger: subEl,
-          start: 'top 82%',
-          end: 'bottom 65%',
-          scrub: 1.2,
-          animation: tlSub,
-        })
-      }
-    })
-    return () => ctx.revert()
-  }, [])
-
-  // Portfolio cards scroll reveal (same as service cards)
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const cards = document.querySelectorAll('.portfolio-card')
-      cards.forEach((card, i) => {
-        gsap.set(card, { y: 50, autoAlpha: 0 })
-        ScrollTrigger.create({
-          trigger: card,
-          start: 'top 88%',
-          end: 'top 15%',
-          onEnter: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.7, ease: 'power3.out', delay: i * 0.1 }),
-          onLeave: () => gsap.to(card, { y: -50, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
-          onEnterBack: () => gsap.to(card, { y: 0, autoAlpha: 1, duration: 0.55, ease: 'power3.out' }),
-          onLeaveBack: () => gsap.to(card, { y: 50, autoAlpha: 0, duration: 0.5, ease: 'power2.in' }),
-        })
-      })
-    })
-    return () => ctx.revert()
-  }, [])
-
-  // Portfolio title word-by-word scrub animation (same as services)
-  useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const ctx = gsap.context(() => {
-      if (prefersReduced) {
-        gsap.set(document.querySelectorAll('#portafolio .section-title .title-word'), { autoAlpha: 1, y: 0 })
-        return
-      }
-
-      const titleEl = document.querySelector('#portafolio .section-title')
-      const subEl = document.querySelector('#portafolio .portfolio-header-text')
-      const words = titleEl?.querySelectorAll('.title-word')
-
-      if (words?.length) {
-        gsap.set(words, { autoAlpha: 0.08, y: 28 })
-        const tl = gsap.timeline()
-        tl.to(words, { autoAlpha: 1, y: 0, ease: 'power2.out', stagger: 0.5 })
-        ScrollTrigger.create({
-          trigger: titleEl,
-          start: 'top 78%',
-          end: 'bottom 60%',
-          scrub: 1.2,
-          animation: tl,
-        })
-      }
-
-      if (subEl) {
-        gsap.set(subEl, { autoAlpha: 0, y: 18 })
-        const tlSub = gsap.timeline()
-        tlSub.to(subEl, { autoAlpha: 1, y: 0, ease: 'power2.out' })
-        ScrollTrigger.create({
-          trigger: subEl,
-          start: 'top 82%',
-          end: 'bottom 65%',
-          scrub: 1.2,
-          animation: tlSub,
-        })
-      }
-    })
-    return () => ctx.revert()
-  }, [])
-
-  return null
+  return null;
 }

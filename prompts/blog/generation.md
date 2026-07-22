@@ -46,6 +46,14 @@ tags: ["..."]
 audience: [...]        # copia el audience del tema
 intent: "..."           # copia el intent del tema
 funnelStage: "..."      # copia el funnelStage del tema
+services:                # entre 1 y 3 servicios realmente relacionados
+  - "desarrollo-mvp"
+cta:
+  type: "service"
+  target: "desarrollo-mvp" # debe estar incluido en services
+# image:                 # opcional, solo si existe un activo validado en public/
+#   src: "/blog/imagen.webp"
+#   alt: "Descripción objetiva de la imagen"
 author: "Código Startup"
 status: "draft"
 featured: false
@@ -68,6 +76,8 @@ reviewScore: null
 - No sobrescribas un archivo existente con el mismo slug — si ya existe, detente y repórtalo en vez de sobrescribir.
 - No modifiques artículos ya `approved` o `published`.
 - `relatedArticles` solo puede apuntar a slugs que ya existan (en `drafts/` o `published/`) — nunca inventes una relación con un artículo que todavía no existe.
+- `services` debe usar slugs de `src/lib/commercial/schema.ts` y reflejar el tema real del artículo; no relaciones todos los servicios por defecto.
+- `cta.target` debe ser el siguiente paso comercial más pertinente y estar incluido en `services`.
 
 ## Después de generar
 

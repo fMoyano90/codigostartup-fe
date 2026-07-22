@@ -30,7 +30,7 @@ const parsed = safeParseArticleFrontmatter(data);
 const today = todayIsoDate();
 const updatedFrontmatter = parsed.success
   ? applyRejection(parsed.data, today)
-  : { ...data, status: "rejected", updatedAt: today };
+  : { ...data, status: "rejected", approvedAt: null, publishedAt: null, updatedAt: today };
 
 const updatedRaw = matter.stringify(content, updatedFrontmatter);
 moveArticle("drafts", "rejected", fileSlug, updatedRaw);

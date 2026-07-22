@@ -90,7 +90,6 @@ export const serviceSchema = z.strictObject({
   capabilities: z.array(capabilitySlugSchema),
   process: z.array(contentBlockSchema),
   relatedProjects: z.array(projectSlugSchema),
-  relatedArticles: z.array(z.string().min(1)),
   faq: z.array(faqSchema),
   cta: ctaSchema,
   seo: seoSchema,
@@ -153,6 +152,25 @@ const testimonialSchema = z.strictObject({
   author: z.string().min(1),
 });
 
+const projectGalleryItemSchema = z.strictObject({
+  src: z.string().min(1),
+  alt: z.string().min(1),
+  caption: z.string().min(1).optional(),
+});
+
+const projectCaseStudySchema = z.strictObject({
+  context: z.string().min(1).nullable(),
+  problem: z.string().min(1).nullable(),
+  previousState: z.string().min(1).nullable(),
+  objective: z.string().min(1).nullable(),
+  solution: z.string().min(1).nullable(),
+  features: z.array(z.string().min(1)),
+  process: z.array(contentBlockSchema),
+  result: z.string().min(1).nullable(),
+  gallery: z.array(projectGalleryItemSchema),
+  relatedArticles: z.array(z.string().min(1)),
+});
+
 export const projectSchema = z.strictObject({
   slug: projectSlugSchema,
   kind: z.enum(["client", "own-product"]),
@@ -169,6 +187,7 @@ export const projectSchema = z.strictObject({
   metrics: z.array(metricSchema),
   testimonial: testimonialSchema.nullable(),
   relatedServices: z.array(serviceSlugSchema),
+  caseStudy: projectCaseStudySchema,
   editorialStatus: editorialStatusSchema,
   editorialNotes: z.array(z.string().min(1)),
 });
@@ -201,7 +220,16 @@ export const siteConfigSchema = z.strictObject({
     email: z.string().email(),
     whatsappNumber: z.string().regex(/^\d+$/),
     whatsappUrl: z.string().url(),
+    bookingUrl: z.string().url(),
+    bookingEmbedUrl: z.string().url(),
   }),
+  /** Perfiles sociales reales para Organization.sameAs. Omitir los que no existan. */
+  social: z
+    .strictObject({
+      linkedin: z.string().url().optional(),
+      instagram: z.string().url().optional(),
+    })
+    .default({}),
 });
 
 export type ServiceSlug = z.infer<typeof serviceSlugSchema>;

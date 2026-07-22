@@ -5,6 +5,7 @@ import { ProjectCard } from "@/components/projects/ProjectCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import { capabilities } from "@/data/capabilities";
 import { projects } from "@/data/projects";
+import { initialLeadActionState } from "@/lib/leads";
 import { services } from "@/data/services";
 import { getArticleMetadataBySlug } from "@/lib/blog/article-loader";
 import {
@@ -25,6 +26,7 @@ const websiteService = services.find(({ slug }) => slug === "sitios-web");
 if (!websiteService) throw new Error("Falta el servicio sitios-web para las pruebas");
 
 describe("shared commercial components", () => {
+  const testLeadAction = async () => initialLeadActionState;
   it("marks the current breadcrumb and hides separators from assistive technology", () => {
     const html = renderToStaticMarkup(
       <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Sitios web" }]} />
@@ -104,7 +106,7 @@ describe("shared commercial components", () => {
     const html = renderToStaticMarkup(
       <ServiceLeadForm
         service={websiteService}
-        action="/api/leads"
+        action={testLeadAction}
         idPrefix="website-primary"
         source="service-page"
         fields={[
@@ -124,7 +126,6 @@ describe("shared commercial components", () => {
       />
     );
 
-    expect(html).toContain('method="post"');
     expect(html).toContain('for="website-primary-lead-form-field-0"');
     expect(html).toContain('id="website-primary-lead-form-field-0"');
     expect(html).toContain('name="service" value="sitios-web"');
@@ -139,7 +140,7 @@ describe("shared commercial components", () => {
     expect(() => renderToStaticMarkup(
       <ServiceLeadForm
         service={websiteService}
-        action="/api/leads"
+        action={testLeadAction}
         idPrefix="website-duplicate"
         source="service-page"
         fields={[
@@ -154,7 +155,7 @@ describe("shared commercial components", () => {
     expect(() => renderToStaticMarkup(
       <ServiceLeadForm
         service={websiteService}
-        action="/api/leads"
+        action={testLeadAction}
         idPrefix="website form"
         source="service-page"
         fields={[]}

@@ -165,3 +165,84 @@ topics:
     objective: Artículo generado desde TEMAS-BLOG.md — cómo proteger la información
       almacenada en planillas.
     notes: []
+  - id: que-deberia-incluir-una-auditoria-basica-de-seguridad
+    title: Qué debería incluir una auditoría básica de seguridad
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: qué debería incluir una auditoría básica de seguridad.
+    notes: []
+  - id: como-reducir-la-dependencia-de-una-sola-persona-tecnica
+    title: Cómo reducir la dependencia de una sola persona técnica
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo reducir la dependencia de una sola persona técnica.
+    notes: []
+  - id: que-revisar-antes-de-integrar-una-inteligencia-artificial
+    title: Qué revisar antes de integrar una inteligencia artificial
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: qué revisar antes de integrar una inteligencia artificial.
+    notes: []
+  - id: riesgos-de-subir-informacion-confidencial-a-herramientas-de-ia
+    title: Riesgos de subir información confidencial a herramientas de IA
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: riesgos de subir información confidencial a herramientas de ia.
+    notes: []
+  - id: como-evaluar-la-seguridad-de-un-proveedor-saas
+    title: Cómo evaluar la seguridad de un proveedor SaaS
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo evaluar la seguridad de un proveedor saas.
+    notes: []
+  - id: que-accesos-y-cuentas-debe-controlar-siempre-la-empresa
+    title: Qué accesos y cuentas debe controlar siempre la empresa
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: qué accesos y cuentas debe controlar siempre la empresa.
+    notes: []
+  - id: por-que-las-actualizaciones-de-software-tambien-son-una-medida-de-seguridad
+    title: Por qué las actualizaciones de software también son una medida de seguridad
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: por qué las actualizaciones de software también son una medida de
+      seguridad.
+    notes: []
+  - id: que-hacer-ante-una-filtracion-de-datos
+    title: Qué hacer ante una filtración de datos
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: qué hacer ante una filtración de datos.
+    notes: []

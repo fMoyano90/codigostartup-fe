@@ -1,230 +1,163 @@
-import LogoLoop from '@/components/LogoLoop'
-import Magnet from '@/components/Magnet'
-import HomeAnimations from '@/components/HomeAnimations'
+import Image from "next/image";
+import Link from "next/link";
+import HomeAnimations from "@/components/HomeAnimations";
+import { SectionHeader } from "@/components/SectionHeader";
+import { ArticleCard } from "@/components/blog/ArticleCard";
+import { ProjectCard } from "@/components/projects/ProjectCard";
 import {
-  homeClientProjects as clientCases,
+  capabilities,
+  homeClientProjects,
   homeOwnProduct,
-  homeServiceGroups as services,
-  processSteps as steps,
-  siteConfig,
-  techLogos,
-} from '@/data/commercial'
+  processSteps,
+  services,
+} from "@/data/commercial";
+import { getAllPublishedArticles } from "@/lib/blog/article-loader";
+import type { ServiceSlug } from "@/lib/commercial/schema";
+
+function requireService(slug: ServiceSlug) {
+  const service = services.find((item) => item.slug === slug);
+  if (!service) throw new Error(`No existe el servicio ${slug}`);
+  return service;
+}
+
+const websiteService = requireService("sitios-web");
+const softwareService = requireService("software-a-medida");
+const automationService = requireService("automatizacion-de-procesos");
+const mvpService = requireService("desarrollo-mvp");
+const webAppService = requireService("aplicaciones-web");
+const mobileAppService = requireService("aplicaciones-moviles");
+const auditService = requireService("auditoria-y-evolucion");
+
+const needs = [
+  {
+    number: "01",
+    eyebrow: "Presencia digital",
+    title: "Necesito un sitio web",
+    description: websiteService.shortDescription,
+    links: [{ label: websiteService.name, slug: websiteService.slug }],
+  },
+  {
+    number: "02",
+    eyebrow: "Operación",
+    title: "Quiero digitalizar un proceso",
+    description: softwareService.shortDescription,
+    links: [
+      { label: softwareService.name, slug: softwareService.slug },
+      { label: automationService.name, slug: automationService.slug },
+    ],
+  },
+  {
+    number: "03",
+    eyebrow: "Producto digital",
+    title: "Quiero lanzar un producto",
+    description: mvpService.shortDescription,
+    links: [
+      { label: mvpService.name, slug: mvpService.slug },
+      { label: webAppService.name, slug: webAppService.slug },
+      { label: mobileAppService.name, slug: mobileAppService.slug },
+    ],
+  },
+  {
+    number: "04",
+    eyebrow: "Sistema existente",
+    title: "Necesito mejorar lo que ya tengo",
+    description: auditService.shortDescription,
+    links: [{ label: auditService.name, slug: auditService.slug }],
+  },
+];
+
+const homeProblems = [
+  websiteService.problems[1],
+  websiteService.problems[6],
+  softwareService.problems[0],
+  softwareService.problems[4],
+  automationService.problems[0],
+  mvpService.problems[1],
+  auditService.problems[0],
+  auditService.problems[5],
+];
+
+const homeFaq = [
+  {
+    question: "¿Qué pasa si todavía no sé qué solución necesito?",
+    answer: "Partimos con un diagnóstico para entender el problema real. Desde ahí definimos una ruta, un alcance, tiempos y precio claros antes de construir.",
+  },
+  {
+    question: "¿Cómo puedo seguir el avance del proyecto?",
+    answer: "Trabajamos con avances y entregas semanales. Siempre sabes qué se construyó, qué viene y por qué se tomó cada decisión.",
+  },
+  {
+    question: "¿Qué recibo al terminar?",
+    answer: "Entregamos el producto acordado junto con la documentación y el traspaso necesarios para que pueda operar y evolucionar.",
+  },
+  {
+    question: "¿Pueden revisar o continuar un sistema existente?",
+    answer: "Sí. La línea de auditoría y evolución permite revisar deuda técnica, rendimiento, arquitectura, seguridad y capacidad de evolución antes de definir los próximos pasos.",
+  },
+];
 
 export default function Home() {
+  const recentArticles = getAllPublishedArticles().slice(0, 3);
+
   return (
     <main className="home">
       <HomeAnimations />
 
-      {/* ── NAV ── */}
-      <nav id="main-nav" className="nav-root">
-        <a href="#hero" className="nav-logo">
-          <img src="/logo.svg" alt="Codigo Startup" className="nav-logo-img" />
-        </a>
-        <div className="nav-links">
-          <a href="#servicios" className="nav-link">Servicios</a>
-          <a href="#portafolio" className="nav-link">Portafolio</a>
-          <a href="#proceso" className="nav-link">Proceso</a>
-        </div>
-        <a href={siteConfig.contact.whatsappUrl} target="_blank" rel="noreferrer" className="nav-cta">Hablemos</a>
-      </nav>
-
-      {/* ── HERO ── */}
       <section id="hero" className="hero-root">
-        <img src="/isotipo-blanco.svg" className="hero-watermark" aria-hidden="true" alt="" />
-
+        <Image
+          src="/isotipo-blanco.svg"
+          width={620}
+          height={620}
+          className="hero-watermark"
+          aria-hidden="true"
+          alt=""
+          priority
+        />
         <div className="hero-inner">
-          <div className="hero-eyebrow fadein fadein-d1">
-            Desarrollo · Estrategia · Diseño
-          </div>
-
+          <div className="hero-eyebrow fadein fadein-d1">Desarrollo · Estrategia · Diseño</div>
           <div className="hero-title-area">
             <h1 className="hero-title">
-              <span className="reveal-wrap">
-                <span className="reveal reveal-d1">CONSTRUIMOS</span>
-              </span>
-              <span className="reveal-wrap">
-                <span className="reveal reveal-d2">PRODUCTOS</span>
-              </span>
-              <span className="reveal-wrap">
-                <span className="reveal reveal-d3">
-                  QUE <span className="accent">PERDURAN.</span>
-                </span>
-              </span>
+              <span className="reveal-wrap"><span className="reveal reveal-d1">CONSTRUIMOS</span></span>
+              <span className="reveal-wrap"><span className="reveal reveal-d2">PRODUCTOS</span></span>
+              <span className="reveal-wrap"><span className="reveal reveal-d3">QUE <span className="accent">PERDURAN.</span></span></span>
             </h1>
           </div>
-
           <div className="hero-bottom">
             <p className="hero-desc fadein fadein-d2">
-              Somos el
-              equipo técnico que ejecuta contigo: desarrollo, estrategia
-              y diseño para emprendedores, startups y empresas que
-              necesitan avanzar.
+              Somos el equipo técnico que ejecuta contigo. Te ayudamos a construir presencia digital,
+              ordenar tu operación, lanzar un producto o evolucionar un sistema existente.
             </p>
             <div className="hero-actions fadein fadein-d3">
-              <a href={siteConfig.contact.whatsappUrl} target="_blank" rel="noreferrer" className="btn-primary">
-                Cuéntanos tu proyecto →
-              </a>
+              <Link href="/contacto" className="btn-primary">Evaluar mi proyecto →</Link>
+              <Link href="/soluciones" className="home-text-link">Explorar soluciones</Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── SERVICES ── */}
-      <section id="servicios" className="section-wrap">
+      <section className="home-distributor-section" aria-labelledby="needs-heading">
         <div className="container">
-          <div className="services-header">
-            <div className="services-header-left">
-              <div className="section-tag">Servicios</div>
-              <h2 className="section-title">
-                <span className="title-word">DESARROLLO<span className="accent">,</span></span><br />
-                <span className="title-word">ESTRATEGIA</span><br />
-                <span className="title-word">Y</span>{' '}
-                <span className="title-word">DISEÑO<span className="accent">.</span></span>
-              </h2>
-              <p className="services-header-text">
-                Tres líneas de servicio pensadas para ayudarte a
-                avanzar con foco, criterio y soluciones que aporten valor a tu negocio.
-              </p>
-            </div>
-            <div className="tech-loop-wrap">
-              <LogoLoop
-                logos={techLogos}
-                direction="left"
-                speed={55}
-                logoHeight={52}
-                gap={56}
-                hoverSpeed={0}
-                fadeOut
-                fadeOutColor="#0a0a0a"
-                ariaLabel="Tecnologías que usamos"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="service-grid" style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          {services.map((s, i) => (
-            <article key={s.name} className="service-card">
-              <div className="service-category text-[#efc459]">{s.category}</div>
-              <h3 className="service-name">{s.name}</h3>
-              <hr className="service-divider" />
-              <p className="service-desc">{s.description}</p>
-              <div className="service-tags">
-                {s.tags.map((tag) => (
-                  <span key={tag} className="service-tag">{tag}</span>
-                ))}
-              </div>
-              <a
-                href={siteConfig.contact.whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                className={`service-link ${i === 1 ? 'service-link--center' : 'service-link--outer'}`}
-              >{s.cta}</a>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* ── LABORATORIO DE IDEAS ── */}
-      <section id="nucleo" className="lab-root">
-        <div className="lab-inner">
-          <div className="lab-content">
-            <div className="lab-text">
-              <div className="section-tag">Laboratorio de Ideas</div>
-              <h2 className="lab-title">
-                <span className="title-word">CONSTRUIMOS PORQUE</span><br />
-                <span className="title-word">SOMOS COMO TÚ<span className="accent">:</span></span><br />
-                <span className="title-word">EMPRENDEDORES<span className="accent">.</span></span>
-              </h2>
-              <p className="lab-desc">
-                Construir y operar nuestra propia plataformas SAAS nos permite entender tu camino.
-                Todo lo aprendido en casa se traduce en beneficios directos para que tu proyecto
-                sea seguro y sólido desde el primer día.
-              </p>
-            </div>
-
-            <div className="lab-card-flip-wrap">
-              <div className="lab-card-flip-inner">
-
-                {/* ── FRONT ── */}
-                <div className="lab-card lab-card-front">
-                  <div className="lab-card-title-row">
-                    <img src={homeOwnProduct.logo} alt={homeOwnProduct.name} className="lab-card-logo-oficial" />
-                  </div>
-                  <p className="lab-card-desc">
-                    {homeOwnProduct.description}
-                  </p>
-                  <div className="lab-card-metrics">
-                    {homeOwnProduct.metrics.map((metric) => (
-                      <div key={metric.label} className="lab-card-metric">
-                        <span className="lab-card-metric-val">{metric.val}</span>
-                        <span className="lab-card-metric-label">{metric.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="lab-card-footer">
-                    <img src="/chrysalis-logo.png" alt="Chrysalis PUCV" className="lab-card-chrysalis" />
-                  </div>
+          <SectionHeader
+            eyebrow="Elige tu punto de partida"
+            title="¿Qué necesitas resolver?"
+            description="No necesitas llegar con la solución definida. Empieza por la situación que más se parece a la tuya."
+            headingId="needs-heading"
+          />
+          <div className="home-needs-grid">
+            {needs.map((need) => (
+              <article key={need.number} className="home-need-card">
+                <div className="home-need-topline">
+                  <span>{need.number}</span>
+                  <span>{need.eyebrow}</span>
                 </div>
-
-                {/* ── BACK ── */}
-                <div className="lab-card lab-card-back">
-                  <div className="lab-card-back-clip">
-                    <img src="/Adobe Express - file (21).png" alt="Mockup Núcleo Gestor" className="lab-card-back-img" />
-                    <div className="lab-card-back-overlay" />
-                  </div>
-                  <div className="lab-card-back-body">
-                    <div className="lab-card-back-header">
-                      <img src={homeOwnProduct.logo} alt={homeOwnProduct.name} className="lab-card-logo-oficial" />
-                    </div>
-                    <p className="lab-card-back-sub">{homeOwnProduct.homeCard.description}</p>
-                    <a href={homeOwnProduct.externalUrl} target="_blank" rel="noreferrer" className="lab-card-back-cta">
-                      {homeOwnProduct.homeCard.ctaLabel}
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CLIENT CASES / PORTAFOLIO ── */}
-      <section id="portafolio" className="section-wrap">
-        <div className="container">
-          <div className="portfolio-header">
-            <div className="portfolio-header-left">
-              <div className="section-tag">Casos de éxito</div>
-              <h2 className="section-title">
-                <span className="title-word">CONSTRUIDO<span className="accent">.</span></span><br />
-                <span className="title-word">LANZADO<span className="accent">.</span></span><br />
-                <span className="title-word">OPERANDO<span className="accent">.</span></span>
-              </h2>
-              <p className="portfolio-header-text">
-                Tres productos reales en producción, con clientes activos
-                que los usan todos los días.
-              </p>
-            </div>
-            <div className="portfolio-client-logos">
-              {clientCases.map((c) => c.logo && (
-                <img
-                  key={c.name}
-                  src={c.logo}
-                  alt={`Logo ${c.name}`}
-                  className="portfolio-client-logo w-44 h-auto"
-                />
-              ))}
-            </div>
-          </div>
-          <div className="portfolio-grid">
-            {clientCases.map((c) => (
-              <article key={c.name} className="portfolio-card">
-                <span className="portfolio-sector">{c.sector}</span>
-                <h3 className="portfolio-name">{c.name}</h3>
-                <p className="portfolio-desc">{c.description}</p>
-                <div className="portfolio-testimonial">
-                  <p className="portfolio-testimonial-quote">{c.testimonial.quote}</p>
-                  <span className="portfolio-testimonial-author">{c.testimonial.author}</span>
+                <h3>{need.title}</h3>
+                <p>{need.description}</p>
+                <div className="home-need-links">
+                  {need.links.map((link) => (
+                    <Link key={link.slug} href={`/soluciones/${link.slug}`} prefetch={false}>
+                      {link.label} <span aria-hidden="true">→</span>
+                    </Link>
+                  ))}
                 </div>
               </article>
             ))}
@@ -232,73 +165,202 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PROCESS ── */}
-      <section id="proceso" className="section-wrap process-section">
+      <section id="portafolio" className="home-distributor-section home-distributor-section--tinted" aria-labelledby="projects-heading">
         <div className="container">
-          <div className="process-header">
-            <div className="section-tag">Proceso</div>
-            <h2 className="section-title">
-              SIN SECRETOS<span className="accent">:</span><br />
-              ASÍ CONSTRUIMOS<span className="accent">.</span>
-            </h2>
-            <p className="process-desc-text">
-              Aquí trabajamos con las puertas abiertas para que siempre sepas en qué estamos, qué sigue y por qué.
-            </p>
+          <SectionHeader
+            eyebrow="Proyectos reales"
+            title="Construido. Lanzado. Operando."
+            description="Productos digitales que hoy apoyan operaciones, servicios y nuevos negocios."
+            headingId="projects-heading"
+          />
+          <div className="project-card-grid">
+            {homeClientProjects.map((project) => <ProjectCard key={project.slug} project={project} />)}
+          </div>
+          <div className="home-section-action">
+            <Link href="/proyectos" className="home-text-link">Ver todos los proyectos →</Link>
           </div>
         </div>
-        <div className="process-grid">
-          {steps.map((s) => (
-            <div key={s.n} className="process-step">
-              <div className="process-step-header">
-                <span className="process-n">{s.n}</span>
-                <h3 className="process-title">{s.title}</h3>
-              </div>
-              <p className="process-desc">{s.desc}</p>
-            </div>
-          ))}
+      </section>
+
+      <section className="home-distributor-section" aria-labelledby="problems-heading">
+        <div className="container home-problems-layout">
+          <SectionHeader
+            eyebrow="Problemas que resolvemos"
+            title="La tecnología debe quitar fricción, no agregarla"
+            description="Trabajamos sobre problemas concretos de comunicación, operación, producto y sistemas existentes."
+            headingId="problems-heading"
+          />
+          <ol className="service-problem-list">
+            {homeProblems.map((problem, index) => (
+              <li key={problem}>
+                <span className="service-problem-number">{String(index + 1).padStart(2, "0")}</span>
+                <span>{problem}</span>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      <section id="servicios" className="home-distributor-section home-distributor-section--tinted" aria-labelledby="solutions-heading">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Soluciones"
+            title="Una ruta para cada etapa"
+            description="Siete soluciones especializadas, conectadas por una misma forma de diagnosticar, construir y evolucionar."
+            headingId="solutions-heading"
+          />
+          <div className="home-solutions-grid">
+            {services.map((service) => (
+              <article key={service.slug} className="service-card">
+                <div className="service-category">{service.hero.eyebrow}</div>
+                <h3 className="service-name">{service.name}</h3>
+                <hr className="service-divider" />
+                <p className="service-desc">{service.shortDescription}</p>
+                <Link href={`/soluciones/${service.slug}`} prefetch={false} className="service-link service-link--outer">
+                  Ver solución <span aria-hidden="true">→</span>
+                </Link>
+              </article>
+            ))}
+          </div>
+          <div className="home-section-action">
+            <Link href="/soluciones" className="home-text-link">Comparar todas las soluciones →</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-capabilities-section" aria-labelledby="capabilities-heading">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Capacidades transversales"
+            title="Todo lo necesario para construir y lanzar"
+            description="No son servicios aislados. Son capacidades que combinamos según lo que cada solución realmente necesita."
+            headingId="capabilities-heading"
+          />
+          <div className="service-capability-grid">
+            {capabilities.map((capability, index) => (
+              <article key={capability.slug} className="service-capability-item">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{capability.name}</h3>
+                <p>{capability.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="nucleo" className="home-featured-case" aria-labelledby="featured-case-heading">
+        <div className="container home-featured-case-grid">
+          <div className="home-featured-case-copy">
+            <div className="section-tag">Caso destacado · Producto propio</div>
+            <h2 id="featured-case-heading" className="section-title">CONSTRUIMOS PORQUE TAMBIÉN EMPRENDEMOS<span className="accent">.</span></h2>
+            <p>{homeOwnProduct.hook}</p>
+            <Link href={`/proyectos/${homeOwnProduct.slug}`} prefetch={false} className="home-text-link">
+              Ver el proyecto →
+            </Link>
+          </div>
+          <article className="home-featured-case-card">
+            <Image src={homeOwnProduct.logo} alt={homeOwnProduct.name} width={260} height={90} className="home-featured-case-logo" />
+            <p>{homeOwnProduct.description}</p>
+            <div className="home-featured-metrics">
+              {homeOwnProduct.metrics.map((metric) => (
+                <div key={metric.label}>
+                  <strong>{metric.val}</strong>
+                  <span>{metric.label}</span>
+                </div>
+              ))}
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="proceso" className="section-wrap process-section" aria-labelledby="process-heading">
+        <div className="container">
+          <div className="process-header">
+            <div className="section-tag">Proceso abierto</div>
+            <h2 id="process-heading" className="section-title">SIN SECRETOS<span className="accent">:</span><br />ASÍ CONSTRUIMOS<span className="accent">.</span></h2>
+            <p className="process-desc-text">Entregas semanales, alcance y precio claros, decisiones explicadas, documentación y traspaso.</p>
+          </div>
+          <div className="process-grid">
+            {processSteps.map((step) => (
+              <article key={step.n} className="process-step">
+                <div className="process-step-header">
+                  <span className="process-n">{step.n}</span>
+                  <h3 className="process-title">{step.title}</h3>
+                </div>
+                <p className="process-desc">{step.desc}</p>
+              </article>
+            ))}
+          </div>
+          <div className="home-section-action">
+            <Link href="/proceso" className="home-text-link">Conocer el proceso completo →</Link>
+          </div>
+        </div>
+      </section>
+
+      {recentArticles.length > 0 && (
+        <section className="home-distributor-section home-distributor-section--tinted" aria-labelledby="articles-heading">
+          <div className="container">
+            <SectionHeader
+              eyebrow="Ideas para decidir mejor"
+              title="Tecnología explicada desde el negocio"
+              description="Guías para evaluar productos digitales, automatización, software y decisiones técnicas con mayor claridad."
+              headingId="articles-heading"
+            />
+            <div className="article-grid home-article-grid">
+              {recentArticles.map((article) => <ArticleCard key={article.fileSlug} article={article} />)}
+            </div>
+            <div className="home-section-action">
+              <Link href="/blog" className="home-text-link">Explorar el blog →</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="home-team-section" aria-labelledby="team-heading">
+        <div className="container home-team-grid">
+          <div>
+            <SectionHeader
+              eyebrow="El equipo"
+              title="El equipo técnico que ejecuta contigo"
+              description="Combinamos estrategia, diseño y desarrollo para convertir decisiones de negocio en productos que puedan operar y evolucionar."
+              headingId="team-heading"
+            />
+            <Link href="/nosotros" className="home-text-link">Conocer cómo trabajamos →</Link>
+          </div>
+          <ul className="home-team-principles">
+            <li><span>01</span><strong>Diagnóstico antes de construir</strong></li>
+            <li><span>02</span><strong>Avances y entregas semanales</strong></li>
+            <li><span>03</span><strong>Alcance y precio claros</strong></li>
+            <li><span>04</span><strong>Documentación y traspaso</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="home-distributor-section" aria-labelledby="faq-heading">
+        <div className="container service-split-layout">
+          <SectionHeader eyebrow="Preguntas frecuentes" title="Antes de dar el siguiente paso" headingId="faq-heading" />
+          <div className="service-faq-list">
+            {homeFaq.map((item) => (
+              <details key={item.question} className="service-faq-item">
+                <summary>
+                  <span>{item.question}</span>
+                  <span className="service-faq-icon" aria-hidden="true">+</span>
+                </summary>
+                <div className="service-faq-answer"><p>{item.answer}</p></div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="cta" className="cta-root">
         <div className="cta-label">Siguiente paso</div>
-        <h2 className="cta-title">
-          HABLEMOS.<br />EL RESTO LO<br />RESOLVEMOS.
-        </h2>
-        <p className="cta-desc">
-          Cuéntanos qué necesitas y te respondemos con claridad: qué
-          haríamos, en cuánto tiempo y a qué precio. Sin propuestas
-          genéricas ni reuniones que no llevan a nada. Aceptamos
-          Transbank y tenemos facilidades de pago.
-        </p>
+        <h2 className="cta-title">CUÉNTANOS QUÉ<br />NECESITAS RESOLVER.</h2>
+        <p className="cta-desc">Revisamos tu situación y te respondemos con una ruta clara, sin propuestas genéricas ni una solución definida de antemano.</p>
         <div className="cta-actions">
-          <Magnet padding={60} magnetStrength={4}>
-            <a
-              href={siteConfig.contact.whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-dark"
-            >
-              Agendar reunión →
-            </a>
-          </Magnet>
+          <Link href="/contacto" className="btn-dark">Evaluar mi proyecto →</Link>
         </div>
       </section>
-
-      {/* ── FOOTER ── */}
-      <footer className="footer-root">
-        <p className="footer-text">
-          © 2026 Codigo Startup — Desarrollo, estrategia y diseño para
-          emprendedores, startups y empresas.
-        </p>
-        <a
-          href={`mailto:${siteConfig.contact.email}`}
-          className="footer-email"
-        >
-          {siteConfig.contact.email}
-        </a>
-      </footer>
-
     </main>
-  )
+  );
 }

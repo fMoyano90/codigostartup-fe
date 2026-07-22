@@ -1,0 +1,169 @@
+---
+title: Qué debería incluir una auditoría básica de seguridad
+slug: que-deberia-incluir-una-auditoria-basica-de-seguridad
+description: >-
+  Guía para empresarios y gerentes sobre los componentes esenciales de una
+  auditoría de seguridad informática: qué revisar, con qué frecuencia y cómo
+  interpretar los resultados sin ser experto en el tema.
+excerpt: >-
+  La seguridad de un sistema no se mide por lo que creés que está protegido,
+  sino por lo que efectivamente revisaste. Una auditoría básica de seguridad es
+  un chequeo estructurado que responde una sola pregunta: ¿hay algo que un
+  atacante podría explotar y nosotros no estamos viendo?
+category: seguridad-y-riesgos
+tags:
+  - auditoría de seguridad
+  - seguridad informática
+  - protección de datos
+  - riesgos tecnológicos
+  - ciberseguridad para empresas
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+services:
+  - auditoria-y-evolucion
+  - software-a-medida
+cta:
+  type: service
+  target: auditoria-y-evolucion
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-04-07'
+updatedAt: '2026-04-13'
+approvedAt: '2026-04-11'
+publishedAt: '2026-04-11'
+seo:
+  title: Qué debería incluir una auditoría básica de seguridad | Código Startup
+  description: >-
+    Componentes esenciales de una auditoría de seguridad informática básica:
+    revisión de accesos, configuración de servicios, copias de seguridad,
+    vulnerabilidades comunes y checklist para empresas sin equipo de seguridad
+    dedicado.
+  primaryKeyword: auditoría básica de seguridad informática
+  secondaryKeywords:
+    - qué revisar en una auditoría de seguridad
+    - checklist seguridad para empresas
+    - componentes de auditoría de seguridad
+    - revisión de seguridad de sistemas
+    - seguridad informática para no técnicos
+relatedArticles:
+  - riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde
+  - que-preguntar-sobre-seguridad-a-tu-proveedor
+  - que-datos-de-tus-clientes-debes-proteger
+reviewStatus: pending
+reviewScore: null
+---
+
+La mayoría de las empresas no tiene un equipo de seguridad informática. No porque no les importe, sino porque no tienen la escala para justificarlo. Pero la ausencia de un equipo dedicado no significa que no se pueda hacer nada: significa que hace falta un proceso periódico y estructurado para revisar que lo básico esté cubierto.
+
+Ese proceso se llama auditoría básica de seguridad, y no requiere conocimientos técnicos profundos para entender lo que busca ni para actuar sobre lo que encuentra. Este artículo describe qué debería incluir, con qué frecuencia conviene hacerla y qué hacer con los resultados.
+
+## Qué es una auditoría básica de seguridad
+
+Una auditoría de seguridad es un chequeo sistemático que responde una pregunta concreta: ¿hay vulnerabilidades evidentes en nuestro sistema que un atacante con conocimientos básicos podría explotar?
+
+No busca garantizar que el sistema sea invulnerable —eso no existe—. Busca identificar los agujeros más obvios, esos que no requieren un atacante sofisticado para ser explotados y que suelen ser el punto de entrada de la mayoría de los incidentes reales.
+
+<Callout variant="info" title="Auditoría no es lo mismo que prueba de penetración">
+  Una prueba de penetración o pentest simula un ataque real para ver hasta dónde puede llegar un atacante. Una auditoría básica es menos ambiciosa y más estructurada: revisa configuraciones, accesos y prácticas contra una lista de verificación. La prueba de penetración requiere especialistas; la auditoría básica puede hacerla —al menos en parte— personal técnico interno con las indicaciones correctas.
+</Callout>
+
+## Los cinco componentes que no pueden faltar
+
+### 1. Revisión de accesos y permisos
+
+El vector de ataque más común no es un hacker misterioso: es una cuenta con más permisos de los necesarios. Un empleado que se fue y cuyo acceso nunca se desactivó. Un proveedor externo que sigue teniendo credenciales para un sistema que ya no mantiene. Un usuario administrativo compartido entre tres personas.
+
+La revisión de accesos debería responder estas preguntas:
+
+- ¿Hay cuentas activas de personas que ya no trabajan en la empresa o con la empresa?
+- ¿Hay usuarios con permisos de administrador que no los necesitan para su trabajo diario?
+- ¿Las contraseñas de servicios críticos se cambiaron en los últimos seis meses?
+- ¿Se usa autenticación de dos factores en todas las cuentas que acceden a información sensible o a configuraciones del sistema?
+
+Esta revisión no requiere herramientas especializadas: en la mayoría de los servicios y plataformas, la lista de usuarios y sus permisos está disponible en un panel de administración. El desafío no es técnico: es disciplinarse para hacer la revisión periódicamente.
+
+### 2. Revisión de configuraciones de servicios
+
+Los servicios que usa tu empresa —servidores, bases de datos, plataformas en la nube, herramientas de comunicación— vienen con configuraciones por defecto que suelen priorizar la facilidad de uso sobre la seguridad. Con el tiempo, a medida que se agregan funcionalidades y se integran servicios, esas configuraciones se van relajando sin que nadie lo registre.
+
+La revisión debería chequear:
+
+- ¿Hay puertos o servicios expuestos a internet que no deberían estarlo?
+- ¿Las bases de datos aceptan conexiones desde cualquier dirección o están restringidas a las direcciones IP que efectivamente las necesitan?
+- ¿Los servicios de almacenamiento de archivos —como buckets en la nube— están configurados como privados o están accesibles públicamente?
+- ¿Hay funcionalidades de depuración o desarrollo habilitadas en el entorno de producción?
+
+Este componente sí requiere cierto conocimiento técnico, pero es un checklist que cualquier desarrollador con acceso a la configuración de los servicios puede ejecutar en unas horas.
+
+### 3. Verificación de copias de seguridad
+
+Una copia de seguridad que no se probó no es una copia: es una esperanza. La auditoría debería verificar no solo que las copias existen, sino que se pueden restaurar.
+
+Tres verificaciones mínimas:
+
+- ¿Hay copias de seguridad programadas para cada sistema y base de datos crítica?
+- ¿Cuándo fue la última vez que se intentó restaurar una copia en un entorno de prueba?
+- ¿Las copias están almacenadas en un lugar distinto del sistema principal? Una copia en el mismo servidor que el original no protege contra la falla del servidor.
+
+Si querés profundizar en este tema, el artículo sobre [qué respaldos necesita una empresa](/blog/que-respaldos-necesita-una-empresa) detalla los tipos de respaldo y cómo decidir qué respaldar.
+
+### 4. Revisión de dependencias y actualizaciones
+
+El software que usa tu empresa no es una sola cosa: es un conjunto de piezas —bibliotecas, frameworks, complementos— que otras personas escribieron y mantienen. Cada una de esas piezas puede tener vulnerabilidades conocidas que se corrigen con actualizaciones.
+
+La auditoría debería verificar:
+
+- ¿Hay actualizaciones de seguridad pendientes para los componentes principales del sistema?
+- ¿Se usa alguna biblioteca o servicio que ya no recibe mantenimiento de sus creadores?
+- ¿Hay un proceso definido para aplicar actualizaciones de seguridad, o se hacen cuando alguien se acuerda?
+
+Las vulnerabilidades en dependencias desactualizadas son una de las causas más frecuentes de incidentes de seguridad —y una de las más fáciles de prevenir—.
+
+### 5. Revisión de prácticas del equipo
+
+La seguridad no depende solo de la configuración de los sistemas: depende de cómo trabajan las personas que los usan. Una revisión de prácticas incluye:
+
+- ¿Se comparten contraseñas por canales no seguros como WhatsApp o correo electrónico sin cifrar?
+- ¿Los desarrolladores tienen acceso directo a la base de datos de producción, o los cambios pasan por un proceso controlado?
+- ¿Se revisa el código nuevo antes de publicarlo, al menos con otra persona que no lo escribió?
+- ¿Hay un procedimiento claro para actuar si se detecta un incidente de seguridad?
+
+<Callout variant="warning" title="El eslabón más débil suele ser una persona, no un sistema">
+  La mayoría de los incidentes de seguridad no empiezan con un ataque técnico sofisticado. Empiezan con una contraseña compartida por error, un acceso que no se revocó a tiempo, o una configuración que alguien cambió para resolver un problema urgente y nunca volvió a su estado seguro. La auditoría de prácticas es tan importante como la auditoría técnica.
+</Callout>
+
+## Con qué frecuencia hacerla
+
+Una auditoría básica de seguridad no es un evento único. Los sistemas cambian, las personas rotan, las configuraciones se modifican. Lo que estaba bien hace seis meses puede no estarlo hoy.
+
+Una frecuencia razonable para la mayoría de las empresas es cada seis meses para la revisión completa y cada tres meses para la revisión de accesos —que es la que se desactualiza más rápido—. Si ocurre un cambio significativo —una persona clave se va, se integra un servicio nuevo importante, se detecta un incidente—, conviene adelantar la revisión.
+
+## Quién debería hacerla
+
+Si la empresa no tiene un responsable de seguridad dedicado, la auditoría puede distribuirse entre el equipo técnico existente, siempre que se siga un checklist estructurado y no dependa de que alguien "se acuerde" de revisar cada punto.
+
+Sin embargo, hay una limitación importante: el equipo que construyó y mantiene el sistema puede tener puntos ciegos. Sabe cómo deberían estar las cosas, pero también sabe qué atajos se tomaron y tiende a normalizarlos. Por eso, al menos una vez al año, conviene que la auditoría la haga alguien externo —un consultor, una empresa especializada— que mire el sistema sin los sesgos de quien convive con él todos los días.
+
+## Qué hacer con los resultados
+
+El resultado de una auditoría no es un puntaje: es una lista de hallazgos. Cada hallazgo debería clasificarse en tres niveles:
+
+- **Crítico:** puede causar un incidente grave en el corto plazo y requiere acción inmediata. Ejemplo: una base de datos expuesta a internet sin restricciones.
+- **Importante:** representa un riesgo real pero no inminente. Ejemplo: dependencias con actualizaciones de seguridad pendientes.
+- **Menor:** es una mejora deseable pero no urgente. Ejemplo: políticas de contraseñas que podrían ser más estrictas.
+
+La clasificación permite priorizar: atender lo crítico en días, lo importante en semanas, lo menor en el próximo ciclo de mejoras.
+
+<Callout variant="tip" title="No esperes a tener todo resuelto para empezar">
+  Una auditoría de seguridad puede devolver una lista larga de hallazgos. Eso no significa que el sistema sea un desastre: significa que la auditoría fue minuciosa. Lo importante es empezar por los críticos y avanzar de a uno. Un sistema con diez vulnerabilidades críticas corregidas es más seguro que uno con cien hallazgos sin clasificar y sin atender.
+</Callout>
+
+## La seguridad no es un producto, es un hábito
+
+Una auditoría de seguridad no hace más seguro al sistema: lo hace más consciente. La seguridad real se construye con los hábitos que se mantienen entre una auditoría y la siguiente: revisar accesos cuando alguien se va, aplicar actualizaciones cuando están disponibles, probar las copias de seguridad sin esperar a necesitarlas.
+
+Si tu empresa nunca hizo una auditoría de seguridad, el primer paso no es contratar a un especialista: es pedirle a tu equipo técnico que revise los cinco componentes de esta guía y te diga qué encontraron. El artículo sobre [riesgos técnicos que nadie revisa hasta que ya generaron una pérdida](/blog/riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde) complementa esta guía con categorías de riesgo que suelen pasar desapercibidas incluso para equipos técnicos experimentados.

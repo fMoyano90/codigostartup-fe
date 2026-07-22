@@ -289,3 +289,13 @@ topics:
       - emprendedores
     objective: los errores más comunes al crear una plataforma digital.
     notes: []
+  - id: como-convertir-una-necesidad-operacional-en-un-proyecto-tecnologico
+    title: Cómo convertir una necesidad operacional en un proyecto tecnológico
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo convertir una necesidad operacional en un proyecto tecnológico.
+    notes: []

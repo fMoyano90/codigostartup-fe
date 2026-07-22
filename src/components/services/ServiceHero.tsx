@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
+import { ANALYTICS_EVENTS } from "@/lib/analytics/events";
 import type { Service } from "@/lib/commercial/schema";
 
 type ServiceHeroProps = {
@@ -26,9 +27,15 @@ export function ServiceHero({ service, ctaHref }: ServiceHeroProps) {
             <div className="service-page-eyebrow">{service.hero.eyebrow ?? service.name}</div>
             <h1 className="service-page-title">{service.hero.title}</h1>
             <p className="service-page-intro">{service.hero.description}</p>
-            <Link href={href} prefetch={false} className="btn-primary">
+            <TrackedLink
+              href={href}
+              prefetch={false}
+              className="btn-primary"
+              event={ANALYTICS_EVENTS.clickServiceCta}
+              params={{ service: service.slug, cta_position: "hero" }}
+            >
               {service.cta.label} <span aria-hidden="true">→</span>
-            </Link>
+            </TrackedLink>
           </div>
           <aside className="service-page-audience" aria-label="Para quién es este servicio">
             <span className="service-page-audience-label">Pensado para</span>

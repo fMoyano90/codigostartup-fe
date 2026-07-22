@@ -100,6 +100,20 @@ export function validateArticleContent(
     });
   }
 
+  if (parsedFrontmatter.success) {
+    const allowedStatuses: Record<ArticleStatusDir, string[]> = {
+      drafts: ["draft", "approved"],
+      published: ["published"],
+      rejected: ["rejected"],
+    };
+    if (!allowedStatuses[dir].includes(parsedFrontmatter.data.status)) {
+      issues.push({
+        level: "error",
+        message: `El estado "${parsedFrontmatter.data.status}" no corresponde a la carpeta content/blog/${dir}/.`,
+      });
+    }
+  }
+
   const wordCount = countWords(body);
   if (wordCount < editorialRules.minimumWords) {
     issues.push({

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArticleCard } from "@/components/blog/ArticleCard";
 import { siteConfig } from "@/config/site";
 import { CategoryFilter } from "@/components/blog/CategoryFilter";
@@ -10,14 +11,24 @@ const DESCRIPTION =
   "Guías y análisis para crear productos digitales, automatizar procesos y evaluar inversiones tecnológicas sin tomar decisiones a ciegas.";
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Código Startup`,
+  title: { absolute: `${TITLE} | ${siteConfig.name}` },
   description: DESCRIPTION,
-  alternates: { canonical: `${siteConfig.baseUrl}/blog` },
+  alternates: {
+    canonical: `${siteConfig.baseUrl}/blog`,
+    types: { "application/rss+xml": `${siteConfig.baseUrl}/rss.xml` },
+  },
   openGraph: {
-    title: TITLE,
+    title: `${TITLE} | ${siteConfig.name}`,
     description: DESCRIPTION,
     url: `${siteConfig.baseUrl}/blog`,
     type: "website",
+    siteName: siteConfig.name,
+    locale: "es_CL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${TITLE} | ${siteConfig.name}`,
+    description: DESCRIPTION,
   },
 };
 
@@ -66,9 +77,9 @@ export default function BlogIndexPage() {
 
       <section className="blog-cta">
         <p>¿Tienes un proyecto en mente y quieres evaluar cómo abordarlo?</p>
-        <a href={siteConfig.contact.whatsappUrl} target="_blank" rel="noreferrer" className="btn-primary">
+        <Link href="/contacto?origen=blog" className="btn-primary">
           Cuéntanos tu proyecto →
-        </a>
+        </Link>
       </section>
     </main>
   );

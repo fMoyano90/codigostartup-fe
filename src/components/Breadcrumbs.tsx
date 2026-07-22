@@ -15,7 +15,9 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
           return (
             <li key={`${item.label}-${index}`} className="breadcrumbs-item">
               {item.href && !isLast ? (
-                <Link href={item.href} prefetch={item.prefetch}>{item.label}</Link>
+                <Link href={item.href} prefetch={item.prefetch ?? (item.href === "/" ? false : undefined)}>
+                  {item.label}
+                </Link>
               ) : (
                 <span aria-current={isLast ? "page" : undefined}>{item.label}</span>
               )}

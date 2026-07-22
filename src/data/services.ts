@@ -51,8 +51,24 @@ const serviceData: Service[] = [
     capabilities: ["estrategia", "ux-ui", "desarrollo", "contenido", "seo", "analitica", "lanzamiento-y-evolucion"],
     process: standardProcess,
     relatedProjects: [],
-    relatedArticles: [],
-    faq: [],
+    faq: [
+      {
+        question: "¿Cuánto demora construir un sitio web?",
+        answer: "Depende del alcance, la cantidad de contenido y las integraciones. Después del diagnóstico definimos tiempos, entregas y responsabilidades antes de comenzar.",
+      },
+      {
+        question: "¿También pueden ayudarnos con el contenido?",
+        answer: "Sí, cuando el proyecto lo necesita. Podemos organizar y producir el contenido necesario para explicar la solución con claridad, definiendo desde el inicio qué aporta cada parte.",
+      },
+      {
+        question: "¿El sitio quedará preparado para SEO?",
+        answer: "Incluimos fundamentos técnicos y editoriales de SEO cuando corresponda. Esto prepara el sitio para ser encontrado, pero no implica promesas de posiciones o resultados garantizados.",
+      },
+      {
+        question: "¿Podremos actualizar el sitio después?",
+        answer: "La forma de administrar contenido se define según las necesidades del proyecto. La entrega considera documentación y traspaso para que el sitio pueda operar y evolucionar.",
+      },
+    ],
     cta: {
       title: "Conversemos sobre tu presencia digital",
       description: "Cuéntanos qué necesitas comunicar y qué debería lograr tu sitio.",
@@ -63,8 +79,8 @@ const serviceData: Service[] = [
       title: "Desarrollo de sitios web | Código Startup",
       description: "Diseño y desarrollo de sitios web profesionales para empresas, emprendedores y startups.",
     },
-    editorialStatus: "draft",
-    editorialNotes: ["Pendiente validar preguntas frecuentes y proyectos realmente relacionados."],
+    editorialStatus: "ready",
+    editorialNotes: [],
   },
   {
     slug: "software-a-medida",
@@ -107,11 +123,24 @@ const serviceData: Service[] = [
     capabilities: ["estrategia", "ux-ui", "desarrollo", "analitica", "arquitectura", "seguridad", "lanzamiento-y-evolucion"],
     process: standardProcess,
     relatedProjects: ["subtech", "nextdrill", "nucleo-gestor"],
-    relatedArticles: [
-      "software-a-medida-versus-software-estandar-cual-conviene",
-      "cuando-dejar-de-usar-planillas",
+    faq: [
+      {
+        question: "¿Cuándo conviene construir software a medida?",
+        answer: "Cuando las herramientas existentes no se adaptan al proceso, la información está fragmentada o las tareas manuales generan errores y falta de trazabilidad. El diagnóstico permite comprobarlo antes de construir.",
+      },
+      {
+        question: "¿Pueden integrar los sistemas que ya usamos?",
+        answer: "Evaluamos cada integración según los accesos, la documentación y las capacidades reales de los sistemas involucrados. Solo se incorpora al alcance después de validar su factibilidad.",
+      },
+      {
+        question: "¿Cómo se define el alcance y el precio?",
+        answer: "Primero revisamos el proceso actual, sus usuarios y prioridades. Con esa información proponemos un alcance, tiempos y precio claros antes de comenzar la construcción.",
+      },
+      {
+        question: "¿Qué recibimos al finalizar?",
+        answer: "Además del sistema acordado, la entrega considera pruebas, documentación y traspaso para reducir la dependencia y facilitar su operación y evolución.",
+      },
     ],
-    faq: [],
     cta: {
       title: "Revisemos el proceso que necesitas digitalizar",
       description: "Cuéntanos cómo funciona hoy, quiénes participan y dónde están los principales problemas.",
@@ -122,8 +151,8 @@ const serviceData: Service[] = [
       title: "Desarrollo de software a medida | Código Startup",
       description: "Software a medida para centralizar información, reducir tareas manuales y adaptar la tecnología a la operación real.",
     },
-    editorialStatus: "draft",
-    editorialNotes: ["Pendiente validar preguntas frecuentes y alcance comercial definitivo."],
+    editorialStatus: "ready",
+    editorialNotes: [],
   },
   {
     slug: "automatizacion-de-procesos",
@@ -153,8 +182,24 @@ const serviceData: Service[] = [
     capabilities: ["estrategia", "desarrollo", "analitica", "arquitectura", "seguridad", "lanzamiento-y-evolucion"],
     process: standardProcess,
     relatedProjects: [],
-    relatedArticles: ["cuando-automatizar-un-proceso", "procesos-administrativos-automatizar-primero"],
-    faq: [],
+    faq: [
+      {
+        question: "¿Qué tareas conviene automatizar primero?",
+        answer: "Conviene comenzar por tareas repetitivas, con reglas claras y suficiente volumen. El diagnóstico también revisa excepciones, riesgos y dependencias antes de elegir el primer flujo.",
+      },
+      {
+        question: "¿Pueden conectar las herramientas que ya usamos?",
+        answer: "Evaluamos cada conexión según los accesos, APIs y documentación disponibles. Solo proponemos una integración después de validar que sea técnicamente viable.",
+      },
+      {
+        question: "¿Cómo sé si necesito automatización o software a medida?",
+        answer: "La automatización suele servir cuando el proceso ya está definido y necesita conectar tareas o herramientas. Si la operación requiere reglas, usuarios y datos propios, puede convenir software a medida.",
+      },
+      {
+        question: "¿Qué ocurre si una automatización falla?",
+        answer: "El diseño debe considerar validaciones, manejo de errores y una forma clara de supervisar el flujo. Esos controles se definen según el riesgo de cada proceso.",
+      },
+    ],
     cta: {
       title: "Identifiquemos qué conviene automatizar",
       description: "Describe las tareas repetitivas, herramientas y personas involucradas.",
@@ -165,8 +210,8 @@ const serviceData: Service[] = [
       title: "Automatización de procesos | Código Startup",
       description: "Automatización de tareas, documentos, reportes, notificaciones e integraciones para empresas.",
     },
-    editorialStatus: "draft",
-    editorialNotes: ["Pendiente validar casos relacionados y preguntas frecuentes."],
+    editorialStatus: "ready",
+    editorialNotes: [],
   },
   {
     slug: "desarrollo-mvp",
@@ -203,11 +248,24 @@ const serviceData: Service[] = [
     capabilities: ["estrategia", "ux-ui", "desarrollo", "analitica", "arquitectura", "lanzamiento-y-evolucion"],
     process: standardProcess,
     relatedProjects: ["entrena", "nextdrill", "nucleo-gestor"],
-    relatedArticles: [
-      "como-definir-el-alcance-de-un-mvp",
-      "como-validar-una-idea-sin-construir-el-producto",
+    faq: [
+      {
+        question: "¿Cuál es la diferencia entre un prototipo y un MVP?",
+        answer: "Un prototipo permite representar y revisar una experiencia. Un MVP es una primera versión funcional que usuarios reales pueden utilizar para validar hipótesis.",
+      },
+      {
+        question: "¿Un MVP es un producto construido de forma provisoria?",
+        answer: "No. Tiene un alcance reducido, pero debe estar bien construido para cumplir su objetivo y poder evolucionar si la validación entrega evidencia favorable.",
+      },
+      {
+        question: "¿Cómo se decide qué funcionalidades incluir?",
+        answer: "Priorizamos las funciones necesarias para completar la experiencia principal, validar las hipótesis definidas y aprender del uso real. Lo demás se deja para etapas posteriores.",
+      },
+      {
+        question: "¿Qué ocurre después del lanzamiento?",
+        answer: "Revisamos el uso y la evidencia obtenida para decidir si conviene ajustar, ampliar, mantener o cambiar la dirección del producto.",
+      },
     ],
-    faq: [],
     cta: {
       title: "Evaluemos la idea y lo que necesitas validar",
       description: "Cuéntanos qué problema resuelve, quién lo utilizará y qué necesitas aprender con la primera versión.",
@@ -218,8 +276,8 @@ const serviceData: Service[] = [
       title: "Desarrollo de MVP | Código Startup",
       description: "Diseño y desarrollo de una primera versión funcional para validar una idea con usuarios reales.",
     },
-    editorialStatus: "draft",
-    editorialNotes: ["Pendiente validar preguntas frecuentes y el contenido comparativo entre idea, prototipo, MVP y producto."],
+    editorialStatus: "ready",
+    editorialNotes: [],
   },
   {
     slug: "aplicaciones-web",
@@ -245,8 +303,24 @@ const serviceData: Service[] = [
     capabilities: ["estrategia", "ux-ui", "desarrollo", "analitica", "arquitectura", "seguridad", "lanzamiento-y-evolucion"],
     process: standardProcess,
     relatedProjects: ["entrena", "nextdrill", "nucleo-gestor"],
-    relatedArticles: ["app-web-o-automatizacion", "que-significa-que-un-software-sea-escalable"],
-    faq: [],
+    faq: [
+      {
+        question: "¿Cuándo conviene una aplicación web?",
+        answer: "Cuando distintos usuarios necesitan acceder desde el navegador a funciones, datos o procesos centralizados sin instalar una aplicación en cada dispositivo.",
+      },
+      {
+        question: "¿Una aplicación web puede tener distintos roles?",
+        answer: "Sí. Los permisos y experiencias se definen según las responsabilidades reales de cada tipo de usuario y los datos que necesita consultar o modificar.",
+      },
+      {
+        question: "¿Pueden construir una plataforma SaaS?",
+        answer: "Sí, SaaS es uno de los tipos de aplicación web contemplados. El alcance depende del modelo, los usuarios, la administración y las funciones que necesita la primera etapa.",
+      },
+      {
+        question: "¿La aplicación podrá evolucionar después?",
+        answer: "La arquitectura, documentación y plan de lanzamiento se definen para el alcance acordado y consideran la evolución esperada, sin construir anticipadamente funciones que todavía no se necesitan.",
+      },
+    ],
     cta: {
       title: "Conversemos sobre tu aplicación web",
       description: "Cuéntanos quién la usará, qué proceso resolverá y en qué etapa se encuentra.",
@@ -257,8 +331,8 @@ const serviceData: Service[] = [
       title: "Desarrollo de aplicaciones web | Código Startup",
       description: "Desarrollo de SaaS, plataformas B2B, portales, reservas, paneles y aplicaciones web.",
     },
-    editorialStatus: "draft",
-    editorialNotes: ["Pendiente validar preguntas frecuentes y alcance comercial definitivo."],
+    editorialStatus: "ready",
+    editorialNotes: [],
   },
   {
     slug: "aplicaciones-moviles",
@@ -283,8 +357,24 @@ const serviceData: Service[] = [
     capabilities: ["estrategia", "ux-ui", "desarrollo", "analitica", "arquitectura", "seguridad", "lanzamiento-y-evolucion"],
     process: standardProcess,
     relatedProjects: ["entrena", "nucleo-gestor"],
-    relatedArticles: [],
-    faq: [],
+    faq: [
+      {
+        question: "¿Cuándo conviene una aplicación móvil en lugar de una web?",
+        answer: "Cuando la experiencia depende del teléfono, la operación ocurre en terreno o se necesitan capacidades como captura móvil, notificaciones o funcionamiento offline dentro del alcance definido.",
+      },
+      {
+        question: "¿La aplicación puede funcionar sin conexión?",
+        answer: "Sí, cuando el caso lo requiere. Primero definimos qué funciones y datos deben estar disponibles offline y cómo se sincronizarán cuando vuelva la conectividad.",
+      },
+      {
+        question: "¿Puede enviar notificaciones?",
+        answer: "Las notificaciones pueden incorporarse cuando existe un evento relevante y una acción clara para la persona usuaria. Su alcance se define junto con el flujo del producto.",
+      },
+      {
+        question: "¿También diseñan la experiencia móvil?",
+        answer: "Sí. El servicio contempla diseño UX/UI móvil alineado con el contexto, las tareas y las condiciones reales en que se utilizará la aplicación.",
+      },
+    ],
     cta: {
       title: "Evaluemos tu aplicación móvil",
       description: "Cuéntanos quién la utilizará, dónde y qué información necesita administrar.",
@@ -295,8 +385,8 @@ const serviceData: Service[] = [
       title: "Desarrollo de aplicaciones móviles | Código Startup",
       description: "Aplicaciones móviles para clientes, trabajadores y operaciones en terreno.",
     },
-    editorialStatus: "draft",
-    editorialNotes: ["Pendiente validar preguntas frecuentes y artículos relacionados."],
+    editorialStatus: "ready",
+    editorialNotes: [],
   },
   {
     slug: "auditoria-y-evolucion",
@@ -321,8 +411,24 @@ const serviceData: Service[] = [
     capabilities: ["estrategia", "arquitectura", "seguridad", "analitica", "desarrollo", "lanzamiento-y-evolucion"],
     process: standardProcess,
     relatedProjects: [],
-    relatedArticles: ["senales-de-que-tu-arquitectura-necesita-una-revision", "que-es-la-deuda-tecnica-para-founders"],
-    faq: [],
+    faq: [
+      {
+        question: "¿Necesitan acceso al código fuente?",
+        answer: "El acceso al código permite una revisión más profunda. Si no está disponible, podemos definir un alcance limitado a la información, documentación y comportamiento observable del sistema.",
+      },
+      {
+        question: "¿Qué entrega una auditoría técnica?",
+        answer: "Entregamos un diagnóstico, hallazgos priorizados, riesgos, dependencias y recomendaciones para construir un roadmap de evolución.",
+      },
+      {
+        question: "¿La auditoría incluye corregir los problemas encontrados?",
+        answer: "La auditoría identifica y prioriza. Las correcciones o la evolución posterior se estiman como un alcance separado después de comprender los hallazgos.",
+      },
+      {
+        question: "¿Cuánto demora una revisión?",
+        answer: "Depende del tamaño del sistema, la documentación, los accesos disponibles y las áreas que deban revisarse. El alcance y los tiempos se definen antes de comenzar.",
+      },
+    ],
     cta: {
       title: "Revisemos el estado de tu sistema",
       description: "Cuéntanos qué problema presenta, qué tecnologías utiliza y qué acceso o documentación existe.",
@@ -333,8 +439,8 @@ const serviceData: Service[] = [
       title: "Auditoría y evolución de software | Código Startup",
       description: "Revisión de deuda técnica, arquitectura, seguridad, rendimiento y capacidad de evolución de sistemas existentes.",
     },
-    editorialStatus: "draft",
-    editorialNotes: ["Pendiente validar preguntas frecuentes y proyectos relacionados."],
+    editorialStatus: "ready",
+    editorialNotes: [],
   },
 ];
 

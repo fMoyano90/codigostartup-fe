@@ -1,0 +1,140 @@
+---
+title: Cómo planificar nuevas funcionalidades sin destruir lo que ya funciona
+slug: como-planificar-nuevas-funcionalidades-sin-destruir-lo-que-ya-funciona
+description: >-
+  Estrategias para incorporar nuevas funcionalidades a un producto digital sin
+  romper las existentes, mantener la estabilidad y no multiplicar los costos de
+  mantenimiento.
+excerpt: >-
+  Agregar una funcionalidad nueva a un sistema que ya funciona es una de las
+  operaciones más riesgosas en desarrollo de software. No porque sea difícil
+  construir lo nuevo, sino porque lo nuevo puede romper lo viejo. Y cuando lo
+  viejo es lo que usan tus clientes todos los días, el costo de romperlo supera
+  por mucho el beneficio de lo nuevo.
+category: escalabilidad-y-crecimiento
+tags:
+  - planificación de funcionalidades
+  - desarrollo de software
+  - estabilidad de sistemas
+  - gestión de producto
+  - mantenimiento de software
+audience:
+  - empresarios
+  - gerentes
+intent: commercial
+funnelStage: awareness
+services:
+  - auditoria-y-evolucion
+  - aplicaciones-web
+  - software-a-medida
+cta:
+  type: service
+  target: auditoria-y-evolucion
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-10'
+updatedAt: '2026-07-13'
+approvedAt: '2026-07-12'
+publishedAt: '2026-07-12'
+seo:
+  title: >-
+    Cómo planificar nuevas funcionalidades sin destruir lo que ya funciona |
+    Código Startup
+  description: >-
+    Guía para planificar nuevas funcionalidades sin romper lo existente: cómo
+    evaluar el impacto, probar antes de lanzar, implementar por etapas y reducir
+    el riesgo de error en sistemas en producción.
+  primaryKeyword: planificar nuevas funcionalidades sin romper lo existente
+  secondaryKeywords:
+    - cómo agregar funciones a un sistema
+    - desarrollo sin romper lo que funciona
+    - planificación de mejoras de software
+    - estabilidad al agregar funcionalidades
+    - gestión de cambios en software
+relatedArticles:
+  - que-es-la-deuda-tecnica-para-founders
+  - senales-de-que-tu-arquitectura-necesita-una-revision
+  - que-significa-que-un-software-sea-escalable
+reviewStatus: pending
+reviewScore: null
+---
+
+El momento más peligroso en la vida de un producto digital no es el lanzamiento. Es cada vez que se le agrega algo nuevo. La funcionalidad que ya funciona, la que los clientes usan sin pensar, la que parece sólida e inmutable —esa es la que está en riesgo cada vez que el equipo mete mano en el sistema para agregar algo distinto.
+
+No es un problema de falta de cuidado. Es una propiedad de los sistemas complejos: cuando modificás una parte, las consecuencias se propagan a otras partes que no anticipaste. La buena noticia es que hay formas de minimizar ese riesgo. No de eliminarlo —eso no existe—, pero sí de reducirlo a un nivel donde el beneficio de lo nuevo justifique ampliamente el riesgo.
+
+## Por qué lo nuevo rompe lo viejo
+
+Para entender el problema, imaginá un sistema como una red de conexiones. Cada funcionalidad no es una isla: comparte datos con otras, depende de servicios comunes, usa las mismas tablas en la base de datos. Cuando construiste la funcionalidad original, tomaste decisiones pensando en cómo funcionaba en ese momento. La nueva funcionalidad llega con sus propias necesidades, que pueden chocar con esas decisiones.
+
+Un ejemplo concreto: tu sistema de facturación asume que cada cliente tiene una sola dirección de envío. Funcionó perfecto durante dos años. Ahora querés agregar la posibilidad de que un cliente tenga múltiples direcciones. Parece un cambio simple —agregar una tabla de direcciones—, pero toca todo lo que depende de "la dirección del cliente": el cálculo de envío, los reportes de ventas por zona, la exportación a Excel que usa el área de logística, el formulario de checkout, las notificaciones automáticas.
+
+El cambio es chico en concepto pero enorme en alcance. Y sin una planificación adecuada, algo de todo eso se va a romper.
+
+## Cinco prácticas para minimizar el riesgo
+
+### 1. Entender el impacto antes de escribir una línea de código
+
+Antes de empezar a construir, el equipo debería responder una pregunta: ¿qué partes del sistema actual van a ser afectadas por este cambio? La respuesta no es intuitiva —por eso se necesita un análisis—, pero es la diferencia entre encontrar problemas en la etapa de diseño y encontrarlos en producción con los clientes como testers.
+
+Ese análisis puede ser tan simple como una lista de los módulos, pantallas y procesos que comparten información con la parte que vas a modificar. Si la lista tiene más de diez elementos, el cambio es más riesgoso de lo que parece y necesita más validación.
+
+### 2. Agregar sin modificar
+
+Una de las causas más comunes de rotura es modificar código existente en lugar de extenderlo. Cuando tocás una función que ya funciona para que haga algo adicional, corrés el riesgo de que deje de funcionar para lo que ya hacía.
+
+La alternativa es construir la funcionalidad nueva como una capa adicional, sin alterar lo que ya existe. No siempre es posible —a veces el cambio requiere modificar estructuras profundas—, pero cuando es posible, reduce drásticamente el riesgo.
+
+<Callout variant="tip" title="La regla del andamio">
+  Pensá en la funcionalidad nueva como un andamio que se apoya sobre la estructura existente sin modificarla. Si el andamio funciona, después podés evaluar si conviene integrarlo a la estructura permanente. Si no funciona, lo sacás y la estructura queda intacta.
+</Callout>
+
+### 3. Probar en un entorno que no afecta a los clientes
+
+Todo cambio debería pasar por un entorno de pruebas antes de llegar a los usuarios reales. Esto parece obvio, pero muchas empresas —sobre todo las que están creciendo rápido y tienen presión por entregar— saltean este paso total o parcialmente.
+
+El entorno de pruebas no es solo para verificar que lo nuevo funciona. Es para verificar que lo viejo sigue funcionando. Las pruebas de regresión —así se llaman técnicamente— son la red de seguridad que detecta si el cambio nuevo rompió algo que antes andaba.
+
+Si tu equipo no tiene un conjunto de pruebas automatizadas que se ejecuten antes de cada cambio, cada funcionalidad nueva es una apuesta. Y en las apuestas, a veces se gana y a veces se pierden clientes.
+
+### 4. Lanzar de a poco, no de golpe
+
+No hace falta que la funcionalidad nueva esté disponible para todos los usuarios desde el primer minuto. Se puede liberar de forma gradual: primero para un 5% de los usuarios, después para un 20%, después para todos. Si algo falla en el primer grupo, el impacto es mínimo y se puede corregir antes de que afecte a la mayoría.
+
+Esta técnica —conocida como feature flags o despliegues progresivos— requiere una inversión inicial en infraestructura, pero se paga rápido en incidentes evitados. Preguntale a tu equipo si pueden implementarla. Si la respuesta es que el sistema actual no lo permite, ese es un dato importante sobre el estado de tu arquitectura.
+
+### 5. Tener un plan para volver atrás
+
+Todo despliegue debería tener un procedimiento documentado para deshacer el cambio si algo sale mal. No alcanza con "si falla, lo arreglamos". Arreglar bajo presión, con los clientes reclamando, lleva mucho más tiempo que volver a la versión anterior y resolver el problema con calma.
+
+El plan de rollback —así se llama— no es pesimismo: es profesionalismo. Significa que el equipo reconoce que los sistemas complejos son impredecibles y prefiere tener una salida antes que rezar para que todo salga bien.
+
+<Callout variant="warning" title="Si no podés volver atrás, no deberías avanzar">
+  Hay cambios que, por su naturaleza, no se pueden deshacer fácilmente —modificaciones en la base de datos, migraciones de datos, cambios en la lógica de negocio que generan información nueva—. Para esos casos, la planificación tiene que ser especialmente cuidadosa, con pruebas mucho más exhaustivas y, preferiblemente, con una ventana de lanzamiento en un horario de bajo uso.
+</Callout>
+
+## El costo de no planificar
+
+Cuando una funcionalidad nueva rompe algo que ya funcionaba, el costo no es solo técnico. Es también —y sobre todo— de negocio:
+
+- Clientes que no pueden operar y llaman o escriben quejándose.
+- El equipo de soporte dedicando horas a atender reclamos en lugar de resolver otros problemas.
+- Desarrolladores que dejan lo que estaban haciendo para apagar el incendio.
+- La confianza de los usuarios, que se erosiona un poco con cada incidente.
+
+Ese costo rara vez se mide, pero es concreto y suele ser mucho mayor que el tiempo que hubiera tomado planificar adecuadamente.
+
+## Cómo saber si tu equipo ya planifica bien
+
+Tres preguntas para hacerle a tu equipo técnico hoy mismo:
+
+1. **Antes de empezar una funcionalidad nueva, ¿hacen un análisis de impacto sobre lo que ya existe?** Si la respuesta es "depende de la funcionalidad", pediles que definan un criterio claro de cuándo se hace y cuándo no.
+
+2. **¿Tienen pruebas automatizadas que detecten si algo que funcionaba dejó de funcionar?** Si la respuesta es no, cada despliegue es un salto al vacío.
+
+3. **¿Pueden deshacer un cambio en menos de diez minutos si algo sale mal?** Si la respuesta es no, necesitan trabajar en el plan de rollback antes de seguir construyendo cosas nuevas.
+
+Un equipo que responde sí a las tres preguntas puede crecer agregando funcionalidades con un riesgo controlado. Uno que responde no a alguna está acumulando riesgos que, tarde o temprano, se van a materializar.
+
+Para entender mejor por qué ciertas arquitecturas resisten mejor los cambios que otras, leé [qué significa que un software sea escalable](/blog/que-significa-que-un-software-sea-escalable). Y si estás en un punto donde los cambios ya son sistemáticamente problemáticos, el artículo sobre [cuándo conviene reconstruir un producto digital](/blog/cuando-conviene-reconstruir-un-producto-digital) te ayuda a evaluar si el problema se resuelve con mejores procesos o requiere una intervención estructural.

@@ -175,3 +175,53 @@ topics:
       - gerentes
     objective: qué necesita una plataforma para operar en varios países.
     notes: []
+  - id: como-escalar-un-equipo-tecnologico-sin-perder-control
+    title: Cómo escalar un equipo tecnológico sin perder control
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo escalar un equipo tecnológico sin perder control.
+    notes: []
+  - id: cuando-contratar-al-primer-desarrollador-interno
+    title: Cuándo contratar al primer desarrollador interno
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: cuándo contratar al primer desarrollador interno.
+    notes: []
+  - id: que-metricas-tecnicas-deberia-conocer-un-founder
+    title: Qué métricas técnicas debería conocer un founder
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: qué métricas técnicas debería conocer un founder.
+    notes: []
+  - id: como-planificar-nuevas-funcionalidades-sin-destruir-lo-que-ya-funciona
+    title: Cómo planificar nuevas funcionalidades sin destruir lo que ya funciona
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo planificar nuevas funcionalidades sin destruir lo que ya funciona.
+    notes: []
+  - id: el-costo-de-crecer-sobre-una-base-tecnologica-debil
+    title: El costo de crecer sobre una base tecnológica débil
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: el costo de crecer sobre una base tecnológica débil.
+    notes: []

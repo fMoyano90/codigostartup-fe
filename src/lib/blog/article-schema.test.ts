@@ -12,6 +12,8 @@ function validFrontmatter(overrides: Record<string, unknown> = {}) {
     audience: ["founders"],
     intent: "informational",
     funnelStage: "awareness",
+    services: ["desarrollo-mvp"],
+    cta: { type: "service", target: "desarrollo-mvp" },
     author: "Código Startup",
     status: "draft",
     featured: false,
@@ -64,5 +66,50 @@ describe("blogArticleFrontmatterSchema", () => {
     delete withoutTitle.title;
     const result = safeParseArticleFrontmatter(withoutTitle);
     expect(result.success).toBe(false);
+  });
+
+  it("accepts an optional article image with accessible alternative text", () => {
+    const result = safeParseArticleFrontmatter(validFrontmatter({
+      image: { src: "/og-image.svg", alt: "Código Startup" },
+    }));
+    expect(result.success).toBe(true);
+  });
+
+  it("requires the CTA target to be one of the related services", () => {
+    const result = safeParseArticleFrontmatter(validFrontmatter({
+      services: ["desarrollo-mvp"],
+      cta: { type: "service", target: "sitios-web" },
+    }));
+    expect(result.success).toBe(false);
+  });
+
+  it("requires publishedAt only for published articles", () => {
+    const publishedWithoutDate = safeParseArticleFrontmatter(validFrontmatter({ status: "published" }));
+    const draftWithDate = safeParseArticleFrontmatter(validFrontmatter({ publishedAt: "2026-07-21" }));
+    const published = safeParseArticleFrontmatter(validFrontmatter({
+      status: "published",
+      approvedAt: "2026-07-21",
+      publishedAt: "2026-07-21",
+    }));
+
+    expect(publishedWithoutDate.success).toBe(false);
+    expect(draftWithDate.success).toBe(false);
+    expect(published.success).toBe(true);
+  });
+
+  it("rejects duplicate services and unsafe image paths", () => {
+    const duplicateServices = safeParseArticleFrontmatter(validFrontmatter({
+      services: ["desarrollo-mvp", "desarrollo-mvp"],
+    }));
+    const remoteImage = safeParseArticleFrontmatter(validFrontmatter({
+      image: { src: "//example.com/image.jpg", alt: "Imagen remota" },
+    }));
+    const traversalImage = safeParseArticleFrontmatter(validFrontmatter({
+      image: { src: "/blog/../secret.png", alt: "Ruta inválida" },
+    }));
+
+    expect(duplicateServices.success).toBe(false);
+    expect(remoteImage.success).toBe(false);
+    expect(traversalImage.success).toBe(false);
   });
 });

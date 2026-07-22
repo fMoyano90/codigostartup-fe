@@ -1,0 +1,140 @@
+---
+title: Qué hacer ante una filtración de datos
+slug: que-hacer-ante-una-filtracion-de-datos
+description: >-
+  Una guía práctica para empresarios y gerentes sobre los pasos inmediatos que
+  debe tomar una empresa cuando detecta una filtración de datos, desde la
+  contención hasta la comunicación y la recuperación.
+excerpt: >-
+  Detectar que información de la empresa o de sus clientes salió de los sistemas
+  es uno de los momentos más estresantes para cualquier organización. Este
+  artículo presenta un protocolo de respuesta ordenado: qué hacer en las
+  primeras horas, cómo comunicar el incidente y qué pasos seguir para que no
+  vuelva a ocurrir.
+category: seguridad-y-riesgos
+tags:
+  - seguridad
+  - filtración de datos
+  - respuesta a incidentes
+  - protección de datos
+  - gestión de crisis
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+services:
+  - auditoria-y-evolucion
+  - software-a-medida
+cta:
+  type: service
+  target: auditoria-y-evolucion
+author: Código Startup
+status: draft
+featured: false
+createdAt: '2026-04-28'
+updatedAt: '2026-04-30'
+approvedAt: null
+publishedAt: null
+seo:
+  title: Qué hacer ante una filtración de datos | Código Startup
+  description: >-
+    Guía paso a paso para empresarios: qué hacer en las primeras horas tras
+    detectar una filtración de datos. Contención, comunicación, análisis y
+    medidas para que no se repita.
+  primaryKeyword: qué hacer ante una filtración de datos
+  secondaryKeywords:
+    - respuesta a filtración de datos
+    - protocolo ante fuga de información
+    - gestión de incidentes de seguridad
+    - filtración de datos empresa
+    - proteger datos de clientes
+relatedArticles:
+  - que-datos-de-tus-clientes-debes-proteger
+  - que-es-una-brecha-de-seguridad
+  - como-proteger-la-informacion-almacenada-en-planillas
+reviewStatus: pending
+reviewScore: null
+---
+
+El momento en que una empresa descubre que información sensible salió de sus sistemas es uno de los más difíciles de gestionar. La mezcla de urgencia, incertidumbre y presión externa lleva a muchas organizaciones a tomar decisiones apresuradas que empeoran la situación: comunicar antes de entender, borrar evidencia que después hace falta, o minimizar el problema hasta que se vuelve imposible de ocultar.
+
+Una filtración de datos —también llamada fuga de información o brecha de datos— ocurre cuando información que debería permanecer dentro de los sistemas de la empresa es accedida, copiada, transmitida o expuesta sin autorización. Puede tratarse de datos de clientes, información financiera, propiedad intelectual, comunicaciones internas o cualquier otro activo de información.
+
+Este artículo presenta un protocolo de respuesta ordenado en cuatro fases: contener, entender, comunicar y corregir. Está pensado para empresarios y gerentes que necesitan un marco de acción claro, sin tecnicismos innecesarios.
+
+## Fase 1: Contener (las primeras horas)
+
+El objetivo de la primera fase no es resolver el problema: es evitar que siga creciendo. Cada minuto que pasa desde que se detecta una filtración hasta que se contiene, la información puede seguir saliendo. Las acciones de esta fase son inmediatas y no requieren un análisis exhaustivo.
+
+**Aislar los sistemas comprometidos.** Si se sabe o se sospecha por dónde se está filtrando la información —un servidor, una cuenta de correo, una base de datos, una API—, el primer paso es cortar el acceso externo a ese sistema. Esto puede implicar desconectar un servidor de internet, desactivar una cuenta de usuario, revocar claves de API o bloquear direcciones IP. La prioridad es detener la salida de datos, incluso si eso implica una interrupción del servicio.
+
+**Cambiar credenciales críticas.** Todas las contraseñas, tokens de acceso y claves de API que estén en el alcance del incidente deben ser rotadas de inmediato. Si no se sabe exactamente qué credenciales están comprometidas, se rotan todas las que razonablemente podrían estarlo. Esto incluye credenciales de administración, cuentas de servicio y accesos de proveedores externos.
+
+**Preservar la evidencia.** La urgencia por contener no debe llevar a destruir la información que después va a hacer falta para entender qué pasó. Antes de apagar un servidor o borrar un archivo, tomá una copia del estado actual: logs del sistema, registros de acceso, capturas de pantalla, archivos de configuración. Si no sabés qué preservar, pedile a alguien con conocimiento técnico que haga una imagen forense del sistema afectado.
+
+**Activar al equipo de respuesta.** En empresas pequeñas, el "equipo de respuesta" pueden ser dos o tres personas: el dueño o gerente general, el responsable técnico y el asesor legal. En empresas más grandes, debería existir un protocolo documentado con roles, responsabilidades y canales de comunicación predefinidos. Si no existe, la filtración actual es el momento de improvisarlo con las personas clave disponibles.
+
+<Callout variant="warning" title="Lo que no hay que hacer en las primeras horas">
+  No borres logs, no modifiques sistemas sin documentar lo que hacés, no reinicies servidores sin antes preservar su estado, y no informes a clientes o autoridades sin antes entender el alcance real del incidente. Cada una de estas acciones puede destruir evidencia necesaria para la investigación o generar compromisos que después no se pueden sostener.
+</Callout>
+
+## Fase 2: Entender (las primeras 24 a 48 horas)
+
+Una vez contenida la salida de datos, el foco pasa a entender qué ocurrió, qué información se vio comprometida y qué alcance tiene el incidente. Esta fase no requiere certezas absolutas —que rara vez se obtienen en plazos cortos—, pero sí un nivel de comprensión suficiente para tomar decisiones informadas.
+
+**Determinar qué datos se filtraron.** No es lo mismo que se haya filtrado una lista de direcciones de correo electrónico que una base de datos con información financiera, documentos de identidad o datos de tarjetas de crédito. La naturaleza de los datos determina las obligaciones legales, el impacto reputacional y las acciones de remediación necesarias.
+
+**Determinar cómo ocurrió.** ¿Fue un ataque externo que explotó una vulnerabilidad? ¿Un error de configuración que dejó expuesta una base de datos? ¿Una cuenta de empleado comprometida por phishing? ¿Un ex empleado que conservaba accesos no revocados? La causa determina qué medidas correctivas son necesarias y qué otros sistemas podrían estar en riesgo.
+
+**Determinar el alcance temporal.** ¿Desde cuándo estuvo ocurriendo la filtración? ¿Fue un evento puntual o una exposición continua durante semanas o meses? La respuesta a esta pregunta define el universo de datos potencialmente comprometidos y el alcance de las notificaciones que haya que hacer.
+
+**Documentar todo.** Cada acción tomada, cada hallazgo, cada decisión debe quedar registrada con fecha y hora. Esta documentación va a ser necesaria para la comunicación con clientes, para cumplir con obligaciones legales que puedan existir y para el análisis posterior que permita prevenir incidentes similares.
+
+<Callout variant="info" title="Si no tenés certezas, decilo">
+  Durante la fase de entendimiento, es preferible decir "estamos investigando y todavía no tenemos una respuesta definitiva" que dar información que después resulte ser incorrecta. La credibilidad se construye en estas horas, y rectificar después es mucho más difícil que ser transparente desde el principio.
+</Callout>
+
+## Fase 3: Comunicar (cuando el entendimiento es suficiente)
+
+La comunicación de una filtración de datos es inevitable en la mayoría de los casos. Lo que varía es cuándo, cómo y a quién se comunica. Una buena comunicación puede preservar la confianza de clientes y socios. Una mala comunicación puede causar más daño que la filtración misma.
+
+**Evaluar las obligaciones legales de notificación.** Muchos países tienen leyes que obligan a notificar filtraciones de datos personales a las autoridades de protección de datos y a los titulares de los datos en plazos determinados —a veces tan cortos como 72 horas desde la detección—. Si tu empresa opera en un marco regulatorio que lo exige, consultá con un asesor legal antes de comunicar para asegurarte de cumplir con los requisitos de forma y plazo.
+
+**Comunicar a los afectados.** Si la filtración involucra datos de clientes, proveedores o empleados, la comunicación debe ser directa, clara y sin tecnicismos. Los elementos que debe incluir: qué ocurrió (en términos comprensibles), qué datos están potencialmente comprometidos, qué medidas está tomando la empresa para contener y remediar el incidente, qué pasos deberían tomar los afectados para protegerse —como cambiar contraseñas o monitorear sus cuentas— y un canal de contacto para consultas adicionales.
+
+**Preparar la comunicación interna.** Los empleados de la empresa van a recibir consultas de clientes, proveedores y conocidos. Si no saben qué pasó ni qué responder, el mensaje que llega al mercado es inconsistente y genera más desconfianza. Un comunicado interno breve, con los hechos confirmados y una guía de respuestas para consultas frecuentes, evita que la información circule de forma desordenada.
+
+**Comunicar a socios y proveedores afectados.** Si la filtración compromete datos compartidos con socios comerciales o proveedores, notificarles permite que ellos tomen sus propias medidas de contención y evita que el incidente se propague a través de integraciones y accesos cruzados.
+
+Para entender mejor qué información merece un tratamiento especial, el artículo sobre [qué datos de tus clientes debes proteger](/blog/que-datos-de-tus-clientes-debes-proteger) ofrece criterios para clasificar la sensibilidad de los datos. Y si querés comprender cómo una vulnerabilidad se convierte en un incidente real, [qué es una brecha de seguridad](/blog/que-es-una-brecha-de-seguridad) explica el proceso desde la exposición hasta el daño.
+
+## Fase 4: Corregir y prevenir (después del incidente)
+
+Superado el incidente inmediato, el trabajo no termina. La fase de corrección y prevención es la que determina si la empresa aprendió de lo ocurrido o si va a repetir el mismo error.
+
+**Cerrar la vulnerabilidad que causó el incidente.** Si la filtración fue por una vulnerabilidad técnica, aplicá el parche o la corrección correspondiente. Si fue por un error de configuración, corregilo y verificá que el mismo error no exista en otros sistemas. Si fue por un acceso no revocado, implementá el protocolo de gestión de salidas que debería haber existido.
+
+**Hacer una auditoría de sistemas similares.** Es poco frecuente que una vulnerabilidad exista en un solo lugar. Si un servidor estaba mal configurado, probablemente otros también lo estén. Si una cuenta tenía permisos excesivos, probablemente otras cuentas también. La auditoría post-incidente es la oportunidad de encontrar y cerrar vulnerabilidades antes de que alguien más las encuentre.
+
+**Revisar y actualizar el plan de respuesta.** El incidente que acaba de ocurrir expuso las debilidades del plan de respuesta —o la ausencia de un plan—. Documentar qué funcionó, qué no funcionó y qué debería hacerse distinto la próxima vez convierte un incidente doloroso en una inversión en preparación.
+
+**Evaluar la necesidad de soporte externo.** Dependiendo de la gravedad del incidente, puede ser necesario contratar a una empresa especializada en respuesta a incidentes para la investigación forense, a un estudio jurídico para las notificaciones regulatorias, o a una consultora de comunicación para la gestión de crisis. La decisión de buscar ayuda externa no es una admisión de incompetencia: es un reconocimiento de que ciertas situaciones requieren especialistas.
+
+<Callout variant="tip" title="El aprendizaje que ninguna empresa debería necesitar dos veces">
+  Después de un incidente, hacé una reunión con todas las personas involucradas en la respuesta —técnicos, legales, gerenciales— con una sola regla: está prohibido buscar culpables. El objetivo de la reunión no es señalar quién se equivocó, sino identificar qué procesos fallaron y cómo corregirlos. Las empresas que convierten los incidentes en cacería de brujas son las que aseguran que el próximo incidente nadie va a reportar a tiempo.
+</Callout>
+
+## Qué hacer si la filtración es por un error interno
+
+No todas las filtraciones son causadas por atacantes externos. Un empleado que envía por error una planilla con datos de clientes a un destinatario equivocado, una base de datos que se deja expuesta por una mala configuración durante una migración, o un documento interno que se comparte con un proveedor sin las restricciones adecuadas son filtraciones tanto como un ataque informático.
+
+En estos casos, la contención suele ser más simple —alcanza con eliminar el acceso indebido— pero la gestión de la situación requiere tanta seriedad como si hubiera sido un ataque. Minimizar el incidente porque "fue un error sin mala intención" es un error: el daño para los clientes cuyos datos quedaron expuestos es el mismo, y las obligaciones legales también.
+
+## Prepararse antes de que ocurra
+
+La mejor respuesta a una filtración de datos es la que se planificó antes de que ocurra. Así como las empresas tienen un plan de evacuación en caso de incendio sin esperar a que haya un incendio, tener un plan de respuesta a incidentes de seguridad no es paranoia: es preparación.
+
+Un plan mínimo debería incluir: una lista de las personas a convocar en caso de incidente con sus datos de contacto, una clasificación previa de los datos que maneja la empresa según su sensibilidad, una plantilla de comunicado para clientes y un procedimiento documentado para las primeras cuatro horas. No hace falta que sea un documento extenso: una página bien escrita y accesible para las personas que van a necesitarla es más útil que un manual de cien páginas que nadie leyó.
+
+Proteger la información de la empresa no es solo instalar software de seguridad: es tener un plan para cuando la seguridad falla. Porque en algún momento va a fallar. Y cuando eso pase, la diferencia entre un incidente gestionable y una crisis fuera de control no va a estar en la tecnología: va a estar en la preparación.

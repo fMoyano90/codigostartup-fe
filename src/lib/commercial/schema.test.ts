@@ -15,7 +15,6 @@ function validService(overrides: Record<string, unknown> = {}) {
     capabilities: ["ux-ui"],
     process: [],
     relatedProjects: [],
-    relatedArticles: [],
     faq: [],
     cta: {
       title: "CTA",

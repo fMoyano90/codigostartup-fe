@@ -1,5 +1,3 @@
-import { readdirSync } from "node:fs";
-import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   capabilities,
@@ -36,21 +34,6 @@ describe("commercial data", () => {
       for (const serviceSlug of project.relatedServices) {
         const service = services.find(({ slug }) => slug === serviceSlug);
         expect(service?.relatedProjects).toContain(project.slug);
-      }
-    }
-  });
-
-  it("references only published related articles", () => {
-    const publishedDir = join(process.cwd(), "content", "blog", "published");
-    const publishedSlugs = new Set(
-      readdirSync(publishedDir)
-        .filter((fileName) => fileName.endsWith(".mdx"))
-        .map((fileName) => fileName.replace(/\.mdx$/, ""))
-    );
-
-    for (const service of services) {
-      for (const articleSlug of service.relatedArticles) {
-        expect(publishedSlugs.has(articleSlug), `${articleSlug} debe estar publicado`).toBe(true);
       }
     }
   });

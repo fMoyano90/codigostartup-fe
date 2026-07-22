@@ -9,7 +9,7 @@ import {
   parseArticleFrontmatter,
   type BlogArticleFrontmatter,
 } from "@/lib/blog/article-schema";
-import { calculateReadingTime, countWords } from "@/lib/blog/article-utils";
+import { calculateReadingTime, countWords, formatCalendarDate } from "@/lib/blog/article-utils";
 import { mdxComponents } from "@/components/blog/mdx-components";
 import type { ReactElement } from "react";
 
@@ -84,8 +84,26 @@ function sortByPublishedDateDesc(articles: ArticleMetadata[]): ArticleMetadata[]
   });
 }
 
+export function isPubliclyPublished(
+  metadata: Pick<ArticleMetadata, "status" | "publishedAt">,
+  now = Date.now(),
+) {
+  return metadata.status === "published"
+    && Boolean(metadata.publishedAt)
+    && (metadata.publishedAt as string) <= formatCalendarDate(now);
+}
+
+function statusMatchesDirectory(dir: ArticleStatusDir, metadata: ArticleMetadata) {
+  if (dir === "published") return isPubliclyPublished(metadata);
+  if (dir === "drafts") return metadata.status === "draft" || metadata.status === "approved";
+  return metadata.status === "rejected";
+}
+
 export function getPublishedSlugs(): string[] {
-  return listMdxFiles("published");
+  return listMdxFiles("published").filter((fileSlug) => {
+    const { metadata } = parseArticleMetadata("published", fileSlug);
+    return statusMatchesDirectory("published", metadata);
+  });
 }
 
 export function getAllPublishedArticles(): ArticleMetadata[] {
@@ -106,7 +124,8 @@ export function getArticleMetadataBySlug(
   dir: ArticleStatusDir = "published"
 ): ArticleMetadata | null {
   if (!listMdxFiles(dir).includes(fileSlug)) return null;
-  return parseArticleMetadata(dir, fileSlug).metadata;
+  const { metadata } = parseArticleMetadata(dir, fileSlug);
+  return statusMatchesDirectory(dir, metadata) ? metadata : null;
 }
 
 const mdxOptions = {
@@ -121,6 +140,7 @@ export async function getArticleBySlug(
   if (!listMdxFiles(dir).includes(fileSlug)) return null;
 
   const { metadata, body } = parseArticleMetadata(dir, fileSlug);
+  if (!statusMatchesDirectory(dir, metadata)) return null;
 
   const { content } = await compileMDX({
     source: body,

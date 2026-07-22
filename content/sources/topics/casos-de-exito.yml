@@ -81,7 +81,8 @@ topics:
     audience:
       - empresarios
       - gerentes
-    objective: "Artículo generado desde TEMAS-BLOG.md — de proceso manual a plataforma digital: etapas y aprendizajes."
+    objective: "Artículo generado desde TEMAS-BLOG.md — de proceso manual a
+      plataforma digital: etapas y aprendizajes."
     notes: []
   - id: como-un-mvp-permitio-validar-una-idea-antes-de-una-inversion-mayor
     title: Cómo un MVP permitió validar una idea antes de una inversión mayor
@@ -115,4 +116,84 @@ topics:
       - gerentes
     objective: Artículo generado desde TEMAS-BLOG.md — cómo una empresa mejoró la
       trazabilidad de sus operaciones.
+    notes: []
+  - id: como-digitalizar-un-checklist-redujo-errores-en-terreno
+    title: Cómo digitalizar un checklist redujo errores en terreno
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo digitalizar un checklist redujo errores en terreno.
+    notes: []
+  - id: como-una-plataforma-de-reservas-mejoro-la-experiencia-de-los-clientes
+    title: Cómo una plataforma de reservas mejoró la experiencia de los clientes
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo una plataforma de reservas mejoró la experiencia de los clientes.
+    notes: []
+  - id: que-aprendimos-desarrollando-un-producto-para-una-empresa-real
+    title: Qué aprendimos desarrollando un producto para una empresa real
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: qué aprendimos desarrollando un producto para una empresa real.
+    notes: []
+  - id: antes-y-despues-de-automatizar-un-proceso-comercial
+    title: Antes y después de automatizar un proceso comercial
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: antes y después de automatizar un proceso comercial.
+    notes: []
+  - id: como-reemplazar-planillas-sin-detener-la-operacion
+    title: Cómo reemplazar planillas sin detener la operación
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo reemplazar planillas sin detener la operación.
+    notes: []
+  - id: que-resultados-puede-generar-una-automatizacion-sencilla
+    title: Qué resultados puede generar una automatización sencilla
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: qué resultados puede generar una automatización sencilla.
+    notes: []
+  - id: como-detectar-la-verdadera-causa-de-un-problema-operacional
+    title: Cómo detectar la verdadera causa de un problema operacional
+    status: generated
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo detectar la verdadera causa de un problema operacional.
+    notes: []
+  - id: lecciones-de-un-proyecto-que-tuvo-que-ser-reconstruido
+    title: Lecciones de un proyecto que tuvo que ser reconstruido
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: lecciones de un proyecto que tuvo que ser reconstruido.
     notes: []

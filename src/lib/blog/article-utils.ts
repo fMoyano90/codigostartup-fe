@@ -14,6 +14,17 @@ export function countWords(mdxBody: string): number {
   return mdxBody.split(/\s+/).filter(Boolean).length;
 }
 
+export function formatCalendarDate(timestamp: number, timeZone = "America/Santiago") {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    timeZone,
+  }).formatToParts(new Date(timestamp));
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
 export function formatArticleDate(dateString: string): string {
   // Frontmatter dates are calendar dates (e.g. "2026-07-21"), not instants.
   // Formatting in UTC avoids an off-by-one day shift on servers with a

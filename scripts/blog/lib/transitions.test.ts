@@ -6,7 +6,7 @@ import {
   applyPublish,
   applyRejection,
 } from "./transitions";
-import type { BlogArticleFrontmatter } from "@/lib/blog/article-schema";
+import { safeParseArticleFrontmatter, type BlogArticleFrontmatter } from "@/lib/blog/article-schema";
 import type { ValidationIssue } from "./validate-article";
 
 function baseFrontmatter(overrides: Partial<BlogArticleFrontmatter> = {}): BlogArticleFrontmatter {
@@ -20,6 +20,8 @@ function baseFrontmatter(overrides: Partial<BlogArticleFrontmatter> = {}): BlogA
     audience: ["founders"],
     intent: "informational",
     funnelStage: "awareness",
+    services: ["desarrollo-mvp"],
+    cta: { type: "service", target: "desarrollo-mvp" },
     author: "Código Startup",
     status: "draft",
     featured: false,
@@ -48,7 +50,7 @@ describe("canApprove / applyApproval", () => {
   });
 
   it("refuses to approve an article that isn't in draft status", () => {
-    const frontmatter = baseFrontmatter({ status: "approved" });
+    const frontmatter = baseFrontmatter({ status: "approved", approvedAt: "2026-07-22" });
     const result = canApprove(frontmatter, noIssues, "not-available");
     expect(result.ok).toBe(false);
   });
@@ -94,19 +96,19 @@ describe("canPublish / applyPublish", () => {
   });
 
   it("refuses to publish an approved article that still has blocking errors", () => {
-    const frontmatter = baseFrontmatter({ status: "approved" });
+    const frontmatter = baseFrontmatter({ status: "approved", approvedAt: "2026-07-22" });
     const result = canPublish(frontmatter, blockingIssues);
     expect(result.ok).toBe(false);
   });
 
   it("allows publishing an approved article with no blocking errors", () => {
-    const frontmatter = baseFrontmatter({ status: "approved" });
+    const frontmatter = baseFrontmatter({ status: "approved", approvedAt: "2026-07-22" });
     const result = canPublish(frontmatter, noIssues);
     expect(result.ok).toBe(true);
   });
 
   it("sets status, publishedAt and updatedAt", () => {
-    const frontmatter = baseFrontmatter({ status: "approved" });
+    const frontmatter = baseFrontmatter({ status: "approved", approvedAt: "2026-07-22" });
     const updated = applyPublish(frontmatter, "2026-07-23");
     expect(updated.status).toBe("published");
     expect(updated.publishedAt).toBe("2026-07-23");
@@ -119,6 +121,20 @@ describe("applyRejection", () => {
     const frontmatter = baseFrontmatter({ status: "draft" });
     const updated = applyRejection(frontmatter, "2026-07-24");
     expect(updated.status).toBe("rejected");
+    expect(updated.approvedAt).toBeNull();
+    expect(updated.publishedAt).toBeNull();
     expect(updated.updatedAt).toBe("2026-07-24");
+  });
+});
+
+describe("transition schema invariants", () => {
+  it("keeps approval, publication and rejection outputs valid", () => {
+    const approved = applyApproval(baseFrontmatter(), "2026-07-22");
+    const published = applyPublish(approved, "2026-07-22");
+    const rejected = applyRejection(approved, "2026-07-22");
+
+    expect(safeParseArticleFrontmatter(approved).success).toBe(true);
+    expect(safeParseArticleFrontmatter(published).success).toBe(true);
+    expect(safeParseArticleFrontmatter(rejected).success).toBe(true);
   });
 });

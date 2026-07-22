@@ -13,6 +13,8 @@ export const editorialRules = {
     "audience",
     "intent",
     "funnelStage",
+    "services",
+    "cta",
     "author",
     "status",
     "seo",

@@ -1,0 +1,165 @@
+---
+title: Qué accesos y cuentas debe controlar siempre la empresa
+slug: que-accesos-y-cuentas-debe-controlar-siempre-la-empresa
+description: >-
+  Una guía para empresarios y gerentes sobre qué cuentas, accesos y credenciales
+  debe mantener siempre bajo control directo la empresa, y cuáles pueden
+  delegarse sin riesgo.
+excerpt: >-
+  Perder el control de una cuenta crítica puede dejar a una empresa sin acceso a
+  sus propios sistemas, datos o clientes. Este artículo identifica los accesos
+  que nunca deben depender de una sola persona externa y explica cómo mantener
+  el control sin convertirse en un cuello de botella operativo.
+category: seguridad-y-riesgos
+tags:
+  - seguridad
+  - gestión de accesos
+  - credenciales
+  - control de cuentas
+  - infraestructura
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+services:
+  - auditoria-y-evolucion
+  - software-a-medida
+cta:
+  type: service
+  target: auditoria-y-evolucion
+author: Código Startup
+status: draft
+featured: false
+createdAt: '2026-01-28'
+updatedAt: '2026-02-01'
+approvedAt: null
+publishedAt: null
+seo:
+  title: Qué accesos y cuentas debe controlar siempre la empresa | Código Startup
+  description: >-
+    Guía para empresarios: qué cuentas, accesos y credenciales debe mantener la
+    empresa bajo su control directo y cuáles puede delegar. Evitá perder el
+    acceso a tus propios sistemas.
+  primaryKeyword: accesos y cuentas que debe controlar la empresa
+  secondaryKeywords:
+    - control de cuentas empresariales
+    - credenciales de la empresa
+    - accesos críticos empresa
+    - seguridad cuentas corporativas
+    - gestión de accesos empresariales
+relatedArticles:
+  - gestionar-accesos-cuando-alguien-deja-la-empresa
+  - por-que-es-importante-tener-acceso-a-las-cuentas-y-servicios-del-proyecto
+  - que-datos-de-tus-clientes-debes-proteger
+reviewStatus: pending
+reviewScore: null
+---
+
+Toda empresa que opera con tecnología —aunque sea una cuenta de correo y una planilla compartida— acumula accesos y credenciales que, sin darse cuenta, puede perder de vista. El problema no aparece cuando todo funciona: aparece cuando la persona que tenía la contraseña del dominio se va, cuando el proveedor que configuró el servidor deja de responder, o cuando la tarjeta de crédito asociada a un servicio crítico expira y nadie sabe quién la registró.
+
+Perder el control de una cuenta no es un problema técnico: es un problema de negocio. Si tu empresa no puede acceder a su propio dominio web, a su base de datos de clientes o a las cuentas de correo corporativas, la operación se frena. Y lo peor es que, en la mayoría de los casos, recuperar ese acceso lleva días, semanas o directamente no se puede.
+
+Este artículo identifica qué accesos y cuentas debe controlar siempre la empresa de forma directa, cuáles pueden delegarse con condiciones claras y cómo implementar un esquema de control que no dependa de una sola persona.
+
+## La diferencia entre delegar un acceso y perder el control
+
+Delegar el acceso a un sistema es necesario. Nadie puede —ni debería— operar todo personalmente. Un proveedor de desarrollo necesita acceso al repositorio de código. Un contador necesita acceso a la plataforma de facturación. Una agencia de marketing necesita acceso a las cuentas de redes sociales.
+
+El problema no es delegar: es delegar sin conservar el control. Cuando una empresa le pide a un proveedor que "cree la cuenta" en un servicio, y ese proveedor registra el servicio con su propio correo, su propia tarjeta y sus propias credenciales, lo que ocurrió no fue una delegación: fue una transferencia de propiedad. Si mañana la relación termina, la empresa se queda sin acceso al servicio que pagó y que contiene su información.
+
+La regla es simple: la empresa debe ser siempre la propietaria de la cuenta raíz o administradora de cada servicio que utiliza. El acceso de terceros debe ser un permiso otorgado desde esa cuenta raíz, no al revés. Dicho de otra forma: la cuenta principal la abre la empresa, y desde ahí invita a colaboradores, proveedores y empleados con los permisos que correspondan.
+
+<Callout variant="warning" title="La pregunta que define quién controla qué">
+  Si mañana cortás la relación con todos tus proveedores tecnológicos, ¿podés seguir accediendo a todos tus sistemas? Si la respuesta es no para alguno de ellos, ese sistema no está bajo tu control. Identificar esos puntos ciegos es el primer paso para corregirlos.
+</Callout>
+
+## El inventario mínimo: qué cuentas no pueden depender de un tercero
+
+No hace falta controlarlo todo con el mismo nivel de obsesión. Hay servicios donde perder el acceso es una molestia menor, y hay servicios donde perderlo paraliza la operación. El inventario mínimo debería cubrir todas las cuentas del segundo tipo.
+
+### Dominios web
+
+El dominio es la dirección de tu empresa en internet. Si perdés el control del dominio, perdés el correo corporativo, el sitio web y potencialmente la capacidad de operar servicios que dependen de ese dominio para validar identidad. Recuperar un dominio cuyo registro está a nombre de un tercero puede ser un proceso largo, costoso y a veces imposible.
+
+La empresa debe ser la titular registral del dominio —con sus datos de contacto, no los del proveedor— y tener acceso directo al panel de administración del registrador. La renovación automática debe estar configurada con un medio de pago corporativo que no dependa de la tarjeta personal de nadie.
+
+### Cuentas de correo electrónico corporativo
+
+El correo no es solo comunicación: es el mecanismo de recuperación de contraseñas de la mayoría de los servicios. Si un tercero controla las cuentas de correo de la empresa, puede restablecer las contraseñas de cualquier otro servicio vinculado a esas direcciones.
+
+La empresa debe ser la administradora del servicio de correo —Google Workspace, Microsoft 365 o el que utilice— y tener al menos una cuenta de administración a la que solo accedan personas designadas por la empresa, con un segundo factor de autenticación que tampoco dependa de un proveedor externo.
+
+### Servicios en la nube e infraestructura
+
+Si tu aplicación o sistema corre en servidores contratados a AWS, Google Cloud, Azure o cualquier otro proveedor de infraestructura, la cuenta raíz de ese servicio debe pertenecer a la empresa. Las consecuencias de perder el acceso a la infraestructura son evidentes: la aplicación deja de funcionar y no hay forma de recuperarla sin el acceso administrativo.
+
+Además, las credenciales de acceso a la infraestructura —claves de API, tokens de acceso, usuarios administradores— deben estar documentadas en un lugar seguro que la empresa controle, no solo en la cabeza o en la computadora del proveedor.
+
+### Plataformas de gestión internas
+
+CRM, ERP, sistema de facturación, plataforma de atención al cliente. Cualquier sistema donde resida información operativa de la empresa debe tener una cuenta administradora bajo control directo. Si el proveedor que implementó el sistema es el único que puede crear usuarios, modificar permisos o acceder a las configuraciones, la empresa tiene un problema de dependencia que va más allá de lo técnico.
+
+### Repositorios de código y propiedad intelectual
+
+Si tu empresa desarrolló un software a medida o contrató un desarrollo, el código fuente debe residir en un repositorio cuya cuenta de administración controle la empresa. GitHub, GitLab, Bitbucket o cualquier otro. La empresa debe ser la dueña de la organización o del repositorio raíz, y los proveedores deben ser colaboradores con los permisos que necesiten para trabajar.
+
+### Cuentas de redes sociales y presencia digital
+
+Las cuentas de redes sociales corporativas —LinkedIn, Instagram, Facebook, Twitter— deben ser administradas por la empresa, no por la agencia de marketing ni por un community manager externo. Si mañana la agencia deja de trabajar con la empresa y se lleva las credenciales, la empresa pierde sus canales de comunicación con clientes y su historial de contenido.
+
+### Medios de pago y suscripciones
+
+Cada servicio en la nube, cada herramienta de software, cada suscripción a una plataforma debe estar asociada a un medio de pago corporativo —tarjeta de crédito empresarial o cuenta bancaria— que la empresa controle. Si un proveedor registra servicios con su propia tarjeta, la empresa no solo depende de ese proveedor para acceder al servicio: también depende de que el proveedor mantenga el pago al día.
+
+<Callout variant="info" title="Una auditoría que podés hacer hoy">
+  Elegí cinco servicios críticos que use tu empresa. Para cada uno, respondé: ¿quién es el propietario legal de la cuenta? ¿Quién tiene las credenciales de administrador? ¿Qué pasa si esa persona no está disponible mañana? Si no podés responder las tres preguntas con certeza para todos, hay trabajo por hacer.
+</Callout>
+
+## El modelo de control: cuenta raíz de la empresa, permisos para terceros
+
+El esquema que elimina la mayoría de los riesgos de dependencia es simple de describir pero requiere disciplina para implementar:
+
+**La empresa crea la cuenta raíz.** Para cada servicio nuevo, alguien de la empresa —no el proveedor— abre la cuenta, configura el medio de pago corporativo y establece las credenciales de administrador. Esta cuenta raíz se almacena en un gestor de contraseñas corporativo al que solo acceden las personas autorizadas por la empresa.
+
+**Los terceros reciben permisos, no propiedad.** Una vez que la cuenta raíz existe, la empresa invita a los proveedores como colaboradores, administradores delegados o usuarios con los permisos específicos que necesitan para trabajar. Si la relación termina, revocar esos permisos es un trámite de minutos.
+
+**Las credenciales de administrador nunca son personales.** Nadie —ni el dueño, ni el gerente, ni el proveedor— debería usar sus credenciales personales como único mecanismo de acceso a la cuenta raíz. La empresa debe tener sus propias credenciales de administración, idealmente protegidas con autenticación de dos factores que use un dispositivo corporativo o un método que no dependa de una sola persona.
+
+Este modelo requiere que la empresa designe a alguien internamente como responsable de la gestión de accesos. Puede ser el dueño en una empresa chica, un gerente de operaciones en una mediana, o un equipo de TI en una grande. Lo importante es que esa responsabilidad esté asignada explícitamente y que exista un procedimiento documentado.
+
+## Los casos más comunes de pérdida de control y cómo evitarlos
+
+Hay patrones que se repiten en empresas de todos los tamaños. Reconocerlos ayuda a prevenirlos.
+
+**"El proveedor lo abrió con su cuenta y nunca lo transferimos."** Es quizás el más frecuente. El proveedor crea la cuenta en AWS, registra el dominio en su panel de GoDaddy o abre la cuenta de Google Workspace usando su propio correo como administrador. La empresa paga las facturas pero no tiene acceso. La solución es explícita desde el día uno: exigir que cualquier cuenta nueva se abra desde un correo corporativo y con un medio de pago de la empresa, y verificar el acceso antes de que el proveedor empiece a trabajar.
+
+**"La única persona que sabía la contraseña ya no está."** Este patrón se da cuando una cuenta crítica fue creada por un empleado o un proveedor que ya no trabaja con la empresa, y las credenciales no quedaron documentadas en ningún lado. La solución es preventiva: toda credencial de administración debe estar almacenada en un gestor de contraseñas corporativo desde el momento en que se crea.
+
+**"La cuenta de administración está atada a un teléfono personal."** La autenticación de dos factores es una medida de seguridad necesaria, pero si el segundo factor es el teléfono personal de una persona que puede irse mañana, la seguridad se convierte en un punto único de falla. La solución es usar métodos de autenticación que no dependan de un dispositivo personal —como llaves de seguridad físicas almacenadas en la empresa, o aplicaciones de autenticación configuradas en dispositivos corporativos.
+
+**"Nadie sabe qué servicios están contratados ni quién los paga."** Empresas que crecen rápido acumulan suscripciones y servicios sin documentarlos. Un día la tarjeta de crédito del ex gerente de operaciones expira, y tres servicios críticos dejan de funcionar porque estaban atados a esa tarjeta. La solución es mantener un inventario actualizado de todos los servicios contratados, con su medio de pago, fecha de renovación y responsable interno.
+
+Para entender cómo gestionar este inventario de forma sistemática, el artículo sobre [cómo gestionar accesos cuando alguien deja la empresa](/blog/gestionar-accesos-cuando-alguien-deja-la-empresa) ofrece un protocolo paso a paso. Y si todavía no tenés claridad sobre este tema, [por qué es importante tener acceso a las cuentas y servicios del proyecto](/blog/por-que-es-importante-tener-acceso-a-las-cuentas-y-servicios-del-proyecto) explica las consecuencias concretas de no tenerlo.
+
+## Cómo implementar el control sin volverse un cuello de botella
+
+Una objeción frecuente a este modelo es que la empresa no tiene tiempo ni conocimiento para gestionar todos estos accesos, y que delegar todo en el proveedor es más simple. Es cierto que gestionar accesos requiere tiempo. Pero no gestionarlos sale mucho más caro.
+
+La clave está en separar el control —que debe ser de la empresa— de la operación —que puede delegarse—. La empresa no necesita saber cómo configurar un servidor en AWS: necesita tener la cuenta raíz de AWS bajo su control y darle al proveedor los permisos para que lo configure. La empresa no necesita saber cómo administrar Google Workspace: necesita ser la administradora de la cuenta y darle a su equipo de TI los permisos que correspondan.
+
+Un enfoque práctico para empresas que empiezan de cero:
+
+**Semana 1: relevamiento.** Hacé una lista de todos los servicios que usa la empresa. Para cada uno, anotá quién creó la cuenta, quién tiene las credenciales de administrador y qué medio de pago está asociado.
+
+**Semana 2: recuperación de accesos críticos.** Identificá los servicios cuyo control no está en manos de la empresa y empezá por los más críticos —dominio, correo, infraestructura, sistema de gestión—. Contactá al proveedor o a la persona que tiene el acceso y pedí la transferencia de propiedad o la creación de una cuenta administradora para la empresa.
+
+**Semana 3: documentación y almacenamiento.** Implementá un gestor de contraseñas corporativo —aunque sea uno simple— y almacená ahí todas las credenciales de administración. Documentá el procedimiento para dar de alta un servicio nuevo de modo que siempre se siga el modelo de cuenta raíz de la empresa.
+
+**Semana 4: verificación.** Probá el modelo con un caso real. La próxima vez que se contrate un servicio nuevo, asegurate de que la cuenta raíz la abra la empresa y que el proveedor reciba un permiso delegado. Si funciona, repetilo para cada servicio nuevo de acá en adelante.
+
+<Callout variant="tip" title="La regla para no olvidarse">
+  Cada vez que alguien en la empresa diga "contratemos X servicio", la primera pregunta no debería ser cuánto cuesta ni qué funcionalidades tiene. La primera pregunta debería ser: ¿quién va a abrir la cuenta raíz y cómo nos aseguramos de que quede bajo nuestro control? Si esa pregunta se vuelve un reflejo, la mayoría de los problemas de acceso desaparecen antes de aparecer.
+</Callout>
+
+El control de accesos y cuentas no es un tema técnico: es un tema de propiedad y de continuidad operativa. Las empresas que lo gestionan bien no son las que tienen más presupuesto ni las que contratan a los mejores proveedores: son las que tienen claro qué es de ellas y qué es delegado, y se aseguran de que esa línea nunca se borre.

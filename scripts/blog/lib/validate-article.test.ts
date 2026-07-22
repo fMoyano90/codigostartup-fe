@@ -11,10 +11,13 @@ function frontmatterBlock(overrides: Record<string, string> = {}) {
     audience: '["founders"]',
     intent: "informational",
     funnelStage: "awareness",
+    services: '["desarrollo-mvp"]',
     author: "Código Startup",
     status: "draft",
     createdAt: "2026-07-21",
     updatedAt: "2026-07-21",
+    approvedAt: "null",
+    publishedAt: "null",
     ...overrides,
   };
 
@@ -27,11 +30,17 @@ category: "${fields.category}"
 audience: ${fields.audience}
 intent: "${fields.intent}"
 funnelStage: "${fields.funnelStage}"
+services: ${fields.services}
+cta:
+  type: service
+  target: desarrollo-mvp
 author: "${fields.author}"
 status: "${fields.status}"
 featured: false
 createdAt: "${fields.createdAt}"
 updatedAt: "${fields.updatedAt}"
+approvedAt: ${fields.approvedAt}
+publishedAt: ${fields.publishedAt}
 seo:
   title: "SEO"
   description: "SEO"
@@ -115,5 +124,28 @@ describe("validateArticleContent", () => {
     const raw = frontmatterBlock() + `${longEnoughBody()}\n\n[único link](/blog/otro)`;
     const result = validateArticleContent(raw, "titulo-de-prueba", "drafts", ["titulo-de-prueba", "otro"]);
     expect(result.issues.some((issue) => issue.message.includes("enlace(s) interno(s)"))).toBe(true);
+  });
+
+  it("flags a status that does not match its content directory", () => {
+    const body = `${longEnoughBody()}\n\n[link](/blog/otro) [link2](/blog/categoria/x)`;
+    const draftInPublished = validateArticleContent(
+      frontmatterBlock() + body,
+      "titulo-de-prueba",
+      "published",
+      ["titulo-de-prueba"],
+    );
+    const publishedInDrafts = validateArticleContent(
+      frontmatterBlock({
+        status: "published",
+        approvedAt: '"2026-07-21"',
+        publishedAt: '"2026-07-21"',
+      }) + body,
+      "titulo-de-prueba",
+      "drafts",
+      ["titulo-de-prueba"],
+    );
+
+    expect(draftInPublished.issues.some((issue) => issue.message.includes("no corresponde a la carpeta"))).toBe(true);
+    expect(publishedInDrafts.issues.some((issue) => issue.message.includes("no corresponde a la carpeta"))).toBe(true);
   });
 });

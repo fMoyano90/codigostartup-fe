@@ -23,10 +23,25 @@ export async function generateMetadata({
   const category = getCategoryBySlug(slug);
   if (!category) return {};
 
+  const title = `${category.name} | Blog ${siteConfig.name}`;
+
   return {
-    title: `${category.name} | Blog Código Startup`,
+    title: { absolute: title },
     description: category.description,
     alternates: { canonical: `${siteConfig.baseUrl}/blog/categoria/${slug}` },
+    openGraph: {
+      title,
+      description: category.description,
+      url: `${siteConfig.baseUrl}/blog/categoria/${slug}`,
+      type: "website",
+      siteName: siteConfig.name,
+      locale: "es_CL",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: category.description,
+    },
   };
 }
 
