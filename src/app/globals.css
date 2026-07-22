@@ -49,42 +49,7 @@ a {
   text-decoration: none;
 }
 
-/* Hide default cursor on pointer devices — scoped to .home, which mounts the
-   custom cursor follower via HomeAnimations. Other routes (e.g. /blog) keep
-   the native cursor since they don't render that replacement. */
-@media (hover: hover) and (pointer: fine) {
-  body.home-cursor-active,
-  body.home-cursor-active * {
-    cursor: none !important;
-  }
-}
 
-/* ─────────────────────────────────────────
-   CUSTOM CURSOR
-───────────────────────────────────────── */
-#cs-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--volt);
-  pointer-events: none;
-  z-index: 9999;
-  transition:
-    width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.2s;
-  mix-blend-mode: difference;
-}
-
-#cs-cursor.hovered {
-  width: 44px;
-  height: 44px;
-  opacity: 0.5;
-  background: var(--violet);
-}
 
 /* ─────────────────────────────────────────
    ANIMATIONS
