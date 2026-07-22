@@ -146,8 +146,7 @@ export function LeadForm({
           <input type="hidden" name="utmCampaign" value="" readOnly />
           <input type="hidden" name="utmContent" value="" readOnly />
           <input type="hidden" name="utmTerm" value="" readOnly />
-          <div className="lead-honeypot" aria-hidden="true">
-            <label htmlFor={`${formId}-website`}>Deja este campo vacío</label>
+          <div className="lead-honeypot" aria-hidden="true" style={{ display: "none" }}>
             <input id={`${formId}-website`} name="website" type="text" tabIndex={-1} autoComplete="off" />
           </div>
 

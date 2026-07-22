@@ -149,7 +149,7 @@ const projectData: Project[] = [
       { val: "100%", label: "Offline" },
       { val: "FES", label: "Ley 19799" },
     ],
-    logo: "/logo-nucleo-gestor-blanco-naranjo.svg",
+    logo: "/logo-nucleo.svg",
     externalUrl: "https://nucleogestor.com/landing",
     homeCard: {
       description: "Gestión de liderazgo y normativa DS44 para la industria minera.",
