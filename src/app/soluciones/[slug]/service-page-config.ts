@@ -34,6 +34,7 @@ export const servicePageConfig: Record<ServiceSlug, ServicePageConfig> = {
           name: "contentManagement",
           label: "¿Necesitas administrar el contenido?",
           type: "select",
+          wide: true,
           options: [
             { label: "Sí", value: "si" },
             { label: "No", value: "no" },

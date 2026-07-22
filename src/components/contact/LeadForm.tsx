@@ -24,6 +24,7 @@ type BaseField = {
   placeholder?: string;
   helpText?: string;
   defaultValue?: string;
+  wide?: boolean;
 };
 
 export type LeadFormField =
@@ -156,8 +157,10 @@ export function LeadForm({
                 const fieldId = `${formId}-field-${index}`;
                 const helpId = field.helpText ? `${formId}-help-${index}` : undefined;
 
+                const isWide = field.type === "textarea" || field.wide;
+
                 return (
-                  <div key={field.name} className={`service-form-field${field.type === "textarea" ? " service-form-field--wide" : ""}`}>
+                  <div key={field.name} className={`service-form-field${isWide ? " service-form-field--wide" : ""}`}>
                     <label htmlFor={fieldId}>
                       {field.label}
                       {field.required && <span aria-hidden="true"> *</span>}
@@ -222,7 +225,7 @@ export function LeadForm({
                 className="btn-primary"
                 onClick={() => trackEvent(ANALYTICS_EVENTS.clickWhatsapp, { ...eventContext, cta_position: "lead-success" })}
               >
-                Continuar por WhatsApp <span aria-hidden="true">→</span>
+                Continuar por WhatsApp
               </a>
               <a
                 href={siteConfig.contact.bookingUrl}
@@ -238,7 +241,7 @@ export function LeadForm({
             <>
               <div className="lead-submit-actions">
                 <button type="submit" className="btn-primary" disabled={isPending}>
-                  {isPending ? "Enviando…" : submitLabel} <span aria-hidden="true">→</span>
+                  {isPending ? "Enviando…" : submitLabel}
                 </button>
                 <a
                   href={siteConfig.contact.bookingUrl}

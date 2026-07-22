@@ -41,7 +41,7 @@ export function ContactLeadForm({ initialService, project, origin }: ContactLead
       ],
     },
     { name: "description", label: "¿Qué necesitas resolver?", type: "textarea", required: true, rows: 6 },
-    { name: "budget", label: "Presupuesto aproximado", type: "text", placeholder: "Opcional. Puedes indicar un rango o escribir “por definir”." },
+    { name: "budget", label: "Presupuesto aproximado", type: "text", placeholder: "Opcional. Puedes indicar un rango o escribir “por definir”.", wide: true },
   ];
 
   return (
