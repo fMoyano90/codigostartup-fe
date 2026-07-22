@@ -1,0 +1,99 @@
+---
+title: Cómo retomar un proyecto desarrollado por otro equipo
+slug: como-retomar-un-proyecto-desarrollado-por-otro-equipo
+description: >-
+  Recibir un proyecto de software construido por otro equipo —sea por cambio de
+  proveedor, rotación interna o adquisición— es una de las situaciones más
+  complejas en tecnología. Guía para evaluar lo que hay, planificar la
+  transición y no empezar de cero innecesariamente.
+excerpt: >-
+  La primera reacción de muchos equipos al recibir código ajeno es querer
+  reescribir todo. A veces es necesario. Muchas veces no. Cómo tomar la decisión
+  correcta sin quemar meses ni presupuesto.
+category: proveedores-tecnologicos
+tags:
+  - retomar proyecto
+  - migración de proveedor
+  - deuda técnica
+  - legado de software
+  - transición de equipos
+audience:
+  - empresarios
+  - gerentes
+intent: commercial
+funnelStage: awareness
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-22'
+approvedAt: '2026-07-22'
+seo:
+  title: Cómo retomar un proyecto desarrollado por otro equipo | Código Startup
+  description: >-
+    Guía práctica para empresas que necesitan continuar un proyecto de software
+    construido por otro equipo. Cómo evaluar el estado del código, planificar la
+    transición y decidir entre refactorizar o reconstruir.
+  primaryKeyword: cómo retomar un proyecto desarrollado por otro equipo
+  secondaryKeywords:
+    - cambiar de proveedor de software
+    - retomar desarrollo de otro equipo
+    - migración de proyecto de software
+    - qué hacer con código heredado
+    - transición de proveedor tecnológico
+relatedArticles:
+  - que-hacer-cuando-tu-proveedor-desaparece-o-abandona-el-proyecto
+  - cuando-cambiar-de-proveedor-tecnologico
+  - como-evitar-que-la-deuda-tecnica-frene-tu-empresa
+reviewStatus: pending
+reviewScore: null
+publishedAt: '2026-07-22'
+---
+
+Recibir un proyecto de software construido por otro equipo es como mudarse a una casa que diseñó y construyó otra persona. Algunas cosas funcionan exactamente como esperabas. Otras te hacen preguntarte qué estaba pensando el dueño anterior. Y hay cosas que no descubrís que están mal hasta que llevás semanas viviendo ahí. Esta situación es más frecuente de lo que parece, y tiene puntos en común con lo que discutimos en [cómo evitar que la deuda técnica frene tu empresa](/blog/como-evitar-que-la-deuda-tecnica-frene-tu-empresa).
+
+Este artículo ofrece un marco para evaluar un proyecto heredado, planificar la transición y tomar decisiones informadas sobre su futuro sin caer en los dos extremos más comunes: reescribir todo de cero sin evaluar si es necesario, o seguir parcheando algo que ya no da más.
+
+## Antes de tocar una línea de código
+
+El primer instinto de cualquier equipo técnico que recibe código ajeno es abrir el editor y empezar a leer código. Es un error. Antes de entender cómo está construido, hay que entender qué hace, para quién, y en qué estado se encuentra desde la perspectiva del negocio.
+
+Hay un conjunto mínimo de preguntas que deberías poder responder antes de que el nuevo equipo escriba su primera línea de código. ¿El sistema está en producción y lo usan usuarios reales? Si la respuesta es sí, cualquier cambio introduce riesgo operativo. ¿Qué funcionalidades usa la gente y cuáles están ahí pero nadie toca? Muchos sistemas tienen un montón de código muerto: funcionalidades que se construyeron, nunca se usaron y nadie se animó a sacar. ¿Qué es lo que más se rompe? Si el equipo anterior dejó registro de incidentes o quejas de usuarios, ahí está la hoja de ruta de lo urgente. ¿Qué documentación existe? Aunque sea mínima —un readme, un diagrama dibujado en una servilleta, un archivo con credenciales—, cualquier cosa es mejor que nada.
+
+Estas preguntas se responden hablando con usuarios, con el equipo anterior si está disponible, y revisando logs, tickets de soporte y métricas de uso. No requieren escribir código.
+
+## La auditoría técnica mínima
+
+Una vez que entendés el contexto de negocio, el paso siguiente es una auditoría técnica acotada. No es una revisión exhaustiva de cada línea —que llevaría semanas y no aportaría valor inmediato— sino una evaluación de los aspectos que determinan si el sistema se puede mantener y hacer crecer.
+
+Lo primero es verificar que el código se puede ejecutar en un entorno que controle el nuevo equipo. Si el código está en un repositorio pero no hay instrucciones para levantarlo —o las que hay no funcionan—, eso es lo primero que hay que resolver. Sin un entorno funcionando, todo lo demás es teórico.
+
+Lo segundo es evaluar la estructura general: ¿está organizado de forma que se pueda modificar una parte sin tocar todas las demás, o es una maraña de dependencias donde cualquier cambio puede romper cualquier cosa? Los sistemas que no tienen una separación clara de responsabilidades son los más difíciles —y caros— de mantener.
+
+Lo tercero es identificar los puntos de dolor: bibliotecas o frameworks que quedaron obsoletos y sin soporte, configuraciones hardcodeadas que impiden mover el sistema de entorno, código que depende de un servicio externo que ya no existe o cambió sus condiciones.
+
+Lo cuarto es verificar la cobertura de pruebas automatizadas, si las hay. Un sistema sin pruebas es un sistema que no se puede modificar con confianza. Cada cambio implica riesgo de romper algo que funcionaba, y la única forma de detectarlo es que un usuario se queje.
+
+## La decisión: refactorizar, reconstruir o convivir
+
+Con la información de la auditoría, se puede tomar una decisión informada sobre el camino a seguir. Las opciones no son solo dos —reescribir o seguir igual— sino un espectro de estrategias con distintos costos, riesgos y plazos.
+
+La refactorización progresiva consiste en ir mejorando el código existente de a partes, mientras el sistema sigue funcionando y entregando valor al negocio. Esta estrategia tiene la ventaja de que no interrumpe la operación y permite priorizar las mejoras por orden de impacto. Tiene la desventaja de que lleva tiempo —meses, a veces años— y requiere disciplina para no abandonar el esfuerzo cuando aparecen urgencias.
+
+La reconstrucción desde cero implica tirar todo y empezar de nuevo. Puede ser la decisión correcta cuando el código existente es tan problemático que modificarlo sale más caro que reescribirlo, o cuando la tecnología es tan obsoleta que no se consiguen desarrolladores que quieran trabajar con ella. El riesgo es subestimar lo que el sistema actual ya resuelve: un sistema feo pero que funciona encapsula meses o años de aprendizaje sobre casos de borde, reglas de negocio y excepciones que una reconstrucción va a tener que redescubrir.
+
+La convivencia controlada es aceptar que ciertas partes del sistema no se van a tocar por ahora. Se mantienen como están, se documentan sus límites y se construye lo nuevo alrededor o en paralelo. Es una estrategia válida cuando el sistema cumple su función y el costo de modificarlo no se justifica frente a otras prioridades.
+
+## Cómo gestionar la transición con el equipo anterior
+
+Si el equipo anterior está disponible para una transición — aunque sea parcial—, conviene aprovecharla al máximo. Pero hay que ser realista: un equipo que sabe que está siendo reemplazado rara vez está motivado para documentar, explicar y transferir conocimiento con entusiasmo.
+
+Algunas prácticas que ayudan: pedir sesiones de transferencia grabadas —una videollamada donde el equipo anterior explica la arquitectura, muestra cómo se despliega, señala las partes más delicadas— rinde mucho más que pedir "documentación completa" genérica. Solicitar un listado de las credenciales, servicios externos y accesos necesarios para operar y desarrollar el sistema. Preguntar específicamente "¿qué es lo que más se rompe?" y "¿qué modificarías si pudieras volver atrás?". Y pedir que identifiquen y documenten las decisiones de diseño que no son evidentes leyendo el código: por qué se eligió cierta estructura, por qué se descartó cierta alternativa.
+
+## La paciencia como ventaja competitiva
+
+Retomar un proyecto ajeno es un maratón, no una carrera de velocidad. Los equipos que mejores resultados obtienen son los que resisten la tentación de cambiar todo de golpe, dedican las primeras semanas a entender antes de modificar, y construyen la relación con los usuarios del sistema mostrando mejoras incrementales en lugar de prometer una refundación que va a tardar meses en llegar.
+
+La mayoría de los sistemas heredados no son basura: son el resultado de decisiones que tuvieron sentido en su momento, tomadas por personas que trabajaban con la información y las restricciones que tenían disponibles. Entender por qué el sistema es como es —antes de decidir cómo debería ser— es la diferencia entre heredar un problema y heredar un punto de partida.
+
+El artículo sobre [cuándo cambiar de proveedor tecnológico](/blog/cuando-cambiar-de-proveedor-tecnologico) ayuda a evaluar si el cambio es la decisión correcta, y la guía sobre [qué documentación debes exigir al finalizar un proyecto de software](/blog/que-documentacion-exigir-finalizar-proyecto) detalla qué debería entregar el proveedor saliente para facilitar el traspaso. Para más herramientas sobre este proceso, te recomendamos [qué hacer cuando tu proveedor desaparece o abandona el proyecto](/blog/que-hacer-cuando-tu-proveedor-desaparece-o-abandona-el-proyecto).

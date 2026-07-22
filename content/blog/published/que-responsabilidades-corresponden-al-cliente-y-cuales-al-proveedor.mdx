@@ -1,0 +1,109 @@
+---
+title: Qué responsabilidades corresponden al cliente y cuáles al proveedor
+slug: que-responsabilidades-corresponden-al-cliente-y-cuales-al-proveedor
+description: >-
+  Delimitación clara de lo que le corresponde a cada parte en un proyecto de
+  desarrollo de software: desde la definición del alcance hasta las pruebas de
+  aceptación, pasando por la disponibilidad de información y la toma de
+  decisiones.
+excerpt: >-
+  Muchos proyectos de software fracasan no por falta de capacidad técnica, sino
+  porque las responsabilidades no estaban claras desde el inicio. Saber qué le
+  toca a cada parte —cliente y proveedor— evita zonas grises donde las cosas
+  importantes no las hace nadie.
+category: proveedores-tecnologicos
+tags:
+  - responsabilidades en proyectos
+  - gestión de proveedores
+  - relación cliente-proveedor
+  - proyectos de software
+  - alcance de proyecto
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: consideration
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-22'
+approvedAt: '2026-07-22'
+publishedAt: '2026-07-22'
+seo:
+  title: >-
+    Qué responsabilidades corresponden al cliente y cuáles al proveedor | Código
+    Startup
+  description: >-
+    Delimitación de responsabilidades entre cliente y proveedor en proyectos de
+    software: qué debe aportar cada parte para que el proyecto llegue a buen
+    puerto.
+  primaryKeyword: responsabilidades cliente y proveedor de software
+  secondaryKeywords:
+    - qué le toca al cliente en un proyecto de desarrollo
+    - qué le toca al proveedor de software
+    - roles en proyectos de software
+    - gestión de expectativas en desarrollo
+    - división de tareas cliente proveedor
+relatedArticles:
+  - que-debe-contener-contrato-desarrollo-software
+  - como-organizar-la-comunicacion-con-un-equipo-de-desarrollo
+  - preguntas-antes-de-contratar-un-proveedor-tecnologico
+reviewStatus: pending
+reviewScore: null
+---
+
+Uno de los malentendidos más costosos en los proyectos de desarrollo de software es asumir que la otra parte va a encargarse de algo que nunca se conversó explícitamente. El cliente asume que el proveedor va a proponer mejoras de usabilidad; el proveedor asume que el cliente va a proporcionar los textos y las imágenes del contenido. Ninguno lo puso sobre la mesa, y semanas después, cuando el proyecto se frena porque falta algo que nadie consideró suyo, empiezan las fricciones.
+
+Delimitar responsabilidades no es burocracia: es lo que permite que un proyecto avance sin que las cosas importantes se caigan en las grietas entre lo que uno cree que hace el otro y lo que el otro cree que hace uno. Este artículo describe qué responsabilidades corresponden típicamente a cada parte.
+
+## Lo que le corresponde al cliente
+
+El cliente —ya sea un fundador, un gerente o un área de la empresa— es quien conoce el negocio, el problema a resolver y el contexto en el que va a operar el software. Por más que el proveedor sea experto en tecnología, hay cosas que solo el cliente puede aportar:
+
+**Definir el problema y los objetivos de negocio.** El proveedor puede ayudar a traducir un problema de negocio en requerimientos técnicos, pero no puede definir cuál es el problema. Decir "quiero una aplicación para gestionar mis clientes" no es suficiente: hace falta explicitar qué procesos cubre, qué información maneja, qué resultado se espera obtener. Si el cliente no tiene claro el problema, el proveedor va a construir una solución para un problema que no existe —y eso no es responsabilidad del proveedor—.
+
+**Proveer la información de dominio.** Datos de productos, reglas de negocio, flujos de trabajo, catálogos, precios, políticas comerciales. El proveedor no puede inventar esta información, y cuando el cliente no la provee a tiempo, el proyecto se frena. Una práctica recomendable es designar a una persona del lado del cliente como responsable de proporcionar y validar esta información.
+
+**Tomar decisiones de negocio.** El proveedor puede recomendar, pero no puede decidir por el cliente. ¿Qué funcionalidades entran en la primera versión y cuáles se postergan? ¿Qué nivel de calidad es aceptable para el lanzamiento? ¿Se prioriza velocidad o alcance? Estas son decisiones de negocio que solo el cliente puede tomar. Cuando el cliente las delega completamente en el proveedor, el resultado rara vez coincide con lo que esperaba.
+
+**Probar y validar lo construido.** El proveedor debe entregar software que funcione según lo acordado. Pero la validación de que lo construido efectivamente resuelve el problema de negocio le corresponde al cliente. El proveedor prueba que el sistema no tenga errores técnicos; el cliente prueba que el sistema haga lo que el negocio necesita. Si el cliente no dedica tiempo a probar —y a dar feedback concreto—, los problemas se descubren en producción, cuando corregirlos es más caro.
+
+**Garantizar la disponibilidad de su equipo.** Si el proyecto requiere la participación de personas del lado del cliente —alguien de operaciones que explique cómo funciona un proceso, alguien de ventas que detalle el flujo comercial—, el cliente debe asegurarse de que esas personas tengan el tiempo y la disposición para participar. Un proyecto donde el proveedor no puede hablar con quien tiene la información que necesita es un proyecto condenado a los supuestos, y los supuestos en desarrollo de software casi siempre son incorrectos.
+
+<Callout variant="warning" title="Lo que el cliente no puede delegar">
+  Hay tres cosas que ningún proveedor puede hacer por el cliente: entender su negocio mejor que él, tomar decisiones que afectan la estrategia comercial, y validar que el producto resuelve el problema real. Delegar cualquiera de estas tres cosas es delegar el fracaso del proyecto.
+</Callout>
+
+## Lo que le corresponde al proveedor
+
+El proveedor —agencia, equipo de desarrollo o freelancer— aporta la capacidad técnica y la experiencia en construcción de software. Sus responsabilidades típicas incluyen:
+
+**Traducir los requerimientos en una solución técnica.** A partir de lo que el cliente describe, el proveedor debe proponer una arquitectura, tecnologías y enfoque de desarrollo. También debe señalar cuando un requerimiento es técnicamente inviable, excesivamente costoso, o contradictorio con otros requerimientos. Callar y aceptar todo sin cuestionar no es ser buen proveedor: es estar acumulando problemas para más adelante.
+
+**Estimar y planificar.** El proveedor debe dar estimaciones realistas de esfuerzo, identificar dependencias entre tareas, y comunicar proactivamente cuando los plazos están en riesgo. Una estimación inflada para quedar bien o una estimación optimista para ganar el proyecto son igual de dañinas.
+
+**Construir con estándares profesionales.** Código limpio, documentado y testeado; prácticas de seguridad básicas; control de versiones; ambientes de desarrollo y pruebas separados de producción. Estas no son opcionales ni dependen de lo que el cliente pida explícitamente —son parte de lo que constituye un servicio profesional—.
+
+**Comunicar avances, bloqueos y riesgos.** El proveedor debe informar periódicamente qué se construyó, qué está en progreso, y qué obstáculos encontró. No debería ser el cliente quien tenga que preguntar cómo va el proyecto. El artículo sobre [cómo organizar la comunicación con un equipo de desarrollo](/blog/como-organizar-la-comunicacion-con-un-equipo-de-desarrollo) detalla los rituales y canales que facilitan esta comunicación.
+
+**Entregar documentación y transferir conocimiento.** Al finalizar el proyecto, el proveedor debe entregar la documentación técnica necesaria para que otro equipo pueda mantener el sistema, y realizar sesiones de transferencia de conocimiento si fueron acordadas. El artículo sobre [qué documentación debes exigir al finalizar un proyecto de software](/blog/que-documentacion-exigir-finalizar-proyecto) lista la documentación mínima esperable.
+
+## La zona gris: cosas que conviene aclarar explícitamente
+
+Hay responsabilidades que no son obvias y que conviene definir por adelantado para evitar conflictos:
+
+- **Carga de datos iniciales.** ¿Quién carga los productos, usuarios o registros históricos en el sistema nuevo? ¿El cliente, el proveedor, o un tercero?
+- **Contenido editorial.** Textos de la interfaz, mensajes de error, correos automáticos, páginas informativas. Salvo que se contrate a un redactor, suelen ser responsabilidad del cliente —pero el proveedor debería avisar con anticipación qué contenidos se necesitan—.
+- **Capacitación de usuarios.** ¿El proveedor capacita a los usuarios finales o entrega un manual? ¿El cliente se encarga de la adopción interna?
+- **Mantenimiento post-lanzamiento.** ¿Qué cubre la garantía? ¿Qué entra dentro del soporte incluido y qué se cobra aparte? ¿Quién se encarga de las copias de seguridad, las actualizaciones de seguridad y el monitoreo?
+
+<Callout variant="tip" title="La lista de verificación antes de arrancar">
+  Antes de empezar un proyecto, conviene responder por escrito estas tres preguntas: ¿qué espera el cliente que haga el proveedor? ¿Qué espera el proveedor que haga el cliente? ¿Hay algo que ambos asumen que hará el otro y que no se ha dicho explícitamente? La respuesta a la tercera pregunta suele contener las sorpresas más caras.
+</Callout>
+
+## Cuando las responsabilidades no están claras
+
+Los proyectos donde las responsabilidades nunca se discutieron explícitamente suelen presentar los mismos síntomas: ambos lados sienten que el otro no está cumpliendo, las conversaciones se cargan de frustración, y las fechas se postergan sin que nadie se haga cargo. Lo irónico es que, en general, ninguna de las partes está actuando de mala fe: simplemente cada una opera bajo un conjunto de supuestos distintos sobre lo que le toca hacer al otro.
+
+La solución no es un contrato de cien páginas. Es una conversación al inicio del proyecto —y documentada, aunque sea en un correo o un documento compartido— donde se explicitan las responsabilidades de cada parte, se identifican las zonas grises y se acuerda quién se encarga de qué. Esa conversación puede ser incómoda —implica reconocer que hay cosas que no se habían considerado—, pero es mucho menos incómoda que descubrir las diferencias de expectativas cuando el proyecto ya está en marcha.

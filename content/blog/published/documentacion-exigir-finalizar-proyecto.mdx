@@ -1,0 +1,148 @@
+---
+title: Qué documentación debes exigir al finalizar un proyecto de software
+slug: documentacion-exigir-finalizar-proyecto
+description: >-
+  La documentación mínima que un proveedor debería entregar al cerrar un
+  desarrollo de software: manuales, diagramas, guías de despliegue y más, para
+  que tu empresa no dependa del proveedor original.
+excerpt: >-
+  Un proyecto de software no termina cuando el código funciona. Termina cuando
+  tu empresa tiene todo lo necesario para operar, mantener y modificar el
+  producto sin depender de quien lo construyó.
+category: proveedores-tecnologicos
+tags:
+  - documentación de software
+  - proveedores de desarrollo
+  - entrega de proyectos
+  - mantenimiento de software
+  - transferencia de conocimiento
+audience:
+  - founders
+  - empresarios
+intent: commercial
+funnelStage: decision
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-21'
+approvedAt: '2026-07-21'
+publishedAt: '2026-07-21'
+seo:
+  title: >-
+    Qué documentación debes exigir al finalizar un proyecto de software | Código
+    Startup
+  description: >-
+    Lista de la documentación mínima que un proveedor debería entregar al cerrar
+    un desarrollo: manuales, diagramas de arquitectura, guías de despliegue y
+    más.
+  primaryKeyword: documentación exigir al finalizar un proyecto de software
+  secondaryKeywords:
+    - qué documentación pedir al terminar un desarrollo
+    - entregables de un proyecto de software
+    - documentación técnica para el cliente
+    - transferencia de conocimiento en proyectos de software
+relatedArticles:
+  - como-evitar-depender-de-un-proveedor
+  - quien-debe-ser-dueno-del-codigo-fuente
+  - que-debe-contener-contrato-desarrollo-software
+  - preguntas-antes-de-contratar-un-proveedor-tecnologico
+  - freelancer-agencia-o-equipo-interno
+reviewStatus: pending
+reviewScore: null
+---
+
+Un proyecto de software no termina cuando el código funciona en producción. Termina cuando tu empresa —o cualquier equipo técnico que contrates en el futuro— puede operar, mantener y modificar ese software sin depender de quien lo construyó. La diferencia entre un escenario y el otro suele estar en algo que muchas empresas no piden porque no saben que deberían pedirlo: la documentación.
+
+La documentación no es un adorno ni un gesto de buena voluntad del proveedor. Es un entregable del proyecto, tan importante como el código mismo. Sin ella, el conocimiento sobre cómo funciona el sistema, cómo se despliega, cómo se recupera de una falla y cómo se modifica queda exclusivamente en la cabeza de las personas que lo construyeron. Y cuando esas personas no están disponibles —porque cambiaron de trabajo, porque la relación comercial terminó o porque pasaron tres años y ya no recuerdan los detalles—, ese conocimiento desaparece.
+
+Este artículo lista la documentación mínima que deberías exigir al finalizar un proyecto de software. No es una lista exhaustiva —cada proyecto tiene particularidades—, pero cubre lo esencial para que tu empresa no quede atada a un proveedor por falta de información.
+
+<Callout variant="info" title="Documentación como requisito contractual">
+La documentación debe figurar como un entregable explícito en el contrato, con el mismo nivel de obligación que el código. Si el contrato no la menciona, el proveedor puede argumentar —con razón— que no estaba en el alcance. La [guía sobre qué debe contener un contrato de desarrollo](/blog/que-debe-contener-contrato-desarrollo-software) incluye este punto.
+</Callout>
+
+## Los cinco bloques de documentación que necesitás
+
+### 1. Documentación de arquitectura y decisiones técnicas
+
+Es el mapa del sistema. Explica cómo está organizado el software, qué componentes lo forman, cómo se comunican entre sí y por qué se tomaron las decisiones técnicas que se tomaron.
+
+Debe incluir:
+
+- **Diagrama de arquitectura general**: una representación visual de los componentes del sistema (frontend, backend, base de datos, servicios externos, colas de mensajes, etc.) y cómo se relacionan. No necesita ser un diagrama UML de nivel ingenieril; con un diagrama de cajas y flechas bien comentado alcanza.
+- **Stack tecnológico**: lista de lenguajes, frameworks, bibliotecas principales y versiones utilizadas. Con versiones: \"usa React\" no es suficiente; \"usa React 18.2\" sí lo es.
+- **Registro de decisiones de arquitectura**: un documento breve que explique por qué se eligió cada tecnología principal y qué alternativas se consideraron. Esto es particularmente útil cuando, meses o años después, alguien nuevo pregunta \"¿por qué eligieron esta base de datos y no otra?\".
+- **Modelo de datos**: diagrama o descripción de las tablas, colecciones o estructuras de datos principales, sus relaciones y los campos más importantes.
+
+<Callout variant="tip" title="La prueba del nuevo desarrollador">
+Una buena forma de evaluar si la documentación de arquitectura es suficiente: ¿un desarrollador competente que nunca vio el proyecto podría entender cómo está organizado el sistema después de leerla? Si la respuesta es no, falta información.
+</Callout>
+
+### 2. Documentación de despliegue e infraestructura
+
+Es el manual de instrucciones para poner el software en funcionamiento en un entorno nuevo. Si mañana necesitás migrar el sistema a otro servidor, a otro proveedor de nube o a una infraestructura propia, esta documentación es lo que hace posible hacerlo sin el proveedor original.
+
+Debe incluir:
+
+- **Guía de despliegue paso a paso**: instrucciones para instalar y configurar el software en un entorno nuevo, desde cero. Debe asumir que quien la lee parte de un servidor vacío y necesita llegar a un sistema funcionando.
+- **Variables de entorno y configuración**: lista de todas las variables de configuración necesarias, qué hace cada una y ejemplos de valores válidos. Sin esto, reproducir el entorno es un ejercicio de prueba y error.
+- **Dependencias de infraestructura**: qué servicios externos necesita el sistema para funcionar (bases de datos, almacenamiento de archivos, servicios de correo, pasarelas de pago, etc.) y cómo se configuran.
+- **Procedimientos de backup y restauración**: cómo se hacen las copias de seguridad, dónde se almacenan y —más importante— cómo se restauran. Un backup que no se probó restaurar no es un backup: es una esperanza.
+- **Certificados y dominios**: lista de dominios, subdominios y certificados SSL asociados, con fechas de vencimiento y procedimiento de renovación.
+
+### 3. Documentación funcional y manuales de usuario
+
+Mientras que la documentación de arquitectura y despliegue está dirigida a equipos técnicos, la documentación funcional está dirigida a los usuarios del sistema —sean internos o externos— y a quienes necesiten entender qué hace el software sin entrar en cómo lo hace.
+
+Debe incluir:
+
+- **Manual de usuario**: descripción de cada funcionalidad desde la perspectiva de quien la usa. Idealmente con capturas de pantalla o referencias visuales. No es un documento de marketing; es una guía operativa.
+- **Roles y permisos**: qué roles existen en el sistema, qué puede hacer cada uno y cómo se administran.
+- **Flujos principales**: descripción de los flujos de uso más importantes —por ejemplo, \"cómo se crea una orden de compra\" o \"cómo se genera un reporte mensual\"—, paso a paso.
+- **Preguntas frecuentes operativas**: problemas comunes que pueden encontrar los usuarios y cómo resolverlos sin asistencia técnica.
+
+### 4. Documentación para desarrolladores
+
+Si en el futuro otro equipo técnico va a modificar o extender el software, esta documentación es lo que les permite hacerlo sin tener que hacer arqueología del código —leer cientos de archivos para entender cómo funciona algo que debería estar explicado en un documento—.
+
+Debe incluir:
+
+- **Guía de configuración del entorno de desarrollo**: cómo instalar las dependencias, levantar el sistema localmente y ejecutar las pruebas.
+- **Convenciones de código**: estándares de estilo, nomenclatura y organización de archivos que se usaron en el proyecto.
+- **Estrategia de testing**: qué tipos de pruebas existen, cómo se ejecutan y qué cobertura tienen.
+- **Guía de contribución**: cómo agregar una funcionalidad nueva o modificar una existente sin romper nada.
+- **Documentación de APIs**: si el sistema expone APIs, cada endpoint debe estar documentado con su método, parámetros, respuestas esperadas y ejemplos.
+
+### 5. Documentación operativa y de continuidad
+
+Este bloque cubre lo que hay que hacer para que el sistema siga funcionando en el día a día y lo que hay que saber para reaccionar cuando algo falla.
+
+Debe incluir:
+
+- **Procedimientos de monitoreo**: qué se monitorea, con qué herramientas y qué significan las alertas.
+- **Procedimientos de recuperación ante fallas**: qué hacer si se cae la base de datos, si un servicio externo deja de responder, si el sistema se vuelve lento.
+- **Procedimientos de mantenimiento rutinario**: tareas que deben ejecutarse periódicamente —limpieza de logs, renovación de certificados, actualización de dependencias— y con qué frecuencia.
+- **Contactos y accesos**: lista de servicios externos contratados, con quién están a nombre y cómo se accede a ellos. Esto incluye hosting, dominios, servicios de email, pasarelas de pago y cualquier otro servicio que el sistema necesite para funcionar. La [guía sobre cómo evitar depender de un proveedor](/blog/como-evitar-depender-de-un-proveedor) explica por qué estas cuentas deben estar a nombre de tu empresa y no del proveedor.
+
+## Cómo verificar que la documentación entregada sirve
+
+Recibir un paquete de documentos no es lo mismo que recibir documentación útil. Para verificar que lo que te entregaron cumple su propósito, hacé estas tres pruebas:
+
+**Prueba 1: despliegue limpio.** Pedile a alguien con conocimientos técnicos —puede ser un desarrollador de confianza que no haya participado en el proyecto— que intente levantar el sistema desde cero usando solo la documentación de despliegue. Si no puede, la documentación no sirve.
+
+**Prueba 2: modificación guiada.** Pedile a ese mismo desarrollador que haga un cambio pequeño pero representativo —agregar un campo a un formulario, modificar una validación— usando solo la documentación para desarrolladores. Si necesita preguntarle al proveedor original cómo hacerlo, la documentación no sirve.
+
+**Prueba 3: recuperación simulada.** Simulá una falla —\"se borró la base de datos\" o \"el servidor no responde\"— y verificá que los procedimientos de recuperación son completos y ejecutables. Si algún paso dice \"contactar al proveedor\", ese paso es una dependencia no resuelta.
+
+<Callout variant="warning" title="No esperes al final para pedir la documentación">
+La documentación que se escribe al final del proyecto, contra el reloj y después de meses sin documentar nada, es sistemáticamente peor que la que se produce durante el desarrollo. Exigí que la documentación sea un entregable progresivo: cada hito del proyecto debe incluir la documentación correspondiente a lo construido en ese hito.
+</Callout>
+
+## Por qué esto es una decisión comercial, no técnica
+
+Pedir documentación no es un capricho de quienes \"no entienden de tecnología y necesitan que les expliquen todo\". Es una decisión que protege la inversión. Un desarrollo de software puede costar decenas o cientos de miles de dólares. Que todo el conocimiento sobre cómo opera ese activo resida exclusivamente en el proveedor que lo construyó es un riesgo de negocio que ninguna otra industria aceptaría.
+
+Imaginá que encargás la construcción de un edificio y el arquitecto te entrega las llaves pero no los planos. Cuando necesites hacer una ampliación, o reparar una filtración, o simplemente entender por dónde pasan los cables, vas a depender de que el arquitecto original esté disponible, recuerde lo que hizo y quiera ayudarte. En el mundo físico, eso es impensable. En el mundo del software, es la norma.
+
+No tiene por qué serlo. La documentación que describimos en este artículo no es un lujo ni un costo adicional: es parte del producto que estás comprando. Exigila desde el contrato, verificá que se entregue durante el proyecto —no al final— y comprobá que sirve antes de dar el proyecto por terminado. Tu independencia tecnológica futura depende de eso.

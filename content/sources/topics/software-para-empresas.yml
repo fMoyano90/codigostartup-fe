@@ -1,0 +1,213 @@
+id: software-para-empresas-01
+name: Software para empresas
+category: software-para-empresas
+topics:
+  - id: cuando-dejar-de-usar-planillas
+    title: Cuándo dejar de usar planillas
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ayudar a detectar cuándo las planillas comienzan a generar riesgos.
+    notes:
+      - Publicado como content/blog/published/cuando-dejar-de-usar-planillas.mdx.
+      - Este tema queda como referencia para que blog:sync-topics demuestre la
+        transición generated → published.
+  - id: software-medida-vs-estandar
+    title: Software a medida vs. software estándar
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+    objective: Ayudar a comparar ambas alternativas antes de decidir una inversión.
+    notes:
+      - Incluir criterios de decisión (tiempo, costo, flexibilidad,
+        mantenimiento).
+      - Evitar posicionar "a medida" como la opción siempre correcta.
+  - id: sintomas-sistema-interno-obsoleto
+    title: Señales de que tu sistema interno ya no da abasto
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - gerentes
+      - empresarios
+    objective: Ayudar a detectar cuándo un sistema interno necesita reemplazo o
+      modernización.
+    notes:
+      - Distinguir entre "lento" y "obsoleto" — no todo problema de performance
+        requiere reemplazo completo.
+  - id: cuando-una-planilla-excel-deja-de-ser-suficiente
+    title: Cuándo una planilla Excel deja de ser suficiente
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ayudar a identificar el momento en que las planillas se convierten en
+      un riesgo operativo.
+    notes:
+      - Relacionado con cuando-dejar-de-usar-planillas pero con enfoque en
+        señales tempranas y casos concretos.
+  - id: senales-de-que-tu-empresa-necesita-sistema-gestion
+    title: Señales de que tu empresa necesita un sistema de gestión propio
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ayudar a detectar cuándo los procesos justifican una inversión en
+      software de gestión.
+    notes:
+      - Distinguir entre 'me vendría bien' y 'lo necesito para no perder plata o
+        clientes'.
+  - id: como-detectar-procesos-digitalizables
+    title: Cómo detectar procesos de tu empresa que podrían digitalizarse
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Dar un método para identificar procesos manuales que justifican
+      inversión en software.
+    notes:
+      - "Criterios: volumen, repetitividad, costo del error, dependencia de una
+        persona."
+  - id: centralizar-informacion-whatsapp-excel
+    title: Cómo centralizar información que hoy está repartida entre WhatsApp, Excel
+      y correo
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Mostrar el impacto de tener información dispersa y cómo consolidarla
+      sin frenar la operación.
+    notes:
+      - No recomendar herramientas específicas — hablar del problema y criterios
+        de solución.
+  - id: procesos-administrativos-automatizar-primero
+    title: Qué procesos administrativos vale la pena automatizar primero
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Dar criterios para priorizar qué automatizar en el back-office antes
+      que otras áreas.
+    notes: []
+  - id: software-a-medida-versus-software-estandar-cual-conviene
+    title: "Software a medida versus software estándar: cuál conviene"
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: "Artículo generado desde TEMAS-BLOG.md — software a medida versus
+      software estándar: cuál conviene."
+    notes: []
+  - id: como-reducir-errores-operacionales-usando-software
+    title: Cómo reducir errores operacionales usando software
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo reducir errores
+      operacionales usando software.
+    notes: []
+  - id: que-es-una-plataforma-interna-y-cuando-tiene-sentido-construir-una
+    title: Qué es una plataforma interna y cuándo tiene sentido construir una
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — qué es una plataforma interna
+      y cuándo tiene sentido construir una.
+    notes: []
+  - id: como-elegir-un-crm-para-una-empresa-pequena-o-mediana
+    title: Cómo elegir un CRM para una empresa pequeña o mediana
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo elegir un crm para una
+      empresa pequeña o mediana.
+    notes: []
+  - id: que-deberia-tener-un-buen-sistema-de-reservas
+    title: Qué debería tener un buen sistema de reservas
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — qué debería tener un buen
+      sistema de reservas.
+    notes: []
+  - id: como-digitalizar-formularios-inspecciones-y-checklists
+    title: Cómo digitalizar formularios, inspecciones y checklists
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo digitalizar formularios,
+      inspecciones y checklists.
+    notes: []
+  - id: como-mejorar-la-trazabilidad-de-las-operaciones-de-una-empresa
+    title: Cómo mejorar la trazabilidad de las operaciones de una empresa
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo mejorar la trazabilidad de las operaciones de una empresa.
+    notes: []
+  - id: que-procesos-nunca-deberias-depender-de-una-sola-persona
+    title: Qué procesos nunca deberías depender de una sola persona
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: qué procesos nunca deberías depender de una sola persona.
+    notes: []
+  - id: como-integrar-los-sistemas-que-ya-usa-tu-empresa
+    title: Cómo integrar los sistemas que ya usa tu empresa
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo integrar los sistemas que ya usa tu empresa.
+    notes: []
+  - id: cuando-reemplazar-un-software-antiguo
+    title: Cuándo reemplazar un software antiguo
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: cuándo reemplazar un software antiguo.
+    notes: []

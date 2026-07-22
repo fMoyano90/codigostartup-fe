@@ -1,0 +1,182 @@
+---
+title: Qué hacer si tu aplicación queda fuera de servicio
+slug: que-hacer-si-tu-aplicacion-queda-fuera-de-servicio
+description: >-
+  Pasos concretos que un empresario o gerente puede seguir cuando su aplicación
+  deja de funcionar: a quién llamar, qué verificar primero y cómo minimizar el
+  impacto mientras se resuelve el problema.
+excerpt: >-
+  Tu aplicación dejó de funcionar. Los clientes no pueden acceder. Los empleados
+  no pueden operar. El reloj corre y cada minuto caído tiene un costo. En ese
+  momento, lo último que necesitás es improvisar. Una guía paso a paso para
+  actuar con criterio durante una caída de servicio, desde el primer minuto
+  hasta la restauración, pensada para empresarios y gerentes sin conocimientos
+  técnicos profundos.
+category: seguridad-y-riesgos
+tags:
+  - fuera de servicio
+  - downtime
+  - continuidad operativa
+  - gestión de incidentes
+  - respuesta a fallos
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-22'
+approvedAt: '2026-07-22'
+seo:
+  title: Qué hacer si tu aplicación queda fuera de servicio | Código Startup
+  description: >-
+    Guía para actuar cuando una aplicación deja de funcionar: primeros pasos, a
+    quién contactar, cómo comunicarse con clientes y cómo minimizar el impacto
+    operativo.
+  primaryKeyword: aplicación fuera de servicio
+  secondaryKeywords:
+    - qué hacer si mi app no funciona
+    - caída de servicio
+    - downtime aplicación
+    - restaurar servicio caído
+    - gestión de incidentes ti
+relatedArticles:
+  - riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde
+  - que-es-una-brecha-de-seguridad
+  - que-respaldos-necesita-una-empresa
+reviewStatus: pending
+reviewScore: null
+publishedAt: '2026-07-22'
+---
+
+En algún momento, toda aplicación deja de funcionar. No es una cuestión de si va a pasar, sino de cuándo, por qué y —sobre todo— qué hacés al respecto. Un servidor se satura, una actualización introduce un error, un proveedor externo se cae, alguien borra algo que no debía. Las causas son muchas y variadas. Lo que marca la diferencia entre un incidente molesto y uno catastrófico no es la causa: es la respuesta.
+
+El problema es que la mayoría de las empresas no tienen un plan para cuando su aplicación deja de funcionar. Cuando ocurre —y ocurre siempre en el peor momento, un lunes a las nueve de la mañana o un viernes a las seis de la tarde—, la reacción es una mezcla de llamadas frenéticas, mensajes cruzados, decisiones improvisadas y horas perdidas tratando de entender qué pasó antes siquiera de empezar a resolverlo.
+
+Este artículo propone una secuencia de acciones para empresarios y gerentes. No asume que seas técnico. Asume que sos la persona que recibe la llamada —o el mensaje, o la queja del cliente— que dice "el sistema no anda". Y te dice qué hacer a partir de ese momento.
+
+## Minuto uno: confirmar que hay un problema real
+
+Antes de escalar, verificá tres cosas que toman menos de un minuto y evitan falsas alarmas:
+
+**¿El problema es general o es solo tuyo?** Si sos la única persona que reporta el problema, puede ser un tema de conexión, de navegador, de caché. Probá acceder desde otro dispositivo, desde otra red —los datos móviles del teléfono, no el wifi de la oficina—, o pedile a alguien externo que intente entrar. Si varias personas, desde distintas ubicaciones, reportan lo mismo, el problema es real.
+
+**¿El problema es de la aplicación o de un componente externo?** Muchas aplicaciones dependen de servicios de terceros: pasarelas de pago, envío de correos, mapas, autenticación. Si solo una funcionalidad específica falla —no se pueden procesar pagos, pero el resto de la aplicación funciona—, el problema puede estar en el servicio externo, no en tu aplicación.
+
+**¿Hay algún aviso del proveedor?** Revisá los canales oficiales de tu proveedor de infraestructura o de la plataforma que usás. AWS, Google Cloud, Azure y otros servicios publican incidentes en sus paneles de estado. Si hay un problema generalizado, no hay nada que puedas hacer más que esperar a que lo resuelvan. Pero al menos sabés que no es un problema de tu sistema.
+
+<Callout variant="tip" title="Antes de llamar a nadie">
+  Abrí el navegador en modo incógnito, conectate con los datos del teléfono —no con el wifi— y tratá de acceder a la aplicación. Si funciona, el problema es local: tu conexión, tu navegador, tu caché. Si no funciona, el problema está confirmado y podés pasar al siguiente paso.
+</Callout>
+
+## Primeros quince minutos: activar la respuesta
+
+Confirmado el problema, estos son los pasos que deberían ocurrir en el primer cuarto de hora:
+
+### 1. Designar a una persona a cargo
+
+En situaciones de estrés, el peor esquema es el de "todos haciendo todo". Alguien tiene que tomar las decisiones y coordinar al resto. Esa persona no necesariamente es la más técnica: es la que tiene la autoridad para asignar tareas, la calma para no empeorar la situación con decisiones apresuradas y la claridad para comunicar lo que está pasando.
+
+Si esa persona sos vos —el dueño, el gerente general—, tu rol no es resolver el problema técnico: es asegurarte de que quien puede resolverlo tenga lo que necesita y de que el resto de la empresa sepa qué hacer mientras tanto.
+
+### 2. Contactar al responsable técnico
+
+Si tenés un equipo interno, un proveedor de desarrollo o un servicio de soporte, este es el momento de activarlo. La comunicación inicial debe incluir tres cosas:
+
+- Qué está fallando exactamente: "la aplicación no carga", "los usuarios no pueden iniciar sesión", "el sistema de facturación devuelve error al intentar emitir una factura". Cuanto más precisa la descripción, más rápido el diagnóstico.
+- Desde cuándo: "dejó de funcionar hace quince minutos", "los primeros reportes de clientes llegaron a las diez de la mañana".
+- A quiénes afecta: "todos los usuarios", "solo los que intentan pagar con tarjeta", "solo el panel de administración, la parte pública funciona".
+
+### 3. Activar el plan de comunicación
+
+Si la aplicación está caída y tiene usuarios externos —clientes, proveedores, público—, comunicar el incidente reduce la presión. Un mensaje simple en el sitio web, en redes sociales o por correo que diga "Estamos experimentando una interrupción del servicio. Nuestro equipo está trabajando para resolverlo. Actualizaremos en cuanto tengamos más información" evita que los clientes llamen uno por uno preguntando si el problema es solo de ellos.
+
+Lo que no deberías hacer en la comunicación inicial:
+
+- Prometer un tiempo de resolución que no podés cumplir. "En diez minutos vuelve" dicho sin evidencia es una promesa que probablemente rompas.
+- Dar detalles técnicos que después resulten incorrectos. "Es un problema del servidor" puede ser un problema de base de datos, de red, de código. Esperá a tener un diagnóstico confirmado.
+- Minimizar el problema si no sabés la magnitud. "Es algo menor" cuando después resulta que los datos de la última hora se perdieron destruye la credibilidad.
+
+## Durante la caída: mantener la operación
+
+Mientras el equipo técnico investiga y resuelve, la empresa sigue teniendo que operar. Algunas cosas que se pueden hacer dependiendo del tipo de aplicación:
+
+### Si la aplicación es de cara al cliente
+
+- **Activar un mensaje de mantenimiento.** En lugar de que los usuarios vean un error genérico o una pantalla en blanco, mostrar una página que explique la situación y ofrezca alternativas de contacto —teléfono, correo, WhatsApp, sucursal física—.
+- **Habilitar canales alternativos.** Si el sistema de reservas online no funciona, ¿los clientes pueden reservar por teléfono? Si el e-commerce está caído, ¿pueden comprar por WhatsApp o en el local físico? El canal alternativo debería estar definido de antemano, no improvisado en el momento.
+- **Preparar un mensaje para cuando el servicio vuelva.** Explicar qué pasó —sin tecnicismos—, qué medidas se tomaron para que no vuelva a ocurrir y, si corresponde, ofrecer algo a los clientes afectados.
+
+### Si la aplicación es de uso interno
+
+- **Identificar qué procesos pueden seguir funcionando sin el sistema.** Si el sistema de facturación está caído, ¿se puede facturar en papel o con una planilla temporal y cargarlo después? Tener identificados estos procesos alternativos —y que el equipo sepa usarlos— es parte del plan de continuidad que debería existir antes del incidente.
+- **Proteger los datos que se generen durante la caída.** Si los empleados van a trabajar con planillas, papel o archivos locales mientras el sistema no funciona, alguien tiene que asegurarse de que esa información se capture de forma que después se pueda cargar sin errores ni omisiones.
+- **Comunicar internamente con claridad.** Un mensaje a todo el equipo —"El sistema va a estar fuera de servicio por un tiempo indeterminado. Mientras tanto, facturación se hace con la planilla temporal que está en la carpeta compartida. Ventas toma los pedidos por teléfono y los carga cuando el sistema vuelva"— reduce la incertidumbre y evita que cada persona improvise por su cuenta.
+
+<Callout variant="warning" title="Lo que no hay que hacer durante una caída">
+  No le pidas al equipo técnico reportes de avance cada cinco minutos. Cada interrupción para dar un estado es tiempo que no se dedica a resolver el problema. Establecé un ritmo de actualización —cada treinta minutos, cada hora— y respetalo. Si el equipo no tiene novedades en ese intervalo, que lo diga: "seguimos investigando, sin novedades" también es información útil.
+</Callout>
+
+## La restauración: cuando el sistema vuelve
+
+El momento en que la aplicación vuelve a funcionar es crítico por dos razones: hay que verificar que realmente funciona, y hay que asegurarse de que no se pierda la información generada durante la caída.
+
+### Verificar antes de comunicar
+
+Antes de decirle a nadie que el sistema volvió, verificá:
+
+- Que las funcionalidades principales funcionan: iniciar sesión, consultar datos, crear un registro nuevo, modificar uno existente.
+- Que los datos están íntegros: ¿falta algo que se haya ingresado antes de la caída? ¿Las transacciones que estaban en curso se completaron o quedaron a medio hacer?
+- Que el sistema responde con velocidad normal: a veces un sistema vuelve pero funciona más lento porque hay procesos de recuperación corriendo en segundo plano.
+
+Si algo de esto falla, el sistema no está restaurado. Seguí en modo de incidente y no comuniques una resolución que después tengas que desmentir.
+
+### Cargar la información pendiente
+
+Si durante la caída la operación siguió con métodos alternativos —planillas, papel, registros manuales—, alguien tiene que cargar esa información en el sistema. Esta tarea es subestimada con frecuencia: lleva tiempo, es propensa a errores y suele recaer en las mismas personas que ya están sobrecargadas por el incidente.
+
+Designar a alguien específicamente para esta tarea, darle tiempo para hacerla sin interrupciones y verificar una muestra de los datos cargados antes de dar por cerrado el incidente.
+
+## Después del incidente: aprender para la próxima
+
+Un incidente del que no se aprende es un incidente que va a repetirse. En los días posteriores a la restauración, tres cosas deberían ocurrir:
+
+### 1. Un análisis de causa raíz
+
+No para buscar culpables, sino para entender qué falló y por qué. Las preguntas que importan:
+
+- ¿Qué ocurrió exactamente? La secuencia de eventos, validada por las personas involucradas y por la evidencia disponible —logs, registros, pantallas de error—.
+- ¿Por qué no se detectó antes? Muchos incidentes no son súbitos: hay señales previas que nadie vio o que se ignoraron. Identificar esas señales ayuda a detectar el próximo incidente antes de que ocurra.
+- ¿Qué se hizo bien durante la respuesta? Reconocer lo que funcionó es tan importante como identificar lo que falló. Si el plan de comunicación funcionó, si el equipo respondió rápido, si los procesos alternativos evitaron un impacto mayor, eso debería documentarse y reforzarse.
+- ¿Qué se podría haber hecho mejor? Sin asignar culpas, identificando acciones concretas que reduzcan la probabilidad o el impacto del próximo incidente.
+
+### 2. Un plan de acción
+
+Cada hallazgo del análisis debería traducirse en una acción concreta, con responsable y fecha:
+
+- Si el incidente se debió a una falla de infraestructura, ¿se necesitan redundancias o mecanismos de recuperación automática?
+- Si tomó más tiempo del necesario porque la persona que sabía resolverlo no estaba disponible, ¿hay que documentar procedimientos o capacitar a más personas?
+- Si la comunicación fue caótica, ¿hay que definir un protocolo de comunicación de incidentes para la próxima vez?
+
+### 3. Una simulación o prueba
+
+La mejor forma de prepararse para el próximo incidente es simularlo. Elegir un día y una hora, desconectar un componente del sistema —en un entorno de prueba, no en producción— y ejecutar el plan de respuesta. Medir cuánto tarda cada paso, identificar los puntos donde el plan falla o es ambiguo, y ajustarlo.
+
+Muy pocas empresas hacen simulacros de caída de servicio. Las que lo hacen resuelven incidentes reales en una fracción del tiempo que tardan las que improvisan.
+
+<Callout variant="info" title="El plan de continuidad: el artículo siguiente">
+  Este artículo cubre qué hacer durante un incidente. El complemento necesario es tener un plan de continuidad operacional que defina, antes de que ocurra el incidente, quién hace qué, qué procesos alternativos existen y cómo se restaura la operación. Si tu empresa no tiene ese plan, el artículo sobre [cómo preparar un plan básico de continuidad operacional](/blog/como-preparar-un-plan-basico-de-continuidad-operacional) explica por dónde empezar.
+</Callout>
+
+## Lo que no deberías delegar
+
+Hay decisiones durante un incidente que no deberían delegarse en el equipo técnico porque son decisiones de negocio:
+
+- **Cuánto tiempo puede estar la aplicación fuera de servicio antes de que el impacto sea inaceptable.** El equipo técnico puede decir cuánto tarda en restaurarse. La decisión de si ese tiempo es aceptable o si hay que tomar medidas extraordinarias —y potencialmente más costosas— es del negocio.
+- **Qué comunicar a los clientes y cuándo.** El tono, el contenido y el momento de la comunicación externa son decisiones de negocio que afectan la reputación y la relación con los clientes.
+- **Si se activa un plan de contingencia que tiene costo.** Restaurar desde un backup en otra región, activar servidores de reserva, contratar soporte de emergencia del proveedor: estas acciones tienen costos asociados. La decisión de incurrir en ellos es del negocio, no del equipo técnico.
+
+Un incidente de disponibilidad es estresante, pero no es el fin del mundo si se maneja con criterio. Las empresas que responden bien no son las que tienen la mejor infraestructura: son las que tienen un plan, designan a una persona a cargo, comunican con claridad y aprenden de cada incidente para que el próximo sea más corto, menos costoso y mejor manejado. Como ocurre con otros [riesgos técnicos que nadie revisa hasta que es tarde](/blog/riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde), la diferencia entre un incidente manejable y uno catastrófico no está en la tecnología sino en la preparación previa.

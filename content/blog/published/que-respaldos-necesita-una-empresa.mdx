@@ -1,0 +1,182 @@
+---
+title: Qué respaldos necesita una empresa
+slug: que-respaldos-necesita-una-empresa
+description: >-
+  Un marco para decidir qué información respaldar, con qué frecuencia y cómo
+  verificar que los respaldos realmente funcionan cuando se necesitan.
+excerpt: >-
+  Un backup no probado no es un backup: es una promesa. Este artículo propone
+  criterios para decidir qué respaldar y cómo asegurarse de que los respaldos
+  cumplan su función.
+category: seguridad-y-riesgos
+tags:
+  - respaldos
+  - backups
+  - continuidad de negocio
+  - recuperación de datos
+  - infraestructura
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-21'
+approvedAt: '2026-07-21'
+publishedAt: '2026-07-21'
+seo:
+  title: Qué respaldos necesita una empresa | Código Startup
+  description: >-
+    Cómo decidir qué información respaldar, con qué frecuencia y cómo verificar
+    que los respaldos funcionan. Marco práctico para empresarios y gerentes.
+  primaryKeyword: qué respaldos necesita una empresa
+  secondaryKeywords:
+    - backups empresa
+    - política de respaldos
+    - recuperación de datos
+    - continuidad operativa
+    - plan de respaldo empresarial
+relatedArticles:
+  - que-preguntar-sobre-seguridad-a-tu-proveedor
+  - riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde
+  - cuando-dejar-de-usar-planillas
+reviewStatus: pending
+reviewScore: null
+---
+
+Los respaldos son una de esas cosas en las que nadie piensa hasta que las necesita. Y cuando se necesitan, ya es tarde para empezar a pensar. La pregunta "¿tenemos backup?" suele hacerse después de que algo salió mal: un disco que murió, un ataque que cifró los datos, un error humano que borró información crítica, un incendio o una inundación que dejó el servidor inaccesible.
+
+Pero la pregunta correcta no es solo si hay backups. Es qué se está respaldando, cada cuánto, dónde se guardan esas copias y —quizás lo más importante— si alguien probó restaurarlas alguna vez. Porque un backup que nunca se probó no es un backup: es una historia que nos contamos para dormir tranquilos.
+
+Este artículo propone un marco de razonamiento para decidir qué respaldar y cómo verificar que los respaldos cumplen su función. No recomienda proveedores ni herramientas específicas —eso depende del tipo de infraestructura que uses y del presupuesto disponible— sino criterios que aplican independientemente de la tecnología que elijas.
+
+## Los tres niveles de respaldo que toda empresa debería considerar
+
+No toda la información de una empresa necesita el mismo nivel de respaldo. Pretender que todo se respalde con la misma frecuencia, en el mismo lugar y con la misma prioridad de recuperación es caro e innecesario. Conviene pensar en tres niveles:
+
+### Nivel 1: Información crítica para la operación diaria
+
+Es la información sin la cual la empresa no puede operar: no facturar, no entregar pedidos, no atender clientes. Si esta información desaparece, la operación se detiene en horas o minutos, no en días.
+
+Qué suele estar en este nivel: bases de datos transaccionales —pedidos, facturas, pagos, inventario—, sistemas de gestión interna, información de clientes activos, configuraciones de los servidores que sostienen la operación.
+
+Cuánto tiempo podés permitirte perder: minutos u horas. Si se cae la base de datos de facturación a las tres de la tarde, ¿podés darte el lujo de perder todo lo facturado desde la mañana? La respuesta a esa pregunta define la frecuencia del respaldo.
+
+### Nivel 2: Información importante pero no urgente
+
+Es información cuya pérdida genera un costo —horas de trabajo, molestia para clientes, tiempo de reconstrucción— pero no detiene la operación inmediatamente. La empresa puede seguir funcionando mientras se recupera.
+
+Qué suele estar en este nivel: documentos internos, archivos de proyectos terminados, correos electrónicos antiguos, versiones anteriores de archivos de trabajo, materiales de marketing, código fuente —si está en un repositorio con su propio respaldo, quizás no necesite un respaldo adicional—.
+
+Cuánto tiempo podés permitirte perder: días. Si se pierde la carpeta compartida con los manuales de procedimiento, va a llevar tiempo reconstruirla, pero mientras tanto la operación no se frena.
+
+### Nivel 3: Información deseable pero no esencial
+
+Es información cuya pérdida es una molestia sin consecuencias operativas. Reconstruirla toma tiempo pero no afecta a clientes ni a ingresos.
+
+Qué suele estar en este nivel: versiones intermedias de archivos de trabajo, descargas de software que pueden volver a obtenerse, capturas de pantalla, datos de prueba y entornos de desarrollo, borradores que ya fueron reemplazados por versiones finales.
+
+Cuánto tiempo podés permitirte perder: semanas o más. Si se pierde, molesta, pero no justifica el costo de un respaldo frecuente.
+
+<Callout variant="tip" title="Una pregunta para cada nivel">
+  Para cada tipo de información, preguntá: si esto desapareciera por completo ahora mismo, ¿cuánto tiempo me tomaría volver a tener la operación funcionando? ¿Cuánto me costaría en horas de trabajo, ingresos perdidos o clientes insatisfechos? La respuesta define el nivel de protección que esa información necesita.
+</Callout>
+
+## Tipos de respaldo y cuándo usar cada uno
+
+No todos los backups son iguales. Los tres tipos más comunes —completo, incremental y diferencial— tienen lógicas distintas y conviene entenderlas para decidir cuál aplica en cada caso.
+
+**Respaldo completo**: una copia exacta de todos los datos en un momento dado. Es el más simple de restaurar —todo está en un solo lugar— pero también el más lento de hacer y el que más espacio ocupa. Conviene para el Nivel 1, con frecuencia diaria o incluso horaria según la criticidad.
+
+**Respaldo incremental**: copia solo lo que cambió desde el último respaldo —completo o incremental—. Es más rápido de hacer y ocupa menos espacio, pero la restauración es más lenta y compleja: hay que reconstruir el estado final a partir del último respaldo completo más todos los incrementales posteriores. Si falla un incremental en la cadena, todo lo que viene después es irrecuperable.
+
+**Respaldo diferencial**: copia todo lo que cambió desde el último respaldo completo. Es un punto intermedio: más rápido de hacer que un completo, más simple de restaurar que un incremental. Cada diferencial es independiente de los demás —solo depende del completo—, así que si uno falla no compromete al resto.
+
+En la práctica, muchas empresas combinan: un respaldo completo semanal los fines de semana, incrementales o diferenciales diarios entre semana, y retención de varios completos hacia atrás —por ejemplo, los últimos cuatro completos— para poder volver a un punto anterior si un problema tarda en detectarse.
+
+## Dónde guardar los respaldos: la regla del tres-dos-uno
+
+En respaldos, existe una regla ampliamente recomendada conocida como "tres-dos-uno" que ayuda a dimensionar cuánta redundancia es razonable:
+
+- **Tres copias** de los datos: la original y al menos dos respaldos.
+- **Dos tipos de medios distintos**: por ejemplo, un respaldo en disco —en otro servidor o en un servicio de almacenamiento en la nube— y otro en un soporte diferente, como una cinta o un servicio de almacenamiento de otra categoría. El objetivo es que una falla que afecte a un tipo de medio no afecte al otro.
+- **Una copia fuera de la ubicación física**: si todos los respaldos están en la misma oficina y hay un incendio, una inundación o un robo, se pierde todo junto. Una copia en otra ubicación geográfica —otra ciudad, otra región del proveedor cloud, otro país— protege contra desastres que afectan al lugar físico donde opera la empresa.
+
+Esta regla no es obligatoria ni universal: su aplicación depende del volumen de datos, del presupuesto y de la criticidad de la información. Pero es un buen punto de partida para la conversación con quien administre la infraestructura.
+
+<Callout variant="warning" title="Cuidado con el backup en el mismo lugar">
+  Un error frecuente es respaldar la base de datos de producción en el mismo servidor donde corre la base de datos. Si el servidor falla —disco dañado, ataque, error de configuración—, los datos originales y el backup desaparecen juntos. El backup debe estar separado físicamente de los datos que respalda.
+</Callout>
+
+## Frecuencia de respaldo: cómo decidirla
+
+La frecuencia del respaldo se define por una sola variable: cuántos datos te podés permitir perder. Ese número tiene un nombre técnico —RPO, por recovery point objective— pero la idea es simple: es la cantidad máxima de información que estás dispuesto a resignar en caso de una falla.
+
+Si tu RPO es de una hora, necesitás respaldos cada hora —o menos—. Si es de un día, un respaldo diario alcanza. Si es de quince minutos, necesitás una estrategia de respaldo casi en tiempo real, que suele ser más cara y compleja.
+
+Algunas preguntas para definir el RPO de cada sistema:
+
+- ¿Cuántas transacciones se procesan por hora en este sistema?
+- ¿Cuál es el valor promedio de cada transacción?
+- Si perdiéramos las últimas dos horas de datos, ¿cuánto costaría reconstruirlas?
+- ¿Hay requisitos legales o contractuales que definan un plazo máximo de pérdida de datos?
+
+No todos los sistemas necesitan el mismo RPO. La base de datos de facturación puede necesitar respaldo cada hora; la carpeta de manuales de procedimiento, una vez por semana.
+
+## Probar los respaldos: la parte que casi nadie hace
+
+Acá está la diferencia entre tener una política de respaldos y tener respaldos que funcionan: la prueba de restauración.
+
+Un respaldo puede fallar de muchas formas silenciosas. El archivo se corrompió y nadie lo notó. El script que hace el backup dejó de funcionar hace tres semanas pero como no mandó un error tampoco mandó una alerta. El backup está completo pero la base de datos cambió de versión y el formato del respaldo ya no es compatible con la versión actual. El backup existe pero la persona que sabía cómo restaurarlo ya no trabaja en la empresa.
+
+La única forma de saber si un respaldo funciona es restaurarlo. No alcanza con verificar que el archivo existe y tiene un tamaño razonable. Hay que hacer el proceso completo: tomar el respaldo, restaurarlo en un entorno separado del de producción y verificar que los datos son íntegros y que el sistema arranca y funciona correctamente.
+
+<Callout variant="tip" title="Frecuencia de pruebas">
+  Para respaldos de Nivel 1 —información crítica—, la prueba de restauración debería hacerse al menos una vez por trimestre. Para Nivel 2, una vez cada seis meses. Para Nivel 3, una vez al año. La prueba debería ser un procedimiento documentado que cualquier persona del equipo técnico pueda ejecutar, no algo que solo sabe hacer una persona.
+</Callout>
+
+Relacionado: un respaldo no probado es uno de esos [riesgos técnicos que nadie revisa hasta que es tarde](/blog/riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde). Como ocurre con otros riesgos invisibles, el problema no es que existan —todo sistema tiene riesgos— sino que no se gestionen activamente.
+
+## Respaldos y proveedores de software
+
+Si tu software está desarrollado y mantenido por un proveedor externo —agencia, freelancer, equipo tercerizado—, la responsabilidad de los respaldos debería estar definida en el contrato o en el acuerdo de nivel de servicio. Algunas preguntas que conviene tener respondidas:
+
+- ¿Quién es responsable de hacer los respaldos: el proveedor o tu empresa?
+- ¿Con qué frecuencia se hacen?
+- ¿Dónde se almacenan?
+- ¿Quién tiene acceso a los respaldos?
+- ¿Cuál es el procedimiento de restauración y cuánto tiempo toma?
+- ¿El proveedor ha probado restaurar un backup en el último trimestre?
+- Si terminás la relación comercial, ¿recibís una copia completa de los datos respaldados?
+
+Estas preguntas deberían ser parte de la conversación inicial con el proveedor, no una ocurrencia después de un incidente. El artículo sobre [qué preguntar sobre seguridad a tu proveedor](/blog/que-preguntar-sobre-seguridad-a-tu-proveedor) cubre en detalle la dimensión de respaldos y recuperación, incluyendo preguntas específicas sobre RPO, RTO —recovery time objective, o cuánto tiempo toma restaurar el servicio— y pruebas de restauración.
+
+## Respaldos de información que no está en un servidor
+
+No toda la información de una empresa vive en servidores. Las computadoras de los empleados, los teléfonos, las tablets, las cuentas de correo y las herramientas en la nube también contienen información que puede ser crítica. Algunos puntos que suelen pasarse por alto:
+
+- **Correo electrónico**: si usás servicios como Google Workspace o Microsoft 365, los correos tienen redundancia incorporada, pero eso no es lo mismo que un backup. Un usuario que borra un correo importante o un atacante que accede a una cuenta y elimina todo no se resuelve con la redundancia del proveedor. Servicios de backup específicos para correo electrónico existen por esta razón.
+- **Archivos en herramientas colaborativas**: Google Drive, Dropbox, SharePoint. La papelera de estas herramientas tiene un tiempo de retención limitado. Si un archivo se borra y nadie lo nota durante más tiempo que ese período de retención, se pierde para siempre.
+- **Código fuente**: si usás GitHub, GitLab o Bitbucket, el código está respaldado en los servidores del proveedor. Pero eso no cubre el caso de que un atacante borre el repositorio, que la cuenta sea suspendida o que alguien con acceso haga un push que sobrescriba ramas importantes. Tener un mirror del repositorio en otra ubicación es una práctica recomendada.
+- **Información en aplicaciones de terceros**: CRM, herramientas de facturación, plataformas de email marketing. Muchas de estas herramientas permiten exportar datos de forma periódica. Si no lo estás haciendo y el proveedor suspende el servicio, cambia los términos o sufre una pérdida de datos, podrías perder información de negocio que no está respaldada en ningún otro lado.
+
+<Callout variant="info" title="No asumas que la nube te respalda">
+  Los proveedores de servicios en la nube suelen garantizar alta disponibilidad —que el servicio no se caiga— y durabilidad —que los datos no se corrompan—, pero eso no es un backup. La durabilidad protege contra fallas de infraestructura del proveedor; no contra errores humanos —borrar algo sin querer—, ataques —alguien que accede a tu cuenta y elimina datos— o problemas legales —una suspensión de cuenta—. El backup es responsabilidad tuya, no del proveedor de infraestructura.
+</Callout>
+
+## Cómo empezar si hoy no tenés nada
+
+Si tu empresa no tiene una política de respaldos definida, el volumen de cosas por hacer puede ser abrumador. Un orden razonable para empezar:
+
+1. **Identificá la información crítica** —Nivel 1— y asegurate de que tenga al menos un respaldo diario, en una ubicación distinta de donde están los datos originales.
+2. **Probá la restauración de ese respaldo** antes de preocuparte por respaldar los Niveles 2 y 3. Un respaldo del Nivel 1 que funciona ya cubre lo más urgente.
+3. **Documentá el procedimiento**: qué se respalda, cada cuánto, dónde se guarda, cómo se restaura, quién es responsable. Si la persona que sabe hacerlo se va de la empresa, el conocimiento no debería irse con ella.
+4. **Avanzá hacia la regla tres-dos-uno** para el Nivel 1: al menos dos copias en medios distintos y una fuera de la ubicación física.
+5. **Extendé la cobertura** a los Niveles 2 y 3 progresivamente, según el presupuesto y la criticidad de cada tipo de información.
+
+La perfección no es el objetivo. Un respaldo semanal en un disco externo que se probó restaurar una vez es infinitamente mejor que la política de respaldos más sofisticada que nunca se implementó.
+
+La pregunta no es si tu empresa necesita respaldos. La pregunta es si los respaldos que tenés —o que creés tener— van a funcionar el día que los necesites. Y ese día, como todos los días en que algo falla, no avisa.

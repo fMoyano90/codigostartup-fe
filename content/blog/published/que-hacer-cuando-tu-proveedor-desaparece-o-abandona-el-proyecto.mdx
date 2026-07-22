@@ -1,0 +1,128 @@
+---
+title: Qué hacer cuando tu proveedor desaparece o abandona el proyecto
+slug: que-hacer-cuando-tu-proveedor-desaparece-o-abandona-el-proyecto
+description: >-
+  Pasos concretos para recuperar el control cuando un proveedor tecnológico deja
+  de responder, abandona el proyecto o desaparece sin entregar el código fuente
+  ni las credenciales.
+excerpt: >-
+  Que un proveedor tecnológico deje de responder no es el fin del proyecto, pero
+  sí una emergencia que requiere decisiones rápidas. Acá va una guía de pasos
+  concretos para recuperar el control y minimizar el daño.
+category: proveedores-tecnologicos
+tags:
+  - proveedores tecnológicos
+  - abandono de proyecto
+  - código fuente
+  - continuidad operativa
+  - relación con proveedores
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-22'
+approvedAt: '2026-07-22'
+publishedAt: '2026-07-22'
+seo:
+  title: >-
+    Qué hacer cuando tu proveedor desaparece o abandona el proyecto | Código
+    Startup
+  description: >-
+    Guía de pasos concretos para actuar cuando un proveedor tecnológico deja de
+    responder, abandona el proyecto o desaparece sin entregar código ni
+    credenciales.
+  primaryKeyword: qué hacer cuando tu proveedor desaparece o abandona el proyecto
+  secondaryKeywords:
+    - proveedor de software no responde
+    - abandono de proyecto tecnológico
+    - recuperar código fuente de proveedor
+    - proveedor desapareció con el código
+    - cómo actuar si el desarrollador abandona el proyecto
+relatedArticles:
+  - quien-debe-ser-dueno-del-codigo-fuente
+  - que-preguntas-hacer-antes-de-contratar-a-un-proveedor-tecnologico
+  - que-revisar-antes-de-recibir-una-aplicacion-terminada
+reviewStatus: pending
+reviewScore: null
+---
+
+Un proveedor tecnológico que deja de responder, desaparece sin aviso o abandona el proyecto a medio camino es una de las situaciones más estresantes para quien encargó el desarrollo. Del otro lado hay plazos comprometidos, dinero invertido y, sobre todo, un producto que no existe o quedó incompleto. La sensación inicial es de parálisis: ¿a quién llamo, qué pasó con el código, puedo recuperar algo de lo que pagué?
+
+La buena noticia es que, aunque la situación es grave, existen pasos concretos para recuperar el control. La mala noticia es que el margen de maniobra depende casi por completo de las decisiones que se tomaron antes de que el proveedor desapareciera. Este artículo recorre qué hacer en el momento de la crisis, qué información y accesos necesitás tener para no quedar atado y cómo preparar futuras relaciones para que esto no vuelva a pasar.
+
+## Lo primero: no quemes el único puente que te queda
+
+Cuando un proveedor desaparece, la reacción más instintiva es la confrontación: mensajes urgentes, amenazas legales, reclamos en redes sociales. Es comprensible, pero suele ser contraproducente. Si el proveedor todavía tiene el código fuente, las credenciales de los servicios o el control del dominio, la prioridad número uno es recuperar esos activos. Un mensaje agresivo puede hacer que el proveedor —si es que todavía está del otro lado leyendo— decida cortar toda comunicación definitivamente.
+
+El primer paso es intentar un contacto profesional y directo, por escrito, que deje constancia de la situación y ofrezca una salida sin confrontación. Algo como: "Entendemos que puede haber circunstancias que hayan interrumpido el proyecto. Nuestra prioridad en este momento es recibir el código fuente, la documentación y las credenciales de los servicios contratados. Podemos acordar una entrega ordenada sin necesidad de escalar la situación." Este mensaje no garantiza una respuesta, pero abre una puerta que un ultimátum cerraría.
+
+En paralelo a ese intento de contacto, hay que activar un plan de contención. Lo urgente no es resolver quién tuvo la culpa, sino asegurar lo que todavía se puede asegurar.
+
+## Recuperar el control técnico: lo que necesitás y dónde buscarlo
+
+El objetivo inmediato es obtener tres cosas: el código fuente, las credenciales de servicios externos y la documentación del proyecto. Qué tan posible sea obtener cada una depende de lo que se acordó al inicio del proyecto.
+
+**El código fuente.** Si el contrato establecía que el código estaría en un repositorio compartido —GitHub, GitLab, Bitbucket— y el cliente tenía acceso desde el día uno, recuperarlo es trivial: se clona el repositorio y el código está disponible. Si el código vivía en la máquina del desarrollador o en un repositorio privado sin acceso para el cliente, la situación es mucho más compleja. En ese caso, el código existe pero no está accesible, y la única vía para obtenerlo es que el proveedor lo entregue voluntariamente o que una acción legal lo obligue.
+
+**Las credenciales de servicios.** Un proyecto de software moderno depende de múltiples servicios externos: el dominio (GoDaddy, Namecheap, Cloudflare), el hosting (AWS, Vercel, DigitalOcean), bases de datos, servicios de email, pasarelas de pago. Si el proveedor contrató estos servicios a nombre del cliente y usó el correo corporativo del cliente como cuenta de recuperación, recuperar el acceso es un proceso estándar de "olvidé mi contraseña". Si los servicios están a nombre del proveedor, con su correo y su tarjeta de crédito, el cliente no tiene forma directa de recuperarlos.
+
+**La documentación.** Si existe un documento de especificación, actas de reunión, un backlog de tareas o cualquier registro de lo que se estaba construyendo, ese material es valiosísimo para quien retome el proyecto. Permite entender qué se hizo, qué faltaba y por qué se tomaron ciertas decisiones técnicas.
+
+<Callout variant="warning" title="La lección que deja toda crisis">
+  Si estás leyendo esto y tu proyecto todavía está en marcha con un proveedor activo, verificá hoy mismo dos cosas: que el código esté en un repositorio al que tengas acceso directo y que los servicios externos estén a nombre de tu empresa. Son dos verificaciones que llevan quince minutos y que marcan la diferencia entre un contratiempo y un desastre.
+</Callout>
+
+## Evaluar el estado real del proyecto
+
+Mientras se intenta recuperar el acceso, conviene hacer un inventario de lo que efectivamente existe. No de lo que el proveedor dijo que existía en la última reunión de avance, sino de lo que se puede verificar: ¿hay una versión funcionando en algún entorno? ¿Se puede compilar el código? ¿Las funcionalidades que se mostraron en la última demo están realmente implementadas o eran prototipos visuales?
+
+Este inventario va a determinar las opciones disponibles. Tres escenarios típicos:
+
+**Escenario A: el código está accesible y funciona.** Es el mejor caso posible. Se necesita encontrar un nuevo equipo que entienda el código, evalúe su calidad y determine si conviene continuar sobre esa base o empezar de nuevo. Un equipo técnico competente puede hacer esa evaluación en unos pocos días.
+
+**Escenario B: el código está accesible pero es inutilizable.** Pasa más seguido de lo que parece. El código compila pero la arquitectura es un desorden, no hay pruebas automatizadas, los nombres de variables son crípticos y las decisiones técnicas son difíciles de justificar. En este caso, continuar sobre esa base puede ser más caro que reconstruir. Un nuevo equipo técnico puede confirmarlo después de una revisión de código de unas cuantas horas.
+
+**Escenario C: no hay acceso al código ni a los servicios.** Es el peor escenario, y reduce las opciones a dos: recuperar lo perdido por vía legal —un proceso lento, costoso y de resultado incierto— o asumir la pérdida y empezar de nuevo con un proveedor distinto, esta vez con las condiciones de acceso y propiedad bien definidas desde el día uno.
+
+<Callout variant="info" title="No estás solo en esto">
+  Muchas empresas han pasado por esta situación. El artículo sobre [quién debe ser dueño del código fuente](/blog/quien-debe-ser-dueno-del-codigo-fuente) explica cómo establecer la propiedad desde el contrato para que este escenario no se repita. Y si estás en proceso de seleccionar un nuevo proveedor, el checklist de [preguntas antes de contratar](/blog/que-preguntas-hacer-antes-de-contratar-a-un-proveedor-tecnologico) incluye justamente las que previenen este tipo de abandono.
+</Callout>
+
+## Cómo encarar la transición a un nuevo equipo
+
+Si el código está accesible y se decide continuar, el siguiente paso es encontrar un equipo que pueda tomar la posta. La transición de un proyecto abandonado a un equipo nuevo tiene particularidades que conviene anticipar.
+
+**No pidas un presupuesto cerrado de entrada.** Ningún equipo serio va a cotizar el costo total de continuar un proyecto ajeno sin antes revisar el código en profundidad. Lo razonable es contratar una revisión técnica paga —unas diez o veinte horas de trabajo— que produzca un informe con el estado del código, los riesgos identificados y una estimación del esfuerzo para completar lo que falta. Esa revisión es una inversión, no un gasto: evita comprometerse con un presupuesto basado en suposiciones.
+
+**Documentá lo que sepas del proyecto.** Aunque no seas técnico, tu conocimiento del negocio es el activo más valioso para el nuevo equipo. Escribí —en tus propias palabras— qué se suponía que debía hacer el sistema, qué funcionalidades estaban terminadas según lo que viste en las demos, qué problemas estaban pendientes de resolver y qué cambios de alcance se discutieron. Ese documento, por informal que sea, le ahorra al nuevo equipo días de investigación.
+
+**Pedí visibilidad desde el día uno.** Que el nuevo equipo trabaje en un repositorio al que tengas acceso, con commits frecuentes y demos periódicas. No es desconfianza: es la forma de asegurarte de que, si algo sale mal, no te vuelva a pasar lo mismo.
+
+## Prevenir la próxima vez: qué cambiar en la relación con proveedores
+
+La mejor forma de resolver una crisis es haberla anticipado. Estas son las prácticas que reducen drásticamente el riesgo de que un proveedor desaparezca dejándote sin nada:
+
+**Repositorio compartido desde el día uno.** El código fuente vive en GitHub, GitLab o similar, y el cliente tiene acceso de lectura —como mínimo— desde que se escribe la primera línea. Esto no es negociable. Si un proveedor se resiste a esta condición, es una señal de alerta que conviene tomar en serio.
+
+**Servicios externos a nombre del cliente.** El dominio, el hosting, las bases de datos y cualquier servicio pago deben estar contratados a nombre de la empresa cliente, con su correo corporativo y su método de pago. El proveedor puede administrarlos, pero la propiedad y la capacidad de recuperación deben ser del cliente.
+
+**Entregas parciales y frecuentes.** Un proyecto que solo se ve cuando está "terminado" es un proyecto donde el cliente no tiene forma de verificar el progreso real. Las demos quincenales o mensuales con software funcionando —no presentaciones ni mockups— permiten detectar desvíos y problemas de compromiso mucho antes de que se conviertan en un abandono.
+
+**Documentación viva.** No hace falta un manual de cien páginas. Alcanza con que el proveedor mantenga un documento compartido con la arquitectura general, las decisiones técnicas importantes y las instrucciones para poner el proyecto en marcha en una máquina nueva. Si ese documento no existe, ningún equipo externo va a poder tomar el proyecto sin un costo de arranque altísimo.
+
+Para profundizar en cómo evaluar el trabajo recibido antes de darlo por terminado, el artículo sobre [qué revisar antes de recibir una aplicación terminada](/blog/que-revisar-antes-de-recibir-una-aplicacion-terminada) cubre los puntos que conviene verificar en cada entrega parcial y en la entrega final.
+
+## Cuándo escala a un problema legal
+
+Si el proveedor desaparece con dinero ya pagado y sin entregar nada, o retiene código fuente y credenciales de forma deliberada, la situación escala al plano legal. No es el foco de este artículo —eso le corresponde a un abogado—, pero hay dos cosas que conviene tener claras:
+
+**El contrato es la base de cualquier reclamo.** Si el contrato establecía que el código era propiedad del cliente, que las credenciales debían entregarse y que los pagos estaban atados a hitos verificables, hay fundamento para reclamar. Si el acuerdo fue de palabra o por WhatsApp, la situación es mucho más débil. No hace falta un contrato de cincuenta páginas: un documento de tres o cuatro carillas que especifique propiedad, entregables y condiciones de rescisión ya cambia la posición legal por completo.
+
+**La vía legal consume tiempo y energía.** Un proceso judicial, incluso uno favorable, puede llevar meses o años. Durante ese tiempo, el proyecto está parado. La decisión de iniciar acciones legales debería sopesarse contra la alternativa de asumir la pérdida y reconstruir con mejores condiciones. No hay una respuesta universal: depende del monto invertido, de la urgencia del proyecto y de la solvencia del proveedor. Pero conviene tomar esa decisión con un abogado, no en caliente.
+
+Un proveedor que desaparece no es el fin del proyecto, pero sí una llamada de atención sobre las condiciones en las que se delegó el desarrollo. La diferencia entre una crisis administrable y un desastre total no está en la reacción durante la emergencia, sino en las decisiones que se tomaron mucho antes de que el proveedor dejara de responder.

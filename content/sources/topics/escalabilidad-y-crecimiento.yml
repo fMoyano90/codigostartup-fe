@@ -1,0 +1,177 @@
+id: escalabilidad-y-crecimiento-01
+name: Escalabilidad y crecimiento
+category: escalabilidad-y-crecimiento
+topics:
+  - id: que-preparar-antes-de-escalar-tu-producto
+    title: Qué preparar en tu producto antes de escalar
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - gerentes
+    objective: Ayudar a anticipar cuellos de botella técnicos antes de que el
+      crecimiento los exponga.
+    notes:
+      - Hablar en términos de síntomas observables (lentitud, errores bajo
+        carga), no de arquitectura específica.
+  - id: cuando-tu-equipo-tecnico-ya-no-da-abasto
+    title: Señales de que tu equipo técnico ya no da abasto para crecer
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ayudar a detectar cuándo el equipo actual necesita refuerzo,
+      reestructuración o apoyo externo.
+    notes:
+      - Distinguir entre problema de capacidad (faltan personas) y problema de
+        proceso (falta orden).
+  - id: que-significa-que-un-software-sea-escalable
+    title: Qué significa que un software sea escalable
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - gerentes
+    objective: Explicar el concepto de escalabilidad en términos no técnicos, con
+      ejemplos concretos.
+    notes:
+      - Diferenciar escalabilidad de performance — no son lo mismo.
+  - id: que-es-la-deuda-tecnica-para-founders
+    title: Qué es la deuda técnica explicada para founders
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - empresarios
+    objective: Explicar el concepto de deuda técnica y su impacto en el negocio sin
+      usar jerga de programación.
+    notes:
+      - "Usar analogías de negocio, no de código. Ej: construir sin planos vs.
+        con planos."
+  - id: como-saber-si-app-esta-preparada-para-crecer
+    title: Cómo saber si tu aplicación está preparada para crecer
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - gerentes
+    objective: Dar señales observables de que una app puede o no soportar más usuarios.
+    notes:
+      - "Hablar de síntomas: lentitud bajo carga, errores intermitentes, caídas
+        en horas pico."
+  - id: solucion-10-usuarios-vs-1000
+    title: Por qué una solución que funciona con 10 usuarios puede fallar con 1.000
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - empresarios
+    objective: Explicar sin tecnicismos por qué la escala cambia todo.
+    notes:
+      - "Analogía: un restaurante de 10 mesas vs. 100 mesas — no es solo poner
+        más mesas."
+  - id: decisiones-tecnicas-limitan-crecimiento
+    title: Qué decisiones técnicas pueden limitar el crecimiento de un negocio
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - empresarios
+    objective: Identificar decisiones técnicas tempranas que pueden volverse un
+      freno cuando el negocio crece.
+    notes: []
+  - id: como-preparar-plataforma-recibir-mas-clientes
+    title: Cómo preparar una plataforma para recibir más clientes
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - founders
+      - gerentes
+    objective: Dar pasos concretos para preparar un sistema antes de un aumento de
+      usuarios.
+    notes: []
+  - id: cuando-conviene-reconstruir-un-producto-digital
+    title: Cuándo conviene reconstruir un producto digital
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cuándo conviene reconstruir
+      un producto digital.
+    notes: []
+  - id: de-mvp-a-producto-estable-que-debe-cambiar
+    title: "De MVP a producto estable: qué debe cambiar"
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: "Artículo generado desde TEMAS-BLOG.md — de mvp a producto estable:
+      qué debe cambiar."
+    notes: []
+  - id: como-evitar-que-la-deuda-tecnica-frene-tu-empresa
+    title: Cómo evitar que la deuda técnica frene tu empresa
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo evitar que la deuda
+      técnica frene tu empresa.
+    notes: []
+  - id: como-crecer-sin-perder-estabilidad-operativa
+    title: Cómo crecer sin perder estabilidad operativa
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo crecer sin perder
+      estabilidad operativa.
+    notes: []
+  - id: senales-de-que-tu-arquitectura-necesita-una-revision
+    title: Señales de que tu arquitectura necesita una revisión
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — señales de que tu
+      arquitectura necesita una revisión.
+    notes: []
+  - id: como-preparar-un-producto-para-venderlo-a-empresas-grandes
+    title: Cómo preparar un producto para venderlo a empresas grandes
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo preparar un producto
+      para venderlo a empresas grandes.
+    notes: []
+  - id: que-necesita-una-plataforma-para-operar-en-varios-paises
+    title: Qué necesita una plataforma para operar en varios países
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: qué necesita una plataforma para operar en varios países.
+    notes: []

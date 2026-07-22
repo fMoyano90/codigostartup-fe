@@ -1,0 +1,162 @@
+---
+title: Cómo proteger la información almacenada en planillas
+slug: como-proteger-la-informacion-almacenada-en-planillas
+description: >-
+  Guía práctica para reducir los riesgos de seguridad de las planillas que
+  contienen datos sensibles: permisos de acceso, copias de seguridad,
+  alternativas de migración y buenas prácticas aplicables desde hoy.
+excerpt: >-
+  Las planillas de cálculo son la base de datos más usada en las pymes, y
+  también la más vulnerable. Se envían por correo, se almacenan en carpetas
+  compartidas sin control de acceso, se editan en simultáneo sin trazabilidad de
+  cambios. Esta guía explica cómo proteger la información que vive en planillas
+  sin necesidad de abandonarlas de un día para el otro —y cuándo es momento de
+  migrar a un sistema más seguro.
+category: seguridad-y-riesgos
+tags:
+  - planillas
+  - excel
+  - seguridad de datos
+  - protección de información
+  - buenas prácticas
+audience:
+  - empresarios
+  - gerentes
+intent: commercial
+funnelStage: decision
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-22'
+approvedAt: '2026-07-22'
+seo:
+  title: Cómo proteger la información almacenada en planillas | Código Startup
+  description: >-
+    Guía para proteger datos sensibles en planillas de cálculo: permisos,
+    backups, encriptación, trazabilidad y señales de que es momento de migrar a
+    un sistema más seguro.
+  primaryKeyword: proteger información en planillas
+  secondaryKeywords:
+    - seguridad en excel
+    - proteger datos en planillas
+    - planillas información sensible
+    - riesgos de planillas compartidas
+    - alternativas a excel para datos sensibles
+relatedArticles:
+  - cuando-una-planilla-excel-deja-de-ser-suficiente
+  - que-datos-de-tus-clientes-debes-proteger
+  - que-es-una-brecha-de-seguridad
+  - riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde
+reviewStatus: pending
+reviewScore: null
+publishedAt: '2026-07-22'
+---
+
+Las planillas de cálculo son la herramienta de gestión más utilizada en las pequeñas y medianas empresas. Están en todas partes: la lista de clientes, el control de facturación, el seguimiento de proveedores, el registro de personal, el inventario, las proyecciones financieras. Son flexibles, son familiares, no requieren instalación ni capacitación, y resuelven el problema inmediato de tener la información organizada en un solo lugar.
+
+Pero las planillas también son la superficie de ataque más grande y menos protegida de la mayoría de las empresas. Se comparten por correo sin encriptar, se guardan en carpetas de red sin permisos, se editan por múltiples personas sin control de cambios, y rara vez tienen una copia de seguridad verificable. Cuando la información que contienen es sensible —datos de clientes, información financiera, registros de personal—, esa vulnerabilidad deja de ser un problema de organización y se convierte en un riesgo de seguridad con consecuencias legales y de negocio.
+
+Este artículo propone medidas concretas para proteger la información almacenada en planillas, ordenadas de menor a mayor esfuerzo. No asume que vayas a reemplazar las planillas por un sistema complejo la semana que viene: asume que las planillas son una realidad y que necesitás reducir el riesgo mientras tanto.
+
+## Por qué las planillas son vulnerables
+
+Antes de proteger, conviene entender dónde están los riesgos. Las planillas son vulnerables por diseño, no por descuido: fueron creadas para ser flexibles y fáciles de compartir, no para ser seguras.
+
+**No tienen control de acceso granular.** Un archivo de planilla compartido en una carpeta de red o en un servicio de almacenamiento en la nube suele tener dos estados: acceso total o ningún acceso. No hay forma de decir "esta persona puede ver la columna de clientes pero no la de información financiera" o "esta persona puede modificar las filas de su sucursal pero no las de otras sucursales". Si alguien tiene acceso al archivo, tiene acceso a todo lo que contiene.
+
+**No tienen trazabilidad confiable.** Saber quién modificó qué y cuándo depende de funcionalidades que no siempre están activadas, que no siempre funcionan bien con múltiples usuarios simultáneos y que se pierden cuando el archivo se copia, se envía por correo o se mueve de carpeta.
+
+**Viajan sin protección.** Una planilla enviada por correo electrónico es un archivo adjunto que pasa por múltiples servidores, queda en las bandejas de entrada y salida, en las copias de seguridad del servicio de correo, en los dispositivos de quien la envía y de quien la recibe. En cada uno de esos lugares, puede ser leída, copiada o reenviada.
+
+**Se multiplican sin control.** La práctica de "guardar como" y crear versiones derivadas genera copias del archivo —y de la información sensible que contiene— en múltiples ubicaciones. Cuando alguien deja la empresa, nadie revisa cuántas copias de cada planilla sensible tenía en su computadora, en su correo o en sus carpetas personales.
+
+**No tienen protección contra pérdida.** Un archivo de planilla puede ser eliminado accidentalmente, sobrescrito por error, corrompido por un corte de energía o secuestrado por un ransomware. Si la única copia es la que está en la carpeta compartida, perder ese archivo es perder toda la información que contiene.
+
+<Callout variant="warning" title="El riesgo silencioso de las planillas con datos de clientes">
+  Si tu empresa almacena datos personales de clientes en planillas —nombres, correos, teléfonos, direcciones, información financiera— y esas planillas no están protegidas, estás expuesto a un riesgo que va más allá de lo operativo. Las regulaciones de protección de datos en cada vez más países exigen medidas de seguridad proporcionadas al tipo de información que se maneja. Una planilla sin protección puede ser considerada una violación de esas obligaciones.
+</Callout>
+
+## Medidas inmediatas: lo que podés hacer hoy
+
+Estas acciones no requieren inversión ni conocimientos técnicos avanzados. Se pueden implementar en menos de una hora y reducen el riesgo de forma significativa.
+
+### 1. Separar la información sensible de la no sensible
+
+Si una planilla contiene datos de clientes junto con información operativa que no es sensible, separalas en dos archivos. La planilla con datos sensibles debería tener un acceso más restringido que la planilla operativa. No todas las personas que necesitan ver el inventario necesitan ver los datos personales de los clientes.
+
+### 2. Revisar quién tiene acceso a cada planilla
+
+Tomate treinta minutos para revisar los permisos de las carpetas compartidas donde están las planillas. ¿Hay personas que ya no trabajan en la empresa y que todavía tienen acceso? ¿Hay personas que no necesitan acceder a esa información para su trabajo diario? Reducir el acceso a lo estrictamente necesario —el principio de mínimo privilegio— es la medida de seguridad de mayor impacto con menor esfuerzo.
+
+### 3. Activar la protección con contraseña
+
+La mayoría de las herramientas de planillas permiten proteger el archivo con una contraseña para abrirlo. No es una protección infalible —las contraseñas de archivos de planillas pueden ser vulneradas con herramientas especializadas—, pero es una barrera adicional que impide que cualquiera que encuentre el archivo pueda abrirlo. La contraseña debería ser robusta —no "empresa123"— y debería compartirse solo con las personas que realmente necesitan acceder, idealmente a través de un gestor de contraseñas, no por correo o mensajería.
+
+### 4. Desactivar la edición simultánea cuando no sea necesaria
+
+La edición en tiempo real por múltiples usuarios es una funcionalidad útil para la colaboración, pero también es una fuente de riesgos: cambios no deseados, sobrescrituras accidentales, pérdida de información por conflictos de versión. Si la planilla no requiere edición simultánea, configurarla para que solo una persona pueda editarla por vez protege la integridad de los datos.
+
+<Callout variant="tip" title="El checklist de seguridad para planillas">
+  Dedicá treinta minutos hoy a revisar tus cinco planillas más sensibles con este checklist: (1) ¿quién tiene acceso? ¿Debería tenerlo? (2) ¿tiene contraseña? (3) ¿existe una copia de seguridad en otro lugar? (4) ¿se envió por correo en los últimos seis meses? Si una planilla sensible no pasa este checklist, ya sabés por dónde empezar.
+</Callout>
+
+## Medidas a mediano plazo: inversiones que escalan
+
+Estas acciones requieren algo más de tiempo o de inversión, pero ofrecen una protección sustancialmente mayor.
+
+### Migrar a almacenamiento en la nube con control de acceso
+
+Servicios como Google Drive, OneDrive o Dropbox ofrecen controles de acceso más granulares que una carpeta compartida en un servidor local. Permiten definir quién puede ver, comentar o editar cada archivo, revocar accesos individuales, y ver un historial de actividad —quién accedió al archivo, cuándo y desde dónde—.
+
+La migración en sí es simple: mover los archivos de la carpeta local a una carpeta en la nube. Lo que requiere atención es la configuración de permisos: revisar, archivo por archivo, quién debería tener acceso y con qué nivel.
+
+### Implementar un sistema de respaldo automático
+
+Si las planillas están en una carpeta local o en un servidor, un respaldo automático diario —a un disco externo, a otro servidor, a la nube— reduce el riesgo de pérdida por eliminación accidental, corrupción o ransomware. La clave, como se explica en el artículo sobre [cómo saber si tu sistema tiene copias de seguridad reales](/blog/como-saber-si-tu-sistema-tiene-copias-de-seguridad-reales), es verificar que el respaldo funciona: no alcanza con configurarlo, hay que probar restaurarlo.
+
+### Establecer una política de manejo de planillas
+
+Un documento simple de una página que establezca reglas básicas para el manejo de planillas con información sensible:
+
+- No se envían por correo electrónico sin protección. Si hay que compartir, se comparte un enlace con acceso controlado, no un archivo adjunto.
+- No se descargan en dispositivos personales. El acceso es desde la carpeta en la nube o desde el servidor, no desde una copia local.
+- Se revisan los permisos cada tres meses y cada vez que alguien cambia de rol o deja la empresa.
+- Se identifica claramente qué planillas contienen información sensible —con un nombre de archivo, una etiqueta o una carpeta específica— para que todos sepan qué archivos requieren cuidado adicional.
+
+La política no necesita ser extensa ni compleja. Necesita estar escrita, comunicada y aplicada. Si no está escrita, no existe.
+
+## Cuándo la planilla dejó de ser la herramienta adecuada
+
+Hay un punto en el que proteger la información en planillas deja de ser suficiente y la decisión correcta es migrar a un sistema diseñado para manejar datos de forma segura. Algunas señales:
+
+**Más de una persona necesita editar la misma información al mismo tiempo.** Las planillas no manejan bien la concurrencia. Cuando dos personas modifican el mismo archivo simultáneamente, los conflictos de versión son frecuentes y la información se pierde o se duplica.
+
+**La información tiene relaciones complejas.** Si necesitás cruzar datos de clientes con datos de facturación, con datos de inventario, con datos de envíos, y cada cosa está en una planilla distinta, mantener la consistencia entre todas esas planillas es un trabajo manual propenso a errores. Un sistema de gestión mantiene esas relaciones automáticamente.
+
+**Necesitás que distintas personas vean distintas partes de la información.** Si el equipo de ventas necesita ver los datos de contacto de los clientes pero no su información financiera, y con planillas eso solo se puede resolver manteniendo dos archivos separados, la complejidad operativa ya supera el beneficio de la simplicidad.
+
+**La información es sensible y el riesgo regulatorio es real.** Si manejás datos personales de clientes, información financiera o datos de salud, un sistema con control de acceso granular, trazabilidad de accesos y registros de auditoría no es un lujo: es una necesidad para cumplir con las obligaciones legales y proteger a la empresa.
+
+**El volumen de datos hace que las planillas sean lentas o inestables.** Una planilla con decenas de miles de filas, fórmulas complejas y múltiples hojas vinculadas es frágil: un error en una fórmula puede propagarse sin ser detectado, y el archivo puede corromperse sin posibilidad de recuperación.
+
+El artículo sobre [cuándo una planilla de Excel deja de ser suficiente](/blog/cuando-una-planilla-excel-deja-de-ser-suficiente) desarrolla en detalle estas señales y ofrece criterios para decidir el momento de migrar a un sistema de gestión.
+
+<Callout variant="info" title="Migrar no es abandonar las planillas de un día para el otro">
+  La migración de planillas a un sistema de gestión es un proceso gradual. Se empieza por la información más sensible o por el proceso que más fricción genera, se migra, se estabiliza, y después se aborda el siguiente. Durante la transición, las medidas de protección descritas en este artículo siguen siendo necesarias para las planillas que todavía están en uso.
+</Callout>
+
+## El costo de no hacer nada
+
+La información almacenada en planillas sin protección es un riesgo que se materializa en silencio. No hay una alarma que suene cuando alguien que no debería accede a los datos de tus clientes. No hay una notificación que avise cuando una planilla con información financiera se envía por error al destinatario equivocado. El daño se descubre después, cuando ya ocurrió.
+
+Las consecuencias de no proteger la información en planillas incluyen:
+
+- **Pérdida de datos sin posibilidad de recuperación.** Un archivo eliminado o sobrescrito puede significar la pérdida de meses o años de información de clientes, historial de operaciones o registros contables.
+- **Exposición de información sensible.** Una planilla enviada al correo equivocado, compartida con permisos demasiado amplios o accesible desde un dispositivo perdido es una brecha de seguridad. El artículo sobre [qué es una brecha de seguridad](/blog/que-es-una-brecha-de-seguridad) explica las consecuencias de este tipo de incidentes.
+- **Incumplimiento regulatorio.** Si los datos de tus clientes están protegidos por regulaciones y tu empresa no toma medidas razonables para protegerlos, las consecuencias pueden incluir multas, sanciones y daño a la reputación.
+- **Pérdida de confianza de los clientes.** Si los clientes se enteran de que su información personal estaba en una planilla sin protección, la pérdida de confianza puede ser más costosa que cualquier multa.
+
+Proteger la información en planillas no requiere un presupuesto significativo. Requiere reconocer que la información que contienen es un activo que merece protección, y dedicar el tiempo —medido en horas, no en semanas— a implementar las medidas básicas descritas en este artículo.
+
+La seguridad no es binaria: no se trata de tener un sistema impenetrable o no tener nada. Se trata de reducir el riesgo paso a paso, empezando por lo que genera mayor protección con menor esfuerzo. Y en la mayoría de las pymes, el primer paso es revisar las planillas.

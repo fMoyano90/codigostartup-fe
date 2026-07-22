@@ -1,0 +1,160 @@
+---
+title: Cómo gestionar accesos cuando alguien deja la empresa
+slug: gestionar-accesos-cuando-alguien-deja-la-empresa
+description: >-
+  Un protocolo simple para revocar accesos y proteger información ante la salida
+  de personal: qué revisar, en qué orden y cómo asegurarse de que no quede una
+  puerta abierta.
+excerpt: >-
+  Cuando una persona deja la empresa, sus credenciales pueden seguir activas
+  durante semanas. Un protocolo paso a paso para empresarios y gerentes que
+  quieren proteger su información sin depender de que alguien se acuerde de
+  hacerlo.
+category: seguridad-y-riesgos
+tags:
+  - seguridad
+  - gestión de accesos
+  - protección de datos
+  - protocolo de salida
+  - credenciales
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-21'
+approvedAt: '2026-07-21'
+publishedAt: '2026-07-21'
+seo:
+  title: Cómo gestionar accesos cuando alguien deja la empresa | Código Startup
+  description: >-
+    Protocolo para revocar accesos y proteger información ante la salida de
+    personal. Qué sistemas revisar, en qué orden y cómo automatizarlo.
+  primaryKeyword: gestionar accesos salida de personal
+  secondaryKeywords:
+    - revocar accesos empleados
+    - seguridad salida de personal
+    - protocolo baja de empleado
+    - proteger información empresa
+    - credenciales ex empleados
+relatedArticles:
+  - que-es-una-brecha-de-seguridad
+  - que-datos-de-tus-clientes-debes-proteger
+  - riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde
+reviewStatus: pending
+reviewScore: null
+---
+
+Cada vez que una persona deja una empresa —por renuncia, despido, fin de contrato o cualquier otra razón—, se abre una ventana de riesgo que la mayoría de las organizaciones no gestiona bien. Las credenciales de esa persona pueden seguir activas durante días, semanas o meses. Las sesiones iniciadas en aplicaciones web pueden permanecer abiertas. Los accesos compartidos de los que nadie lleva registro pueden quedar en el limbo.
+
+El problema no es la persona que se va. Es que muy pocas empresas tienen un protocolo claro para revocar accesos de forma sistemática. Cuando la gestión se hace de manera informal —"que alguien de sistemas desactive las cuentas"—, el resultado es un mosaico de accesos parcialmente revocados, credenciales que sobreviven por omisión y puertas abiertas que nadie sabe que existen hasta que ocurre un incidente.
+
+Este artículo propone un protocolo simple que cualquier empresa puede implementar, desde una pyme con cinco empleados hasta una organización con equipos de decenas de personas. No requiere herramientas sofisticadas: requiere disciplina y un checklist.
+
+## Por qué la gestión de salida es un problema de seguridad subestimado
+
+Cuando una persona deja la empresa, el foco suele estar en lo operativo: quién va a cubrir sus tareas, cómo se hace la transición de sus proyectos, qué documentación deja. La seguridad de la información suele ser una ocurrencia tardía, algo que "alguien se ocupa" pero que rara vez tiene un responsable designado y un procedimiento escrito.
+
+Las consecuencias de no gestionar bien los accesos tras una salida son más frecuentes de lo que se cree. Un ex empleado que conserva acceso a la cuenta de correo corporativa puede leer comunicaciones internas durante semanas. Un ex colaborador con credenciales activas en el sistema de gestión puede modificar o eliminar información. Una cuenta compartida de un servicio en la nube que nunca se rotó puede ser usada por alguien que ya no debería tener acceso.
+
+No hace falta que haya mala intención. A veces el problema es que la cuenta sigue activa, alguien la usa por costumbre y se mezcla información vieja con nueva. O que la cuenta es vulnerada por un tercero porque nadie la monitorea y la contraseña es débil. El riesgo no es solo el ex empleado: es que el acceso no gestionado se convierta en un vector de ataque para cualquiera.
+
+<Callout variant="warning" title="Un dato que debería preocuparte">
+  En muchas empresas, el tiempo promedio entre la salida de una persona y la revocación completa de todos sus accesos supera los siete días. Durante esa semana, las credenciales están activas y nadie las está monitoreando. Si tu empresa no sabe exactamente cuánto tarda este proceso hoy, probablemente sea más de lo que imaginás.
+</Callout>
+
+## El protocolo en cuatro pasos
+
+Gestionar la salida de una persona en términos de seguridad no es complejo si se sigue un orden. Lo que falla no es la dificultad técnica: es la falta de un procedimiento estandarizado que se ejecute siempre, sin excepciones, sin depender de que alguien se acuerde.
+
+### Paso 1: Mapear los accesos antes de que la persona se vaya
+
+El momento de preguntarse a qué sistemas tiene acceso una persona no es el día después de que se fue. Es antes: idealmente en el momento de la contratación, cuando se definen los accesos que necesita, y se actualiza cada vez que cambia de rol o de responsabilidades.
+
+Si tu empresa no tiene un registro de qué accesos tiene cada persona —un simple documento alcanza—, el primer paso del protocolo es crearlo. No hace falta un sistema complejo: una planilla con columnas de persona, sistema, tipo de acceso y fecha de concesión es suficiente para empezar.
+
+Los sistemas que suelen concentrar la mayor cantidad de accesos no revocados son:
+
+- **Correo electrónico corporativo.** Es el acceso más evidente y, paradójicamente, uno de los que más veces queda activo por inercia. Una cuenta de correo activa permite leer correos nuevos, y en muchos casos también permite usar esa cuenta para restablecer contraseñas de otros servicios.
+- **Sistemas de gestión internos.** CRM, ERP, plataformas de facturación, sistemas de atención al cliente. Cualquier sistema donde la persona haya tenido un usuario con permisos de lectura o escritura.
+- **Herramientas de comunicación.** Slack, Teams, grupos de WhatsApp corporativos. Que alguien siga en el grupo de chat de la empresa después de haberse ido es más común de lo que parece.
+- **Repositorios de código y documentación.** GitHub, GitLab, Google Drive, Notion, SharePoint. El acceso a la propiedad intelectual de la empresa debería revocarse en las primeras horas posteriores a la salida.
+- **Servicios en la nube.** AWS, Google Cloud, Azure, y cualquier otro servicio donde la persona haya tenido credenciales de API, claves de acceso o permisos de administración.
+- **Cuentas compartidas.** El punto más débil de casi todas las empresas. Si varias personas comparten una misma cuenta —algo que no debería ocurrir, pero que ocurre—, la salida de una de ellas obliga a cambiar la contraseña y notificar al resto.
+
+<Callout variant="info" title="Un ejercicio para esta semana">
+  Elegí a una persona de tu equipo —no la que se va, sino una actual— y pedile que enumere todos los sistemas, aplicaciones y servicios a los que tiene acceso. Compará esa lista con el registro que tiene la empresa. La diferencia entre ambas listas es tu verdadera exposición al riesgo.
+</Callout>
+
+### Paso 2: Ejecutar la revocación en orden de criticidad
+
+El orden importa. No todos los accesos tienen el mismo potencial de daño si permanecen activos, y el tiempo siempre es limitado —especialmente en salidas conflictivas o repentinas—. Revocá primero lo que más daño puede hacer:
+
+1. **Credenciales de servicios en la nube y claves de API.** Son las llaves de la infraestructura. Con acceso a la consola de administración de AWS o a las claves de API de servicios críticos, una persona puede hacer un daño irreparable en minutos.
+2. **Acceso a sistemas con datos de clientes o información financiera.** CRM, sistema de facturación, base de datos de clientes. La pérdida o modificación de esta información tiene consecuencias legales y de reputación.
+3. **Correo electrónico corporativo.** Además de la información que contiene, el correo es la llave maestra para restablecer contraseñas de decenas de servicios.
+4. **Herramientas de comunicación y repositorios de información.** Slack, Drive, repositorios de código. Menos críticos en términos de daño inmediato, pero contienen información que no debería seguir estando disponible.
+5. **Accesos físicos.** Tarjetas de acceso a oficinas, llaves, dispositivos corporativos. Muchas empresas gestionan bien el dispositivo —piden la devolución de la computadora— pero se olvidan de la tarjeta de acceso al edificio.
+
+### Paso 3: Verificar que la revocación fue efectiva
+
+Revocar un acceso no es lo mismo que confirmar que la revocación funcionó. Después de ejecutar cada paso, verificá:
+
+- Que la cuenta de correo no solo esté desactivada, sino que no pueda recibir correos nuevos y que cualquier intento de acceso sea rechazado, no solo que la contraseña haya sido cambiada.
+- Que las sesiones activas en aplicaciones web hayan sido cerradas. Cambiar la contraseña no cierra las sesiones que ya están iniciadas en muchos sistemas. Si la persona tenía una sesión abierta en su navegador, puede seguir accediendo hasta que esa sesión expire o sea revocada explícitamente.
+- Que las claves de API hayan sido rotadas, no solo desactivadas. Si una clave fue compartida o almacenada en algún lugar fuera del control de la empresa, desactivarla no garantiza que no exista una copia.
+- Que las cuentas compartidas cuya contraseña se cambió hayan sido notificadas a todos los usuarios legítimos, y que ninguno de ellos esté usando la contraseña vieja por desconocimiento.
+
+<Callout variant="tip" title="La verificación que toma cinco minutos y evita problemas">
+  Después de revocar los accesos, intentá iniciar sesión con las credenciales de la persona en cada sistema —o pedile a alguien de tu equipo que lo haga—. Si podés entrar, la revocación no fue efectiva. Este control simple detecta configuraciones mal aplicadas, sesiones que sobrevivieron y accesos que se escaparon del radar.
+</Callout>
+
+### Paso 4: Documentar y aprender
+
+Cada salida es una oportunidad para mejorar el protocolo. Después de ejecutar los pasos anteriores, documentá:
+
+- ¿Apareció algún acceso que no estaba en el registro inicial? Si es así, actualizá el registro de todos los empleados, porque probablemente no sea el único.
+- ¿Alguna revocación tomó más tiempo del esperado? Identificá por qué y corregí el procedimiento para la próxima vez.
+- ¿Quedó alguna cuenta compartida que debería ser individual? La salida de una persona suele exponer las cuentas compartidas que existen por conveniencia operativa pero que representan un riesgo de seguridad.
+
+## Cómo automatizar lo que se pueda
+
+El protocolo descrito hasta acá es manual, y eso está bien para empezar. Pero a medida que la empresa crece, ejecutarlo manualmente cada vez que alguien se va se vuelve ineficiente y propenso a errores. La automatización no requiere un sistema complejo: hay cosas que se pueden resolver con lo que ya tenés.
+
+**Usar un gestor de identidad, aunque sea básico.** Servicios como Google Workspace, Microsoft 365 o herramientas específicas de gestión de identidad permiten centralizar el alta y la baja de usuarios. Cuando una cuenta se desactiva en el directorio central, todos los servicios conectados deberían reflejar ese cambio automáticamente. Si tu empresa ya usa uno de estos servicios, asegurate de que todas las aplicaciones estén integradas. Si no, agregar las que faltan es más rápido y barato que seguir haciendo las bajas a mano.
+
+**Single Sign-On siempre que sea posible.** Cuando los empleados acceden a las aplicaciones de la empresa usando su cuenta corporativa, revocar el acceso es un solo paso: desactivar la cuenta central. Cuando cada aplicación tiene su propio usuario y contraseña, revocar el acceso son quince pasos, y alguno casi seguro se va a olvidar.
+
+**Políticas de contraseñas y rotación automática.** Las cuentas compartidas no deberían existir, pero si existen por razones operativas que no se pueden resolver en el corto plazo, al menos deberían tener rotación automática de contraseñas cada vez que alguien que las usaba deja la empresa.
+
+## Lo que no debería ocurrir y ocurre todo el tiempo
+
+Hay prácticas que son errores evidentes en retrospectiva pero que se repiten en empresas de todos los tamaños. Mencionarlas explícitamente ayuda a reconocerlas:
+
+**Que la persona que se va sea la encargada de desactivar sus propios accesos.** Suena absurdo, pero ocurre. Confiar en que alguien que está saliendo de la empresa va a ejecutar su propia baja de sistemas es delegar la seguridad en quien ya no tiene incentivos para proteger los intereses de la organización.
+
+**Que el protocolo dependa de una sola persona.** Si la única persona que sabe cómo revocar accesos está de vacaciones, el proceso se frena. El protocolo tiene que estar documentado y al menos dos personas deben saber ejecutarlo.
+
+**Que las cuentas de servicios —no de personas— se olviden sistemáticamente.** Muchas credenciales no pertenecen a personas sino a aplicaciones: un script que usa una clave de API, una integración que se autentica con un token, un servicio que corre con credenciales que alguna persona configuró y ya no está. Cuando esa persona se va, el token sigue activo. Un inventario de credenciales de servicio, con responsables designados, es parte del protocolo de salida.
+
+**Que la salida sea amistosa y por eso se relajen los controles.** La seguridad no depende del tono de la salida. Un protocolo bien diseñado se ejecuta igual para una renuncia en buenos términos que para un despido conflictivo. Si el protocolo es opcional en función de cómo se fue la persona, no es un protocolo: es una decisión discrecional.
+
+## Cómo empezar si hoy no tenés nada
+
+Si tu empresa no tiene ningún procedimiento formal para gestionar accesos tras una salida, no intentes implementar todo de una vez. Empezá por lo mínimo viable:
+
+1. **Creá un registro de accesos por persona.** Una planilla simple con columnas: nombre de la persona, sistema, tipo de acceso, fecha de concesión, responsable de revocación. Completala para todos los empleados actuales. Esto ya te da visibilidad sobre lo que hay que revocar cuando alguien se va.
+
+2. **Designá un responsable.** Una persona —o un equipo, si la empresa es más grande— cuyo trabajo incluya explícitamente la gestión de altas y bajas de accesos. No puede ser una responsabilidad difusa que "todos saben que hay que hacer pero nadie tiene asignada".
+
+3. **Escribí el checklist de salida.** Los cuatro pasos descritos en este artículo, adaptados a los sistemas que usa tu empresa, en un documento de una página que cualquier persona pueda seguir. Probá el checklist con la próxima salida y ajustalo según lo que funcione y lo que no.
+
+4. **Hacé una auditoría de accesos activos.** Elegí un día del trimestre para revisar todos los accesos activos y detectar cuentas que deberían haber sido revocadas y no lo fueron. La primera vez que hagas este ejercicio probablemente encuentres accesos de personas que dejaron la empresa hace meses.
+
+El artículo sobre [qué es una brecha de seguridad](/blog/que-es-una-brecha-de-seguridad) explica cómo los accesos no gestionados se convierten en el punto de entrada para incidentes que podrían haberse prevenido. Si manejás datos de clientes, [qué datos de tus clientes debes proteger](/blog/que-datos-de-tus-clientes-debes-proteger) detalla qué información es más sensible y por qué el acceso no controlado a esa información es un riesgo legal y de reputación. Para una mirada más amplia, [riesgos técnicos que nadie revisa hasta que es tarde](/blog/riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde) describe otros puntos débiles que las empresas suelen pasar por alto.
+
+Gestionar la salida de una persona no es un acto de desconfianza: es una práctica de higiene de seguridad. Así como cerrás la puerta con llave cuando salís de la oficina —no porque desconfíes de tus vecinos, sino porque es lo que corresponde—, revocar accesos cuando alguien deja la empresa es simplemente lo que corresponde. Las empresas que lo hacen bien no son las que más invierten en seguridad: son las que tienen un protocolo y lo ejecutan sistemáticamente.

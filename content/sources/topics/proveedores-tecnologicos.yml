@@ -1,0 +1,230 @@
+id: proveedores-tecnologicos-01
+name: Proveedores tecnológicos
+category: proveedores-tecnologicos
+topics:
+  - id: preguntas-antes-de-contratar-un-proveedor-tecnologico
+    title: Preguntas que debes hacer antes de contratar un proveedor tecnológico
+    status: published
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - founders
+      - empresarios
+    objective: Dar un checklist de preguntas que reduzcan el riesgo de elegir mal un
+      proveedor.
+    notes:
+      - Enfocar en preguntas sobre proceso, comunicación y entregables — no solo
+        precio.
+  - id: senales-de-alerta-en-una-propuesta-comercial
+    title: Señales de alerta en una propuesta comercial de desarrollo
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+      - gerentes
+    objective: Ayudar a detectar propuestas poco serias o mal dimensionadas antes de
+      firmar.
+    notes:
+      - "Ejemplos de señales: alcance ambiguo, plazos irreales, ausencia de
+        hitos o de plan de mantenimiento."
+  - id: como-elegir-una-empresa-de-desarrollo-de-software
+    title: Cómo elegir una empresa de desarrollo de software
+    status: published
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - founders
+      - empresarios
+    objective: Dar criterios estructurados para evaluar y seleccionar un equipo de
+      desarrollo.
+    notes:
+      - "Ir más allá del precio: evaluar comunicación, proceso, referencias
+        verificables, documentación."
+  - id: freelancer-agencia-o-equipo-interno
+    title: "Freelancer, agencia o equipo interno: cuál conviene"
+    status: published
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - founders
+      - empresarios
+      - gerentes
+    objective: Comparar los tres modelos según tipo de proyecto, presupuesto y riesgo.
+    notes:
+      - No posicionar uno como siempre mejor — depende del contexto del proyecto.
+  - id: como-evitar-depender-de-un-proveedor
+    title: Cómo evitar depender completamente de un proveedor tecnológico
+    status: published
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - founders
+      - empresarios
+    objective: Dar medidas prácticas para reducir el vendor lock-in desde el inicio
+      de un proyecto.
+    notes:
+      - Acceso al código, documentación, cuentas cloud, conocimiento transferido
+        al cliente.
+  - id: que-debe-contener-contrato-desarrollo-software
+    title: Qué debería contener un contrato de desarrollo de software
+    status: published
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - founders
+      - empresarios
+    objective: Listar cláusulas y puntos clave que protegen al cliente en un
+      contrato de desarrollo.
+    notes:
+      - No dar asesoría legal — listar temas que deberían estar cubiertos, no
+        redactar cláusulas.
+  - id: quien-debe-ser-dueno-del-codigo-fuente
+    title: Quién debería ser dueño del código fuente
+    status: published
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - founders
+      - empresarios
+    objective: Explicar por qué la propiedad del código es una decisión de negocio,
+      no técnica.
+    notes: []
+  - id: documentacion-exigir-finalizar-proyecto
+    title: Qué documentación debes exigir al finalizar un proyecto de software
+    status: published
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - founders
+      - empresarios
+    objective: Listar la documentación mínima que debería entregar un proveedor al
+      cerrar un desarrollo.
+    notes: []
+  - id: que-preguntas-hacer-antes-de-contratar-a-un-proveedor-tecnologico
+    title: Qué preguntas hacer antes de contratar a un proveedor tecnológico
+    status: published
+    intent: informational
+    funnelStage: decision
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — qué preguntas hacer antes de
+      contratar a un proveedor tecnológico.
+    notes: []
+  - id: senales-de-alerta-al-recibir-una-propuesta-de-desarrollo
+    title: Señales de alerta al recibir una propuesta de desarrollo
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — señales de alerta al recibir
+      una propuesta de desarrollo.
+    notes: []
+  - id: como-evaluar-tecnicamente-a-un-proveedor-sin-ser-programador
+    title: Cómo evaluar técnicamente a un proveedor sin ser programador
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo evaluar técnicamente a
+      un proveedor sin ser programador.
+    notes: []
+  - id: que-revisar-antes-de-recibir-una-aplicacion-terminada
+    title: Qué revisar antes de recibir una aplicación terminada
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — qué revisar antes de recibir
+      una aplicación terminada.
+    notes: []
+  - id: como-comparar-dos-propuestas-tecnologicas
+    title: Cómo comparar dos propuestas tecnológicas
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo comparar dos propuestas
+      tecnológicas.
+    notes: []
+  - id: que-hacer-cuando-tu-proveedor-desaparece-o-abandona-el-proyecto
+    title: Qué hacer cuando tu proveedor desaparece o abandona el proyecto
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — qué hacer cuando tu proveedor
+      desaparece o abandona el proyecto.
+    notes: []
+  - id: por-que-es-importante-tener-acceso-a-las-cuentas-y-servicios-del-proyecto
+    title: Por qué es importante tener acceso a las cuentas y servicios del proyecto
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: por qué es importante tener acceso a las cuentas y servicios del proyecto.
+    notes: []
+  - id: como-organizar-la-comunicacion-con-un-equipo-de-desarrollo
+    title: Cómo organizar la comunicación con un equipo de desarrollo
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo organizar la comunicación con un equipo de desarrollo.
+    notes: []
+  - id: que-responsabilidades-corresponden-al-cliente-y-cuales-al-proveedor
+    title: Qué responsabilidades corresponden al cliente y cuáles al proveedor
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: qué responsabilidades corresponden al cliente y cuáles al proveedor.
+    notes: []
+  - id: como-saber-si-un-proyecto-realmente-esta-avanzado
+    title: Cómo saber si un proyecto realmente está avanzado
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo saber si un proyecto realmente está avanzado.
+    notes: []
+  - id: cuando-cambiar-de-proveedor-tecnologico
+    title: Cuándo cambiar de proveedor tecnológico
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: cuándo cambiar de proveedor tecnológico.
+    notes: []
+  - id: como-retomar-un-proyecto-desarrollado-por-otro-equipo
+    title: Cómo retomar un proyecto desarrollado por otro equipo
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo retomar un proyecto desarrollado por otro equipo.
+    notes: []

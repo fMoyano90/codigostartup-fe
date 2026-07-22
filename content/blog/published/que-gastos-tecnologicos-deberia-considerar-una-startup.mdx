@@ -1,0 +1,158 @@
+---
+title: Qué gastos tecnológicos debería considerar una startup
+slug: que-gastos-tecnologicos-deberia-considerar-una-startup
+description: >-
+  Una guía de los gastos tecnológicos que toda startup debe contemplar en su
+  presupuesto: desde infraestructura y herramientas hasta talento y
+  cumplimiento, con criterios para priorizar según la etapa de la empresa.
+excerpt: >-
+  Las startups tienden a subestimar los gastos tecnológicos porque muchos no son
+  visibles al inicio. Esta guía enumera los rubros clave y ofrece criterios para
+  presupuestarlos sin comprometer el crecimiento ni quedarse corto.
+category: costos-y-presupuestos
+tags:
+  - startup
+  - presupuesto tecnológico
+  - infraestructura
+  - costos de tecnología
+  - planificación financiera
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-22'
+approvedAt: '2026-07-22'
+publishedAt: '2026-07-22'
+seo:
+  title: Qué gastos tecnológicos debería considerar una startup | Código Startup
+  description: >-
+    Infraestructura, herramientas SaaS, talento técnico, seguridad,
+    cumplimiento, integraciones: todos los rubros tecnológicos que una startup
+    debe presupuestar desde el inicio, con criterios de priorización por etapa.
+  primaryKeyword: gastos tecnológicos de una startup
+  secondaryKeywords:
+    - presupuesto de tecnología para startups
+    - costos de infraestructura startup
+    - herramientas SaaS para startups
+    - cuánto gasta una startup en tecnología
+relatedArticles:
+  - costos-ocultos-mantener-aplicacion
+  - como-estimar-el-costo-real-de-un-proyecto-de-software
+  - como-estimar-presupuesto-inicial-producto-digital
+reviewStatus: pending
+reviewScore: null
+---
+
+Una startup que no anticipa sus gastos tecnológicos no gasta menos: gasta mal. Descubre los costos cuando ya está comprometida con decisiones que no puede revertir sin fricción —usuarios en una plataforma, datos acumulados, integraciones en producción— y termina pagando más por corregir que lo que habría costado planificar.
+
+Los gastos tecnológicos de una startup no son solamente el desarrollo del producto. Incluyen infraestructura, herramientas, talento, cumplimiento y un conjunto de costos de operación que empiezan chicos y escalan con el crecimiento. Este artículo enumera los rubros principales y ofrece criterios para priorizarlos según la etapa en la que está la empresa.
+
+## Infraestructura: donde vive el producto
+
+Es el gasto más visible y el que mejor se entiende, pero no siempre se dimensiona correctamente. Incluye:
+
+- **Servidores y cómputo:** El costo de tener la aplicación corriendo. En etapas iniciales, servicios como Vercel, Railway, Render o Fly.io ofrecen planes gratuitos o de bajo costo que son suficientes para validar. A medida que el tráfico crece, el costo escala y conviene haber previsto cuándo se va a cruzar el umbral de cada plan.
+- **Bases de datos:** El almacenamiento de los datos del negocio. Las bases de datos como servicio —PlanetScale, Supabase, Neon, MongoDB Atlas— tienen planes de inicio generosos, pero escalan de precio con el volumen de datos, la cantidad de operaciones y los backups.
+- **Almacenamiento de archivos:** Imágenes, documentos, backups y cualquier archivo que los usuarios suban. Servicios como Amazon S3 o Cloudflare R2 cobran por gigabyte almacenado y por gigabyte transferido. El costo de transferencia —lo que se paga cada vez que alguien descarga un archivo— suele ser la parte que más sorprende.
+- **CDN y distribución:** Si la aplicación tiene usuarios en distintas regiones, una red de distribución de contenido —Cloudflare, Fastly, Bunny CDN— reduce los tiempos de carga. En etapas tempranas, el plan gratuito de Cloudflare alcanza. En etapas de crecimiento, el costo se vuelve relevante.
+
+**Cuándo escala:** La infraestructura se vuelve un gasto significativo cuando la aplicación pasa de cientos a miles de usuarios activos. Antes de ese punto, los planes gratuitos o de inicio de la mayoría de los proveedores alcanzan. La clave es monitorear el uso para anticipar el momento del salto de plan, no para intentar evitarlo.
+
+## Herramientas SaaS: el stack invisible
+
+Toda startup usa herramientas de software como servicio que se pagan por mes, por usuario o por uso. La cantidad de herramientas crece con el tiempo, y lo que empieza como cinco suscripciones de diez dólares cada una puede convertirse en un gasto mensual considerable sin que nadie lo haya decidido explícitamente.
+
+**Categorías de herramientas SaaS que una startup típicamente necesita:**
+
+- **Desarrollo y operaciones:** GitHub o GitLab para control de versiones, Linear o Jira para gestión de proyectos, Sentry o Datadog para monitoreo de errores, Notion o Confluence para documentación.
+- **Comunicación:** Slack o Discord para mensajería interna, Zoom o Google Meet para videollamadas, Loom para mensajes grabados.
+- **Diseño y producto:** Figma para diseño de interfaz, Miro o FigJam para diagramas y workshops, Hotjar o PostHog para analítica de producto.
+- **Marketing y ventas:** HubSpot o Pipedrive para CRM, Mailchimp o Customer.io para email marketing, Google Analytics o Plausible para analítica web.
+- **Operaciones:** Google Workspace o Microsoft 365 para correo y documentos, Rippling o Deel para gestión de personas y pagos, QuickBooks o Xero para contabilidad.
+
+**El costo real de las herramientas SaaS.** El costo no está solo en la suscripción. También está en el tiempo que el equipo invierte en configurarlas, aprender a usarlas, integrarlas entre sí y migrar cuando una herramienta deja de ser adecuada. Cada herramienta que se suma al stack debería responder a una necesidad concreta y tener un responsable claro de su uso. Las herramientas que nadie usa pero que se siguen pagando son un síntoma de que el stack creció sin criterio.
+
+<Callout variant="tip" title="Revisión trimestral del stack">
+  Cada tres meses, revisá la lista de herramientas que la startup está pagando. Cancelá las que no se usan, consolidá las que hacen lo mismo y evaluá si el plan actual de cada una se ajusta al uso real. Una revisión de treinta minutos cada tres meses puede ahorrar cientos de dólares al año.
+</Callout>
+
+## Talento técnico: el gasto más grande y el más difícil de calibrar
+
+El equipo técnico es, en la mayoría de las startups de producto, el rubro más grande del presupuesto. Incluye:
+
+- **Desarrolladores:** El equipo que construye el producto. En etapas iniciales puede ser un equipo externo, un cofundador técnico o una combinación de ambos. A medida que la startup crece, se internaliza.
+- **Diseñadores de producto:** Definen la experiencia de usuario y la interfaz. En etapas tempranas, este rol puede ser compartido con un desarrollador con sensibilidad de diseño o con un diseñador freelance. En etapas de crecimiento, se vuelve un rol dedicado.
+- **Líderes técnicos:** La persona que define la arquitectura, prioriza el trabajo técnico y asegura que el equipo construya con estándares que permitan escalar. Una startup sin liderazgo técnico —interno o externo— acumula deuda técnica a una velocidad que después frena el crecimiento.
+- **DevOps e infraestructura:** En etapas tempranas, los desarrolladores asumen estas tareas. Cuando la infraestructura se vuelve compleja —múltiples entornos, pipelines de CI/CD, escalado automático—, se necesita un perfil dedicado.
+
+**Modelos de contratación de talento técnico:**
+
+- **Equipo interno:** El más caro en el corto plazo —sueldos, beneficios, equipamiento, espacio de trabajo— pero el que genera mayor conocimiento acumulado y velocidad de iteración en el largo plazo.
+- **Agencia o consultora externa:** El costo mensual es más alto que un equipo interno equivalente, pero no requiere compromiso de largo plazo y permite escalar el equipo hacia arriba o hacia abajo según la necesidad. Adecuado para etapas de validación o para proyectos puntuales.
+- **Freelancers:** Flexibilidad máxima y costo variable, pero menor continuidad y mayor riesgo de dependencia de personas específicas. Adecuado para tareas acotadas o para cubrir picos de trabajo.
+
+La decisión de cómo contratar el talento técnico no debería basarse solo en el costo por hora o por mes, sino en la necesidad de continuidad, la velocidad de iteración requerida y la etapa de la empresa.
+
+## Seguridad y cumplimiento: el gasto que nadie quiere tener y todos necesitan
+
+La seguridad no es un producto que se compra una vez. Es un conjunto de prácticas, herramientas y procesos que tienen un costo continuo:
+
+- **Certificados SSL y protección de dominio:** Aunque existen opciones gratuitas para SSL, la protección de dominio —contra phishing, suplantación de identidad, registro abusivo de variantes— requiere servicios como Cloudflare o similares que tienen costo.
+- **Herramientas de seguridad:** Escaneo de dependencias —Dependabot, Snyk—, análisis de código estático —SonarQube, CodeQL—, firewalls de aplicación web —Cloudflare WAF, AWS WAF—.
+- **Pruebas de penetración:** Al menos una vez al año, un externo debería probar la seguridad de la aplicación. El costo varía según la complejidad del producto, pero no hacerlo es más caro: una vulnerabilidad explotada cuesta más en reputación, multas y pérdida de clientes que todas las pruebas de penetración acumuladas.
+- **Cumplimiento regulatorio:** Dependiendo de la industria y la geografía, puede ser necesario cumplir con normas como GDPR en Europa, LGPD en Brasil o la ley de protección de datos chilena. El costo no está solo en las herramientas, sino en el tiempo del equipo para documentar, auditar y mantener el cumplimiento.
+
+**El error común.** Muchas startups postergan la seguridad hasta que tienen un incidente. Para entonces, el costo de corregir es mayor que el de haber invertido en prevención. La seguridad mínima —autenticación robusta, cifrado en tránsito y en reposo, control de accesos, backups— debería estar contemplada desde el presupuesto inicial.
+
+## APIs y servicios de terceros: lo que el producto necesita para funcionar
+
+La mayoría de los productos digitales dependen de servicios externos que cobran por uso:
+
+- **Pasarelas de pago:** Stripe, Mercado Pago, Kushki. Cobran un porcentaje por transacción más una tarifa fija. En volumen bajo, el costo es menor. En volumen alto, se vuelve un rubro relevante del presupuesto.
+- **Envío de correos y notificaciones:** SendGrid, Twilio, OneSignal. Cobran por volumen de envíos. En etapas tempranas, los planes gratuitos alcanzan. Cuando la base de usuarios crece, el costo escala.
+- **APIs de verificación y validación:** Verificación de identidad, validación de RUT, geocodificación, consulta de antecedentes. Muchas son de pago por consulta.
+- **Servicios de IA:** OpenAI, Anthropic, Google AI. Si el producto usa inteligencia artificial como parte de su propuesta de valor, el costo por consulta es un rubro a proyectar desde el inicio, porque escala linealmente con el uso.
+
+**Cómo presupuestar APIs de terceros.** Estimá el volumen esperado de uso para los primeros seis meses y calculá el costo con las tarifas públicas del proveedor. Agregá un margen de seguridad del treinta por ciento. Si el costo proyectado supera lo que el negocio puede absorber, evaluá si hay alternativas más económicas o si la funcionalidad que depende de esa API puede postergarse.
+
+## Gastos que aparecen con el crecimiento
+
+Algunos gastos tecnológicos no existen en la etapa de validación pero se vuelven necesarios cuando la startup crece:
+
+- **Escalado de infraestructura.** Lo que costaba poco con cien usuarios cuesta más con mil, y mucho más con diez mil. El costo de infraestructura no es lineal: duplicar la cantidad de usuarios puede más que duplicar el costo si la arquitectura no está optimizada para escala.
+- **Equipo de soporte técnico.** Cuando la cantidad de usuarios supera la capacidad del equipo de desarrollo para atender consultas y problemas, se necesita un equipo de soporte dedicado, que entienda el producto y pueda resolver sin escalar todo al equipo técnico.
+- **Redundancia y alta disponibilidad.** En etapas tempranas, una caída de treinta minutos un domingo no es crítica. En etapas de crecimiento, sí. Garantizar alta disponibilidad requiere infraestructura redundante, bases de datos replicadas y procesos de recuperación ante fallas que tienen un costo.
+- **Internacionalización.** Si la startup se expande a otros países, aparecen costos de infraestructura en múltiples regiones, traducción de la interfaz, adaptación a regulaciones locales y soporte en múltiples idiomas y husos horarios.
+
+## Cómo priorizar los gastos tecnológicos
+
+No todos los gastos tecnológicos son igual de urgentes. Un criterio de priorización por etapa:
+
+**Etapa de validación (pre-product market fit):**
+
+- Priorizá lo que es indispensable para que el producto funcione: infraestructura mínima, herramientas de desarrollo, salarios del equipo que construye.
+- Postergá lo que no afecta la validación: alta disponibilidad, herramientas de marketing avanzadas, cumplimiento regulatorio que no es obligatorio en tu etapa.
+- Usá planes gratuitos y de inicio de herramientas SaaS siempre que sea posible. Migrar a un plan pago cuando el uso lo justifica es más barato que pagar por capacidad que no se usa.
+
+**Etapa de crecimiento (post-product market fit):**
+
+- Invertí en monitoreo, seguridad y redundancia antes de que un incidente demuestre que hacen falta.
+- Revisá el stack de herramientas y consolidá: menos herramientas pero mejor integradas.
+- Profesionalizá los roles: lo que antes hacía el desarrollador full-stack ahora requiere un equipo con especialización.
+
+**Etapa de escala:**
+
+- Optimizá costos de infraestructura: a cierta escala, la diferencia entre una arquitectura eficiente y una ineficiente se mide en decenas de miles de dólares por mes.
+- Negociá contratos empresariales con proveedores de SaaS y APIs: los precios de lista dejan de ser competitivos cuando el volumen es alto.
+- Internalizá conocimiento técnico: la dependencia de proveedores externos para el núcleo del producto es un riesgo que crece con la empresa.
+
+Una startup que anticipa sus gastos tecnológicos no evita todos los imprevistos, pero reduce la probabilidad de que un imprevisto tecnológico se convierta en un problema de caja. Y en una startup, los problemas de caja no se resuelven con tecnología.
+
+Si querés entender los costos recurrentes que aparecen después de construir una aplicación, el artículo sobre [costos ocultos de mantener una aplicación](/blog/costos-ocultos-mantener-aplicacion) detalla rubro por rubro. Y si estás por iniciar un proyecto y necesitás estimar su costo total, revisá [cómo estimar el costo real de un proyecto de software](/blog/como-estimar-el-costo-real-de-un-proyecto-de-software).
+
+Más contenido sobre planificación financiera en la categoría de [costos y presupuestos](/blog/categoria/costos-y-presupuestos).

@@ -1,0 +1,126 @@
+---
+title: 'Autenticación, permisos y roles explicados para empresarios'
+slug: autenticacion-permisos-y-roles-explicados-para-empresarios
+description: >-
+  Qué significan autenticación, permisos y roles en un sistema, por qué son
+  importantes para cualquier empresa que maneje información y cómo tomar
+  decisiones al respecto sin ser experto en tecnología.
+excerpt: >-
+  ¿Quién puede entrar al sistema? ¿Qué puede ver? ¿Qué puede modificar? Tres
+  preguntas que todo empresario debería poder responder sobre el software que
+  usa su empresa. Una explicación sin tecnicismos.
+category: seguridad-y-riesgos
+tags:
+  - autenticación
+  - permisos de usuario
+  - roles
+  - seguridad informática
+  - control de acceso
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-22'
+approvedAt: '2026-07-22'
+publishedAt: '2026-07-22'
+seo:
+  title: 'Autenticación, permisos y roles explicados para empresarios | Código Startup'
+  description: >-
+    Una guía para no técnicos sobre autenticación, permisos y roles: qué
+    significan, por qué son críticos para proteger la información de tu empresa
+    y qué preguntas hacerle a tu equipo o proveedor de software.
+  primaryKeyword: autenticación permisos y roles para empresarios
+  secondaryKeywords:
+    - control de acceso software
+    - seguridad informática para no técnicos
+    - roles de usuario en sistemas
+    - permisos en aplicaciones empresariales
+relatedArticles:
+  - gestionar-accesos-cuando-alguien-deja-la-empresa
+  - que-datos-de-tus-clientes-debes-proteger
+reviewStatus: pending
+reviewScore: null
+---
+
+Cada vez que alguien en tu empresa abre un sistema, pasa por tres controles que probablemente nunca te explicaron en términos de negocio. El proveedor habla de autenticación, permisos y roles como si fueran conceptos obvios. Pero cuando no venís del mundo técnico, esas palabras no te dicen nada sobre los riesgos que cubren — ni sobre los que dejan expuestos.
+
+Este artículo traduce esos tres conceptos al lenguaje de cualquier empresario. Al terminar de leerlo, vas a poder sentarte con tu equipo o tu proveedor de software y hacer las preguntas correctas sobre quién puede acceder a qué en los sistemas de tu empresa.
+
+## Autenticación: quién está del otro lado de la pantalla
+
+La autenticación responde una sola pregunta: ¿la persona que está intentando entrar al sistema es quien dice ser?
+
+El método más común es el usuario y la contraseña. Pero si ese es el único método, el sistema tiene la seguridad de una puerta con una cerradura de las más baratas. Las contraseñas se comparten, se anotan en post-its, se filtran sin querer, se reutilizan entre servicios.
+
+<Callout variant="info" title="Lo básico que deberías esperar">
+Cualquier sistema que maneje información sensible de tu empresa debería ofrecer — como mínimo — un segundo factor de autenticación. Esto significa que, además de la contraseña, el sistema pide algo que solo esa persona tiene: un código que llega al teléfono, una huella digital o una aplicación autenticadora. Con un solo factor, la seguridad de tu información depende de qué tan buena sea la contraseña que eligió cada empleado. Y la mayoría de las personas elige contraseñas que un atacante automatizado puede vulnerar en minutos.
+</Callout>
+
+### Preguntas para hacerle a tu proveedor
+
+- ¿El sistema permite activar autenticación de dos factores? ¿Es obligatoria o queda a criterio de cada usuario?
+- ¿Hay un límite de intentos fallidos antes de que la cuenta se bloquee temporalmente? Si alguien puede probar contraseñas indefinidamente, tu sistema es vulnerable a ataques de fuerza bruta.
+- ¿Las sesiones tienen un tiempo de expiración? Si un empleado deja la computadora abierta y se va, ¿el sistema cierra la sesión automáticamente después de un tiempo de inactividad?
+- ¿Se puede ver un historial de accesos? Saber quién entró, desde dónde y a qué hora es la primera línea de detección ante un acceso no autorizado.
+
+## Permisos: qué puede hacer cada persona una vez que entró
+
+La autenticación te dice quién entró. Los permisos te dicen qué puede hacer adentro. No es lo mismo: alguien puede estar legítimamente autenticado y aún así no debería poder ver o modificar cierta información.
+
+Los permisos responden preguntas como:
+
+- ¿Este usuario puede ver todos los clientes o solo los que él gestiona?
+- ¿Puede modificar un precio o solo consultarlo?
+- ¿Puede exportar la base de datos completa o solo los datos de su área?
+- ¿Puede borrar información o solo crearla y editarla?
+
+Un sistema sin permisos bien definidos es como una oficina donde todos tienen llave de todas las puertas y acceso a todos los archivos. La confianza no es una política de seguridad.
+
+### El principio que debería gobernar tus permisos
+
+En seguridad informática existe un principio llamado "mínimo privilegio": cada persona debería tener acceso solo a lo que necesita para hacer su trabajo, y nada más.
+
+Suena obvio, pero en la práctica muchas empresas operan con lo opuesto: permisos amplios por defecto que después nadie se toma el trabajo de ajustar. Un vendedor no necesita ver los salarios de la empresa. Un cadete no necesita modificar la lista de precios. Un pasante no debería poder borrar la base de clientes.
+
+<Callout variant="warning" title="El riesgo de los permisos demasiado amplios">
+El riesgo no es solo externo. Un empleado que comete un error con permisos de administrador puede causar tanto daño como un atacante. Y un empleado que se va de la empresa en malos términos, si sus accesos no se revocan a tiempo, tiene las llaves del sistema.
+</Callout>
+
+## Roles: agrupar permisos para no volverte loco
+
+Administrar permisos persona por persona funciona cuando tenés tres empleados. Con veinte, se vuelve un caos. Con cincuenta, es imposible mantenerlo actualizado.
+
+Los roles resuelven esto: en lugar de asignar permisos uno por uno, creás perfiles — "vendedor", "administrador", "gerente", "contador" — y a cada perfil le asignás un conjunto de permisos. Después, cuando entra alguien nuevo, simplemente le asignás el rol que corresponde. Cuando alguien cambia de puesto, cambiás su rol.
+
+Un buen diseño de roles tiene tres características:
+
+- **Cada rol tiene límites claros.** Sabés exactamente qué puede y qué no puede hacer.
+- **Los roles se auditan periódicamente.** Cada tanto revisás si los permisos de cada rol siguen siendo los adecuados. Un rol de "vendedor" creado hace tres años puede tener permisos que ya no corresponden porque el sistema cambió.
+- **No hay usuarios sin rol.** Si alguien tiene permisos que no vienen de un rol definido, estás en problemas. Los permisos sueltos son difíciles de rastrear y fáciles de olvidar cuando esa persona se va.
+
+## Cómo auditar los accesos de tu empresa
+
+No hace falta saber de tecnología para hacer una auditoría básica de accesos. Estas cinco preguntas pueden guiar una conversación con tu equipo o proveedor:
+
+1. **¿Quiénes tienen acceso al sistema hoy?** Pedí una lista de usuarios activos. Es común encontrar cuentas de personas que ya no trabajan en la empresa y que nadie desactivó. Si querés profundizar en este punto, leé [cómo gestionar accesos cuando alguien deja la empresa](/blog/gestionar-accesos-cuando-alguien-deja-la-empresa).
+
+2. **¿Cada usuario tiene el nivel de acceso que necesita y nada más?** Revisá, rol por rol, los permisos asignados. Si encontrás que todos los usuarios tienen permisos de administrador, hay un problema.
+
+3. **¿Hay cuentas compartidas?** Si varias personas usan el mismo usuario y contraseña, no hay forma de saber quién hizo qué. Las cuentas deben ser individuales, sin excepciones.
+
+4. **¿Hay registro de actividad?** El sistema debería mantener un historial de quién hizo qué y cuándo. No para espiar a los empleados, sino para poder reconstruir eventos si algo sale mal.
+
+5. **¿Cada cuánto se revisan los accesos?** Si la respuesta es "nunca" o "cuando nos acordamos", establecé una frecuencia fija. Una revisión trimestral toma minutos y puede evitar problemas serios.
+
+## La seguridad no es técnica: es un criterio de gestión
+
+Autenticación, permisos y roles no son decisiones que deba tomar el equipo de sistemas en soledad. Son decisiones de negocio: definen quién puede ver qué información y quién puede modificarla. Si el dueño o el gerente general no participa en esas definiciones, alguien las está tomando por él — probablemente con criterios técnicos, no de negocio.
+
+Empezá por lo más simple: pedile a tu proveedor o a tu equipo un informe de quiénes tienen acceso a qué en cada sistema. Si ese informe no existe o tarda más de un día en generarse, ya sabés por dónde empezar.
+
+Para complementar esta lectura, te sugerimos [qué datos de tus clientes debes proteger](/blog/que-datos-de-tus-clientes-debes-proteger), que aborda el tema desde la perspectiva de la información que manejás, más allá de quién accede a ella.

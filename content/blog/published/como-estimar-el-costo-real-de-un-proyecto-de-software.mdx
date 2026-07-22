@@ -1,0 +1,112 @@
+---
+title: Cómo estimar el costo real de un proyecto de software
+slug: como-estimar-el-costo-real-de-un-proyecto-de-software
+description: >-
+  Un marco simple para estimar costos de desarrollo y anticipar variables que
+  suelen quedar fuera de una cotización inicial.
+excerpt: >-
+  Las variables que más impactan el costo de un proyecto de software y que rara
+  vez aparecen en una primera cotización.
+category: costos-y-presupuestos
+tags:
+  - costos de desarrollo
+  - presupuesto de software
+  - estimación de proyectos
+audience:
+  - founders
+  - empresarios
+intent: informational
+funnelStage: consideration
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-21'
+approvedAt: '2026-07-21'
+publishedAt: '2026-07-21'
+seo:
+  title: Cómo estimar el costo real de un proyecto de software | Código Startup
+  description: >-
+    Variables y criterios para estimar el costo real de un desarrollo de
+    software, más allá de la cotización inicial del proveedor.
+  primaryKeyword: costo real de un proyecto de software
+  secondaryKeywords:
+    - estimar costos de desarrollo
+    - presupuesto de software
+    - variables de costo en proyectos tecnológicos
+relatedArticles:
+  - que-validar-antes-de-desarrollar-una-aplicacion
+  - cuando-dejar-de-usar-planillas
+reviewStatus: pending
+reviewScore: null
+---
+
+Pedir una cotización por un desarrollo de software y recibir una cifra es una experiencia común. El problema no es que el número sea alto o bajo: es que, con frecuencia, ese número representa solo una parte de lo que el proyecto termina costando. Lo que queda afuera suele ser lo que más impacto tiene en el presupuesto final y en los plazos.
+
+Este artículo no va a darte una fórmula mágica para calcular costos —porque no existe una que funcione para todos los casos—, sino un conjunto de variables y criterios para que puedas anticipar lo que una cotización inicial probablemente no incluye. El objetivo es que la estimación sea una herramienta de decisión, no una cifra que después queda chica.
+
+## Lo que una cotización típica incluye (y lo que no)
+
+La mayoría de las cotizaciones de desarrollo cubren lo que el proveedor puede dimensionar con certeza razonable: el alcance funcional que se discutió en las reuniones iniciales, el tiempo estimado de desarrollo y testing, y el costo del equipo durante ese período. Eso está bien como punto de partida.
+
+Lo que casi nunca aparece —porque requiere un análisis más profundo del negocio, no solo del alcance técnico— incluye:
+
+- La migración de datos desde sistemas actuales, si los hay.
+- El entrenamiento del equipo que va a usar la herramienta.
+- El período de convivencia entre el sistema nuevo y el anterior.
+- Los ajustes que surgen cuando los usuarios reales empiezan a usar el producto y aparecen necesidades que no estaban en el alcance original.
+- El mantenimiento posterior: corrección de errores, actualizaciones de seguridad, cambios menores.
+
+Ninguno de estos rubros es opcional si el proyecto apunta a ser usado en serio. Pero como no forman parte del "desarrollo" propiamente dicho, es frecuente que se omitan de la cotización inicial. El resultado: un presupuesto que parece alcanzable y que, tres meses después del lanzamiento, ya se quedó corto.
+
+<Callout variant="info" title="Regla práctica">
+  Si en una cotización solo aparecen horas de desarrollo, pedí que desglosen también las otras etapas: relevamiento, migración, puesta en marcha y soporte post-lanzamiento. Si no pueden estimarlas, al menos sabés que hay un riesgo no cuantificado.
+</Callout>
+
+## Las variables que más impacto tienen en el costo
+
+Más allá de lo obvio —cantidad de funcionalidades, complejidad técnica, tamaño del equipo—, hay variables que suelen subestimarse y que explican buena parte de las desviaciones entre lo cotizado y lo que efectivamente se gasta.
+
+### El nivel de definición del alcance
+
+Un alcance detallado —historias de usuario con criterios de aceptación claros, flujos completos, reglas de negocio documentadas— permite una estimación más precisa. Un alcance definido en términos generales —"un sistema para gestionar clientes", "una app como la de X pero con algunos cambios"— obliga al proveedor a estimar sobre supuestos que, cuando se confrontan con la realidad, rara vez se sostienen.
+
+La diferencia de costo entre desarrollar con un alcance bien definido y desarrollar mientras se define el alcance no es menor. No se trata solo de tiempo adicional: es retrabajo, decisiones que se toman y se revierten, y funcionalidades que se construyen dos veces porque la primera versión no era lo que el negocio necesitaba.
+
+### La cantidad de sistemas con los que se integra
+
+Integrar un sistema nuevo con herramientas existentes —un ERP, un CRM, una pasarela de pagos, un sistema de facturación— es, en muchos proyectos, más costoso que desarrollar la funcionalidad principal. Cada integración introduce dependencias externas que el equipo de desarrollo no controla: APIs que cambian, documentación desactualizada, límites de uso, formatos de datos incompatibles.
+
+Conviene preguntar, para cada integración prevista: ¿el proveedor ya trabajó con ese sistema específico? ¿Sabe qué limitaciones tiene? Si la respuesta es "no, pero lo investigamos", esa integración va a costar más de lo estimado, porque parte del tiempo se va a ir en descubrir cómo funciona el sistema ajeno, no en construir la conexión.
+
+### La calidad y disponibilidad de los datos actuales
+
+Si el proyecto incluye migrar información desde planillas, bases de datos o sistemas anteriores, la calidad de esos datos determina buena parte del esfuerzo. Datos inconsistentes, duplicados, incompletos o con formatos que varían según quién los cargó requieren trabajo de limpieza y normalización antes de poder migrarlos.
+
+Este trabajo rara vez puede hacerlo solo el equipo de desarrollo: requiere que alguien del negocio defina qué datos son válidos, cuáles se descartan y cómo se resuelven las inconsistencias. Si esa persona no está identificada antes de empezar, la migración se frena o se hace mal, y corregirla después cuesta más que haberla planificado bien desde el inicio.
+
+## Cómo armar una estimación más realista
+
+Con estas variables en mente, un ejercicio útil antes de pedir cotizaciones es responder por escrito:
+
+1. ¿El alcance está documentado con suficiente detalle como para que dos proveedores distintos entiendan lo mismo?
+2. ¿Cuántos sistemas externos necesito integrar y qué sé sobre su documentación y estabilidad?
+3. ¿En qué estado están los datos que necesito migrar? ¿Quién va a validarlos?
+4. ¿Qué va a pasar durante las primeras semanas después del lanzamiento? ¿Quién atiende dudas de usuarios? ¿Quién corrige errores?
+5. ¿Quién mantiene el sistema después de los primeros meses?
+
+Si no podés responder al menos tres de estas cinco preguntas con claridad, cualquier cotización que recibas va a ser una estimación parcial. Eso no significa que no sirva —significa que tenés que interpretarla como lo que es: un piso, no un techo.
+
+## El costo de no estimar correctamente
+
+Cuando el presupuesto real supera al estimado, las consecuencias no son solo financieras. El proyecto entra en un ciclo de recortes: se reduce el alcance para no exceder el presupuesto, se postergan funcionalidades que eran importantes para los usuarios, o se acelera el desarrollo para cumplir plazos a costa de calidad. El resultado es un producto que no resuelve bien el problema original, y que además va a requerir más inversión para llegar a donde debería haber llegado desde el principio.
+
+La estimación realista no garantiza que el proyecto salga exactamente como se planeó —ningún proyecto de software lo hace—, pero reduce la probabilidad de que las desviaciones sean tan grandes que pongan en riesgo la continuidad del producto.
+
+## Próximos pasos
+
+Antes de pedir tu próxima cotización, dedicá una sesión de trabajo a responder las cinco preguntas anteriores con tu equipo. Si hay brechas, definí quién y cuándo las va a resolver. Lo que inviertas en precisar el alcance ahora es tiempo que no vas a gastar en corregir sobre la marcha, cuando cada corrección cuesta más y el equipo ya está corriendo contra un plazo.
+
+Relacionado: si todavía estás en la etapa de definir qué construir, conviene revisar [qué validar antes de desarrollar una aplicación](/blog/que-validar-antes-de-desarrollar-una-aplicacion). Y si el proyecto nace del agotamiento de las herramientas actuales, puede ser útil leer [cuándo dejar de usar planillas](/blog/cuando-dejar-de-usar-planillas) para distinguir entre un problema de costo y un problema de herramienta.
+
+Podés encontrar más contenido sobre planificación y presupuesto en la categoría de [costos y presupuestos](/blog/categoria/costos-y-presupuestos).

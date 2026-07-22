@@ -1,0 +1,151 @@
+---
+title: Cómo estimar el presupuesto inicial de un producto digital
+slug: como-estimar-presupuesto-inicial-producto-digital
+description: >-
+  Un método simple, paso a paso, para calcular una primera estimación de costo
+  de un producto digital sin necesidad de conocer todos los detalles técnicos
+  del proyecto.
+excerpt: >-
+  Estimar cuánto puede costar un producto digital cuando todavía no tenés todas
+  las definiciones técnicas no es imposible. Este método te da un número de
+  referencia para tomar decisiones.
+category: costos-y-presupuestos
+tags:
+  - estimación de costos
+  - presupuesto de software
+  - producto digital
+  - planificación de proyectos
+audience:
+  - founders
+  - empresarios
+intent: informational
+funnelStage: consideration
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-21'
+approvedAt: '2026-07-21'
+publishedAt: '2026-07-21'
+seo:
+  title: Cómo estimar el presupuesto inicial de un producto digital | Código Startup
+  description: >-
+    Un método simple para calcular una primera estimación de costo de un
+    producto digital, incluso cuando todavía no tenés definidos todos los
+    detalles técnicos.
+  primaryKeyword: cómo estimar el presupuesto inicial de un producto digital
+  secondaryKeywords:
+    - estimar costo de un producto digital
+    - presupuesto inicial de software
+    - cuánto cuesta desarrollar una app
+    - método para calcular presupuesto de tecnología
+relatedArticles:
+  - como-estimar-el-costo-real-de-un-proyecto-de-software
+  - elementos-que-influyen-costo-desarrollo
+  - por-que-dos-presupuestos-de-software-precios-diferentes
+  - cuanto-cuesta-desarrollar-una-aplicacion-en-chile
+reviewStatus: pending
+reviewScore: null
+---
+
+Estimar cuánto va a costar un producto digital cuando todavía no tenés definidos los detalles técnicos, ni el equipo, ni siquiera todas las funcionalidades, parece una tarea destinada al fracaso. La intuición dice que sin una especificación completa cualquier número es un tiro al aire. Pero la intuición, en este caso, se equivoca en algo importante: no necesitás precisión de centavo para tomar una decisión de inversión. Necesitás un orden de magnitud que te permita decidir si seguís adelante, si ajustás el alcance o si buscás financiamiento.
+
+Este artículo propone un método simple para estimar el presupuesto inicial de un producto digital. No reemplaza una cotización formal —eso viene después, cuando haya más definiciones—, pero sí te da un número de referencia lo suficientemente sólido como para avanzar. El método funciona incluso si no tenés experiencia técnica, siempre que puedas responder algunas preguntas sobre qué querés construir, para quién y con qué nivel de profundidad.
+
+## Por qué la mayoría de las estimaciones fallan antes de empezar
+
+El error más frecuente al estimar un presupuesto no es equivocarse en las horas de desarrollo. Es confundir una estimación de orden de magnitud con una cotización detallada. Son dos cosas distintas con propósitos distintos.
+
+Una cotización detallada requiere un alcance definido, un equipo asignado, tecnologías decididas y un cronograma. Se hace cuando el proyecto está listo para arrancar. Una estimación de orden de magnitud se hace mucho antes: cuando estás evaluando si el proyecto es viable, si necesitás inversión externa, o si el alcance que imaginaste es realista para el presupuesto que tenés.
+
+El segundo error es intentar estimar \"todo junto\". Un producto digital no es una masa uniforme de trabajo: tiene capas. Y cada capa se estima con criterios distintos. Separar esas capas es el primer paso del método.
+
+## Las cinco capas de costo de un producto digital
+
+Casi cualquier producto digital —una aplicación web, una app móvil, un sistema interno— puede descomponerse en cinco capas de costo. No todas aplican a todos los proyectos, pero tenerlas identificadas evita omisiones que después se traducen en presupuestos que se quedan cortos.
+
+### 1. La capa de funcionalidades visibles
+
+Es lo que los usuarios van a ver y usar: pantallas, formularios, dashboards, flujos de navegación. Para estimar esta capa sin conocimientos técnicos, alcanza con enumerar las funcionalidades principales y clasificarlas en tres niveles de complejidad:
+
+- **Baja**: formularios simples, páginas de contenido, visualización de datos en tablas.
+- **Media**: flujos de varios pasos, dashboards con filtros, notificaciones, carga de archivos.
+- **Alta**: editores interactivos, procesamiento en tiempo real, sincronización entre dispositivos, integraciones con servicios externos.
+
+A cada funcionalidad le asignás un rango de horas estimadas —por ejemplo, 20 a 40 horas para complejidad baja, 60 a 120 para media, 150 a 300 para alta— y multiplicás por el costo hora del mercado. Si no tenés referencia de costo hora, la [guía sobre cuánto cuesta desarrollar en Chile](/blog/cuanto-cuesta-desarrollar-una-aplicacion-en-chile) te da una base para ubicarte según el tipo de equipo que necesitás.
+
+<Callout variant="tip" title="No intentes ser exacto">
+El objetivo de esta clasificación no es la precisión, sino detectar qué funcionalidades concentran el mayor esfuerzo. Es frecuente que dos o tres funcionalidades representen el 70% del costo total. Identificarlas temprano permite priorizar, recortar o buscar alternativas más simples.
+</Callout>
+
+### 2. La capa de infraestructura y operación
+
+Todo producto digital necesita vivir en algún lado. Servidores, bases de datos, almacenamiento de archivos, dominios, certificados SSL. Esta capa tiene dos componentes: el costo de implementación inicial —preparar el entorno— y el costo recurrente mensual.
+
+Para una estimación temprana, no necesitás elegir proveedor de nube ni dimensionar servidores. Alcanza con ubicar tu producto en una de tres categorías de infraestructura y asignar un rango mensual estimado:
+
+- **Ligera** (USD 30–100/mes): aplicaciones con pocos usuarios concurrentes, sin procesamiento pesado de datos, sin almacenamiento intensivo de archivos.
+- **Media** (USD 100–500/mes): tráfico moderado, bases de datos con volumen significativo, procesamiento de imágenes o archivos.
+- **Pesada** (USD 500–2,000+/mes): alto tráfico, procesamiento en tiempo real, streaming, machine learning en producción.
+
+Estos valores son referenciales y dependen del proveedor y la región, pero sirven para anticipar que la operación mensual no es cero. Los [costos ocultos de mantener una aplicación](/blog/costos-ocultos-mantener-aplicacion) detallan cada rubro para que no te tome por sorpresa.
+
+### 3. La capa de integraciones
+
+Si tu producto necesita conectarse con sistemas externos —pasarelas de pago, APIs de terceros, sistemas contables, ERPs, plataformas de envío—, cada integración suma esfuerzo de desarrollo y, en muchos casos, costo recurrente por uso de la API.
+
+Para estimar esta capa, enumerá cada integración y clasificala según dos criterios: ¿la API externa está bien documentada? ¿Tu equipo ya trabajó con ella antes? Una integración con una API madura y conocida puede resolverse en 30 a 60 horas. Una integración con un sistema legacy, mal documentado o sin experiencia previa, puede consumir 100 a 200 horas o más.
+
+### 4. La capa de datos y migración
+
+Muchas estimaciones iniciales omiten por completo esta capa, y es una de las que más desviaciones de presupuesto produce. Si tu producto parte de cero —sin datos que migrar, sin sistemas anteriores que reemplazar—, esta capa puede ser mínima. Pero si necesitás migrar datos desde planillas, desde un sistema anterior o desde múltiples fuentes, el esfuerzo puede ser considerable.
+
+La migración de datos implica limpiar, normalizar, transformar y validar. Rara vez los datos actuales están en el formato que el nuevo sistema necesita. Y casi siempre aparecen inconsistencias que requieren decisiones humanas —no automatizables— para resolver.
+
+<Callout variant="warning" title="No subestimes la migración de datos">
+En proyectos que reemplazan un sistema existente, la migración puede representar entre el 15% y el 30% del presupuesto total de desarrollo. Si tu proveedor no la incluye en la cotización inicial, preguntá por qué y qué alcance tiene lo que sí incluye.
+</Callout>
+
+### 5. La capa de puesta en producción y transición
+
+El desarrollo puede estar terminado y el producto funcionando en un entorno de pruebas, pero todavía falta ponerlo en manos de usuarios reales. Esta capa incluye:
+
+- Configuración del entorno productivo (distinto del de desarrollo).
+- Migración final de datos (si aplica).
+- Pruebas de aceptación con usuarios reales.
+- Capacitación del equipo que va a usar la herramienta.
+- Período de convivencia con el sistema anterior (si lo hay).
+- Corrección de incidencias que aparecen en los primeros días de uso.
+
+Esta capa suele subestimarse porque no es \"desarrollo\" propiamente dicho. Pero sin ella, el producto no se usa —o se usa mal, o se abandona—. Un 10% a 20% adicional sobre el costo de desarrollo es una provisión razonable.
+
+## El método en tres pasos
+
+Con las cinco capas identificadas, el método para estimar se reduce a tres pasos:
+
+**Paso 1: enumerar y clasificar.** Listá todas las funcionalidades, integraciones y necesidades de infraestructura que puedas identificar. Clasificá cada una según las categorías de complejidad. No te preocupes por lo que falta: siempre va a faltar algo. La pregunta es si lo que falta cambia el orden de magnitud.
+
+**Paso 2: asignar rangos, no números fijos.** Para cada capa, definí un rango (mínimo probable, máximo probable). Multiplicá horas estimadas por costo hora de mercado. Sumá los mínimos por un lado y los máximos por otro. El resultado no es \"el número\", es \"el rango\". Un rango de 30 a 50 millones de pesos es información accionable. Un número fijo de 40 millones es una ilusión de precisión.
+
+**Paso 3: agregar la provisión por indefinición.** Cuanto menos definido esté el alcance, mayor debe ser la provisión. Una regla práctica: si tenés las funcionalidades detalladas con criterios de aceptación, agregá un 15% de provisión. Si tenés solo una lista de funcionalidades sin detalle, agregá un 30%. Si tenés solo una idea general, agregá un 50% o más. La provisión no es para \"cubrirse\": es el reconocimiento honesto de que lo que no se definió va a requerir iteraciones, y las iteraciones cuestan.
+
+## Cuándo esta estimación es suficiente
+
+Una estimación de orden de magnitud es suficiente cuando lo que necesitás es decidir. Decidir si pedir financiamiento y por cuánto. Decidir si el alcance que imaginaste cabe en el presupuesto que manejás. Decidir si vale la pena avanzar a la siguiente etapa: la definición detallada del alcance.
+
+No es suficiente —y ninguna estimación temprana lo es— para firmar un contrato ni para comprometer una fecha de entrega. Para eso existe otra etapa, que requiere otro nivel de definición, y que es posterior a la decisión de avanzar.
+
+La diferencia entre una empresa que estima y una que no es que la primera puede comparar sus expectativas con la realidad antes de comprometer recursos. La segunda descubre la brecha cuando ya es tarde para ajustar. El método de este artículo apunta a que estés del primer lado, incluso si esta es tu primera experiencia con un producto digital.
+
+## Qué hacer si el número no cierra
+
+Si la estimación arroja un rango que está por encima de tu presupuesto, no es una mala noticia: es información que llegó a tiempo. Las opciones no son \"hacerlo igual\" o \"no hacerlo\". Son:
+
+- **Reducir alcance**: ¿todas las funcionalidades son necesarias para la primera versión? La [guía sobre qué incluir y qué dejar fuera de un MVP](/blog/mvp-que-incluir-que-dejar-fuera) puede ayudarte a priorizar.
+- **Por etapas**: dividir el producto en fases, donde la primera entrega valor y las siguientes lo expanden. Esto reduce la inversión inicial y permite validar antes de comprometer el presupuesto completo.
+- **Buscar alternativas técnicas**: a veces una decisión de tecnología —usar un servicio existente en lugar de construir desde cero, por ejemplo— reduce significativamente el costo sin sacrificar la propuesta de valor.
+- **Ajustar expectativas de plazo**: un equipo más chico cuesta menos por mes, pero tarda más. Si el tiempo no es la restricción principal, esta puede ser una palanca.
+
+Ninguna de estas opciones requiere conocimientos técnicos profundos. Requieren tener un número de referencia —aunque sea un rango— y la disposición a iterar sobre el alcance antes de comprometer el presupuesto.
+
+Estimar no es adivinar. Es estructurar la incertidumbre para poder tomar decisiones. Y para eso, este método es suficiente.

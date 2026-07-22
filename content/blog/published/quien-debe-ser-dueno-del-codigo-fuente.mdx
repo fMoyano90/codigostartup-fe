@@ -1,0 +1,130 @@
+---
+title: Quién debería ser dueño del código fuente
+slug: quien-debe-ser-dueno-del-codigo-fuente
+description: >-
+  Por qué la propiedad del código fuente es una decisión de negocio, no técnica,
+  y qué implicancias tiene para tu empresa cederla o retenerla frente a un
+  proveedor de desarrollo.
+excerpt: >-
+  Que un proveedor escriba el código no significa que deba ser su dueño. La
+  propiedad del código fuente define quién puede modificarlo, mudarlo o seguir
+  construyendo sin el proveedor original.
+category: proveedores-tecnologicos
+tags:
+  - propiedad intelectual
+  - código fuente
+  - proveedores de desarrollo
+  - independencia tecnológica
+  - contratos de software
+audience:
+  - founders
+  - empresarios
+intent: commercial
+funnelStage: decision
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-21'
+approvedAt: '2026-07-21'
+publishedAt: '2026-07-21'
+seo:
+  title: Quién debería ser dueño del código fuente | Código Startup
+  description: >-
+    La propiedad del código fuente no es un detalle técnico: es una decisión de
+    negocio que determina quién puede modificar, mudar y seguir construyendo tu
+    software.
+  primaryKeyword: quién debería ser dueño del código fuente
+  secondaryKeywords:
+    - propiedad del código fuente
+    - dueño del código en desarrollo de software
+    - contrato de desarrollo propiedad intelectual
+    - quién es dueño del software
+relatedArticles:
+  - como-evitar-depender-de-un-proveedor
+  - que-debe-contener-contrato-desarrollo-software
+  - freelancer-agencia-o-equipo-interno
+  - preguntas-antes-de-contratar-un-proveedor-tecnologico
+  - senales-de-alerta-en-una-propuesta-comercial
+reviewStatus: pending
+reviewScore: null
+---
+
+La pregunta \"¿de quién es el código?\" debería responderse antes de escribir la primera línea. Pero en muchas negociaciones entre una empresa y un proveedor de desarrollo, la propiedad del código fuente aparece tarde, como un punto menor del contrato, o peor: no aparece hasta que la relación termina y una de las partes descubre que la otra tiene las llaves del producto.
+
+Este artículo argumenta una posición que no es obvia para quien viene del mundo de los activos físicos: que un proveedor escriba el código no significa que deba ser su dueño. La propiedad del código fuente es una decisión de negocio, no técnica, y tratarla como un detalle contractual es uno de los errores más costosos que puede cometer una empresa que encarga un desarrollo.
+
+## Propiedad no es lo mismo que acceso
+
+El primer malentendido que conviene aclarar es la diferencia entre tener acceso al código y ser dueño del código. Un proveedor puede darte acceso al repositorio, entregarte credenciales, incluso dejarte ver el código. Pero si el contrato no transfiere explícitamente la propiedad intelectual, el código no es tuyo. Es de quien lo escribió —o de la empresa que lo emplea—.
+
+Tener acceso sin propiedad significa que podés ver el código pero no podés —legalmente— hacer mucho con él: modificarlo, contratar a otro proveedor para que lo modifique, distribuirlo, venderlo o licenciarlo. En la práctica, significa que dependés del proveedor original para cualquier cambio, y que si la relación se termina —por el motivo que sea—, tu capacidad de seguir operando y evolucionando el producto queda comprometida.
+
+<Callout variant="warning" title="El riesgo de confundir acceso con propiedad">
+Hemos visto empresas que operaron durante años con un software cuyo código fuente no les pertenecía, sin saberlo, porque el proveedor les había dado acceso al repositorio y eso les pareció suficiente. Cuando quisieron cambiar de proveedor, descubrieron que el código no era suyo y que el contrato no decía nada sobre la propiedad intelectual. La corrección de esa situación costó más que el desarrollo original.
+</Callout>
+
+## Las tres formas en que se estructura la propiedad
+
+En el mercado de desarrollo de software a medida, la propiedad del código fuente suele estructurarse de tres maneras. Cada una tiene implicancias distintas, y entenderlas permite negociar con criterio en lugar de aceptar lo que el proveedor propone por defecto.
+
+### 1. Propiedad total del cliente
+
+El cliente es dueño de todo el código que se escribió para el proyecto, desde el primer commit hasta el último. Esto incluye el código fuente, la documentación, los diseños y cualquier otro entregable intelectual producido durante el desarrollo.
+
+Esta es la estructura que más protege al cliente y la que recomendamos como posición de partida. Implica que el cliente puede, en cualquier momento y sin autorización del proveedor, modificar el código, contratar a otro equipo para que lo haga, migrar el software a otra infraestructura o incluso licenciarlo a terceros.
+
+Para que esta estructura funcione, el contrato debe incluir una cláusula explícita de cesión de propiedad intelectual. No alcanza con que diga \"el código es del cliente\" o \"el cliente es dueño del software\". Debe especificar que todos los derechos de autor, patentes y cualquier otro derecho de propiedad intelectual sobre el código, la documentación y los diseños son transferidos al cliente al momento del pago —o según el cronograma de hitos que se acuerde—.
+
+### 2. Propiedad compartida o licencia amplia
+
+El proveedor retiene la propiedad del código pero otorga al cliente una licencia amplia —perpetua, irrevocable, sin costo adicional— para usar, modificar y distribuir el software. El cliente no es dueño del código, pero puede hacer casi todo lo que haría si lo fuera.
+
+Esta estructura es común cuando el proveedor construye el software sobre componentes propios preexistentes —un framework interno, bibliotecas desarrolladas para otros clientes, módulos reutilizables— que no está dispuesto a transferir. La [guía sobre cómo evitar depender de un proveedor](/blog/como-evitar-depender-de-un-proveedor) entra en detalle sobre cómo manejar estos casos.
+
+La diferencia práctica entre propiedad total y licencia amplia es sutil pero importante: con licencia amplia, el proveedor puede reutilizar el código —o partes de él— para otros clientes. Si el software que te construyeron contiene lógica de negocio que te da ventaja competitiva, esa lógica podría aparecer en el software de un competidor sin que tengas recurso legal para impedirlo.
+
+### 3. Propiedad del proveedor con licencia limitada
+
+El proveedor es dueño del código y el cliente recibe una licencia de uso limitada —por tiempo, por alcance o por condiciones—. Esta es la estructura que más conviene al proveedor y la que más riesgo representa para el cliente.
+
+Bajo esta estructura, el cliente no puede modificar el código, no puede contratar a otro proveedor para que lo modifique y, en algunos casos, no puede ni siquiera migrar el software a otra infraestructura sin autorización. Si el proveedor desaparece, sube los precios o cambia las condiciones, el cliente no tiene salida.
+
+<Callout variant="info" title="Cuando la propiedad del proveedor puede ser aceptable">
+Hay escenarios donde esta estructura tiene sentido: productos SaaS donde pagás una suscripción por usar el software y nunca tuviste expectativa de ser dueño del código. El problema aparece cuando encargás un desarrollo a medida creyendo que estás comprando un activo y el contrato dice que solo estás comprando una licencia de uso. La diferencia entre un producto y un servicio no siempre es obvia en la propuesta comercial.
+</Callout>
+
+## Lo que un contrato debería decir sobre propiedad intelectual
+
+La [guía sobre qué debe contener un contrato de desarrollo de software](/blog/que-debe-contener-contrato-desarrollo-software) cubre todos los aspectos del contrato. Acá nos concentramos solo en las cláusulas de propiedad intelectual.
+
+Un contrato que protege al cliente en materia de propiedad intelectual debería incluir al menos lo siguiente:
+
+- **Cesión explícita**: una cláusula que diga que todos los derechos de propiedad intelectual sobre el código, la documentación, los diseños y cualquier otro entregable del proyecto son transferidos al cliente. Sin ambigüedad. Sin condiciones que dependan de la interpretación del proveedor.
+- **Momento de la transferencia**: cuándo se transfiere la propiedad. Puede ser al momento del pago total, al momento del pago de cada hito, o al momento de la entrega de cada entregable. Lo importante es que esté definido y que no dependa de la voluntad unilateral del proveedor.
+- **Software preexistente**: si el proveedor usa componentes propios que no va a transferir, el contrato debe listarlos explícitamente y especificar qué derechos tiene el cliente sobre ellos —típicamente una licencia perpetua e irrevocable—.
+- **Software de terceros**: si el proyecto usa bibliotecas open source o componentes de terceros, el contrato debe identificar cuáles son y bajo qué licencias se distribuyen. Algunas licencias open source —como GPL— imponen restricciones sobre cómo se puede distribuir el software que las incorpora.
+- **Garantía de originalidad**: el proveedor debe garantizar que el código que entrega es original o que tiene los derechos para usarlo, y que no infringe derechos de propiedad intelectual de terceros.
+- **Entrega del código**: el contrato debe especificar que el código fuente completo —no solo el código compilado o el ejecutable— será entregado al cliente, junto con instrucciones para compilarlo y desplegarlo, en un formato estándar y sin mecanismos de protección que impidan su acceso o modificación.
+
+## Por qué la propiedad del código es una decisión de negocio
+
+La propiedad del código fuente no es un tecnicismo legal ni un capricho de abogados. Es una decisión que afecta directamente la capacidad del negocio para operar, crecer y adaptarse. Algunas implicancias concretas:
+
+**Continuidad operativa**: si el proveedor desaparece —quiebra, cierra, pierde al equipo clave— y el código no es tuyo, tu operación queda en riesgo. No podés contratar a alguien más para que mantenga el software, porque legalmente no tenés derecho a modificar el código.
+
+**Poder de negociación**: si el código es del proveedor, cada modificación, cada mejora, cada corrección de error depende de su voluntad y de sus precios. No tenés alternativa, y la ausencia de alternativas es la peor posición para negociar.
+
+**Valor del negocio**: un software a medida es un activo. Si el código no es tuyo, ese activo no figura en tu balance, no podés usarlo como garantía, y si vendés la empresa, el comprador va a notar que el software sobre el que opera el negocio no te pertenece.
+
+**Velocidad de adaptación**: los negocios cambian y el software necesita cambiar con ellos. Si cada cambio requiere pasar por el proveedor original —porque solo él puede tocar el código—, la velocidad de adaptación del negocio queda limitada por la disponibilidad, los precios y las prioridades de un tercero.
+
+## Cómo preguntar por la propiedad sin sonar desconfiado
+
+Muchos empresarios evitan el tema de la propiedad intelectual durante la negociación por miedo a que el proveedor lo interprete como desconfianza. Es un error. Preguntar por la propiedad del código no es desconfiar: es hacer la diligencia que cualquier negocio haría al adquirir un activo.
+
+La forma de plantearlo es simple y directa: \"¿El contrato incluye la cesión de propiedad intelectual del código y de todos los entregables del proyecto?\". Si la respuesta es afirmativa, pedí ver la cláusula. Si la respuesta es evasiva, insistí. Si la respuesta es negativa, preguntá por qué y qué alternativas ofrecen.
+
+Un proveedor serio no solo no se va a ofender por la pregunta, sino que va a tener una respuesta preparada. Porque la propiedad del código fuente es un tema que aparece en todas las negociaciones de desarrollo a medida. Si un proveedor actúa sorprendido o incómodo cuando lo preguntás, eso es información.
+
+El código fuente de tu producto es la base sobre la que va a operar tu negocio durante años. Que sea tuyo —o que tengas derechos equivalentes— no es un detalle. Es la diferencia entre ser dueño de tu tecnología y alquilarla sin contrato.

@@ -1,0 +1,172 @@
+---
+title: Cómo preparar un plan básico de continuidad operacional
+slug: como-preparar-un-plan-basico-de-continuidad-operacional
+description: >-
+  Una guía para empresarios y gerentes sobre cómo armar un plan de continuidad
+  que permita seguir operando cuando los sistemas fallan: qué incluir, cómo
+  probarlo y cómo mantenerlo actualizado sin que sea un proyecto inabordable.
+excerpt: >-
+  La continuidad operacional no es un documento de cien páginas que se escribe
+  una vez y se archiva. Es un conjunto de decisiones prácticas que permiten que
+  tu empresa siga funcionando cuando algo falla —un sistema, un proveedor, una
+  persona clave—. Esta guía explica cómo preparar un plan básico en menos de una
+  semana, sin consultores, sin tecnicismos y sin inversiones significativas.
+category: seguridad-y-riesgos
+tags:
+  - continuidad operacional
+  - plan de contingencia
+  - gestión de riesgos
+  - recuperación de desastres
+  - resiliencia operativa
+audience:
+  - empresarios
+  - gerentes
+intent: commercial
+funnelStage: decision
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-22'
+approvedAt: '2026-07-22'
+seo:
+  title: Cómo preparar un plan básico de continuidad operacional | Código Startup
+  description: >-
+    Guía práctica para preparar un plan de continuidad operacional: qué sistemas
+    priorizar, cómo definir procesos alternativos y cómo probar el plan sin
+    afectar la operación diaria.
+  primaryKeyword: plan de continuidad operacional
+  secondaryKeywords:
+    - plan de contingencia empresarial
+    - continuidad de negocio
+    - plan de recuperación
+    - qué hacer si el sistema falla
+    - resiliencia operativa pyme
+relatedArticles:
+  - que-hacer-si-tu-aplicacion-queda-fuera-de-servicio
+  - que-respaldos-necesita-una-empresa
+  - como-saber-si-tu-sistema-tiene-copias-de-seguridad-reales
+  - riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde
+reviewStatus: pending
+reviewScore: null
+publishedAt: '2026-07-22'
+---
+
+La mayoría de las empresas no tiene un plan de continuidad operacional. No porque no lo consideren importante, sino porque imaginan que es un proyecto enorme: un documento de cien páginas, un consultor externo, meses de relevamiento, un presupuesto que no está disponible. Y como no se puede hacer la versión ideal, no se hace ninguna.
+
+El resultado es que cuando algo falla —el sistema de facturación se cae, el proveedor de infraestructura tiene una interrupción, la persona que sabe cómo funciona el proceso de cobranzas renuncia—, la empresa improvisa. Y la improvisación, en medio de una emergencia, es la receta más cara para resolver un problema.
+
+Un plan de continuidad operacional no necesita ser perfecto para ser útil. Necesita responder tres preguntas: qué es lo más importante que no puede parar, cómo se sigue haciendo si el sistema principal falla, y quién se ocupa de cada cosa. Este artículo explica cómo preparar ese plan en un formato que cualquier pyme puede implementar.
+
+## Qué es —y qué no es— un plan de continuidad
+
+Un plan de continuidad operacional es un conjunto de instrucciones escritas que permiten que los procesos críticos de una empresa sigan funcionando —o se recuperen en un tiempo aceptable— cuando ocurre una interrupción. La interrupción puede ser tecnológica —un sistema caído—, humana —una persona clave no está disponible—, física —la oficina no es accesible— o externa —un proveedor deja de funcionar—.
+
+Un plan de continuidad no es:
+
+- **Un plan de respaldo de datos.** Los backups son un componente de la continuidad, pero tener copias de seguridad no alcanza si no sabés cómo restaurarlas, cuánto tardan y qué hacés mientras tanto. El artículo sobre [cómo saber si tu sistema tiene copias de seguridad reales](/blog/como-saber-si-tu-sistema-tiene-copias-de-seguridad-reales) cubre ese aspecto específico.
+- **Un seguro contra todo riesgo.** El plan reduce el impacto de una interrupción, no garantiza que la empresa no sufra ninguna consecuencia. El objetivo no es eliminar el riesgo: es acotarlo.
+- **Un documento para cumplir con una auditoría.** Si el plan se escribe para satisfacer un requisito externo y después se archiva, no sirve. El plan tiene que ser usado, probado y actualizado.
+
+## Paso 1: Identificar los procesos críticos
+
+El primer paso es decidir qué es lo que no puede parar. No todo lo que hace la empresa es igual de urgente. Si el sistema de facturación está caído un día, la empresa puede seguir vendiendo y facturar al día siguiente. Si está caído una semana, los clientes no pagan y el flujo de caja se interrumpe. La criticidad depende del impacto y del tiempo máximo que el proceso puede estar detenido.
+
+Para cada proceso importante de la empresa, preguntate:
+
+- **¿Cuánto tiempo puede estar detenido sin causar un daño significativo?** Una hora, un día, una semana. Ese tiempo es el objetivo de recuperación —RTO, por sus siglas en inglés—. No necesitás calcularlo con precisión: alcanza con un orden de magnitud que refleje la realidad del negocio.
+- **¿Cuánta información me puedo permitir perder?** Si el sistema de ventas se cae y se pierden todas las transacciones de la última hora, ¿es aceptable? ¿Y las del último día? Esa cantidad de información es el punto de recuperación —RPO por sus siglas en inglés—.
+- **¿Hay una forma alternativa de ejecutar este proceso?** Si el sistema no funciona, ¿se puede hacer a mano, con una planilla, por teléfono? Si la respuesta es no, la criticidad es máxima: ese proceso depende completamente del sistema y cualquier interrupción lo frena por completo.
+
+<Callout variant="info" title="RTO y RPO en criollo">
+  RTO: si el sistema se cae a las diez de la mañana, ¿a qué hora tiene que volver a funcionar como máximo para que el daño no sea grave? RPO: si el sistema se cae, ¿cuánta información —transacciones, registros, cambios— estoy dispuesto a perder y tener que reconstruir a mano? Con estas dos preguntas ya tenés el criterio para priorizar.
+</Callout>
+
+El resultado de este paso es una lista de los tres a cinco procesos que no pueden parar, con su tiempo máximo de interrupción aceptable y un indicador de si existe un proceso alternativo.
+
+## Paso 2: Definir los procesos alternativos
+
+Para cada proceso crítico identificado, necesitás una forma de seguir operando mientras el sistema principal no está disponible. El proceso alternativo no tiene que ser eficiente —va a ser más lento, más incómodo, más propenso a errores—, pero tiene que existir y tiene que estar documentado.
+
+Ejemplos de procesos alternativos según el tipo de interrupción:
+
+**Sistema de facturación caído.** Las ventas se registran en una planilla compartida con los datos mínimos necesarios: cliente, producto, monto, fecha. Cuando el sistema vuelve, una persona designada carga todas las operaciones pendientes. La planilla debería existir antes del incidente —con las columnas definidas y el equipo entrenado en usarla—, no crearse en el momento.
+
+**Plataforma de atención al cliente fuera de servicio.** Los tickets se reciben por correo electrónico y se responden desde ahí, sin el sistema de gestión. Un miembro del equipo asume el rol de coordinador: recibe los correos, los asigna manualmente y lleva un registro simple de qué se respondió y qué está pendiente.
+
+**Persona clave no disponible.** Cada proceso crítico debería tener al menos dos personas que sepan ejecutarlo. Si hoy dependés de una sola persona para facturar, para pagar sueldos, para manejar la cuenta bancaria, eso es un riesgo operacional. Documentar el procedimiento —paso a paso, con pantallas, credenciales y contactos— es el primer paso para que otra persona pueda ejecutarlo en una emergencia.
+
+**Oficina no accesible.** Si el equipo no puede ir a la oficina —por una inundación, un corte de luz, una restricción de acceso—, ¿pueden trabajar desde otro lugar? ¿Tienen acceso remoto a los sistemas? ¿Los archivos están en la nube o en un servidor local al que solo se accede desde la red de la oficina?
+
+<Callout variant="tip" title="La planilla de contingencia">
+  Para cada proceso crítico, creá una planilla o documento simple con tres secciones: (1) qué hace este proceso en condiciones normales, (2) cómo se ejecuta cuando el sistema principal no está disponible, (3) qué hay que hacer cuando el sistema vuelve para cargar lo pendiente y verificar que no haya inconsistencias. Que cada persona involucrada tenga acceso a este documento y sepa dónde encontrarlo.
+</Callout>
+
+## Paso 3: Asignar responsables y roles
+
+Un plan sin responsables es una lista de buenas intenciones. Para cada escenario de interrupción, el plan debería especificar:
+
+**Quién detecta el problema y activa el plan.** En empresas chicas, suele ser el dueño o gerente. En empresas más grandes, puede ser el encargado de sistemas o el responsable de operaciones. Lo importante es que sea una persona con la autoridad para decir "estamos en modo de contingencia" y que todos sepan que esa es la señal para activar los procesos alternativos.
+
+**Quién ejecuta cada proceso alternativo.** No alcanza con decir "el equipo de ventas sigue vendiendo con la planilla". Hay que decir quién —nombre y apellido— es responsable de cada cosa: quién coordina la carga de pedidos, quién contacta a los clientes, quién verifica que la información pendiente se cargó correctamente cuando el sistema vuelve.
+
+**Quién comunica hacia adentro y hacia afuera.** Internamente, el equipo necesita saber qué está pasando, qué se espera de cada uno y cada cuánto va a haber actualizaciones. Externamente, los clientes, proveedores y otros actores necesitan saber que hay un problema, qué están haciendo al respecto y cuándo pueden esperar una solución.
+
+**Quién declara el fin de la contingencia.** Así como alguien activa el plan, alguien tiene que declarar que la emergencia terminó y que se vuelve a la operación normal. Sin esa señal explícita, los procesos alternativos pueden seguir usándose por inercia, generando información duplicada o inconsistente.
+
+## Paso 4: Armar el documento
+
+El plan de continuidad debería ser un documento que cualquier persona de la empresa pueda leer y entender en menos de diez minutos. No un manual de procedimientos, no una especificación técnica. Un documento de consulta rápida.
+
+Estructura sugerida para un plan de una pyme:
+
+1. **Información de contacto.** Teléfonos y correos de las personas a cargo de cada área, del proveedor de infraestructura, del soporte técnico, de los servicios externos críticos. Si el plan depende de llamar a alguien y ese alguien cambió de número, el plan falla en el primer paso.
+
+2. **Procesos críticos y sus alternativas.** La lista definida en los pasos 1 y 2, en un formato de tabla simple: proceso, tiempo máximo de interrupción aceptable, procedimiento alternativo, responsable.
+
+3. **Protocolo de activación.** Quién decide activar el plan, cómo se comunica al equipo y qué hace cada persona en los primeros treinta minutos.
+
+4. **Protocolo de restauración.** Qué hay que verificar antes de declarar que el incidente terminó, cómo se carga la información pendiente y quién se ocupa.
+
+5. **Anexos.** Planillas de contingencia, listas de contactos, instrucciones paso a paso para los procesos alternativos.
+
+El documento debería estar disponible en al menos dos formatos y dos ubicaciones. Si el único lugar donde existe es un archivo en el servidor que justo es el que falló, el plan es inaccesible cuando más se necesita. Una copia impresa, un PDF en el teléfono de los responsables, un archivo en una carpeta compartida en la nube.
+
+## Paso 5: Probar el plan
+
+Un plan que no se probó es una hipótesis. La prueba no tiene que ser un simulacro complejo con todo el equipo. Puede ser:
+
+**Una prueba de escritorio.** Reunir a los responsables durante una hora, plantear un escenario —"el sistema de facturación dejó de funcionar, es lunes a las diez de la mañana"— y recorrer el plan paso a paso. ¿Todos saben qué hacer? ¿Los teléfonos de contacto son correctos? ¿La planilla de contingencia está donde debería estar? Esta prueba detecta la mayoría de los problemas sin afectar la operación.
+
+**Una prueba de un solo proceso.** Elegir el proceso más crítico y ejecutar su procedimiento alternativo durante una hora real de trabajo. Si el sistema de ventas se cae, hacer que el equipo de ventas use la planilla de contingencia para registrar pedidos reales durante sesenta minutos. Después, cargar esos pedidos en el sistema y verificar que la información sea consistente.
+
+**Una prueba completa anual.** Una vez al año, simular un incidente mayor que afecte a varios procesos. No hace falta que sea sorpresiva: puede ser planificada y comunicada con anticipación. Lo que importa es ejecutar el plan completo y medir qué funciona y qué no.
+
+<Callout variant="warning" title="La primera prueba siempre encuentra problemas">
+  No te desanimes si la primera prueba revela que el plan tiene agujeros. Es esperable. La primera prueba de cualquier plan de continuidad encuentra información de contacto desactualizada, procedimientos que no están claros, personas que no sabían que tenían un rol asignado. Eso no significa que el plan sea malo: significa que la prueba cumplió su función. Corregí los problemas y volvé a probar.
+</Callout>
+
+## Mantener el plan vivo
+
+Un plan de continuidad se degrada con el tiempo. Las personas cambian de rol o dejan la empresa. Los sistemas se actualizan o se reemplazan. Los procesos evolucionan. Si el plan no se actualiza, en seis meses puede ser obsoleto sin que nadie se dé cuenta.
+
+Tres prácticas para mantenerlo vigente:
+
+- **Revisión trimestral.** Quince minutos para verificar que los contactos, los responsables y los procedimientos alternativos sigan siendo correctos. Si algo cambió —una persona nueva, un sistema nuevo, un proceso que se modificó—, actualizar el plan en el momento, no "después".
+- **Prueba después de cada cambio significativo.** Si la empresa migró a un nuevo sistema de facturación, el plan de continuidad para ese sistema probablemente ya no aplica. Probar el plan específico para ese proceso dentro del mes siguiente al cambio.
+- **Incorporar la continuidad en la inducción de nuevas personas.** Cuando alguien nuevo entra a la empresa, debería recibir el plan de continuidad junto con el resto de la documentación operativa. Que sepa, desde el primer día, qué hacer si el sistema falla.
+
+## ¿Cuánto cuesta no tener un plan?
+
+Muchas empresas posponen el plan de continuidad porque "no hay tiempo" o "no hay presupuesto". Pero el costo de no tenerlo se paga en el peor momento:
+
+- Horas —o días— de operación perdidas mientras se improvisa una solución.
+- Decisiones apresuradas que generan costos adicionales: contratar soporte de emergencia, pagar horas extra, perder clientes que no pueden esperar.
+- Información perdida o inconsistente porque los procesos alternativos no estaban definidos y cada persona resolvió como pudo.
+- Estrés en el equipo, que se siente abandonado sin instrucciones claras sobre qué hacer.
+
+Preparar un plan básico de continuidad —el nivel descrito en este artículo— toma entre tres y cinco días de trabajo, no requiere consultores externos y su costo principal es el tiempo de las personas que participan. Comparado con el costo de un día de operación detenida, la ecuación es clara.
+
+El artículo sobre [qué hacer si tu aplicación queda fuera de servicio](/blog/que-hacer-si-tu-aplicacion-queda-fuera-de-servicio) describe los pasos inmediatos durante un incidente. El plan de continuidad es lo que preparás antes para que esos pasos no se improvisen. Los [riesgos técnicos que nadie revisa hasta que es tarde](/blog/riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde) incluyen la falta de continuidad operacional como uno de los puntos ciegos más costosos. Y si todavía no tenés claro qué información respaldar, [qué respaldos necesita una empresa](/blog/que-respaldos-necesita-una-empresa) te da el marco para empezar.
+
+La continuidad operacional no es un lujo de grandes corporaciones. Es una decisión de gestión que cualquier empresa puede tomar esta semana. No necesitás un plan perfecto: necesitás un plan que funcione la primera vez que lo uses. Y para eso, alcanza con empezar.

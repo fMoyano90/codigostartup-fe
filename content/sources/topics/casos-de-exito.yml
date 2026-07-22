@@ -1,0 +1,118 @@
+id: casos-de-exito-01
+name: Casos de éxito
+category: casos-de-exito
+topics:
+  - id: como-leer-un-caso-de-exito-de-un-proveedor
+    title: Cómo leer (con criterio) el caso de éxito de un proveedor tecnológico
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+    objective: Ayudar a evaluar qué información de un caso de éxito es relevante y
+      cuál es solo marketing.
+    notes:
+      - No inventar casos ni testimonios propios — este artículo enseña a
+        evaluar casos ajenos, no presenta uno.
+  - id: que-preguntar-para-verificar-referencias-de-un-proveedor
+    title: Qué preguntar al pedir referencias de un proveedor tecnológico
+    status: published
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - founders
+      - empresarios
+      - gerentes
+    objective: Dar un criterio práctico para verificar referencias antes de contratar.
+    notes:
+      - Enfocar en preguntas concretas a hacerle al cliente de referencia, no en
+        historias inventadas.
+  - id: patron-automatizar-proceso-redujo-horas
+    title: Cómo automatizar un proceso puede reducir horas de trabajo administrativo
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ilustrar con un patrón genérico cómo una automatización bien pensada
+      reduce carga operativa.
+    notes: []
+  - id: patron-centralizar-informacion-clientes
+    title: Cómo una empresa puede centralizar la información de sus clientes
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Mostrar el patrón de consolidación de datos de clientes dispersos en
+      múltiples fuentes.
+    notes: []
+  - id: como-una-empresa-dejo-de-gestionar-su-operacion-con-whatsapp-y-excel
+    title: Cómo una empresa dejó de gestionar su operación con WhatsApp y Excel
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo una empresa dejó de
+      gestionar su operación con whatsapp y excel.
+    notes: []
+  - id: como-una-plataforma-ayudo-a-un-coach-a-organizar-alumnos-clases-y-evaluaciones
+    title: Cómo una plataforma ayudó a un coach a organizar alumnos, clases y
+      evaluaciones
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo una plataforma ayudó a
+      un coach a organizar alumnos, clases y evaluaciones.
+    notes: []
+  - id: de-proceso-manual-a-plataforma-digital-etapas-y-aprendizajes
+    title: "De proceso manual a plataforma digital: etapas y aprendizajes"
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: "Artículo generado desde TEMAS-BLOG.md — de proceso manual a plataforma digital: etapas y aprendizajes."
+    notes: []
+  - id: como-un-mvp-permitio-validar-una-idea-antes-de-una-inversion-mayor
+    title: Cómo un MVP permitió validar una idea antes de una inversión mayor
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo un mvp permitió validar
+      una idea antes de una inversión mayor.
+    notes: []
+  - id: como-una-integracion-elimino-la-duplicacion-de-informacion
+    title: Cómo una integración eliminó la duplicación de información
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo una integración eliminó
+      la duplicación de información.
+    notes: []
+  - id: como-una-empresa-mejoro-la-trazabilidad-de-sus-operaciones
+    title: Cómo una empresa mejoró la trazabilidad de sus operaciones
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo una empresa mejoró la
+      trazabilidad de sus operaciones.
+    notes: []

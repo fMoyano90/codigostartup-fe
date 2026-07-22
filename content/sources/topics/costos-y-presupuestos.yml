@@ -1,0 +1,218 @@
+id: costos-y-presupuestos-01
+name: Costos y presupuestos
+category: costos-y-presupuestos
+topics:
+  - id: como-estimar-el-costo-real-de-un-proyecto-de-software
+    title: Cómo estimar el costo real de un proyecto de software
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+    objective: Dar un marco simple para estimar costos y anticipar variables que
+      suelen quedar fuera de una cotización inicial.
+    notes:
+      - No inventar cifras ni rangos de precio concretos — hablar en términos de
+        variables y criterios, no de montos.
+  - id: presupuesto-cerrado-vs-cobro-por-horas
+    title: "Presupuesto cerrado vs. cobro por horas: qué conviene según el proyecto"
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+      - gerentes
+    objective: Ayudar a elegir el modelo de cobro adecuado según el nivel de certeza
+      del alcance.
+    notes:
+      - "Explicar el trade-off: alcance muy definido favorece presupuesto
+        cerrado, alcance incierto favorece horas."
+  - id: cuanto-cuesta-desarrollar-una-aplicacion-en-chile
+    title: Cuánto cuesta desarrollar una aplicación en Chile
+    status: published
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+    objective: Dar un marco de referencia sobre variables que afectan el costo, sin
+      publicar precios fijos.
+    notes:
+      - "No dar cifras exactas — hablar de factores: complejidad, integraciones,
+        equipo, plazo."
+  - id: por-que-dos-presupuestos-de-software-precios-diferentes
+    title: Por qué dos presupuestos de software pueden tener precios tan diferentes
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+    objective: Explicar qué variables explican diferencias de precio entre
+      cotizaciones de desarrollo.
+    notes:
+      - "Factores: alcance real, stack tecnológico, experiencia del equipo,
+        nivel de detalle, mantenimiento incluido."
+  - id: elementos-que-influyen-costo-desarrollo
+    title: Qué elementos influyen en el costo de un desarrollo
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+    objective: Listar y explicar las variables que determinan el costo de un
+      proyecto de software.
+    notes:
+      - No dar cifras — explicar por qué cada variable afecta el presupuesto.
+  - id: costos-ocultos-mantener-aplicacion
+    title: Costos ocultos de mantener una aplicación
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+    objective: Visibilizar costos recurrentes que no aparecen en la cotización inicial.
+    notes:
+      - Hosting, dominios, SSL, backups, monitoreo, actualizaciones, soporte,
+        bugs.
+  - id: como-estimar-presupuesto-inicial-producto-digital
+    title: Cómo estimar el presupuesto inicial de un producto digital
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+    objective: Dar un método simple para calcular una primera estimación sin conocer
+      todos los detalles técnicos.
+    notes: []
+  - id: cuanto-cuesta-una-mala-decision-tecnologica
+    title: Cuánto cuesta realmente una mala decisión tecnológica
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Mostrar el impacto financiero y operativo de elegir mal una
+      tecnología o arquitectura.
+    notes: []
+  - id: desarrollo-por-hora-precio-fijo-o-equipo-mensual-que-modelo-elegir
+    title: "Desarrollo por hora, precio fijo o equipo mensual: qué modelo elegir"
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: "Artículo generado desde TEMAS-BLOG.md — desarrollo por hora, precio
+      fijo o equipo mensual: qué modelo elegir."
+    notes: []
+  - id: como-reducir-el-costo-de-un-mvp-sin-construir-algo-desechable
+    title: Cómo reducir el costo de un MVP sin construir algo desechable
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo reducir el costo de un
+      mvp sin construir algo desechable.
+    notes: []
+  - id: que-gastos-tecnologicos-deberia-considerar-una-startup
+    title: Qué gastos tecnológicos debería considerar una startup
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — qué gastos tecnológicos
+      debería considerar una startup.
+    notes: []
+  - id: como-calcular-el-retorno-de-inversion-de-un-software
+    title: Cómo calcular el retorno de inversión de un software
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo calcular el retorno de
+      inversión de un software.
+    notes: []
+  - id: que-incluye-normalmente-una-cotizacion-de-desarrollo
+    title: Qué incluye normalmente una cotización de desarrollo
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — por qué elegir solamente por
+      precio suele salir caro.
+    notes: []
+  - id: como-dividir-un-proyecto-tecnologico-en-etapas-financiables
+    title: Cómo dividir un proyecto tecnológico en etapas financiables
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo dividir un proyecto tecnológico en etapas financiables.
+    notes: []
+  - id: cuando-conviene-invertir-en-software-propio
+    title: Cuándo conviene invertir en software propio
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: cuándo conviene invertir en software propio.
+    notes: []
+  - id: que-costos-aparecen-despues-de-lanzar-una-plataforma
+    title: Qué costos aparecen después de lanzar una plataforma
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: qué costos aparecen después de lanzar una plataforma.
+    notes: []
+  - id: como-presupuestar-soporte-mantenimiento-e-infraestructura
+    title: Cómo presupuestar soporte, mantenimiento e infraestructura
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo presupuestar soporte, mantenimiento e infraestructura.
+    notes: []
+  - id: software-barato-versus-software-sostenible
+    title: Software barato versus software sostenible
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: software barato versus software sostenible.
+    notes: []
+  - id: como-saber-si-una-automatizacion-se-paga-sola
+    title: Cómo saber si una automatización se paga sola
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: cómo saber si una automatización se paga sola.
+    notes: []

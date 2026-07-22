@@ -1,0 +1,103 @@
+---
+title: Por qué es importante tener acceso a las cuentas y servicios del proyecto
+slug: por-que-es-importante-tener-acceso-a-las-cuentas-y-servicios-del-proyecto
+description: >-
+  Cuando un proveedor controla las cuentas de hosting, dominio, repositorios y
+  servicios del proyecto, la empresa pierde poder de negociación y autonomía.
+  Por qué este punto, que parece administrativo, es estratégico.
+excerpt: >-
+  Muchas empresas descubren demasiado tarde que no tienen acceso a los servicios
+  donde corre su propio software. El dominio está a nombre del proveedor, la
+  base de datos en una cuenta que no controlan, el código en un repositorio
+  privado ajeno.
+category: proveedores-tecnologicos
+tags:
+  - control de accesos
+  - gestión de proveedores
+  - propiedad de cuentas
+  - autonomía tecnológica
+  - riesgo de proveedor
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-22'
+approvedAt: '2026-07-22'
+seo:
+  title: >-
+    Por qué es importante tener acceso a las cuentas y servicios del proyecto |
+    Código Startup
+  description: >-
+    Cómo asegurar que tu empresa controle el acceso a los servicios esenciales
+    del proyecto: dominio, hosting, repositorio y cuentas de infraestructura.
+    Guía práctica para evitar la dependencia total del proveedor.
+  primaryKeyword: por qué es importante tener acceso a las cuentas y servicios del proyecto
+  secondaryKeywords:
+    - control de cuentas del proyecto
+    - acceso a hosting y dominio
+    - autonomía frente al proveedor
+    - propiedad de cuentas de infraestructura
+    - evitar dependencia del proveedor
+relatedArticles:
+  - que-hacer-cuando-tu-proveedor-desaparece-o-abandona-el-proyecto
+  - como-evitar-depender-de-un-proveedor
+  - quien-debe-ser-dueno-del-codigo-fuente
+reviewStatus: pending
+reviewScore: null
+publishedAt: '2026-07-22'
+---
+
+Una de las conversaciones más incómodas en la relación entre una empresa y su proveedor tecnológico empieza con una frase aparentemente inocente: "¿me podrías pasar el acceso a la cuenta de hosting?". La respuesta —"lo manejo yo, no te preocupes"— debería encender todas las alarmas.
+
+Cuando el proveedor controla las cuentas donde corre el software, la empresa pierde algo más valioso que unas credenciales: pierde autonomía. No puede cambiar de proveedor sin una migración traumática. No puede auditar lo que se está haciendo. No puede reaccionar rápido si algo falla y el proveedor no responde. Y en el peor de los casos, queda rehén de una relación que ya no funciona.
+
+Este artículo explica qué cuentas y servicios son críticos, por qué es peligroso que estén bajo control exclusivo del proveedor, y cómo gestionarlos sin generar fricción innecesaria.
+
+## Lo que está en juego
+
+Cuando se habla de cuentas y servicios del proyecto, no se trata solo de usuario y contraseña. Se trata del control sobre los activos digitales que hacen funcionar el software. Los más importantes:
+
+El dominio —la dirección web que usan los clientes— no es solo una URL: es la identidad digital de la empresa. Si el dominio está registrado a nombre del proveedor o en una cuenta que solo él controla, la empresa no puede transferirlo, no puede apuntarlo a otro servidor y, en un escenario extremo, puede perderlo si el proveedor desaparece o decide no renovarlo.
+
+El hosting y los servidores donde corre la aplicación son el equivalente digital del local físico. Si las credenciales de acceso están solo en manos del proveedor, la empresa no puede entrar a ver qué está pasando, no puede hacer una copia de seguridad por su cuenta y no puede migrar el sistema a otro proveedor sin la cooperación del actual.
+
+El repositorio de código fuente es donde está el software en sí. Si está en una cuenta privada del proveedor a la que la empresa no tiene acceso, la empresa pagó por un desarrollo cuyo resultado no controla. En [quién debe ser dueño del código fuente](/blog/quien-debe-ser-dueno-del-codigo-fuente) profundizamos sobre este punto.
+
+Los servicios externos conectados —pasarelas de pago, servicios de correo, APIs de terceros— suelen estar configurados con credenciales que el proveedor gestiona. Si esas credenciales están solo en su poder, cualquier cambio en esos servicios requiere pasar por él.
+
+## Por qué muchos proyectos nacen con este problema
+
+No suele haber mala intención detrás de esta situación. En la mayoría de los casos, el proveedor configura todo desde sus propias cuentas porque es más rápido y más simple —y en la etapa inicial de un proyecto, velocidad y simplicidad son prioridades legítimas—. El problema es que esa configuración inicial cómoda se convierte en la configuración permanente sin que nadie lo cuestione.
+
+El cliente tampoco suele preguntar. Para una empresa que no es del rubro tecnológico, los conceptos de hosting, dominio, DNS y repositorios son terreno desconocido. Se asume que el proveedor se encarga de todo, y durante meses o años esa suposición no genera problemas visibles. Hasta que un día el proveedor desaparece, cambia las condiciones, o simplemente la relación se deteriora, y la empresa descubre que no controla los activos digitales por los que pagó.
+
+## Cómo estructurar los accesos desde el día uno
+
+La solución es sencilla de plantear pero requiere disciplina para sostener: la empresa debe ser dueña de todas las cuentas donde residen sus activos digitales. El proveedor accede a esas cuentas con permisos delegados —como colaborador, no como dueño—. El día que la relación termina, se revocan los permisos y el proveedor deja de tener acceso. Los activos nunca dejaron de estar bajo control de la empresa.
+
+En la práctica, esto significa que la empresa debe crear las cuentas en los servicios relevantes —registrador de dominios, plataforma de hosting, repositorio de código, servicios de email, etc.—, configurar la forma de pago directa desde la empresa a esos servicios, y luego invitar al proveedor como colaborador con los permisos que necesite para trabajar.
+
+Esto puede generar resistencia en algunos proveedores. El argumento típico es "así es más trabajo para ustedes" o "me es más fácil gestionarlo yo". La respuesta es simple: no es un tema de comodidad, es un tema de control. Un proveedor serio entiende esta necesidad y no tiene problemas en trabajar bajo cuentas del cliente. Un proveedor que se niega sistemáticamente está dando información sobre cómo maneja la relación con sus clientes.
+
+## Compensaciones razonables para el proveedor
+
+Hay servicios donde el proveedor tiene un argumento legítimo para mantener el control. Por ejemplo, si el proveedor utiliza una herramienta de monitoreo o despliegue que es parte de su infraestructura y que comparte entre varios clientes, no va a transferir esa cuenta a cada cliente. En esos casos, lo importante es que el proveedor documente qué servicios están bajo su control exclusivo, por qué, y cuál es el procedimiento para que la empresa acceda a la información o a los activos si la relación termina.
+
+También es razonable que el proveedor ofrezca gestionar los servicios como un adicional de mantenimiento —y cobrar por eso—. La diferencia está en quién es el dueño de la cuenta y quién tiene la última palabra. Que el proveedor administre el hosting de la empresa no es problema. Que el hosting esté en una cuenta que solo el proveedor controla, sí.
+
+El artículo sobre [cómo evitar depender completamente de un proveedor tecnológico](/blog/como-evitar-depender-de-un-proveedor) detalla otras medidas prácticas para reducir el vendor lock-in, incluyendo la propiedad del código y la transferencia de conocimiento.
+
+## Lo mínimo que deberías tener
+
+Si tenés un proyecto en marcha y no estás seguro de cómo está la situación de accesos, este es el chequeo mínimo que deberías hacer esta semana:
+
+¿El dominio está registrado a nombre de tu empresa o de una persona de tu empresa? Si está a nombre del proveedor, pedí la transferencia ahora, mientras la relación es buena. Después puede ser más difícil. ¿Tenés acceso de administrador —no solo de usuario— a la plataforma de hosting? Si no, pedilo. ¿Tenés acceso al repositorio de código? Si no, pedí una copia actualizada del código y las instrucciones para ejecutarlo en otro entorno. ¿Sabés qué servicios externos usa tu aplicación y tenés las credenciales de acceso? Si no, pedí un inventario.
+
+Ningún proveedor serio debería resistirse a estas solicitudes. Si alguno lo hace, tomalo como lo que es: una bandera roja sobre la salud de esa relación a futuro. Si estás evaluando cambiar de proveedor, consultá nuestra guía sobre [cuándo cambiar de proveedor tecnológico](/blog/cuando-cambiar-de-proveedor-tecnologico).
+
+El control de las cuentas es parte de una estrategia más amplia de independencia tecnológica. En [cómo evitar depender de un proveedor tecnológico](/blog/como-evitar-depender-de-un-proveedor) exploramos otras medidas concretas para reducir el vendor lock-in desde el inicio del proyecto.

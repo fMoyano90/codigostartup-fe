@@ -1,0 +1,188 @@
+---
+title: Costos ocultos de mantener una aplicación
+slug: costos-ocultos-mantener-aplicacion
+description: >-
+  Los costos recurrentes que no aparecen en la cotización inicial de un
+  desarrollo: hosting, dominios, SSL, backups, monitoreo, actualizaciones,
+  soporte y corrección de bugs.
+excerpt: >-
+  Desarrollar una aplicación es solo el comienzo. Mantenerla funcionando, segura
+  y actualizada tiene costos que rara vez aparecen en el presupuesto inicial.
+category: costos-y-presupuestos
+tags:
+  - costos de mantenimiento
+  - hosting
+  - infraestructura
+  - presupuesto de software
+  - operación
+audience:
+  - founders
+  - empresarios
+intent: informational
+funnelStage: consideration
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-21'
+approvedAt: '2026-07-21'
+publishedAt: '2026-07-21'
+seo:
+  title: Costos ocultos de mantener una aplicación | Código Startup
+  description: >-
+    Hosting, dominios, backups, monitoreo, actualizaciones y soporte: los costos
+    recurrentes de mantener una aplicación que no aparecen en la cotización
+    inicial.
+  primaryKeyword: costos ocultos de mantener una aplicación
+  secondaryKeywords:
+    - costo de mantenimiento de software
+    - gastos recurrentes de una aplicación
+    - qué sale mantener un sistema
+    - hosting y operación de aplicaciones
+relatedArticles:
+  - por-que-dos-presupuestos-de-software-precios-diferentes
+  - como-estimar-el-costo-real-de-un-proyecto-de-software
+  - software-medida-vs-estandar
+reviewStatus: pending
+reviewScore: null
+---
+
+Cuando una empresa recibe una cotización por un desarrollo de software, el foco suele estar en el número que aparece al final. ¿Cuánto cuesta construir? ¿En cuánto tiempo está listo? Esas son las preguntas que dominan la conversación inicial. Pero hay una pregunta que se hace mucho menos y que, con el tiempo, pesa tanto o más que la inversión inicial: ¿cuánto cuesta mantener esto funcionando?
+
+Mantener una aplicación no es un gasto que aparece una vez y desaparece. Es un conjunto de costos recurrentes que empiezan el día que la aplicación se pone en producción y no terminan mientras la aplicación siga en uso. Algunos son fijos y predecibles. Otros son variables y dependen del uso, del crecimiento o de factores externos. Casi todos son inevitables. Y muchos no figuran en la cotización inicial porque no forman parte del desarrollo propiamente dicho.
+
+Este artículo enumera y explica cada uno de los costos ocultos de mantener una aplicación. El objetivo no es desalentar la inversión en tecnología, sino evitar la sorpresa de descubrir que el presupuesto anual de operación supera ampliamente lo que se previó durante la etapa de desarrollo.
+
+## Hosting e infraestructura
+
+Toda aplicación necesita vivir en algún lado. Ese "algún lado" es un servidor —físico o, cada vez más frecuentemente, en la nube— que tiene un costo mensual o anual.
+
+El costo de hosting depende de varias variables:
+
+- El volumen de tráfico: cuántos usuarios usan la aplicación y con qué frecuencia.
+- La cantidad de datos que la aplicación almacena y procesa.
+- La potencia de cómputo necesaria para ejecutar las operaciones que la aplicación realiza.
+- La distribución geográfica: si los usuarios están en distintas regiones, puede ser necesario replicar la infraestructura en múltiples ubicaciones para mantener tiempos de respuesta aceptables.
+
+En proyectos chicos, el hosting puede costar desde unas pocas decenas de dólares por mes. Pero a medida que la aplicación crece en usuarios, en datos o en complejidad, ese costo escala. Y lo hace de manera no lineal: duplicar la cantidad de usuarios no necesariamente duplica el costo de infraestructura, pero casi seguro lo aumenta en una proporción que conviene haber anticipado.
+
+Un error frecuente es dimensionar la infraestructura para el escenario actual y no para el crecimiento previsto en los próximos doce o veinticuatro meses. Migrar una aplicación a una infraestructura más grande cuando el costo actual ya se volvió insostenible es más caro y más riesgoso que planificar ese crecimiento desde el inicio.
+
+## Dominios y certificados SSL
+
+Parecen costos menores comparados con el desarrollo y el hosting, pero son recurrentes y obligatorios:
+
+- El dominio —la dirección web de la aplicación— se renueva anualmente. El costo base es bajo, pero si la empresa opera en múltiples países o tiene varias marcas, la cantidad de dominios se multiplica.
+- Los certificados SSL —que permiten que la conexión entre el usuario y la aplicación sea segura— también se renuevan periódicamente. Aunque existen opciones gratuitas como Let's Encrypt, en contextos empresariales donde se requiere validación extendida o garantías adicionales, los certificados pagos son necesarios.
+- Los subdominios para entornos de prueba, staging o versiones internas también requieren configuración y, en algunos casos, certificados propios.
+
+Ninguno de estos rubros es caro por sí solo. Pero sumados y multiplicados por la cantidad de entornos, dominios y aplicaciones que una empresa puede llegar a tener, el costo anual deja de ser insignificante.
+
+## Backups y recuperación ante desastres
+
+Los datos que una aplicación genera —transacciones, registros de clientes, documentos, configuraciones— son, en muchos casos, más valiosos que la aplicación misma. Perderlos no es un contratiempo técnico: es un problema de negocio que puede implicar desde la imposibilidad de operar hasta consecuencias legales.
+
+Proteger esos datos tiene un costo:
+
+- Almacenamiento de backups: cada copia de seguridad ocupa espacio, y ese espacio se paga. Si la política de retención exige mantener backups de los últimos treinta días, el costo de almacenamiento se multiplica por la cantidad de copias.
+- Transferencia de datos: mover backups entre regiones o entre proveedores para garantizar que sobrevivan a una falla de infraestructura tiene un costo de red.
+- Restauración periódica de prueba: un backup que nunca se probó no es un backup, es una esperanza. Probar la restauración consume tiempo del equipo técnico y, en algunos casos, recursos de infraestructura adicionales.
+
+<Callout variant="info" title="Lo que cuesta un backup vs lo que cuesta no tenerlo">
+  El costo de un esquema de backups robusto es un gasto recurrente predecible. El costo de no tenerlo no se puede predecir, pero en el peor caso puede ser la pérdida total de los datos del negocio. La ecuación, en casi todos los escenarios, favorece al backup.
+</Callout>
+
+## Monitoreo y alertas
+
+Una aplicación en producción necesita ser vigilada. No por desconfianza, sino porque los problemas que no se detectan a tiempo son los que más daño generan.
+
+El monitoreo incluye:
+
+- Disponibilidad: ¿la aplicación está funcionando o está caída? Si se cae a las tres de la mañana de un domingo, ¿alguien se entera antes del lunes a las nueve?
+- Rendimiento: ¿las páginas cargan en un tiempo aceptable? ¿Hay consultas a la base de datos que se volvieron lentas y están degradando la experiencia de los usuarios?
+- Errores: ¿hay funcionalidades que están fallando de manera intermitente y que los usuarios no reportan, simplemente porque asumen que así funciona?
+- Seguridad: ¿hay intentos de acceso no autorizado, patrones de tráfico sospechoso o vulnerabilidades que requieren atención?
+
+Las herramientas de monitoreo tienen un costo —algunas cobran por volumen de datos procesados, otras por cantidad de servidores monitoreados, otras por funcionalidad— y también lo tiene el tiempo del equipo que configura las alertas, investiga las que se disparan y mantiene el sistema de monitoreo actualizado a medida que la aplicación evoluciona.
+
+El monitoreo no es opcional si la aplicación es importante para el negocio. Lo que es opcional es el nivel de sofisticación: se puede empezar con herramientas básicas —gratuitas o de bajo costo— e ir agregando capacidad a medida que la aplicación crece.
+
+## Actualizaciones de dependencias y parches de seguridad
+
+El software no se construye desde cero. Se construye sobre bibliotecas, frameworks y servicios de terceros que, a su vez, se actualizan constantemente. Cada una de esas dependencias es un punto de entrada potencial para vulnerabilidades de seguridad, y cada actualización es una decisión que alguien debe tomar.
+
+Mantener las dependencias actualizadas implica:
+
+- Revisar periódicamente qué bibliotecas tienen nuevas versiones disponibles.
+- Evaluar si la actualización introduce cambios que rompen algo de la aplicación —lo que en la jerga técnica se llama breaking changes— y, si es así, adaptar el código.
+- Priorizar las actualizaciones de seguridad por sobre las de funcionalidad: una vulnerabilidad crítica requiere una respuesta inmediata, no esperar al próximo ciclo de desarrollo planificado.
+- Probar la aplicación después de cada actualización para verificar que todo siga funcionando como antes.
+
+Este trabajo no es visible para el usuario final —la aplicación hace lo mismo que hacía antes—, pero es indispensable para que siga siendo segura y compatible con los entornos donde opera. Postergarlo indefinidamente no ahorra plata: la acumula como deuda técnica que, cuando se vuelve inevitable pagar, cuesta más que si se hubiera mantenido al día.
+
+## Soporte a usuarios
+
+Una vez que la aplicación está en producción, los usuarios van a tener preguntas, dudas y problemas. Alguien tiene que atenderlos.
+
+El soporte puede ser interno —un equipo de la empresa dedicado a atender consultas— o externo —el proveedor que desarrolló la aplicación ofrece un servicio de soporte post-entrega—. En cualquier caso, tiene un costo:
+
+- Tiempo del equipo de soporte: responder consultas, investigar problemas, escalar lo que no se puede resolver en primera instancia.
+- Corrección de errores: los bugs que aparecen en producción no siempre se pueden postergar. Algunos impiden operar y requieren una corrección urgente, que interrumpe el trabajo planificado del equipo de desarrollo.
+- Mejoras menores: lo que un usuario describe como "un error" a veces es una funcionalidad que no existe pero que el usuario esperaba que existiera. Decidir si eso se corrige, se desarrolla como mejora o se explica como limitación también consume tiempo.
+
+El error más común es asumir que el soporte post-entrega está incluido en el costo de desarrollo. Rara vez lo está, y cuando lo está, suele estar acotado en tiempo —treinta, sesenta o noventa días— y en alcance —solo corrección de errores, no mejoras ni consultas de uso—. Pasado ese período, el soporte se paga aparte.
+
+## Corrección de bugs
+
+Ningún software sale sin errores. Incluso después de pruebas exhaustivas, aparecen bugs que solo se manifiestan en condiciones específicas de producción: cierta combinación de datos, cierto volumen de usuarios simultáneos, cierta secuencia de acciones que nadie probó porque parecía improbable.
+
+Corregir esos bugs tiene un costo que se paga de dos maneras:
+
+- Con un contrato de mantenimiento mensual que incluye la corrección de errores dentro de la cuota fija.
+- Por hora, cada vez que aparece un error que requiere intervención del equipo de desarrollo.
+
+La primera opción es predecible —un costo fijo todos los meses— pero puede resultar cara si la aplicación es estable y genera pocos errores. La segunda es impredecible y puede dispararse si la aplicación tiene más bugs de los esperados.
+
+Conviene definir este punto antes de que aparezca el primer error post-entrega. Una conversación incómoda durante la negociación del contrato es mejor que una discusión sobre si algo es un error o una mejora cuando la aplicación ya está en producción y el negocio depende de que funcione.
+
+## Renovación de licencias y servicios de terceros
+
+Muchas aplicaciones dependen de servicios externos que tienen un costo recurrente:
+
+- APIs de pago, facturación electrónica, verificación de identidad o geolocalización.
+- Servicios de envío de correo transaccional, notificaciones push o mensajería.
+- Herramientas de análisis, mapas, almacenamiento de archivos o procesamiento de imágenes.
+- Plataformas de autenticación, single sign-on o gestión de usuarios.
+
+Cada uno de estos servicios se cobra por separado —mensual, anual o por uso— y cada uno tiene sus propias condiciones de renovación, sus propios aumentos de precio y sus propios cambios de funcionalidad que pueden afectar a la aplicación.
+
+Una aplicación que depende de diez servicios externos tiene once facturas que pagar todos los meses: la del hosting y las diez de los servicios. Si alguna de esas facturas deja de pagarse —porque venció la tarjeta, porque el proveedor cambió las condiciones, porque alguien del equipo que gestionaba eso ya no está—, algo de la aplicación deja de funcionar. Y dependiendo de qué servicio falle, el impacto puede ir desde una funcionalidad menor inaccesible hasta la imposibilidad de cobrar o de comunicarse con los clientes.
+
+## El costo de no planificar el mantenimiento
+
+Mantener una aplicación no es barato, pero no mantenerla es más caro. Las consecuencias de postergar el mantenimiento se acumulan:
+
+- Una vulnerabilidad de seguridad no parcheada puede resultar en una filtración de datos, con los costos legales, reputacionales y operativos que eso implica.
+- Un servicio externo que se actualiza y rompe una integración puede dejar de funcionar sin previo aviso, y arreglarlo de urgencia cuesta más que haberlo anticipado.
+- Una base de usuarios que crece sin que la infraestructura se adapte resulta en una aplicación lenta o caída justo cuando más se la necesita.
+
+El mantenimiento no es un lujo ni un seguro contra catástrofes: es la condición necesaria para que la inversión inicial en desarrollo no se deprecie antes de tiempo. Una aplicación que se construyó y se abandonó a su suerte deja de ser un activo y se convierte en un pasivo.
+
+## Cómo anticipar estos costos
+
+Antes de firmar un contrato de desarrollo, conviene pedirle al proveedor —o armar con el equipo interno— un detalle de los costos operativos estimados para el primer año de funcionamiento. Ese detalle debería incluir:
+
+1. Hosting estimado según el volumen de usuarios y datos previstos.
+2. Costo de dominios, SSL y servicios de terceros necesarios.
+3. Esquema de backups y su costo mensual estimado.
+4. Herramientas de monitoreo y su costo.
+5. Modalidad de soporte post-entrega y corrección de errores: ¿está incluido? ¿por cuánto tiempo? ¿qué cubre exactamente?
+6. Plan de actualizaciones: ¿quién mantiene las dependencias al día y con qué frecuencia?
+
+Si el proveedor no puede estimar estos rubros, al menos sabés que hay un riesgo no cuantificado. Si puede estimarlos, tenés un punto de partida para armar el presupuesto operativo del primer año y para decidir si el costo total —desarrollo más operación— es viable para el negocio.
+
+Desarrollar una aplicación es una inversión. Mantenerla es un compromiso. Los dos tienen costos. El error no es asumirlos: es no haberlos contemplado.
+
+Si querés entender mejor por qué dos cotizaciones por el mismo proyecto pueden diferir tanto —y cuánto de esa diferencia se explica por lo que incluyen o excluyen del mantenimiento posterior—, revisá [por qué dos presupuestos de software llegan a precios tan diferentes](/blog/por-que-dos-presupuestos-de-software-precios-diferentes). Y si el proyecto es a medida y querés compararlo con una solución estándar, el artículo sobre [software a medida versus software estándar](/blog/software-medida-vs-estandar) analiza las diferencias de costo total, incluyendo el mantenimiento.
+
+Más contenido sobre planificación financiera de proyectos en la categoría de [costos y presupuestos](/blog/categoria/costos-y-presupuestos).

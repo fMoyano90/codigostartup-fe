@@ -1,0 +1,167 @@
+id: seguridad-y-riesgos-01
+name: Seguridad y riesgos tecnológicos
+category: seguridad-y-riesgos
+topics:
+  - id: riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde
+    title: Riesgos técnicos que nadie revisa hasta que ya generaron una pérdida
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ayudar a identificar riesgos técnicos comunes que se ignoran hasta
+      que causan un problema real.
+    notes:
+      - No inventar incidentes reales ni cifras de pérdidas — hablar en términos
+        de categorías de riesgo.
+  - id: que-preguntar-sobre-seguridad-a-tu-proveedor
+    title: Qué preguntar sobre seguridad a tu proveedor de software
+    status: published
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - founders
+      - empresarios
+    objective: Dar un set de preguntas mínimas sobre seguridad antes de contratar un
+      desarrollo.
+    notes:
+      - No dar recomendaciones legales o normativas específicas sin verificación
+        — señalar que varían por jurisdicción.
+  - id: que-datos-de-tus-clientes-debes-proteger
+    title: Qué datos de tus clientes debes proteger
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ayudar a identificar qué información es sensible y requiere
+      protección adicional.
+    notes:
+      - No dar asesoría legal — señalar que cada país tiene normativas distintas.
+  - id: que-respaldos-necesita-una-empresa
+    title: Qué respaldos necesita una empresa
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Dar un marco para decidir qué respaldar, con qué frecuencia y cómo
+      verificar que funcionan.
+    notes:
+      - No recomendar proveedores específicos — hablar de criterios y tipos de
+        respaldo.
+  - id: riesgos-conectar-frontend-base-de-datos
+    title: Los riesgos de conectar un frontend directamente a una base de datos
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar por qué esta arquitectura es peligrosa, en términos no técnicos.
+    notes:
+      - Hablar de exposición de datos, falta de capa de validación, riesgos de
+        seguridad.
+  - id: que-es-una-brecha-de-seguridad
+    title: Qué es una brecha de seguridad y cómo puede afectar a una empresa
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Definir el concepto y sus consecuencias de negocio, sin tecnicismos.
+    notes:
+      - No inventar incidentes reales. Hablar de tipos de brecha y su impacto
+        potencial.
+  - id: gestionar-accesos-cuando-alguien-deja-la-empresa
+    title: Cómo gestionar accesos cuando alguien deja la empresa
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Dar un protocolo simple para revocar accesos y proteger información
+      ante salidas de personal.
+    notes: []
+  - id: no-compartir-contrasenas-por-whatsapp
+    title: Por qué no deberías compartir contraseñas por WhatsApp
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar los riesgos de compartir credenciales por canales no seguros
+      y proponer alternativas simples.
+    notes: []
+  - id: como-saber-si-tu-sistema-tiene-copias-de-seguridad-reales
+    title: Cómo saber si tu sistema tiene copias de seguridad reales
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo saber si tu sistema
+      tiene copias de seguridad reales.
+    notes: []
+  - id: autenticacion-permisos-y-roles-explicados-para-empresarios
+    title: Autenticación, permisos y roles explicados para empresarios
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — autenticación, permisos y
+      roles explicados para empresarios.
+    notes: []
+  - id: que-hacer-si-tu-aplicacion-queda-fuera-de-servicio
+    title: Qué hacer si tu aplicación queda fuera de servicio
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — qué hacer si tu aplicación
+      queda fuera de servicio.
+    notes: []
+  - id: como-preparar-un-plan-basico-de-continuidad-operacional
+    title: Cómo preparar un plan básico de continuidad operacional
+    status: published
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo preparar un plan básico
+      de continuidad operacional.
+    notes: []
+  - id: que-riesgos-existen-al-usar-herramientas-gratuitas-para-procesos-criticos
+    title: Qué riesgos existen al usar herramientas gratuitas para procesos críticos
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — qué riesgos existen al usar
+      herramientas gratuitas para procesos críticos.
+    notes: []
+  - id: como-proteger-la-informacion-almacenada-en-planillas
+    title: Cómo proteger la información almacenada en planillas
+    status: published
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo proteger la información
+      almacenada en planillas.
+    notes: []

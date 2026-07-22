@@ -1,0 +1,153 @@
+---
+title: Cómo preparar una plataforma para recibir más clientes
+slug: como-preparar-plataforma-recibir-mas-clientes
+description: >-
+  Pasos concretos para preparar un sistema antes de un aumento de usuarios: qué
+  revisar, qué medir y en qué orden actuar para que el crecimiento no se
+  convierta en un problema operativo.
+excerpt: >-
+  Sumar clientes es el objetivo de toda empresa. Pero si la plataforma no está
+  preparada, el crecimiento trae caídas, errores y frustración. Una guía
+  práctica para founders y gerentes que anticipan un aumento de usuarios y
+  quieren llegar preparados.
+category: escalabilidad-y-crecimiento
+tags:
+  - escalabilidad
+  - crecimiento
+  - infraestructura
+  - gestión de usuarios
+  - preparación técnica
+audience:
+  - founders
+  - gerentes
+intent: informational
+funnelStage: consideration
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-21'
+approvedAt: '2026-07-21'
+publishedAt: '2026-07-21'
+seo:
+  title: Cómo preparar una plataforma para recibir más clientes | Código Startup
+  description: >-
+    Pasos concretos para preparar un sistema antes de un aumento de usuarios:
+    medición de capacidad, cuellos de botella y plan de acción. Guía para
+    founders y gerentes.
+  primaryKeyword: preparar plataforma para más clientes
+  secondaryKeywords:
+    - preparar sistema para crecimiento
+    - escalar aplicación más usuarios
+    - cómo preparar software para crecer
+    - checklist antes de escalar
+    - preparar infraestructura para más clientes
+relatedArticles:
+  - como-saber-si-app-esta-preparada-para-crecer
+  - que-significa-que-un-software-sea-escalable
+  - que-preparar-antes-de-escalar-tu-producto
+reviewStatus: pending
+reviewScore: null
+---
+
+Sumar clientes es el objetivo de toda empresa que crece. Pero el crecimiento tiene una cara menos visible: cada nuevo usuario que se suma a una plataforma consume recursos —memoria, capacidad de procesamiento, conexiones a la base de datos— y si esos recursos no se planificaron para escalar, lo que debería ser una buena noticia se convierte en un problema operativo.
+
+El momento de preparar una plataforma para recibir más clientes no es cuando los clientes ya están llegando. Es antes: cuando la proyección de crecimiento está sobre la mesa, cuando se planifica una campaña de adquisición, cuando un cliente grande está por incorporarse. Este artículo describe los pasos concretos que un fundador o gerente puede liderar —sin necesidad de conocimientos técnicos profundos— para asegurarse de que la plataforma va a resistir el aumento de demanda.
+
+## Medir antes de mover: establecé la línea de base
+
+El primer paso para preparar una plataforma es saber exactamente cuál es su capacidad actual. Sin una medición concreta, cualquier decisión que tomes sobre escalabilidad va a estar basada en intuiciones, y las intuiciones no sirven cuando se trata de infraestructura.
+
+Hay tres métricas que deberías poder responder con números, no con aproximaciones:
+
+**¿Cuántos usuarios simultáneos soporta el sistema hoy sin degradarse?** No la cantidad de usuarios registrados —que es un número que no dice nada sobre la carga real—, sino la cantidad de personas usando la plataforma al mismo tiempo en el momento de mayor demanda del día. Si no tenés ese número, pedile a tu equipo técnico que ejecute una prueba de carga y lo obtenga.
+
+**¿Cuál es el tiempo de respuesta promedio en las operaciones más frecuentes?** Las tres o cuatro acciones que más hacen tus usuarios —iniciar sesión, buscar un registro, cargar un listado, confirmar una transacción— deberían tener un tiempo de respuesta medido y documentado. Si ese tiempo ya está cerca del umbral de tolerancia de un usuario —típicamente, más de tres segundos para una operación simple—, el margen para crecer es mínimo.
+
+**¿Cuánto margen de capacidad tiene cada componente?** Una plataforma no es una sola cosa: tiene un servidor de aplicaciones, una base de datos, posiblemente servicios externos, almacenamiento de archivos. Cada uno de esos componentes tiene un límite. Si uno solo llega al 90% de su capacidad, ese componente es el que va a fallar primero cuando lleguen más usuarios, aunque el resto esté sobrado.
+
+<Callout variant="tip" title="Un reporte que podés pedirle a tu equipo esta semana">
+  Pedí un informe de capacidad actual con tres columnas: componente, uso actual en hora pico y capacidad máxima. El componente con el porcentaje de uso más alto es tu prioridad número uno. No hace falta un tablero sofisticado: una tabla simple alcanza para tomar decisiones.
+</Callout>
+
+## Identificar los cuellos de botella antes de que se activen
+
+Con la línea de base establecida, el paso siguiente es identificar qué partes del sistema van a fallar primero cuando aumente la demanda. Los cuellos de botella no son misteriosos: se manifiestan de formas predecibles que cualquier persona puede detectar si sabe qué buscar.
+
+**La base de datos suele ser el primer eslabón que se rompe.** Casi todas las aplicaciones dependen de una base de datos, y casi todas las bases de datos tienen un punto de saturación. Si las consultas más frecuentes ya están tardando más que hace tres meses con el mismo volumen de datos, la base de datos está llegando a su límite. Las señales son consultas que antes eran instantáneas y ahora demoran, bloqueos cuando dos usuarios intentan modificar el mismo registro, y errores de timeout en reportes o búsquedas.
+
+**Los servicios externos son un multiplicador de riesgo.** Si tu plataforma depende de servicios de terceros —pasarelas de pago, envío de correos, verificación de identidad, almacenamiento en la nube—, cada uno de esos servicios tiene su propio límite de capacidad y su propio contrato de nivel de servicio. Un aumento de usuarios multiplica las llamadas a esos servicios, y si alguno de ellos tiene un límite de solicitudes por minuto o por hora, podés encontrarte con que tu plataforma funciona pero un servicio externo te rechaza las solicitudes.
+
+**La cola de tareas en segundo plano se acumula.** Muchas plataformas ejecutan tareas que el usuario no ve: envío de notificaciones, generación de reportes, procesamiento de archivos, sincronización de datos. Cuando la cantidad de usuarios crece, la cantidad de tareas en segundo plano crece con ellos. Si el sistema que procesa esas tareas no tiene capacidad para absorber el aumento, las tareas se acumulan, los tiempos de procesamiento se disparan y funciones que antes eran inmediatas empiezan a demorar minutos u horas.
+
+<Callout variant="warning" title="El cuello de botella que nadie mira">
+  Las integraciones con servicios externos suelen tener límites de uso que pasan desapercibidos hasta que se superan. Revisá los términos de cada servicio que uses: ¿cuántas solicitudes por minuto permite tu plan actual? ¿Qué pasa si las superás: te cobran más, te bloquean, o directamente deja de funcionar? Un aumento de usuarios puede disparar estos límites sin que nadie lo haya previsto.
+</Callout>
+
+## Preparar el terreno: acciones antes del crecimiento
+
+Identificados los cuellos de botella, llega el momento de actuar. Las acciones se dividen en tres categorías según su urgencia y su impacto.
+
+### Acciones inmediatas: lo que podés resolver en semanas
+
+Son problemas que no requieren un rediseño profundo de la arquitectura y que tienen un impacto significativo en la capacidad del sistema:
+
+- **Aumentar los recursos del servidor donde el cuello de botella es más evidente.** Si la base de datos está llegando a su límite de memoria, aumentar la memoria disponible puede darte un margen de varios meses mientras planificás una solución más estructural. No es una solución definitiva, pero es una acción inmediata que compra tiempo.
+
+- **Optimizar las consultas más costosas.** En casi todas las aplicaciones, un puñado de consultas a la base de datos consumen la mayor parte de los recursos. Identificar esas consultas —las que más tardan o las que más se ejecutan— y optimizarlas puede liberar una cantidad significativa de capacidad sin tocar la infraestructura.
+
+- **Implementar caché para los datos que cambian poco.** Si tu plataforma consulta repetidamente información que no cambia con frecuencia —catálogos, listas de precios, configuraciones—, implementar una capa de caché reduce drásticamente la carga sobre la base de datos. Cada consulta que se responde desde caché es una consulta que no llega a la base de datos.
+
+### Acciones estructurales: lo que requiere planificación
+
+Son cambios que llevan más tiempo pero que resuelven el problema de raíz:
+
+- **Separar la base de datos de lectura de la de escritura.** En la mayoría de las aplicaciones, las operaciones de lectura son muchas más que las de escritura. Separar ambas permite que las lecturas —que son las que más carga generan— no compitan con las escrituras por los mismos recursos.
+
+- **Procesar tareas pesadas de forma asíncrona.** Si una operación que el usuario dispara —generar un reporte, procesar un archivo, enviar notificaciones masivas— tarda más de un par de segundos, no debería ejecutarse mientras el usuario espera. Pasarla a una cola de procesamiento asíncrono libera al servidor principal para seguir atendiendo a otros usuarios.
+
+- **Revisar la arquitectura de la base de datos con datos reales de crecimiento.** Una base de datos que funciona bien con diez mil registros puede degradarse significativamente con cien mil. Si la proyección de crecimiento implica un aumento sustancial del volumen de datos, conviene revisar los índices, las particiones y la estructura de tablas con un especialista antes de que el volumen haga que cualquier cambio sea lento y riesgoso.
+
+### Acciones organizacionales: lo que no depende de la tecnología
+
+Preparar la plataforma no es solo un problema técnico. Hay decisiones organizacionales que determinan si el crecimiento va a ser manejable o caótico:
+
+- **Definir un protocolo de respuesta ante caídas.** Si la plataforma se cae cuando lleguen más usuarios, ¿quién se entera primero? ¿Quién tiene la autoridad para decidir qué se hace? ¿Cuánto tiempo debería tomar volver a estar operativa? Tener respuestas para estas preguntas antes de que ocurra el incidente reduce drásticamente el tiempo de recuperación.
+
+- **Designar responsables de monitoreo durante el período de crecimiento.** Si vas a incorporar más clientes en una fecha determinada —por ejemplo, porque una campaña de marketing va a atraer tráfico—, asegurate de que haya personas designadas para monitorear el sistema durante los días y horas críticos. No pueden ser las mismas personas que están atendiendo a los nuevos clientes.
+
+- **Establecer un canal de comunicación con los usuarios afectados.** Si algo falla, los usuarios necesitan saber qué está pasando y cuándo va a resolverse. Tener definido de antemano el canal —un aviso en la propia plataforma, un correo, un mensaje— y un borrador de comunicación ahorra tiempo y reduce la frustración.
+
+## Probar antes del día crítico
+
+Una vez que las acciones están implementadas, el paso que separa una preparación sólida de una apuesta es probar. No sirve asumir que los cambios funcionaron: hay que verificarlo en condiciones controladas antes de que los usuarios reales hagan la prueba en producción.
+
+**Pruebas de carga simuladas.** Pedile a tu equipo técnico que simule el volumen de usuarios que esperás recibir. Si esperás pasar de cien a quinientos usuarios simultáneos, simulá quinientos usuarios ejecutando las operaciones más frecuentes y medí los tiempos de respuesta. Si algo va a fallar, es mejor que falle en una simulación un martes a la tarde que en producción un lunes a las nueve de la mañana.
+
+**Pruebas de degradación parcial.** Simulá la caída de un componente —la base de datos de lectura, un servicio externo, el procesador de tareas en segundo plano— y verificá qué partes de la plataforma siguen funcionando y cuáles no. Una plataforma bien preparada debería degradarse parcialmente —algunas funciones no disponibles— en lugar de caerse por completo.
+
+**Pruebas de recuperación.** Simulá una caída total y medí cuánto tarda el sistema en volver a estar operativo. Esa medición, hecha en frío y sin la presión de usuarios reales esperando, te da un parámetro realista del tiempo de recuperación y te permite identificar qué partes del proceso de recuperación se pueden acelerar.
+
+<Callout variant="info" title="La prueba que casi nadie hace y todos deberían">
+  Simulá un pico de tráfico en el peor momento posible: con la base de datos actualizada al volumen de datos proyectado para dentro de seis meses, con todos los servicios externos operando con latencia real, y con usuarios ejecutando una mezcla de operaciones frecuentes y operaciones pesadas. Si el sistema pasa esta prueba, podés dormir tranquilo.
+</Callout>
+
+## Qué hacer durante la transición
+
+El día en que los nuevos usuarios empiezan a llegar no es el día para descubrir que algo no funciona. Si los pasos anteriores se ejecutaron correctamente, la transición debería ser un no-evento: los nuevos usuarios se suman y la plataforma sigue funcionando como antes. Pero en el mundo real, siempre hay imprevistos. Algunas prácticas para navegarlos:
+
+**Monitoreo en tiempo real durante el período de transición.** Designá a una o dos personas —preferiblemente del equipo técnico— para que observen las métricas clave durante las primeras horas y días del aumento de usuarios. Tiempo de respuesta, tasa de errores, uso de memoria y CPU, cantidad de usuarios simultáneos. Cualquier desviación significativa respecto de la línea de base anterior al crecimiento debería disparar una alerta inmediata.
+
+**Plan de rollback.** Si algo sale mal y la plataforma se degrada de forma inaceptable, ¿podés volver atrás los cambios que hiciste? ¿En cuánto tiempo? Tener un plan de rollback documentado y probado es lo que separa un incidente menor de una crisis. No debería tomar más de unos minutos ejecutarlo si los pasos están claros.
+
+**Incorporación gradual de usuarios.** Si el aumento de usuarios es significativo —pasar de cien a mil usuarios simultáneos, por ejemplo—, considerá hacer la transición en etapas. Primero un diez por ciento de los nuevos usuarios, monitorear durante un día, luego otro veinte por ciento, y así sucesivamente. Cada etapa te da información sobre el comportamiento real del sistema bajo carga y te permite ajustar antes de exponer al cien por ciento de los usuarios.
+
+## Después del crecimiento: lo que sigue
+
+Una vez que los nuevos usuarios están operando y la plataforma resistió, la preparación no termina. El crecimiento no es un evento puntual: es un proceso continuo. Lo que hiciste para prepararte para este aumento de usuarios es lo mismo que vas a necesitar hacer para el próximo. Lo que cambia es que ahora tenés datos reales, no proyecciones.
+
+Documentá lo que funcionó y lo que no. ¿Las pruebas de carga reflejaron adecuadamente el comportamiento real de los usuarios? ¿El cuello de botella que identificaste era realmente el más crítico? ¿El plan de rollback era ejecutable en la práctica? Cada ciclo de crecimiento es una oportunidad de afinar el proceso.
+
+El artículo sobre [cómo saber si tu aplicación está preparada para crecer](/blog/como-saber-si-app-esta-preparada-para-crecer) describe las señales de alerta que indican si una aplicación está llegando a sus límites, y [qué significa que un software sea escalable](/blog/que-significa-que-un-software-sea-escalable) explica los fundamentos de diseño que hacen que un sistema esté preparado para crecer desde su arquitectura. Si estás planificando un crecimiento significativo, [qué preparar antes de escalar tu producto](/blog/que-preparar-antes-de-escalar-tu-producto) ofrece una hoja de ruta detallada con los pasos previos que no conviene saltear.
+
+Preparar una plataforma para más clientes no es un gasto: es la diferencia entre que el crecimiento sea una palanca o un problema. Las empresas que lo hacen bien no son las que más invierten en infraestructura: son las que se preparan antes de necesitarlo.

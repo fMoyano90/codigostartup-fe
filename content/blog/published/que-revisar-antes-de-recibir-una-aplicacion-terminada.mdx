@@ -1,0 +1,140 @@
+---
+title: Qué revisar antes de recibir una aplicación terminada
+slug: que-revisar-antes-de-recibir-una-aplicacion-terminada
+description: >-
+  Checklist de verificación para la entrega de un desarrollo de software:
+  aspectos funcionales, técnicos, de documentación y de propiedad que deben
+  estar cubiertos antes de dar por cerrado el proyecto.
+excerpt: >-
+  Recibir una aplicación sin verificar ciertos puntos es como comprar una
+  propiedad sin revisar los títulos. Acá va un checklist de lo que tenés que
+  chequear antes de dar por cerrado el proyecto.
+category: proveedores-tecnologicos
+tags:
+  - entrega de software
+  - recepción de proyecto
+  - checklist de entrega
+  - verificación de desarrollo
+  - cierre de proyecto
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-22'
+approvedAt: '2026-07-22'
+publishedAt: '2026-07-22'
+seo:
+  title: Qué revisar antes de recibir una aplicación terminada | Código Startup
+  description: >-
+    Checklist para verificar la entrega de un desarrollo de software:
+    funcionalidades, código fuente, documentación, credenciales, pruebas y
+    garantía antes de dar por cerrado el proyecto.
+  primaryKeyword: qué revisar antes de recibir una aplicación terminada
+  secondaryKeywords:
+    - checklist de entrega de software
+    - verificación de proyecto terminado
+    - recepción de desarrollo de software
+    - qué pedir al terminar un proyecto
+    - cierre de proyecto de desarrollo
+relatedArticles:
+  - documentacion-exigir-finalizar-proyecto
+  - quien-debe-ser-dueno-del-codigo-fuente
+  - como-evitar-depender-de-un-proveedor
+reviewStatus: pending
+reviewScore: null
+---
+
+El momento de recibir una aplicación es un punto de inflexión en cualquier proyecto de desarrollo. Hasta ese momento, el proveedor está construyendo. A partir de ese momento, el cliente opera. Lo que no se revise en esa transición difícilmente se corrija después sin costo adicional.
+
+El problema es que muchas organizaciones reciben la aplicación sin un criterio definido de verificación. Revisan que las funcionalidades principales estén —"sí, el sistema registra clientes, se ve bien"— y dan por cerrado el proyecto. Semanas después descubren que faltan credenciales del servidor, que el código no está documentado, que ciertos flujos no funcionan como esperaban o que el proveedor se fue y no saben cómo desplegar una actualización.
+
+Este artículo propone un checklist de seis áreas que deberían verificarse antes de recibir formalmente una aplicación y dar por finalizado el contrato de desarrollo.
+
+## Área 1: Funcionalidades contratadas
+
+La verificación más obvia pero no por eso la más simple. No alcanza con probar cada funcionalidad de manera aislada: hay que probar flujos completos —lo que un usuario haría de principio a fin— y casos límite —lo que pasa cuando algo sale mal—.
+
+Para cada funcionalidad definida en el alcance:
+
+- ¿Funciona según lo especificado? Probar el flujo completo, no solo la pantalla principal. Si el sistema permite registrar un cliente, verificá que se pueda registrar, que los datos se guarden, que aparezca en los listados, que se pueda editar y que se pueda eliminar.
+- ¿Qué pasa cuando el usuario comete un error? Probar qué sucede si se ingresa un dato inválido, si se deja un campo obligatorio vacío, si se intenta hacer algo en un orden no previsto. La aplicación debería manejar estos casos de forma controlada —un mensaje claro, una indicación de qué corregir—, no con un error genérico o un pantallazo en blanco.
+- ¿Qué pasa en condiciones inesperadas? Si la aplicación depende de internet y se corta la conexión a mitad de una operación, ¿pierde los datos ingresados o los preserva? Si un servicio externo no responde, ¿la aplicación muestra un mensaje amigable o se queda esperando indefinidamente?
+
+<Callout variant="tip" title="Probá con alguien que no conozca el proyecto">
+  La persona que participó en la definición del proyecto ya sabe cómo debería funcionar y tiende a seguir el camino feliz sin desviarse. Pedile a alguien del equipo que no haya estado involucrado en el desarrollo que use la aplicación y anote todo lo que le resulte confuso, lento o que no funcione como esperaba. Sus observaciones van a revelar problemas que quien conoce el proyecto ya no ve.
+</Callout>
+
+## Área 2: Código fuente y repositorio
+
+El código fuente es el activo central del proyecto. Si no lo tenés bajo tu control, no tenés control sobre el producto.
+
+Verificá:
+
+- **Acceso al repositorio.** El proveedor debe transferirte la propiedad o darte acceso de administrador al repositorio donde está el código. No alcanza con que te den acceso de lectura: necesitás poder invitar a otros desarrolladores, crear ramas y, eventualmente, migrar el código a otro repositorio.
+- **El código compila y se puede desplegar.** No basta con tener los archivos. Pedí —o pedile a un tercero de confianza— que intente desplegar la aplicación desde el repositorio siguiendo la documentación de instalación. Si no se puede desplegar con lo que hay en el repositorio, lo que recibiste es un archivo, no un producto.
+- **No hay dependencias de recursos que solo el proveedor controla.** Verificá que el código no dependa de bibliotecas internas del proveedor, de servicios alojados en cuentas del proveedor o de configuraciones que solo ellos conocen. Si las tiene, no estás recibiendo un producto independiente: estás recibiendo una extensión de la infraestructura del proveedor.
+
+## Área 3: Documentación técnica
+
+La documentación es lo que permite que otra persona —interna o un nuevo proveedor— entienda, opere y modifique la aplicación sin tener que hacer arqueología del código.
+
+Lo mínimo que deberías recibir:
+
+- **Documentación de arquitectura.** Un diagrama o descripción de los componentes del sistema, cómo se relacionan entre sí y qué tecnología usa cada uno. No necesita ser un documento de cien páginas, pero sí permitir que un desarrollador nuevo entienda la estructura general sin tener que deducirla del código.
+- **Manual de instalación y despliegue.** Instrucciones paso a paso para poner la aplicación en funcionamiento en un entorno nuevo: qué dependencias instalar, qué variables de entorno configurar, qué servicios externos aprovisionar, cómo ejecutar las migraciones de base de datos. Si las instrucciones asumen cosas que no están escritas —"configurar el servidor como hicimos en el entorno de staging"—, la documentación está incompleta.
+- **Documentación de APIs y puntos de integración.** Si la aplicación expone o consume APIs, cada una debería estar documentada: qué recibe, qué devuelve, qué errores puede generar. Esto es especialmente importante si la aplicación se integra con otros sistemas y esas integraciones van a seguir evolucionando.
+
+El artículo sobre [qué documentación debes exigir al finalizar un proyecto de software](/blog/documentacion-exigir-finalizar-proyecto) detalla cada uno de estos rubros con mayor profundidad.
+
+## Área 4: Credenciales y accesos
+
+Este punto parece administrativo pero suele ser donde aparecen los problemas más urgentes después de la entrega.
+
+Verificá que recibís —y que funcionan—:
+
+- Credenciales de administrador de la aplicación —no solo un usuario de prueba, sino acceso con todos los permisos—.
+- Credenciales de los servidores, bases de datos y servicios cloud donde está alojada la aplicación.
+- Acceso a las cuentas de servicios externos: dominio, DNS, envío de correos, pasarela de pago, APIs de terceros, herramientas de monitoreo.
+- Claves de API, tokens de acceso y cualquier secreto necesario para operar los servicios que la aplicación consume.
+
+Cambiá todas las contraseñas inmediatamente después de recibirlas. No por desconfianza hacia el proveedor, sino porque es una práctica básica de seguridad: las credenciales que pasaron por manos de terceros dejan de ser seguras hasta que se rotan.
+
+<Callout variant="warning" title="No esperes al final para pedir los accesos">
+  Algunos de estos accesos deberías tenerlos desde el inicio del proyecto —el dominio, las cuentas cloud— porque son activos del negocio, no del desarrollo. Si el proveedor registró el dominio a su nombre o abrió las cuentas cloud en sus propios servicios, pedí la transferencia antes de la entrega final. Hacerlo después, cuando el proyecto está cerrado y el proveedor ya cobró, es más difícil.
+</Callout>
+
+## Área 5: Entornos y datos de prueba
+
+La aplicación debería entregarse con la capacidad de ser probada en condiciones controladas, no solo en producción.
+
+Verificá que existan y sean accesibles:
+
+- **Un entorno de staging o pruebas** donde se puedan validar cambios antes de pasarlos a producción. Si cada cambio hay que probarlo directamente en el entorno que usan los clientes, el riesgo de romper algo es alto.
+- **Datos de prueba** que permitan simular escenarios realistas sin usar datos de clientes reales. Probar con datos ficticios incompletos o poco representativos genera una falsa sensación de seguridad.
+- **Un procedimiento documentado para pasar cambios de staging a producción.** Si el deploy a producción depende de que alguien del proveedor ejecute una serie de pasos que solo él conoce, la independencia operativa después de la entrega es cero.
+
+## Área 6: Garantía y soporte post-entrega
+
+Antes de dar por cerrado el proyecto, debe estar claro qué pasa después:
+
+- ¿Cuál es el período de garantía —treinta, sesenta, noventa días— y qué cubre exactamente? Idealmente, solo corrección de errores atribuibles al desarrollo, no nuevas funcionalidades ni cambios de alcance.
+- ¿Cuál es el procedimiento para reportar errores? ¿Un canal definido —mail, ticket, herramienta de gestión— con tiempos de respuesta comprometidos?
+- ¿Qué costo tiene el soporte una vez vencida la garantía? ¿Se cobra por hora, hay un abono mensual, se puede contratar por evento?
+- ¿Qué pasa si se detecta un error crítico —la aplicación no funciona, los usuarios no pueden operar— fuera del horario laboral?
+
+Si estas condiciones no están definidas al momento de la entrega, el primer error post-entrega va a ser también la primera discusión sobre quién paga qué.
+
+## Una verificación progresiva, no un evento único
+
+Recibir una aplicación no debería ser un momento binario —"entregado" o "no entregado"— sino un proceso progresivo de verificación que empieza durante el desarrollo. Cada hito de avance —un módulo terminado, una versión de prueba— es una oportunidad para verificar que lo construido se corresponde con lo esperado y que la documentación, los accesos y los entornos se van completando a la par del código.
+
+Si la primera vez que el cliente ve la aplicación funcionando es el día de la entrega, cualquier desviación del alcance o de la calidad esperada se descubre cuando ya no hay tiempo —ni presupuesto— para corregir sin costo.
+
+Para profundizar en cómo mantener la independencia operativa después de la entrega y evitar quedar atado al proveedor, el artículo sobre [cómo evitar depender completamente de un proveedor tecnológico](/blog/como-evitar-depender-de-un-proveedor) aborda medidas prácticas desde el inicio del proyecto.
+
+Más contenido sobre gestión de proveedores en la categoría de [proveedores tecnológicos](/blog/categoria/proveedores-tecnologicos).

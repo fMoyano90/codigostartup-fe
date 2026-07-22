@@ -1,0 +1,291 @@
+id: crear-productos-digitales-01
+name: Crear productos digitales
+category: crear-productos-digitales
+topics:
+  - id: como-definir-el-alcance-de-un-mvp
+    title: Cómo definir el alcance de un MVP sin quedarte corto ni excederte
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+    objective: Ayudar a decidir qué incluir y qué dejar fuera de la primera versión
+      de un producto digital.
+    notes:
+      - Distinguir entre "mínimo" y "incompleto" — un MVP bien recortado sigue
+        resolviendo el problema real.
+  - id: de-la-idea-al-primer-prototipo
+    title: "De la idea al primer prototipo: qué validar antes de programar"
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+    objective: Ayudar a estructurar los pasos previos al desarrollo para reducir el
+      riesgo de construir algo equivocado.
+    notes:
+      - Puede enlazar con que-validar-antes-de-desarrollar-una-aplicacion (ya
+        publicado) como artículo relacionado.
+  - id: app-web-o-automatizacion
+    title: Cómo saber si tu idea necesita una app, una web o solo una automatización
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+    objective: Ayudar a decidir qué tipo de solución técnica es la adecuada según el
+      problema, el usuario y el presupuesto.
+    notes:
+      - No asumir que todo necesita una app — a veces un formulario o una
+        automatización simple resuelve mejor.
+  - id: como-validar-una-idea-sin-construir-el-producto
+    title: Cómo validar una idea sin construir el producto completo
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+    objective: Dar métodos concretos de validación temprana que no requieran
+      desarrollo completo.
+    notes:
+      - Incluir conceptos como prototipos en papel, entrevistas, landing pages,
+        smoke tests.
+  - id: etapas-reales-para-construir-un-producto-tecnologico
+    title: Las etapas reales para construir un producto tecnológico
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+    objective: Describir las fases típicas de desarrollo de un producto digital,
+      desde la idea hasta el lanzamiento.
+    notes:
+      - No prometer plazos fijos — hablar de etapas y su propósito, no de
+        timelines.
+  - id: mvp-que-incluir-que-dejar-fuera
+    title: "MVP: qué debe incluir y qué deberías dejar fuera"
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+    objective: Ayudar a priorizar funcionalidades para una primera versión que ya
+      entregue valor.
+    notes:
+      - Enfocar en criterios de decisión, no en listas genéricas de features.
+  - id: senales-idea-no-esta-lista
+    title: Señales de que tu idea todavía no está lista para desarrollarse
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+    objective: Ayudar a detectar si una idea necesita más validación antes de
+      invertir en desarrollo.
+    notes:
+      - "Señales: no hay usuarios concretos, el problema no está definido, no
+        hay métrica de éxito."
+  - id: no-necesita-mas-tecnologia-sino-mejores-procesos
+    title: "Tu empresa no necesita más tecnología: necesita resolver mejor sus
+      procesos"
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Cuestionar la automatización prematura y proponer mejorar procesos
+      antes de digitalizar.
+    notes:
+      - "Tema transversal. Evitar el discurso anti-tecnología — el punto es el
+        orden correcto: proceso → tecnología."
+  - id: que-validar-antes-de-invertir-en-desarrollo
+    title: Qué validar antes de invertir en desarrollar un producto digital
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+    objective: Listar las validaciones mínimas que reducen el riesgo de invertir en
+      un producto que el mercado no necesita.
+    notes: []
+  - id: app-funciona-no-significa-lista-para-venta
+    title: Que una aplicación funcione no significa que esté lista para venderse
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - founders
+      - emprendedores
+    objective: Explicar la diferencia entre 'técnicamente funcional' y
+      'comercialmente viable'.
+    notes: []
+  - id: ia-no-arregla-procesos-desordenados
+    title: La inteligencia artificial no arregla procesos desordenados
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Advertir que automatizar un mal proceso con IA solo acelera el desorden.
+    notes: []
+  - id: producto-digital-versus-proyecto-de-software-cual-es-la-diferencia
+    title: "Producto digital versus proyecto de software: cuál es la diferencia"
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+    objective: "Artículo generado desde TEMAS-BLOG.md — producto digital versus
+      proyecto de software: cuál es la diferencia."
+    notes: []
+  - id: como-convertir-un-proceso-manual-en-un-producto-digital
+    title: Cómo convertir un proceso manual en un producto digital
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - founders
+      - empresarios
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo convertir un proceso
+      manual en un producto digital.
+    notes: []
+  - id: que-informacion-debes-preparar-antes-de-hablar-con-una-empresa-de-software
+    title: Qué información debes preparar antes de hablar con una empresa de software
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - empresarios
+    objective: Artículo generado desde TEMAS-BLOG.md — qué información debes
+      preparar antes de hablar con una empresa de software.
+    notes: []
+  - id: como-priorizar-funcionalidades-cuando-todo-parece-importante
+    title: Cómo priorizar funcionalidades cuando todo parece importante
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - founders
+      - empresarios
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo priorizar
+      funcionalidades cuando todo parece importante.
+    notes: []
+  - id: por-que-una-buena-idea-no-garantiza-un-buen-producto
+    title: Por qué una buena idea no garantiza un buen producto
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - empresarios
+    objective: Artículo generado desde TEMAS-BLOG.md — por qué una buena idea no
+      garantiza un buen producto.
+    notes: []
+  - id: que-hacer-despues-de-lanzar-la-primera-version-de-tu-producto
+    title: Qué hacer después de lanzar la primera versión de tu producto
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - empresarios
+    objective: Artículo generado desde TEMAS-BLOG.md — qué hacer después de lanzar
+      la primera versión de tu producto.
+    notes: []
+  - id: el-error-de-digitalizar-un-mal-proceso-sin-mejorarlo-primero
+    title: El error de digitalizar un mal proceso sin mejorarlo primero
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — el error de digitalizar un
+      mal proceso sin mejorarlo primero.
+    notes: []
+  - id: como-tomar-mejores-decisiones-tecnologicas-sin-ser-experto
+    title: Cómo tomar mejores decisiones tecnológicas sin ser experto
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — qué debería saber todo
+      founder antes de construir software.
+    notes: []
+  - id: por-que-la-tecnologia-debe-responder-a-una-estrategia-de-negocio
+    title: Por qué la tecnología debe responder a una estrategia de negocio
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — por qué la tecnología debe
+      responder a una estrategia de negocio.
+    notes: []
+  - id: como-evitar-enamorarse-de-una-solucion-antes-de-entender-el-problema
+    title: Cómo evitar enamorarse de una solución antes de entender el problema
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — cómo evitar enamorarse de una
+      solución antes de entender el problema.
+    notes: []
+  - id: las-preguntas-que-debes-responder-antes-de-construir-cualquier-software
+    title: Las preguntas que debes responder antes de construir cualquier software
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Artículo generado desde TEMAS-BLOG.md — las preguntas que debes
+      responder antes de construir cualquier software.
+    notes: []
+  - id: como-recopilar-feedback-util-de-los-primeros-usuarios
+    title: Cómo recopilar feedback útil de los primeros usuarios
+    status: published
+    intent: commercial
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+    objective: cómo recopilar feedback útil de los primeros usuarios.
+    notes: []
+  - id: cuando-construir-desde-cero-y-cuando-usar-herramientas-existentes
+    title: Cuándo construir desde cero y cuándo usar herramientas existentes
+    status: published
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - founders
+      - emprendedores
+    objective: cuándo construir desde cero y cuándo usar herramientas existentes.
+    notes: []
+  - id: los-errores-mas-comunes-al-crear-una-plataforma-digital
+    title: Los errores más comunes al crear una plataforma digital
+    status: published
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+    objective: los errores más comunes al crear una plataforma digital.
+    notes: []

@@ -1,0 +1,128 @@
+---
+title: Cómo saber si tu sistema tiene copias de seguridad reales
+slug: como-saber-si-tu-sistema-tiene-copias-de-seguridad-reales
+description: >-
+  Tener una política de backups no es lo mismo que tener copias de seguridad que
+  funcionen. Este artículo explica cómo verificar que tus respaldos sean reales,
+  completos y recuperables antes de necesitarlos.
+excerpt: >-
+  El backup existe, la política está escrita, el proveedor dice que todo
+  funciona. Pero cuando llega el día en que realmente lo necesitás, ¿estás
+  seguro de que podés recuperar tu información?
+category: seguridad-y-riesgos
+tags:
+  - copias de seguridad
+  - backups
+  - seguridad informática
+  - continuidad operativa
+  - protección de datos
+audience:
+  - empresarios
+  - gerentes
+intent: commercial
+funnelStage: awareness
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-22'
+approvedAt: '2026-07-22'
+publishedAt: '2026-07-22'
+seo:
+  title: Cómo saber si tu sistema tiene copias de seguridad reales | Código Startup
+  description: >-
+    No alcanza con tener backups: hay que verificar que funcionen. Una guía
+    práctica para empresarios sobre cómo comprobar que las copias de seguridad
+    de tu sistema son recuperables, completas y están actualizadas.
+  primaryKeyword: cómo verificar copias de seguridad reales
+  secondaryKeywords:
+    - verificar backups empresa
+    - copias de seguridad funcionan
+    - comprobar respaldos de datos
+    - recuperación de información empresarial
+relatedArticles:
+  - que-respaldos-necesita-una-empresa
+  - riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde
+reviewStatus: pending
+reviewScore: null
+---
+
+La mayoría de las empresas pueden responder rápido a la pregunta "¿tenés copias de seguridad?". La respuesta suele ser sí, seguida de una mención al proveedor de hosting, al servicio en la nube o al "backup automático" que alguien configuró hace tiempo.
+
+La pregunta que casi nadie puede responder con la misma rapidez es: "¿cuándo fue la última vez que intentaste restaurar una de esas copias?".
+
+Porque un backup que nunca se probó no es un backup: es una promesa. Y las promesas, cuando falla un disco, se corrompe una base de datos o alguien borra información crítica por error, no recuperan nada.
+
+Este artículo explica, en términos prácticos y sin tecnicismos, cómo verificar que las copias de seguridad de tu sistema sean reales. Es decir, que existan, que estén completas, que estén actualizadas y — lo más importante — que puedas restaurarlas cuando las necesites.
+
+## Por qué un backup puede fallar sin que lo sepas
+
+Las copias de seguridad no fallan de formas ruidosas. No hay una alarma que suene cuando el backup nocturno se interrumpió a mitad de camino. No hay un cartel que avise que el archivo que respaldaste está corrupto. Los backups fallan en silencio, y la mayoría de las empresas se enteran el día que necesitan recuperar algo.
+
+Las causas más frecuentes de fallas silenciosas:
+
+- **El backup se configuró para una base de datos pero alguien agregó una segunda base y nunca se incluyó en la política de respaldo.** El backup corre todas las noches, sin errores, pero está respaldando solo una parte de la información.
+
+- **El script de respaldo dejó de funcionar hace meses y nadie lo monitoreaba.** El último backup exitoso es de marzo. Hoy es septiembre. Los archivos que ves en la carpeta de backups son de marzo, repetidos.
+
+- **El backup se guarda en el mismo servidor que los datos originales.** Si el servidor falla, perdés los datos y el backup al mismo tiempo. Es como guardar la llave de repuesto adentro del auto.
+
+- **El proceso de restauración nunca se documentó.** Los archivos de backup están, pero la persona que sabía cómo restaurarlos ya no trabaja en la empresa. El conocimiento se fue con ella.
+
+- **El backup es incremental y falta un eslabón de la cadena.** Si perdiste uno de los backups incrementales intermedios, los subsiguientes pueden ser inútiles.
+
+<Callout variant="warning" title="El error más común">
+El error no es no tener backups. El error es asumir que, porque alguien dijo que los backups existen, los datos están protegidos. La protección se verifica, no se asume.
+</Callout>
+
+## Cómo verificar que tus copias de seguridad son reales
+
+No hace falta ser técnico para verificar lo esencial. Estas cinco preguntas son un buen punto de partida para cualquier conversación con tu equipo o tu proveedor:
+
+### 1. ¿Qué datos exactamente se están respaldando?
+
+Pedí una lista concreta. No alcanza con "la base de datos" o "los archivos del servidor". ¿Qué bases de datos? ¿Qué tablas? ¿Qué directorios? ¿Los archivos subidos por los usuarios? ¿Las configuraciones del sistema? ¿Los logs?
+
+Si la respuesta es vaga, es una señal de que la persona que responde no tiene la certeza que debería tener.
+
+### 2. ¿Cada cuánto se hacen las copias?
+
+La frecuencia del backup define cuántos datos podés llegar a perder en el peor escenario. Si el backup es diario y el desastre ocurre a las once de la noche, perdiste casi todo el día de trabajo. Si es semanal, podés perder hasta seis días.
+
+Preguntá cuál es el "RPO" — recovery point objective, o punto objetivo de recuperación — aunque no uses ese término. La pregunta práctica es: "si todo falla ahora mismo, ¿cuánto tiempo de datos pierdo?".
+
+### 3. ¿Dónde se guardan las copias?
+
+El backup debería estar en una ubicación físicamente distinta de los datos originales. Si tu sistema corre en un servidor, el backup debería estar en otro servidor, en otra región geográfica o en un servicio de almacenamiento independiente.
+
+Además, debería existir al menos una copia fuera de línea o inmutable: algo que no pueda ser borrado o alterado, ni siquiera por un atacante que haya obtenido acceso a tus sistemas. Los backups que se pueden modificar o eliminar desde el mismo panel de administración no protegen contra ransomware ni contra errores internos.
+
+### 4. ¿Cuándo fue la última vez que alguien restauró una copia?
+
+Esta es la pregunta que separa los backups reales de los teóricos. Si nadie en tu equipo o en tu proveedor puede responder con una fecha concreta — "el quince de junio restauramos la base de datos de pruebas desde el backup de producción y funcionó" — entonces no sabés si tus backups funcionan.
+
+<Callout variant="tip" title="Lo que podés pedirle a tu proveedor">
+Solicitá una restauración de prueba cada tres o seis meses. No sobre el sistema en producción: sobre un entorno separado, de pruebas. El objetivo no es recuperar datos que perdiste, sino comprobar que el mecanismo de recuperación funciona antes de necesitarlo de verdad.
+</Callout>
+
+### 5. ¿Cuánto tiempo lleva restaurar todo?
+
+Saber que los backups existen es una cosa. Saber cuánto tiempo tomaría volver a operar con normalidad después de un incidente es otra muy distinta. Restaurar una base de datos de cien gigabytes puede llevar horas. Reconstruir configuraciones de servidor, permisos, certificados de seguridad y conexiones entre sistemas puede llevar días si no está documentado.
+
+Pedile a tu equipo o a tu proveedor una estimación realista del "RTO" — recovery time objective, o tiempo objetivo de recuperación — y comparalo con lo que tu negocio puede tolerar. Si el RTO es de tres días y tu empresa no puede estar parada más de ocho horas, tenés un problema independientemente de si los backups funcionan.
+
+## Tres pruebas simples que podés hacer esta semana
+
+No necesitás esperar a la próxima reunión con el proveedor. Tres verificaciones simples que podés hacer ya mismo:
+
+**La prueba del archivo suelto.** Pedile a alguien de tu equipo que restaure un archivo específico desde el backup — una factura del mes pasado, una planilla cualquiera — y que te lo envíe. No una base de datos completa: un solo archivo. Si no pueden hacerlo en menos de una hora, tu proceso de restauración tiene problemas.
+
+**La prueba del inventario.** Solicitá un listado de todo lo que está siendo respaldado, con fechas del último backup exitoso de cada elemento. Si hay algo sin fecha, asumí que no se está respaldando.
+
+**La prueba del escenario.** Planteale a tu equipo o proveedor este escenario hipotético: "mañana a las diez de la mañana alguien borra por error la tabla principal de clientes. ¿Qué harían? ¿Cuánto tardarían en recuperarla? ¿Qué datos se perderían?". Si no pueden describir el procedimiento paso a paso, el procedimiento no existe.
+
+## Más vale un backup verificado que cien backups asumidos
+
+Las copias de seguridad son como un seguro: pagás por ellas esperando no necesitarlas nunca. La diferencia es que un seguro se activa cuando lo reclamás; un backup solo se activa si fue correctamente configurado, monitoreado y — sobre todo — probado.
+
+Si querés entender mejor qué respaldos necesita tu empresa y con qué criterios definirlos, te recomendamos [qué respaldos necesita una empresa](/blog/que-respaldos-necesita-una-empresa). Y si te interesa conocer otros riesgos técnicos que suelen pasar desapercibidos, [riesgos técnicos que nadie revisa hasta que es tarde](/blog/riesgos-tecnicos-que-nadie-revisa-hasta-que-es-tarde) te da un panorama más amplio.

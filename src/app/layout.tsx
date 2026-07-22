@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, DM_Sans, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
+import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -24,6 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.baseUrl),
   title: "Codigo Startup | Productos digitales que perduran",
   description:
     "Desarrollo, estrategia y diseño para startups y empresas que necesitan ejecutar con claridad. Tu equipo técnico completo, sin contratar de planta.",
@@ -38,6 +40,26 @@ export const metadata: Metadata = {
   authors: [{ name: "Codigo Startup" }],
   icons: {
     icon: "/isotipo.svg",
+  },
+  alternates: {
+    canonical: siteConfig.baseUrl,
+  },
+  openGraph: {
+    title: "Codigo Startup | Productos digitales que perduran",
+    description:
+      "Desarrollo, estrategia y diseño para startups y empresas que necesitan ejecutar con claridad. Tu equipo técnico completo, sin contratar de planta.",
+    url: siteConfig.baseUrl,
+    siteName: "Codigo Startup",
+    images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
+    locale: "es_CL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Codigo Startup | Productos digitales que perduran",
+    description:
+      "Desarrollo, estrategia y diseño para startups y empresas que necesitan ejecutar con claridad.",
+    images: ["/og-image.svg"],
   },
 };
 

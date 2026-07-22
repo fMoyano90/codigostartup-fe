@@ -1,0 +1,176 @@
+---
+title: Qué preguntar sobre seguridad a tu proveedor de software
+slug: que-preguntar-sobre-seguridad-a-tu-proveedor
+description: >-
+  Un conjunto de preguntas mínimas sobre seguridad que conviene hacer antes de
+  contratar un desarrollo de software, sin necesidad de ser experto en el tema.
+excerpt: >-
+  No hace falta saber de ciberseguridad para evaluar si un proveedor toma en
+  serio la protección de tus datos. Estas preguntas te dan un criterio mínimo
+  para la conversación.
+category: seguridad-y-riesgos
+tags:
+  - seguridad
+  - proveedores de software
+  - contratación de desarrollo
+  - protección de datos
+audience:
+  - founders
+  - empresarios
+intent: commercial
+funnelStage: decision
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-21'
+approvedAt: '2026-07-21'
+publishedAt: '2026-07-21'
+seo:
+  title: Qué preguntar sobre seguridad a tu proveedor de software | Código Startup
+  description: >-
+    Las preguntas mínimas que todo fundador o empresario debería hacer sobre
+    seguridad antes de contratar un desarrollo de software.
+  primaryKeyword: preguntas de seguridad proveedor de software
+  secondaryKeywords:
+    - seguridad en desarrollo de software
+    - contratar desarrollo seguro
+    - evaluar proveedor de software
+    - checklist seguridad proveedor
+relatedArticles:
+  - que-validar-antes-de-desarrollar-una-aplicacion
+  - cuando-dejar-de-usar-planillas
+reviewStatus: pending
+reviewScore: null
+---
+
+Contratar un desarrollo de software implica entregar datos, procesos y en muchos casos la operación misma de la empresa a un tercero. La conversación sobre seguridad suele reducirse a una pregunta genérica —"¿ustedes trabajan con estándares de seguridad?"— y una respuesta igual de genérica —"sí, por supuesto"—. Esa conversación no protege a nadie.
+
+Este artículo propone un conjunto de preguntas concretas que cualquier fundador o empresario puede hacer, sin necesidad de conocimientos técnicos de ciberseguridad. No son preguntas para impresionar al proveedor: son preguntas cuyas respuestas —o la falta de ellas— revelan si la seguridad es una práctica real o una línea en la propuesta comercial.
+
+<Callout variant="info" title="Aviso importante">
+  Este artículo no ofrece asesoramiento legal ni normativo. Los requisitos específicos sobre protección de datos, almacenamiento geográfico y notificación de incidentes varían según el país, la industria y el tipo de datos que maneje tu empresa. Las preguntas que siguen son un punto de partida para la conversación técnica, no sustituyen la revisión de un profesional con conocimiento de la jurisdicción que aplica a tu caso.
+</Callout>
+
+## 1. ¿Dónde van a estar físicamente mis datos?
+
+La ubicación geográfica de los servidores importa por dos razones: rendimiento y regulación. Si tu empresa opera en un país con requisitos específicos sobre dónde pueden residir los datos —como ocurre en la Unión Europea con el RGPD o en varios países de Latinoamérica con sus leyes de protección de datos—, la respuesta del proveedor define si el proyecto es viable desde el inicio.
+
+Preguntas específicas que conviene hacer:
+
+- ¿En qué país o países van a estar almacenados los datos?
+- ¿El proveedor de infraestructura —AWS, Google Cloud, Azure, otro— tiene datacenters en una región compatible con mis requisitos legales?
+- ¿Los datos de respaldo se almacenan en la misma región geográfica o en otra?
+
+Un proveedor que responde con precisión —"usamos servidores en São Paulo, con backups en Virginia"— está operando con un nivel de control que uno que responde "en la nube" no necesariamente tiene.
+
+## 2. ¿Quién va a tener acceso a mis datos y bajo qué condiciones?
+
+No todas las personas del equipo del proveedor necesitan acceso a los datos de producción. Un desarrollador puede trabajar sobre datos anonimizados o de prueba; el acceso a datos reales debería estar limitado a roles específicos y bajo condiciones documentadas.
+
+Preguntas útiles en esta línea:
+
+- ¿Qué perfiles del equipo tienen acceso a los datos de producción?
+- ¿El acceso se registra? Es decir, ¿queda constancia de quién accedió, a qué y cuándo?
+- ¿Usan datos reales de clientes en entornos de desarrollo y prueba, o trabajan con datos anonimizados?
+- ¿Qué ocurre con el acceso a los datos cuando una persona deja de trabajar en el proyecto?
+
+La respuesta ideal no es "nadie accede nunca" —eso rara vez es cierto en la práctica—, sino una descripción precisa de quién accede, para qué y con qué controles.
+
+## 3. ¿Cómo se gestionan las vulnerabilidades?
+
+Todo software tiene vulnerabilidades. La diferencia entre un proveedor que toma la seguridad en serio y uno que no está en qué hace cuando aparece una.
+
+Preguntas para evaluar este punto:
+
+- ¿Tienen un proceso definido para recibir y gestionar reportes de vulnerabilidades?
+- ¿Con qué frecuencia actualizan las dependencias del proyecto —librerías, frameworks, sistemas operativos— por razones de seguridad?
+- Si se descubre una vulnerabilidad crítica en una librería que usa mi sistema, ¿en cuánto tiempo aplican la actualización?
+- ¿Hacen pruebas de seguridad regulares —análisis estático de código, revisión de dependencias, pruebas de penetración— o es algo que solo ocurre si el cliente lo pide?
+
+No se espera que un proveedor garantice software sin vulnerabilidades —eso no existe—. Se espera que tenga un proceso para detectarlas y corregirlas en tiempos acotados.
+
+## 4. ¿Cómo se protegen los datos en tránsito y en reposo?
+
+Esta pregunta parece técnica pero tiene una traducción simple: ¿los datos viajan encriptados por internet y se guardan encriptados en el servidor? Es el equivalente digital de no mandar información confidencial en una postal y no dejar documentos sensibles sobre el escritorio.
+
+Aspectos a preguntar:
+
+- ¿Toda la comunicación entre el navegador o la app y el servidor usa HTTPS?
+- ¿Los datos almacenados —base de datos, archivos, backups— están cifrados?
+- ¿Quién administra las claves de cifrado? ¿El proveedor, el cliente o un tercero?
+
+El cifrado en tránsito —HTTPS— es el piso mínimo y cualquier proveedor serio lo tiene por defecto. El cifrado en reposo también es estándar en servicios cloud modernos, pero conviene confirmarlo explícitamente y entender quién controla las claves.
+
+## 5. ¿Qué pasa si hay un incidente de seguridad?
+
+La pregunta no es si va a ocurrir un incidente, sino qué va a pasar cuando ocurra. Un proveedor que nunca pensó en esta pregunta es un proveedor que va a improvisar en el peor momento.
+
+Preguntas concretas:
+
+- ¿Tienen un plan de respuesta a incidentes documentado?
+- ¿En qué plazo me notificarían si detectan un acceso no autorizado a mis datos?
+- ¿Quién es mi punto de contacto durante un incidente? ¿Hay una persona designada o un canal específico?
+- ¿Qué información me van a dar sobre el incidente? ¿Causa, alcance, datos comprometidos, medidas tomadas?
+
+La obligación legal de notificar incidentes varía según la jurisdicción y el tipo de datos. Algunas regulaciones exigen notificar a la autoridad de protección de datos en plazos muy cortos —48 o 72 horas—. El proveedor no puede cumplir ese plazo si no tiene un proceso interno para detectar y escalar incidentes. Preguntar por esto antes de contratar alinea expectativas y reduce la fricción cuando —no si— ocurra un incidente.
+
+## 6. ¿Cómo es el proceso de respaldo y recuperación?
+
+La seguridad no es solo prevenir accesos no autorizados: también es garantizar que los datos no se pierdan por un error, una falla de infraestructura o un ataque que los destruya o los cifre.
+
+Preguntas para esta dimensión:
+
+- ¿Con qué frecuencia se hacen copias de seguridad?
+- ¿Dónde se almacenan esas copias? ¿En la misma infraestructura que los datos originales o en una ubicación separada?
+- ¿Cuál es el tiempo máximo de pérdida de datos aceptable —el RPO, recovery point objective— en caso de una falla grave?
+- ¿Cuánto tiempo tomaría restaurar el servicio completo desde un backup —el RTO, recovery time objective—?
+- ¿Han probado restaurar un backup completo en el último trimestre?
+
+Esta última pregunta es particularmente reveladora. Muchos proveedores tienen backups automáticos que nunca probaron restaurar. Un backup no probado es una promesa, no una garantía. Si el proveedor duda o no puede responder cuándo fue la última prueba de restauración, ese es un riesgo que estás asumiendo como cliente.
+
+<Callout variant="tip" title="Cómo leer las respuestas">
+  No necesitás entender cada detalle técnico. Lo que estás evaluando es si el proveedor tiene respuestas preparadas y coherentes. Un proveedor que responde con vaguedades —"tenemos todo bajo control", "usamos los más altos estándares"— está evitando la conversación. Uno que responde con precisión —"hacemos backups cada seis horas, los almacenamos en otra región y el RPO acordado es de seis horas"— está operando con procesos definidos.
+</Callout>
+
+## 7. ¿Qué pasa con mis datos si termino la relación con el proveedor?
+
+La salida es tan importante como la entrada. Si en el futuro cambiás de proveedor o decidís internalizar el desarrollo, necesitás poder llevarte tus datos en un formato que puedas usar.
+
+Preguntas clave:
+
+- ¿En qué formato me entregan los datos si doy por terminado el servicio?
+- ¿Qué plazo tienen para hacer esa entrega?
+- ¿Eliminan mis datos de sus sistemas después de la entrega? ¿Me dan alguna constancia de esa eliminación?
+- ¿Hay algún costo asociado a la exportación o migración de datos?
+
+Un proveedor serio tiene respuestas documentadas para estas preguntas. Si la respuesta es "eso lo vemos cuando llegue el momento", el momento ya llegó: estás a tiempo de definirlo antes de firmar.
+
+## 8. ¿El equipo recibe formación en seguridad?
+
+La seguridad no depende solo de la infraestructura: depende de las decisiones que toma cada persona del equipo todos los días. Un desarrollador que comparte credenciales por Slack, que sube claves de API a un repositorio público o que usa la misma contraseña en todos los servicios es un riesgo aunque el servidor esté perfectamente configurado.
+
+Preguntas para este punto:
+
+- ¿El equipo recibe capacitación periódica en prácticas seguras de desarrollo?
+- ¿Tienen guías internas sobre manejo de credenciales, revisión de código y configuración de entornos?
+- ¿Qué medidas toman para evitar que información sensible —claves, tokens, datos de clientes— termine en el código fuente o en herramientas de comunicación internas?
+
+No se trata de que el proveedor tenga un departamento de seguridad de veinte personas. Se trata de que la seguridad sea parte de la forma de trabajar, no un checklist que se revisa una vez al año.
+
+## Cómo llevar esta conversación sin ser experto en seguridad
+
+Estas preguntas no requieren conocimientos técnicos para ser formuladas. Lo que sí requieren es que el proveedor las tome en serio. Algunas recomendaciones para la conversación:
+
+- **Hacé las preguntas por escrito.** Un correo electrónico o un documento compartido donde el proveedor responda cada punto. Esto evita respuestas improvisadas y te da un registro para comparar proveedores.
+- **No aceptes un "sí" sin detalles.** "¿Usan cifrado?" / "Sí." Esa respuesta no dice nada. Pedí que especifiquen: ¿qué se cifra, con qué algoritmo, quién administra las claves?
+- **Compará las respuestas entre proveedores.** Si estás evaluando más de una opción, las mismas preguntas hechas a distintos proveedores revelan diferencias que la propuesta comercial no muestra.
+- **Si algo no se entiende, pedí que lo expliquen.** Un proveedor que no puede explicar sus prácticas de seguridad en términos que un no-experto entienda probablemente tampoco puede explicárselas a su propio equipo.
+
+## Relación con otras decisiones
+
+La seguridad no se evalúa en el vacío. Antes de llegar a esta conversación, conviene haber definido qué se va a construir y para quién. El artículo sobre [qué validar antes de desarrollar una aplicación](/blog/que-validar-antes-de-desarrollar-una-aplicacion) cubre ese paso previo: si el alcance no está claro, las preguntas de seguridad se vuelven abstractas y el proveedor no puede dar respuestas precisas porque no sabe qué está protegiendo.
+
+También conviene revisar si el sistema que estás por encargar reemplaza procesos que hoy corren sobre herramientas sin controles de acceso —como planillas compartidas—. El artículo sobre [cuándo dejar de usar planillas](/blog/cuando-dejar-de-usar-planillas) aborda los riesgos operativos de mantener información sensible en archivos que cualquiera puede copiar, modificar o eliminar sin registro. Si ese es tu punto de partida, la conversación sobre seguridad con el proveedor es una oportunidad para subir el estándar de protección, no solo para replicar lo que ya hacías.
+
+Hacer estas preguntas antes de contratar no garantiza que no vaya a ocurrir un incidente. Pero garantiza que, si ocurre, ambas partes saben qué hacer, quién responde y en qué plazo. Y eso ya es una forma de protección.

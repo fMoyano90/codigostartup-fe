@@ -1,0 +1,130 @@
+---
+title: 'IA generativa versus automatización: cuándo usar cada una'
+slug: ia-generativa-vs-automatizacion
+description: >-
+  Una guía para distinguir cuándo conviene automatizar un proceso con reglas
+  fijas y cuándo conviene usar IA generativa para tareas que requieren criterio.
+excerpt: >-
+  Automatizar el envío de facturas y redactar respuestas personalizadas a
+  clientes son dos cosas distintas. Esta guía explica cuándo usar cada enfoque.
+category: automatizacion-e-ia
+tags:
+  - automatización
+  - inteligencia artificial generativa
+  - procesos
+  - toma de decisiones
+audience:
+  - founders
+  - gerentes
+intent: informational
+funnelStage: consideration
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-21'
+approvedAt: '2026-07-21'
+publishedAt: '2026-07-21'
+seo:
+  title: 'IA generativa vs automatización: cuándo usar cada una | Código Startup'
+  description: >-
+    Guía práctica para distinguir entre automatización tradicional basada en
+    reglas e IA generativa, con ejemplos concretos de cada enfoque.
+  primaryKeyword: ia generativa versus automatización
+  secondaryKeywords:
+    - diferencia entre automatización e IA
+    - cuándo usar IA generativa
+    - automatización con reglas vs IA
+    - procesos automatizables con IA
+relatedArticles:
+  - cuando-automatizar-un-proceso
+  - que-tareas-se-pueden-automatizar-con-ia
+reviewStatus: pending
+reviewScore: null
+---
+
+En los últimos dos años, la conversación sobre automatización en las empresas se volvió más confusa, no más clara. Antes, automatizar significaba algo bastante concreto: tomar un proceso repetitivo que seguía reglas predecibles y programar una máquina para que lo ejecutara sin intervención humana. Hoy, con la irrupción de la IA generativa, el término "automatización" se usa para describir cosas muy distintas entre sí, y esa ambigüedad genera decisiones equivocadas.
+
+Automatizar el envío de facturas recurrentes y redactar respuestas personalizadas a clientes son dos tareas que, bajo el paraguas de "automatización con IA", podrían sonar similares. Pero la primera se resuelve con automatización tradicional —reglas fijas, cero ambigüedad— y la segunda requiere IA generativa —interpretación de lenguaje, criterio, adaptación al contexto—. Usar la herramienta equivocada para cada caso no solo es ineficiente: es riesgoso.
+
+Este artículo propone un marco para distinguir cuándo usar cada enfoque, con ejemplos concretos que ayudan a tomar la decisión correcta antes de invertir en tecnología.
+
+## Automatización tradicional: cuando las reglas son claras y no cambian
+
+La automatización tradicional —la que existía antes del hype de la IA generativa— funciona bajo un principio simple: si el proceso se puede describir como una secuencia de pasos con condiciones predecibles, se puede automatizar con reglas.
+
+**Cómo funciona.** Alguien define explícitamente qué debe ocurrir en cada situación. Si ocurre A, entonces hacer B. Si el campo "monto" supera cierto valor, enviar notificación al gerente. Si el cliente no pagó después de 30 días, generar recordatorio automático. No hay interpretación: hay ejecución.
+
+**Ejemplos donde este enfoque es la mejor opción:**
+
+- Envío automático de facturas al cerrar una venta en el sistema.
+- Conciliación de pagos cuando los montos y las referencias coinciden exactamente.
+- Generación de reportes periódicos con los mismos campos y las mismas fuentes de datos.
+- Notificaciones automáticas ante eventos predefinidos: un plazo que vence, un stock que baja del mínimo.
+- Validación de formatos de datos: un RUT que no cumple el formato esperado, un campo obligatorio vacío.
+
+**Ventajas.** Es predecible, auditable y de bajo costo operativo una vez implementada. Si algo falla, el error es trazable: la regla estaba mal definida o el dato de entrada no era el esperado. Y es barata de ejecutar: procesar mil facturas con reglas consume una fracción mínima de recursos.
+
+**Limitaciones.** Solo funciona para procesos donde todas las condiciones posibles están previstas de antemano. Apenas aparece una situación que no estaba contemplada, la automatización falla o, peor, produce un resultado incorrecto sin que nadie se entere.
+
+## IA generativa: cuando se necesita criterio, interpretación o adaptación
+
+La IA generativa opera bajo un principio distinto: no ejecuta reglas explícitas, sino que infiere patrones a partir de grandes volúmenes de datos de entrenamiento. Esto le permite manejar situaciones que no están previstas de antemano, interpretar lenguaje natural con sus ambigüedades y generar respuestas adaptadas al contexto.
+
+**Cómo funciona.** En lugar de programar "si pasa X, hacé Y", se le da contexto e instrucciones en lenguaje natural y el modelo decide qué respuesta es más apropiada según lo que aprendió. No hay reglas explícitas: hay inferencia estadística.
+
+**Ejemplos donde este enfoque es la mejor opción:**
+
+- Redactar una respuesta personalizada a un cliente que envió un reclamo extenso con múltiples puntos.
+- Leer un contrato y extraer cláusulas relevantes según criterios definidos por el usuario.
+- Analizar comentarios de clientes en redes sociales o encuestas abiertas y categorizarlos por tema y sentimiento.
+- Generar un resumen ejecutivo de una reunión a partir de la transcripción completa.
+- Convertir una especificación informal en lenguaje natural —"quiero un sistema que haga X, Y y Z"— en historias de usuario estructuradas.
+
+**Ventajas.** Maneja ambigüedad, variaciones en la forma de expresar lo mismo y situaciones que no estaban previstas. Puede operar sobre datos no estructurados —texto libre, imágenes, audio— que la automatización tradicional simplemente no puede procesar.
+
+**Limitaciones.** No es determinista: la misma consulta puede producir respuestas distintas, lo cual es problemático en contextos donde se necesita consistencia absoluta. Puede cometer errores difíciles de predecir —alucinaciones— y estos errores no son trazables como un bug en una regla: entender por qué el modelo dijo lo que dijo puede ser complejo. Y es más cara de operar: cada consulta consume recursos computacionales y, si se usa un proveedor externo, tiene un costo por uso.
+
+<Callout variant="tip" title="Regla práctica para decidir">
+  Si podés escribir las instrucciones completas del proceso en una hoja de papel sin usar las palabras "depende", "a veces" o "según el contexto", probablemente lo resuelve la automatización tradicional. Si necesitás esas palabras para describir el proceso, probablemente necesitás IA generativa.
+</Callout>
+
+## El punto ciego: cuando la combinación de ambas es lo correcto
+
+La mayoría de los procesos reales no son puramente uno u otro. Tienen partes que siguen reglas fijas y partes que requieren criterio. Forzar todo el proceso dentro de un solo enfoque produce malos resultados en ambos sentidos.
+
+**Automatizar con reglas lo que requiere criterio** genera procesos rígidos que fallan apenas aparece una excepción. El ejemplo clásico es el chatbot basado en árboles de decisión que solo entiende las cinco preguntas previstas y ante cualquier variación responde "no entendí tu consulta".
+
+**Usar IA generativa para lo que se resuelve con reglas** es caro e introduce variabilidad innecesaria. Si necesitás que cada factura tenga exactamente el mismo formato y los mismos cálculos, la IA generativa no solo es más costosa sino que además puede, ocasionalmente, producir una factura con un error que las reglas nunca habrían cometido.
+
+El enfoque correcto para muchos procesos es híbrido:
+
+1. La automatización tradicional maneja los pasos estructurados: validar que los datos existen, verificar formatos, ejecutar cálculos, disparar flujos según condiciones claras.
+2. La IA generativa interviene en los puntos donde aparece ambigüedad o se requiere interpretación: leer un texto libre, clasificar una intención, redactar una respuesta adaptada.
+3. El flujo vuelve a la automatización tradicional para los pasos posteriores: registrar la acción, actualizar el sistema, notificar a quien corresponda.
+
+**Ejemplo concreto: atención de un reclamo de cliente.**
+
+- Automatización tradicional: recibe el mensaje, verifica que el cliente existe en el sistema, busca sus datos de cuenta, determina a qué área corresponde según el tipo de reclamo.
+- IA generativa: lee el texto del reclamo, identifica el problema específico, detecta el nivel de urgencia, redacta un borrador de respuesta que incluye la información relevante del cliente.
+- Automatización tradicional: asigna el caso al operador correspondiente con el borrador precargado, registra el tiempo de respuesta, actualiza el tablero de métricas.
+
+## Cómo decidir en la práctica
+
+Antes de elegir tecnología, conviene responder tres preguntas sobre el proceso que querés automatizar:
+
+**1. ¿Cuánta variabilidad tiene el input?** Si la información de entrada siempre llega en el mismo formato —campos fijos en un formulario, un archivo con estructura conocida—, la automatización tradicional alcanza. Si el input es texto libre, imágenes, audios o documentos con formatos variables, probablemente necesitás IA.
+
+**2. ¿Qué pasa si el sistema se equivoca?** Si un error es detectable, reparable y no tiene consecuencias graves —un mail de seguimiento con un dato menor incorrecto—, la IA generativa es una opción viable. Si un error puede generar un problema legal, financiero o reputacional, la automatización tradicional es más segura, o la IA debe operar con supervisión humana obligatoria.
+
+**3. ¿El proceso cambia con frecuencia?** Si las reglas son estables en el tiempo, automatizar con reglas es una inversión que se paga sola. Si el criterio evoluciona constantemente —nuevos productos, nuevas políticas, nuevas regulaciones—, mantener reglas actualizadas puede ser más costoso que usar IA generativa, que se adapta con instrucciones en lenguaje natural en lugar de requerir reprogramación.
+
+## Ni todo es IA ni todo es reglas
+
+La automatización tradicional no quedó obsoleta con la llegada de la IA generativa. Al contrario: para todo lo que es repetitivo, predecible y de bajo riesgo, sigue siendo la opción más barata, más rápida y más confiable. La IA generativa expande el rango de lo automatizable hacia tareas que requieren interpretación y criterio, pero a un costo más alto y con una variabilidad que en algunos contextos no es aceptable.
+
+Saber cuándo usar cada una —y cuándo combinarlas— es la diferencia entre un proyecto de automatización que funciona y uno que genera más problemas de los que resuelve.
+
+Si querés profundizar en cómo identificar qué procesos conviene automatizar primero, el artículo sobre [cuándo automatizar un proceso y cuándo no](/blog/cuando-automatizar-un-proceso) ofrece un método de priorización simple. Y si necesitás un panorama de tareas concretas que ya se pueden automatizar con IA, revisá [qué tareas de una empresa se pueden automatizar con inteligencia artificial](/blog/que-tareas-se-pueden-automatizar-con-ia).
+
+Más sobre automatización en la categoría de [automatización e inteligencia artificial](/blog/categoria/automatizacion-e-ia).

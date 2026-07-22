@@ -1,0 +1,118 @@
+---
+title: Por qué dos presupuestos de software pueden tener precios tan diferentes
+slug: por-que-dos-presupuestos-de-software-precios-diferentes
+description: >-
+  Las variables que explican por qué dos cotizaciones por el mismo proyecto de
+  software pueden diferir en órdenes de magnitud, y cómo leer esas diferencias
+  para tomar una decisión informada.
+excerpt: >-
+  Recibiste dos cotizaciones por el mismo proyecto y los precios no se parecen
+  en nada. Este artículo explica qué variables producen esa diferencia y cómo
+  interpretarlas.
+category: costos-y-presupuestos
+tags:
+  - cotizaciones de software
+  - presupuestos de desarrollo
+  - evaluación de proveedores
+  - costos de software
+audience:
+  - founders
+  - empresarios
+intent: informational
+funnelStage: consideration
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-21'
+updatedAt: '2026-07-21'
+approvedAt: '2026-07-21'
+publishedAt: '2026-07-21'
+seo:
+  title: >-
+    Por qué dos presupuestos de software tienen precios tan diferentes | Código
+    Startup
+  description: >-
+    Variables que explican diferencias de precio entre cotizaciones de
+    desarrollo de software: alcance, stack, experiencia, detalle y garantía.
+  primaryKeyword: por qué dos presupuestos de software precios diferentes
+  secondaryKeywords:
+    - diferencias entre cotizaciones de software
+    - cómo comparar presupuestos de desarrollo
+    - por qué varía tanto el precio de un software
+    - evaluar propuestas de desarrollo
+relatedArticles:
+  - como-estimar-el-costo-real-de-un-proyecto-de-software
+  - presupuesto-cerrado-vs-cobro-por-horas
+reviewStatus: pending
+reviewScore: null
+---
+
+Pediste tres cotizaciones para el mismo proyecto de software. Las tres describen más o menos lo mismo: un sistema para gestionar clientes, una app para tomar pedidos, una plataforma para automatizar reportes. Pero los precios no se parecen en nada: una cotización dice 15, otra dice 40, la tercera dice 90. La reacción natural es asumir que la más barata es un riesgo y la más cara es un abuso. O al revés: que la más barata es la más eficiente y las otras están infladas.
+
+Ninguna de esas conclusiones es necesariamente correcta. Las diferencias de precio entre cotizaciones de software rara vez se explican por un proveedor que "cobra de más" o "cobra de menos". Se explican por variables concretas que, cuando no se hacen explícitas, producen números que parecen hablar del mismo proyecto cuando en realidad están describiendo cosas distintas.
+
+Este artículo desglosa esas variables para que la próxima vez que recibas cotizaciones con precios muy distintos, puedas leer las diferencias en lugar de quedarte solo con el número.
+
+## Variable 1: El alcance real que cada proveedor está cotizando
+
+Dos proveedores pueden estar mirando la misma lista de funcionalidades y entender cosas distintas. Donde uno lee "gestión de usuarios", el otro lee "registro, login, recuperación de contraseña, perfiles, roles, permisos, historial de actividad". El primero cotizó una semana de trabajo. El segundo, un mes.
+
+Esto no significa necesariamente que el primero está recortando alcance de mala fe. Puede ser que esté asumiendo que ciertas funcionalidades se van a resolver con una solución estándar —un sistema de autenticación preexistente, una biblioteca de código abierto— mientras el segundo está cotizando desarrollo a medida. O puede ser que el primero simplemente no pensó en todos los casos de uso y el segundo sí.
+
+La diferencia de precio que surge de esta variable no es una diferencia de "caro versus barato": es una diferencia entre dos interpretaciones del alcance. Si el proyecto avanza con el proveedor más barato, es probable que en algún momento aparezcan funcionalidades que el cliente daba por incluidas y el proveedor considera adicionales. Esa conversación va a ser incómoda, y el costo final va a acercarse al del otro proveedor —o superarlo—, pero distribuido en discusiones y Change Requests en lugar de estar contemplado desde el inicio.
+
+<Callout variant="warning" title="Cómo detectar diferencias de alcance">
+  Pedile a cada proveedor que desglose qué incluye cada funcionalidad de alto nivel. Si uno considera "notificaciones" como "envío de correos transaccionales" y el otro como "correos, notificaciones push, mensajes in-app y centro de notificaciones configurable", la diferencia de precio está explicada y no es un problema de caro versus barato: es un problema de alcance.
+</Callout>
+
+## Variable 2: El stack tecnológico y su costo de operación futura
+
+Dos proveedores pueden resolver el mismo problema con tecnologías distintas, y eso impacta el costo de desarrollo y el costo de operación futura de maneras que no siempre son visibles en la cotización.
+
+Un proveedor puede elegir un stack moderno que acelera el desarrollo inicial pero requiere desarrolladores con experiencia en tecnologías más nuevas —que son más escasos y por lo tanto más caros—. Otro puede elegir un stack más tradicional que requiere más tiempo de desarrollo pero usa tecnologías donde hay más oferta de desarrolladores y el mantenimiento futuro es más barato.
+
+La decisión de stack también afecta la infraestructura. Algunas arquitecturas requieren más servicios cloud y por lo tanto un costo mensual más alto una vez que la aplicación está en producción. Ese costo no aparece en la cotización de desarrollo, pero es un gasto real que la empresa va a tener todos los meses.
+
+**Lo que conviene preguntar:** ¿Por qué eligieron este stack? ¿Qué implica para el mantenimiento futuro? ¿Qué servicios externos requiere en producción y cuál es su costo estimado?
+
+## Variable 3: La experiencia del equipo asignado
+
+No todos los equipos de desarrollo cuestan lo mismo, incluso dentro de un mismo proveedor. Un equipo con desarrolladores seniors que ya hicieron varios proyectos similares va a costar más por hora que un equipo con perfiles junior supervisados por un senior. Pero también va a producir menos errores, menos retrabajo y menos desviaciones de plazo.
+
+Esta diferencia no siempre es visible en la cotización. Algunos proveedores presentan al equipo senior en la etapa comercial y después el trabajo diario recae en perfiles con menos experiencia. El precio de la cotización refleja al equipo presentado, pero el trabajo se hace con otro.
+
+**Lo que conviene preguntar:** ¿Quiénes van a trabajar en el día a día del proyecto? ¿Qué experiencia tienen en proyectos del mismo tipo? ¿El senior que está en la reunión comercial va a estar escribiendo código o solo supervisando?
+
+## Variable 4: El nivel de detalle del presupuesto
+
+Una cotización de una página con un número final y una lista de funcionalidades de alto nivel es fundamentalmente distinta de una cotización de seis páginas con cada funcionalidad desglosada en tareas, horas estimadas y entregables.
+
+La cotización detallada no es más cara porque el proveedor sea más caro: es más cara porque está contemplando cosas que la cotización de una página no contempla. Y la cotización de una página no es más barata porque el proveedor sea más eficiente: es más barata porque deja afuera ambigüedades que después se resuelven con plata adicional.
+
+El problema no es que una sea mejor que la otra en abstracto. El problema es compararlas como si fueran equivalentes. La cotización detallada te está diciendo "esto es lo que creemos que va a costar". La de una página te está diciendo "esto es lo que cuesta lo que alcanzamos a imaginar en esta etapa, y después vemos".
+
+<Callout variant="tip" title="El valor del detalle">
+  Una cotización detallada te sirve incluso si no elegís a ese proveedor: te da un estándar contra el cual comparar las otras. Si el proveedor B dice que hace lo mismo por la mitad, podés preguntarle específicamente qué está dejando afuera que el proveedor A incluyó.
+</Callout>
+
+## Variable 5: Mantenimiento y garantía incluidos (o no)
+
+Algunos proveedores incluyen en la cotización un período de garantía post-lanzamiento —típicamente entre uno y tres meses— durante el cual los errores se corrigen sin costo adicional. Otros cotizan solo el desarrollo y cualquier cosa que surja después de la entrega se factura aparte.
+
+La diferencia en el número final puede ser significativa, pero no porque un proveedor sea más caro: porque uno está incluyendo un servicio que el otro va a cobrar por separado. Si el proyecto es complejo y es razonable esperar ajustes después del lanzamiento, el proveedor que incluye garantía puede terminar siendo más barato en el costo total.
+
+**Lo que conviene preguntar:** ¿Incluye garantía post-lanzamiento? ¿Por cuánto tiempo? ¿Qué cubre exactamente? ¿Cómo se define qué es un error y qué es un cambio?
+
+## Variable 6: El modelo de contratación
+
+No es lo mismo un presupuesto cerrado —precio fijo por un alcance definido— que una estimación de horas con un precio por hora. El presupuesto cerrado incluye un margen de riesgo para el proveedor: si el proyecto se complica, el proveedor asume el sobrecosto. Ese margen encarece el precio. La estimación por horas traslada el riesgo al cliente: si el proyecto se complica, el cliente paga las horas adicionales.
+
+Dos cotizaciones con modelos distintos no son directamente comparables en precio sin ajustar por quién asume el riesgo de desviación.
+
+## La diferencia de precio no es un problema: es información
+
+Recibir cotizaciones con precios muy distintos no es una señal de que el mercado está roto ni de que te están queriendo engañar. Es una señal de que el proyecto tiene variables que no están lo suficientemente definidas, y cada proveedor las está interpretando a su manera. En lugar de elegir por precio —el más bajo con desconfianza, el más alto con la esperanza de que "lo barato sale caro"—, conviene usar las diferencias para hacer las preguntas correctas y refinar el alcance antes de decidir.
+
+Para profundizar en los criterios que hacen que una estimación sea más o menos realista, el artículo sobre [cómo estimar el costo real de un proyecto de software](/blog/como-estimar-el-costo-real-de-un-proyecto-de-software) desarrolla variables adicionales que impactan el presupuesto. Y si estás evaluando si te conviene más un precio fijo o un esquema por horas, revisá [presupuesto cerrado versus cobro por horas](/blog/presupuesto-cerrado-vs-cobro-por-horas) para entender los riesgos de cada modelo.
+
+Más herramientas de evaluación en la categoría de [costos y presupuestos](/blog/categoria/costos-y-presupuestos).

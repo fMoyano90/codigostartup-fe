@@ -1,121 +1,18 @@
 import LogoLoop from '@/components/LogoLoop'
 import Magnet from '@/components/Magnet'
 import HomeAnimations from '@/components/HomeAnimations'
-
-const techLogos = [
-  { src: '/logos/github.png', alt: 'GitHub' },
-  { src: '/logos/react.png', alt: 'React' },
-  { src: '/logos/nextjs.png', alt: 'Next.js' },
-  { src: '/logos/typescript.png', alt: 'TypeScript' },
-  { src: '/logos/vercel.svg', alt: 'Vercel' },
-  { src: '/logos/NestJS.svg', alt: 'NestJS' },
-  { src: '/logos/docker.png', alt: 'Docker' },
-  { src: '/logos/supabase.png', alt: 'Supabase' },
-  { src: '/logos/figma.png', alt: 'Figma' },
-  { src: '/logos/claude-color.png', alt: 'Claude AI' },
-]
-
-const services = [
-  {
-    category: 'Desarrollo',
-    name: 'Construimos',
-    description: 'Creamos soluciones digitales a tu medida, con código sólido, entregas semanales y un producto listo para crecer.',
-    tags: ['Sitios web', 'Landing page', 'Tiendas Online', 'Apps web', 'Apps móviles', 'Software a medida', 'Prototipos'],
-    cta: 'Quiero construir →',
-  },
-  {
-    category: 'Estrategia',
-    name: 'Optimizamos',
-    description: 'Revisamos lo que ya tienes, encontramos los cuellos de botella y te decimos qué mejorar antes de que cueste más caro.',
-    tags: ['Auditoría', 'Arquitectura', 'Seguridad', 'Asesorías/Consultorias Técnicas', 'Mejora de procesos', 'Roadmap'],
-    cta: 'Quiero mejorar lo que tengo →',
-  },
-  {
-    category: 'Diseño y Marca',
-    name: 'Comunicamos',
-    description: 'Diseñamos marcas y productos, unimos identidad y estrategia para que tu mensaje sea profesional y conecte con tus usuarios.',
-    tags: ['Experiencia de Usuario', 'Identidad visual', 'Animación digital', 'Brochure y Graficas', 'Marketing y publicidad digital'],
-    cta: 'Quiero comunicar mejor →',
-  },
-]
-
-const steps = [
-  {
-    n: '01',
-    title: 'Diagnóstico',
-    desc: 'Escuchamos, preguntamos y entendemos dónde está el problema real antes de proponer cualquier solución.',
-  },
-  {
-    n: '02',
-    title: 'Ruta clara',
-    desc: 'Alcance definido, tiempos reales y precio claro. Sin cotizaciones que dicen todo y no comprometen nada.',
-  },
-  {
-    n: '03',
-    title: 'Construcción',
-    desc: 'Avances semanales, código real y decisiones explicadas. Siempre sabes qué se construyó, qué viene y por qué.',
-  },
-  {
-    n: '04',
-    title: 'Iteración',
-    desc: 'Medimos, ajustamos y entregamos un producto que funciona en producción — con documentación y traspaso completo.',
-  },
-]
-
-const clientCases = [
-  {
-    sector: 'Minería',
-    name: 'SubTech',
-    description: 'Monitoreo en tiempo real de maquinarias, vehículos y personas dentro de una mina, nivel por nivel. Visibilidad total de lo que ocurre bajo tierra.',
-    hook: 'En una emergencia, en segundos sabes exactamente quién y qué activos están en el interior.',
-    metrics: [
-      { val: 'Real-time', label: 'Monitoreo' },
-      { val: 'Industrial', label: 'Escala' },
-      { val: 'Minería', label: 'Sector' },
-    ],
-    logo: '/SS_LOGO_WHITE.png',
-    testimonial: {
-      quote: 'Estoy muy contento con el trabajo de Código tanto en desarrollo como su modalidad de trabajo; ágil, limpia y eficaz. El trabajo por parte de Código nos ha permitido validar nuestro MVP, paso crucial para el desarrollo profesional de nuestra Startup.',
-      author: 'Christian Solar, Gerente General',
-    },
-  },
-  {
-    sector: 'Fitness & Coaching',
-    name: 'Entrena',
-    description: 'Plataforma para coaches: gestión de alumnos, clases, seguimiento de progreso y evaluaciones de fuerza, movilidad y carga en un solo lugar.',
-    hook: 'Cada sesión queda registrada. El progreso del alumno siempre visible, para el coach y para el atleta.',
-    metrics: [
-      { val: 'SaaS', label: 'Modelo' },
-      { val: 'Multi-rol', label: 'Coach + Alumno' },
-      { val: 'Fitness', label: 'Industria' },
-    ],
-    logo: '/logo-entrena-vip.png',
-    testimonial: {
-      quote: 'Trabajar con los chicos de código startup ha Sido un gran avance en mi proyecto como coach de entrenamiento debido a que con ellos mejoramos mi sistema completo a través de una app móvil exclusiva para mis alumnos y clientes.',
-      author: 'Jaime Valero, Coach & Founder',
-    },
-  },
-  {
-    sector: 'Finanzas',
-    name: 'NextDrill Admin',
-    description: 'Panel financiero para empresas con múltiples centros de costo: caja proyectada, facturación integrada con SII y visibilidad total del flujo.',
-    hook: 'Sabes exactamente cuánto entra, cuánto sale y cuánto tienes proyectado — sin una hoja de cálculo.',
-    metrics: [
-      { val: 'Multi-CC', label: 'Centros de costo' },
-      { val: 'Proyectada', label: 'Caja' },
-      { val: 'ERP lite', label: 'Tipo' },
-    ],
-    logo: '/logo-nextdrill.png',
-    testimonial: {
-      quote: 'Codigo Startup nos acompañó desde un simple MVP hasta una plataforma robusta integrada con SII. Su enfoque evolutivo nos permitió crecer paso a paso, y ahora estamos listos para el siguiente paso con inventarios y bodegas.',
-      author: 'Roberto Silva, Gerente General',
-    },
-  },
-]
+import {
+  homeClientProjects as clientCases,
+  homeOwnProduct,
+  homeServiceGroups as services,
+  processSteps as steps,
+  siteConfig,
+  techLogos,
+} from '@/data/commercial'
 
 export default function Home() {
   return (
-    <main>
+    <main className="home">
       <HomeAnimations />
 
       {/* ── NAV ── */}
@@ -128,7 +25,7 @@ export default function Home() {
           <a href="#portafolio" className="nav-link">Portafolio</a>
           <a href="#proceso" className="nav-link">Proceso</a>
         </div>
-        <a href="https://wa.me/56966073259" target="_blank" rel="noreferrer" className="nav-cta">Hablemos</a>
+        <a href={siteConfig.contact.whatsappUrl} target="_blank" rel="noreferrer" className="nav-cta">Hablemos</a>
       </nav>
 
       {/* ── HERO ── */}
@@ -164,7 +61,7 @@ export default function Home() {
               necesitan avanzar.
             </p>
             <div className="hero-actions fadein fadein-d3">
-              <a href="https://wa.me/56966073259" target="_blank" rel="noreferrer" className="btn-primary">
+              <a href={siteConfig.contact.whatsappUrl} target="_blank" rel="noreferrer" className="btn-primary">
                 Cuéntanos tu proyecto →
               </a>
             </div>
@@ -217,7 +114,7 @@ export default function Home() {
                 ))}
               </div>
               <a
-                href="https://wa.me/56966073259"
+                href={siteConfig.contact.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
                 className={`service-link ${i === 1 ? 'service-link--center' : 'service-link--outer'}`}
@@ -251,26 +148,18 @@ export default function Home() {
                 {/* ── FRONT ── */}
                 <div className="lab-card lab-card-front">
                   <div className="lab-card-title-row">
-                    <img src="/logo-nucleo-gestor-blanco-naranjo.svg" alt="Núcleo Gestor" className="lab-card-logo-oficial" />
+                    <img src={homeOwnProduct.logo} alt={homeOwnProduct.name} className="lab-card-logo-oficial" />
                   </div>
                   <p className="lab-card-desc">
-                    Plataforma de gestión de liderazgo y cumplimiento normativo del DS44 para la
-                    industria minera. IA entrenada en normativa, app móvil 100% offline y firma
-                    electrónica simple según ley 19799.
+                    {homeOwnProduct.description}
                   </p>
                   <div className="lab-card-metrics">
-                    <div className="lab-card-metric">
-                      <span className="lab-card-metric-val">DS44</span>
-                      <span className="lab-card-metric-label">Normativa</span>
-                    </div>
-                    <div className="lab-card-metric">
-                      <span className="lab-card-metric-val">100%</span>
-                      <span className="lab-card-metric-label">Offline</span>
-                    </div>
-                    <div className="lab-card-metric">
-                      <span className="lab-card-metric-val">FES</span>
-                      <span className="lab-card-metric-label">Ley 19799</span>
-                    </div>
+                    {homeOwnProduct.metrics.map((metric) => (
+                      <div key={metric.label} className="lab-card-metric">
+                        <span className="lab-card-metric-val">{metric.val}</span>
+                        <span className="lab-card-metric-label">{metric.label}</span>
+                      </div>
+                    ))}
                   </div>
                   <div className="lab-card-footer">
                     <img src="/chrysalis-logo.png" alt="Chrysalis PUCV" className="lab-card-chrysalis" />
@@ -285,11 +174,11 @@ export default function Home() {
                   </div>
                   <div className="lab-card-back-body">
                     <div className="lab-card-back-header">
-                      <img src="/logo-nucleo-gestor-blanco-naranjo.svg" alt="Núcleo Gestor" className="lab-card-logo-oficial" />
+                      <img src={homeOwnProduct.logo} alt={homeOwnProduct.name} className="lab-card-logo-oficial" />
                     </div>
-                    <p className="lab-card-back-sub">Gestión de liderazgo y normativa DS44 para la industria minera.</p>
-                    <a href="https://nucleogestor.com/landing" target="_blank" rel="noreferrer" className="lab-card-back-cta">
-                      Conocer Núcleo Gestor →
+                    <p className="lab-card-back-sub">{homeOwnProduct.homeCard.description}</p>
+                    <a href={homeOwnProduct.externalUrl} target="_blank" rel="noreferrer" className="lab-card-back-cta">
+                      {homeOwnProduct.homeCard.ctaLabel}
                     </a>
                   </div>
                 </div>
@@ -385,7 +274,7 @@ export default function Home() {
         <div className="cta-actions">
           <Magnet padding={60} magnetStrength={4}>
             <a
-              href="https://wa.me/56966073259"
+              href={siteConfig.contact.whatsappUrl}
               target="_blank"
               rel="noreferrer"
               className="btn-dark"
@@ -403,10 +292,10 @@ export default function Home() {
           emprendedores, startups y empresas.
         </p>
         <a
-          href="mailto:hola@codigostartup.com"
+          href={`mailto:${siteConfig.contact.email}`}
           className="footer-email"
         >
-          hola@codigostartup.com
+          {siteConfig.contact.email}
         </a>
       </footer>
 
