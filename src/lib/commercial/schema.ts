@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const serviceSlugValues = [
   "sitios-web",
+  "tiendas-online",
   "software-a-medida",
   "automatizacion-de-procesos",
   "desarrollo-mvp",
@@ -58,6 +59,7 @@ const ctaSchema = z.strictObject({
   formType: z.enum([
     "general",
     "sitios-web",
+    "tiendas-online",
     "software-a-medida",
     "automatizacion",
     "mvp",

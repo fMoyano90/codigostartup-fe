@@ -43,6 +43,31 @@ export const servicePageConfig: Record<ServiceSlug, ServicePageConfig> = {
       ],
     },
   },
+  "tiendas-online": {
+    editorialSections: [],
+    lead: {
+      title: "Cuéntanos qué quieres vender en tu tienda online",
+      description: "El catálogo, los medios de pago y la forma de operar hoy nos ayudan a proponer el alcance correcto.",
+      fields: [
+        ...commonFields,
+        { name: "currentStore", label: "¿Tienes una tienda online actual?", type: "url", placeholder: "https://" },
+        { name: "storeGoal", label: "¿Qué quieres lograr con tu tienda online?", type: "textarea", required: true },
+        {
+          name: "catalogSize",
+          label: "¿Cuántos productos aproximadamente?",
+          type: "select",
+          options: [
+            { label: "1 a 20", value: "1-20" },
+            { label: "21 a 100", value: "21-100" },
+            { label: "101 a 500", value: "101-500" },
+            { label: "Más de 500", value: "500+" },
+            { label: "No lo sé todavía", value: "por-definir" },
+          ],
+        },
+        { name: "paymentMethods", label: "¿Qué medios de pago necesitas integrar?", type: "textarea" },
+      ],
+    },
+  },
   "software-a-medida": {
     editorialSections: [
       {

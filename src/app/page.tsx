@@ -21,6 +21,7 @@ function requireService(slug: ServiceSlug) {
 }
 
 const websiteService = requireService("sitios-web");
+const storeService = requireService("tiendas-online");
 const softwareService = requireService("software-a-medida");
 const automationService = requireService("automatizacion-de-procesos");
 const mvpService = requireService("desarrollo-mvp");
@@ -34,7 +35,10 @@ const needs = [
     eyebrow: "Presencia digital",
     title: "Necesito un sitio web",
     description: websiteService.shortDescription,
-    links: [{ label: websiteService.name, slug: websiteService.slug }],
+    links: [
+      { label: websiteService.name, slug: websiteService.slug },
+      { label: storeService.name, slug: storeService.slug },
+    ],
   },
   {
     number: "02",

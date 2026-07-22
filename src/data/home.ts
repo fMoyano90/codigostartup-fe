@@ -26,7 +26,7 @@ const homeServiceGroupData: HomeServiceGroup[] = [
     description: "Creamos soluciones digitales a tu medida, con código sólido, entregas semanales y un producto listo para crecer.",
     tags: ["Sitios web", "Landing page", "Tiendas Online", "Apps web", "Apps móviles", "Software a medida", "Prototipos"],
     cta: "Quiero construir →",
-    serviceSlugs: ["sitios-web", "software-a-medida", "desarrollo-mvp", "aplicaciones-web", "aplicaciones-moviles"],
+    serviceSlugs: ["sitios-web", "tiendas-online", "software-a-medida", "desarrollo-mvp", "aplicaciones-web", "aplicaciones-moviles"],
     capabilitySlugs: ["desarrollo", "arquitectura", "seguridad"],
   },
   {

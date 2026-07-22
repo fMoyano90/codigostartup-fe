@@ -4,6 +4,7 @@ import type { ServiceSlug } from "@/lib/commercial/schema";
 
 const serviceOptions: Array<{ label: string; value: ServiceSlug | "otro" }> = [
   { label: "Sitio web", value: "sitios-web" },
+  { label: "Tienda online", value: "tiendas-online" },
   { label: "Software a medida", value: "software-a-medida" },
   { label: "Automatización de procesos", value: "automatizacion-de-procesos" },
   { label: "Desarrollo de MVP", value: "desarrollo-mvp" },

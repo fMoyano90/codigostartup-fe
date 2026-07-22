@@ -9,6 +9,7 @@ import {
 export const leadFormTypeValues = [
   "general",
   "sitios-web",
+  "tiendas-online",
   "software-a-medida",
   "automatizacion",
   "mvp",
@@ -69,6 +70,10 @@ const fieldSchemas = {
   websiteGoal: z.string().trim().min(10).max(1200),
   servicesToShow: optionalTextSchema,
   contentManagement: z.union([z.literal(""), z.enum(["si", "no", "por-definir"])]),
+  currentStore: optionalUrlSchema,
+  storeGoal: z.string().trim().min(10).max(1200),
+  catalogSize: z.union([z.literal(""), z.enum(["1-20", "21-100", "101-500", "500+", "por-definir"])]),
+  paymentMethods: optionalTextSchema,
   process: z.string().trim().min(10).max(1200),
   currentMethod: z.string().trim().min(10).max(1200),
   participants: z.union([z.literal(""), z.enum(["1-5", "6-20", "21+", "por-definir"])]),
@@ -98,6 +103,7 @@ const fieldSchemas = {
 const fieldsByFormType = {
   general: ["whatsapp", "projectType", "currentStage", "description", "budget"],
   "sitios-web": ["currentWebsite", "websiteGoal", "servicesToShow", "contentManagement"],
+  "tiendas-online": ["currentStore", "storeGoal", "catalogSize", "paymentMethods"],
   "software-a-medida": ["process", "currentMethod", "participants", "systems"],
   automatizacion: ["repetitiveTasks", "tools", "frequency", "desiredResult"],
   mvp: ["problem", "audience", "prototype", "validationGoal"],
@@ -108,6 +114,7 @@ const fieldsByFormType = {
 
 const serviceByFormType: Partial<Record<LeadFormType, ServiceSlug>> = {
   "sitios-web": "sitios-web",
+  "tiendas-online": "tiendas-online",
   "software-a-medida": "software-a-medida",
   automatizacion: "automatizacion-de-procesos",
   mvp: "desarrollo-mvp",
@@ -129,6 +136,10 @@ export const leadFieldLabels: Record<string, string> = {
   websiteGoal: "Objetivo del sitio",
   servicesToShow: "Servicios o productos a mostrar",
   contentManagement: "Administración de contenido",
+  currentStore: "Tienda actual",
+  storeGoal: "Objetivo de la tienda",
+  catalogSize: "Cantidad de productos",
+  paymentMethods: "Medios de pago",
   process: "Proceso a digitalizar",
   currentMethod: "Cómo se realiza hoy",
   participants: "Personas que participan",
@@ -223,6 +234,7 @@ export class LeadSpamError extends Error {
 const formTypeNames: Record<LeadFormType, string> = {
   general: "Evaluación general",
   "sitios-web": "Sitios web",
+  "tiendas-online": "Tiendas online",
   "software-a-medida": "Software a medida",
   automatizacion: "Automatización de procesos",
   mvp: "Desarrollo de MVP",
