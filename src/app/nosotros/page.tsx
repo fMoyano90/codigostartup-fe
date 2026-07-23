@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import { RouteHero } from "@/components/site/RouteHero";
-import { aboutValues, teamGallery } from "@/data/institutional";
+import { aboutValues, founders, teamGallery } from "@/data/institutional";
 import { projects } from "@/data/projects";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -70,22 +70,38 @@ export default function AboutPage() {
 
       <section className="about-team-section" aria-labelledby="about-team-heading">
         <div className="service-page-container">
-          <div className="about-team-heading">
-            <SectionHeader
-              eyebrow="El equipo"
-              title="Personas que conectan negocio, experiencia y tecnología"
-              description="El trabajo combina estrategia, UX/UI, contenido, desarrollo, arquitectura, seguridad y evolución de producto según lo que cada proyecto necesita."
-              headingId="about-team-heading"
-            />
-            <div className="project-editorial-placeholder">
-              <span>Pendiente editorial</span>
-              <p>Publicar nombres, cargos y trayectorias individuales cuando exista información validada para cada perfil.</p>
-            </div>
+          <SectionHeader
+            eyebrow="El equipo"
+            title="Personas que conectan negocio, experiencia y tecnología"
+            description="El trabajo combina estrategia, UX/UI, contenido, desarrollo, arquitectura, seguridad y evolución de producto según lo que cada proyecto necesita."
+            headingId="about-team-heading"
+          />
+          <div className="founders-grid">
+            {founders.map((founder) => (
+              <div key={founder.name} className="founder-card">
+                <div className="founder-photo">
+                  <Image src={founder.image.src} alt={founder.image.alt} fill sizes="64px" />
+                </div>
+                <div className="founder-info">
+                  <span className="founder-name">{founder.name}</span>
+                  <span className="founder-role">{founder.role}</span>
+                  <p className="founder-bio">{founder.bio}</p>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="about-team-gallery">
             {teamGallery.map((image, index) => (
-              <figure key={image.src} className={`about-team-photo about-team-photo--${index + 1}`}>
-                <Image src={image.src} alt={image.alt} fill sizes="(max-width: 680px) 100vw, 50vw" />
+              <figure
+                key={image.src}
+                className={`about-team-photo about-team-photo--${(index % 8) + 1}`}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(max-width: 680px) 45vw, (max-width: 1080px) 30vw, 18vw"
+                />
               </figure>
             ))}
           </div>
@@ -136,7 +152,7 @@ export default function AboutPage() {
               headingId="about-product-heading"
             />
           </div>
-          <ProjectCard project={ownProduct} />
+          <ProjectCard project={ownProduct} colorLogo />
         </div>
       </section>
 

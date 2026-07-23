@@ -24,6 +24,7 @@ const projectData: Project[] = [
     testimonial: {
       quote: "Estoy muy contento con el trabajo de Código tanto en desarrollo como su modalidad de trabajo; ágil, limpia y eficaz. El trabajo por parte de Código nos ha permitido validar nuestro MVP, paso crucial para el desarrollo profesional de nuestra Startup.",
       author: "Christian Solar, Gerente General",
+      photo: { src: "/testimonios/subtech.jpg", alt: "Christian Solar, Gerente General de SubTech" },
     },
     relatedServices: ["software-a-medida"],
     caseStudy: {
@@ -63,6 +64,7 @@ const projectData: Project[] = [
     testimonial: {
       quote: "Trabajar con los chicos de código startup ha Sido un gran avance en mi proyecto como coach de entrenamiento debido a que con ellos mejoramos mi sistema completo a través de una app móvil exclusiva para mis alumnos y clientes.",
       author: "Jaime Valero, Coach & Founder",
+      photo: { src: "/testimonios/entrena.png", alt: "Jaime Valero, Coach & Founder de Entrena" },
     },
     relatedServices: ["desarrollo-mvp", "aplicaciones-web", "aplicaciones-moviles"],
     caseStudy: {
@@ -109,6 +111,7 @@ const projectData: Project[] = [
     testimonial: {
       quote: "Codigo Startup nos acompañó desde un simple MVP hasta una plataforma robusta integrada con SII. Su enfoque evolutivo nos permitió crecer paso a paso, y ahora estamos listos para el siguiente paso con inventarios y bodegas.",
       author: "Roberto Silva, Gerente General",
+      photo: { src: "/testimonios/nextdrill.jpg", alt: "Roberto Silva, Gerente General de NextDrill Admin" },
     },
     relatedServices: ["software-a-medida", "desarrollo-mvp", "aplicaciones-web"],
     caseStudy: {

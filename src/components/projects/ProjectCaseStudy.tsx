@@ -129,7 +129,14 @@ export function ProjectCaseStudy({ project, relatedServices, relatedArticles }: 
             {project.testimonial ? (
               <blockquote className="project-case-testimonial">
                 <p>“{project.testimonial.quote}”</p>
-                <cite>{project.testimonial.author}</cite>
+                <footer className="project-case-testimonial-footer">
+                  {project.testimonial.photo && (
+                    <span className="testimonial-avatar">
+                      <Image src={project.testimonial.photo.src} alt={project.testimonial.photo.alt} fill sizes="40px" />
+                    </span>
+                  )}
+                  <cite>{project.testimonial.author}</cite>
+                </footer>
               </blockquote>
             ) : (
               <EditorialPlaceholder>Validar un testimonio o definir editorialmente si no corresponde.</EditorialPlaceholder>

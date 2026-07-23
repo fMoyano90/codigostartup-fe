@@ -97,9 +97,51 @@ export const aboutValues = [
   },
 ];
 
+export type Founder = {
+  name: string;
+  role: string;
+  bio: string;
+  location: string;
+  image: { src: string; alt: string };
+};
+
+export const founders: Founder[] = [
+  {
+    name: "Andres Rojas",
+    role: "Product Manager · UX/UI Designer",
+    bio: "Publicidad y Adm de empresas · +15 años de experiencia integrando estrategia de negocio, diseño de experiencia y arquitectura de datos.",
+    location: "Chile",
+    image: { src: "/founders/andres-rojas.png", alt: "Andres Rojas, cofundador de Código Startup" },
+  },
+  {
+    name: "Felipe Moyano",
+    role: "Software Engineer & AI Solutions Architect",
+    bio: "+10 años diseñando y construyendo soluciones tecnológicas para minería, aeronáutica, retail y transformación digital empresarial.",
+    location: "Chile",
+    image: { src: "/founders/felipe-moyano.png", alt: "Felipe Moyano, cofundador de Código Startup" },
+  },
+];
+
 export const teamGallery = [
   { src: "/nosotros/gallery-2.jpeg", alt: "Dos integrantes de Código Startup en una actividad exterior" },
   { src: "/nosotros/gallery-4.jpeg", alt: "Integrantes de Código Startup en un encuentro de emprendimiento" },
   { src: "/nosotros/gallery-5.jpeg", alt: "Dos integrantes de Código Startup en una actividad empresarial" },
   { src: "/nosotros/gallery-6.jpeg", alt: "Integrantes de Código Startup durante una sesión de trabajo con un computador portátil" },
+  { src: "/nosotros/gallery-3.jpeg", alt: "Stand de Clima Digital en una feria de emprendimiento al aire libre" },
+  { src: "/nosotros/gallery-7.jpeg", alt: "Integrante de Código Startup siendo entrevistado en un stand de Entel Empresas" },
+  { src: "/nosotros/gallery-8.jpg", alt: "Integrantes de Código Startup revisando código en un taller de trabajo" },
+  { src: "/nosotros/gallery-9.jpg", alt: "Notebooks con código y una terminal abiertos en un espacio de trabajo" },
+  { src: "/nosotros/gallery-10.jpg", alt: "Robot cuadrúpedo exhibido en una feria tecnológica" },
+  { src: "/nosotros/gallery-12.jpg", alt: "Stand de Clima Digital para Codelco con visitantes en una feria industrial" },
+  { src: "/nosotros/gallery-13.jpg", alt: "Estación de herramientas y notebooks en un stand de feria industrial" },
+  { src: "/nosotros/gallery-14.jpg", alt: "Integrante de Código Startup conversando con una visitante en una feria tecnológica" },
+  { src: "/nosotros/gallery-17.jpg", alt: "Integrante de Código Startup en un stand sobre inteligencia artificial aplicada a la minería" },
+  { src: "/nosotros/gallery-19.jpg", alt: "Integrante de Código Startup en la salida de la feria Expomin" },
+  { src: "/nosotros/gallery-20.jpg", alt: "Integrante de Código Startup presentando en el evento TIM" },
+  { src: "/nosotros/gallery-21.jpg", alt: "Asistentes conversando en el espacio de networking de un evento" },
+  { src: "/nosotros/gallery-22.jpg", alt: "Sala de estar de un evento corporativo con asistentes conversando al fondo" },
+  { src: "/nosotros/gallery-23.jpg", alt: "Auditorio de una charla del encuentro Ecosistema" },
+  { src: "/nosotros/gallery-24.jpg", alt: "Charla del Programa Chrysalis Connect ante una audiencia" },
+  { src: "/nosotros/gallery-25.jpg", alt: "Equipo recibiendo un certificado en la premiación Valparaíso Despega" },
+  { src: "/nosotros/gallery-26.jpeg", alt: "Panel de conversación en un evento de Kibernum IT Academy" },
 ];

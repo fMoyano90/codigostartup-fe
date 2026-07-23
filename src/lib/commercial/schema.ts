@@ -152,6 +152,7 @@ const metricSchema = z.strictObject({
 const testimonialSchema = z.strictObject({
   quote: z.string().min(1),
   author: z.string().min(1),
+  photo: z.strictObject({ src: z.string().min(1), alt: z.string().min(1) }).optional(),
 });
 
 const projectGalleryItemSchema = z.strictObject({

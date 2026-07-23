@@ -52,7 +52,7 @@ export default function ProjectsIndexPage() {
             <Link href="/nosotros" className="home-text-link">Conocer más sobre Código Startup →</Link>
           </div>
           <div className="project-card-grid projects-own-grid">
-            {ownProducts.map((project) => <ProjectCard key={project.slug} project={project} />)}
+            {ownProducts.map((project) => <ProjectCard key={project.slug} project={project} colorLogo />)}
           </div>
         </div>
       </section>

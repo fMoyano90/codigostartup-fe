@@ -14,7 +14,7 @@ export function CategoryFilter({
         href="/blog"
         className={`category-chip ${!activeSlug ? "category-chip--active" : ""}`}
       >
-        Todos
+        Inicio
       </Link>
       {categories.map((category) => (
         <Link
