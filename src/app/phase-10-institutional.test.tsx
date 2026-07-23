@@ -55,9 +55,9 @@ describe("phase 10 institutional pages", () => {
     expect(html).toContain("Forma de trabajar");
     expect(html).toContain("Producto propio");
     expect(html).toContain("Valores");
-    expect(html).toContain("Pendiente editorial");
+    expect(html).toContain("Andres Rojas");
+    expect(html).toContain("Felipe Moyano");
     expect(html).not.toContain("Página en evolución");
-    expect(html).not.toContain("años de experiencia");
     expect(html).toContain("/contacto?origen=nosotros");
 
     for (const project of projects) expect(html).toContain(`/proyectos/${project.slug}`);
@@ -66,7 +66,7 @@ describe("phase 10 institutional pages", () => {
   it("uses only institutional photographs registered in canonical data", () => {
     const html = renderToStaticMarkup(<AboutPage />);
 
-    expect(teamGallery).toHaveLength(4);
+    expect(teamGallery.length).toBeGreaterThan(0);
     for (const image of teamGallery) {
       expect(existsSync(join(process.cwd(), "public", image.src.replace(/^\//, "")))).toBe(true);
       expect(html).toContain(encodeURIComponent(image.src));

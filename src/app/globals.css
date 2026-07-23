@@ -5392,13 +5392,31 @@ a {
   right: 0;
   left: 0;
   border-bottom: 1px solid transparent;
+  transition: border-color 0.35s;
+}
+
+/*
+ * The solid background lives on a ::before layer, not on .site-header
+ * itself. backdrop-filter on an element creates a new containing block for
+ * its position:fixed descendants (.site-nav-mobile, .site-solutions-menu),
+ * which would break their viewport-relative positioning if applied here.
+ */
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: transparent;
-  transition: background 0.35s, border-color 0.35s, box-shadow 0.35s;
+  transition: background 0.35s, box-shadow 0.35s;
 }
 
 .site-header--solid,
 .site-header--menu-open {
   border-color: rgba(255, 255, 255, 0.08);
+}
+
+.site-header--solid::before,
+.site-header--menu-open::before {
   background: rgba(10, 10, 10, 0.82);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.32);
   backdrop-filter: blur(28px) saturate(160%);
@@ -6476,6 +6494,7 @@ a {
   .site-header-bar {
     width: min(100% - 2rem, 1380px);
     min-height: 68px;
+    grid-template-columns: 1fr auto;
   }
 
   .site-header-logo img {
