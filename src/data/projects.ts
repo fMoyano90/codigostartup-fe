@@ -30,7 +30,7 @@ const projectData: Project[] = [
     caseStudy: {
       context: "Proyecto para una operación minera que requiere monitorear maquinarias, vehículos y personas dentro de la mina, nivel por nivel.",
       problem: "En una emergencia, el equipo necesita saber exactamente quién y qué activos están en el interior.",
-      previousState: null,
+      previousState: "Cada supervisor debía revisar manualmente quiénes estaban a su cargo y en qué posición se encontraban para recién así tener una idea de quién podía estar bajo tierra. Sin visibilidad centralizada, el proceso era prácticamente a ciegas.",
       objective: "Dar visibilidad total de lo que ocurre bajo tierra mediante monitoreo en tiempo real.",
       solution: "Una solución de monitoreo en tiempo real de maquinarias, vehículos y personas dentro de una mina.",
       features: [
@@ -38,7 +38,28 @@ const projectData: Project[] = [
         "Monitoreo de vehículos y personas.",
         "Visibilidad por nivel dentro de la mina.",
       ],
-      process: [],
+      process: [
+        {
+          title: "Infraestructura de localización",
+          description: "El cliente instaló redes wifi al interior de la mina y pórticos detectores de ubicación, y nos dio acceso a los datos que estos generaban.",
+        },
+        {
+          title: "Plataforma de consumo y limpieza de datos",
+          description: "Construimos una plataforma que consulta esa información cada cierta cantidad de segundos, la limpia y extrae los datos útiles para el monitoreo.",
+        },
+        {
+          title: "Sensores en los activos",
+          description: "Se instalaron sensores en camionetas, maquinarias y cascos de los trabajadores, lo que permite saber en qué sector se encuentra cada activo.",
+        },
+        {
+          title: "Dashboard en tiempo real",
+          description: "El dashboard funciona en tiempo real, con mapas referenciales y un plano de la mina, para que la gerencia pueda ver todo desde su computador.",
+        },
+        {
+          title: "Evolución continua",
+          description: "El proyecto se sigue mejorando hasta la fecha.",
+        },
+      ],
       result: "El testimonio del cliente confirma que el trabajo permitió validar el MVP de SubTech.",
       gallery: [],
       relatedArticles: [],
@@ -68,9 +89,9 @@ const projectData: Project[] = [
     },
     relatedServices: ["desarrollo-mvp", "aplicaciones-web", "aplicaciones-moviles"],
     caseStudy: {
-      context: "Plataforma digital para coaches y sus alumnos, orientada a organizar clases, seguimiento y evaluaciones.",
-      problem: null,
-      previousState: null,
+      context: "Plataforma digital para coaches y sus alumnos, orientada a organizar clases, seguimiento y evaluaciones. Se construyó como SaaS, pensando también en ofrecerla a otros coaches para potenciar sus propios servicios.",
+      problem: "El coach no podía saber con anticipación quiénes asistirían a cada clase: a veces llegaba mucha gente y no alcanzaban los recursos para entrenar a todos, otras veces llegaba poca. Todo se coordinaba por WhatsApp, sin métricas, evaluaciones ni forma de que el alumno viera su progreso diario.",
+      previousState: "Todo funcionaba por WhatsApp y planillas de Excel: los alumnos no podían medir su progreso y el coach no sabía cuántos asistirían a cada clase, lo que dificultaba planificarlas.",
       objective: "Mantener cada sesión registrada y hacer visible el progreso para el coach y el atleta.",
       solution: "Una plataforma para gestionar alumnos, clases, progreso y evaluaciones de fuerza, movilidad y carga.",
       features: [
@@ -79,8 +100,21 @@ const projectData: Project[] = [
         "Evaluaciones de fuerza, movilidad y carga.",
         "Experiencias diferenciadas para coach y alumno.",
       ],
-      process: [],
-      result: null,
+      process: [
+        {
+          title: "Del concepto al MVP",
+          description: "El cliente llegó con muchas ideas y quería una aplicación grande. Lo guiamos para bajar esa idea a un MVP enfocado en lo esencial.",
+        },
+        {
+          title: "Iteración con feedback real",
+          description: "Con el MVP construido, pudo solicitar feedback muy rápidamente, lo que permitió lograr una app más pulida y adaptada a las verdaderas necesidades de los alumnos y del coach.",
+        },
+        {
+          title: "Herramienta indispensable",
+          description: "Hoy es una herramienta indispensable en su operación: todos los alumnos la usan y se ha seguido mejorando con el tiempo. Llevamos dos años trabajando con Jaime.",
+        },
+      ],
+      result: "El coach puede ver las métricas de sus alumnos sin perder información y armar mejores planes para su progreso.",
       gallery: [
         {
           src: "/app-mobile-entrena-cel.png",
@@ -161,10 +195,10 @@ const projectData: Project[] = [
     testimonial: null,
     relatedServices: ["software-a-medida", "desarrollo-mvp", "aplicaciones-web", "aplicaciones-moviles"],
     caseStudy: {
-      context: "Producto propio para gestión de liderazgo y cumplimiento normativo del DS44 en la industria minera.",
-      problem: null,
-      previousState: null,
-      objective: null,
+      context: "Núcleo Gestor lleva cerca de dos años en desarrollo. El proyecto fue incubado por Chrysalis, la incubadora de negocios de la Pontificia Universidad Católica de Valparaíso, para la gestión de liderazgo y cumplimiento normativo del DS44 y las principales ISO en la industria minera.",
+      problem: "La gestión de liderazgo y cumplimiento del DS44 dependía de procesos manuales y en papel: documentos que se pierden o dañan, auditorías que consumen horas por la desorganización y decisiones que se toman sin datos en tiempo real.",
+      previousState: "Los formularios y registros se completaban y archivaban en papel, sin trazabilidad digital. Encontrar un documento para una auditoría implicaba revisar archivos físicos desorganizados, y la gerencia no contaba con información actualizada para tomar decisiones.",
+      objective: "Reemplazar la gestión en papel por una plataforma digital con control total, datos en tiempo real y cero papel, que reduzca el tiempo de gestión, agilice las auditorías y mejore el cumplimiento normativo.",
       solution: "Una plataforma con IA entrenada en normativa, aplicación móvil offline y firma electrónica simple.",
       features: [
         "Gestión de liderazgo y cumplimiento del DS44.",
@@ -172,8 +206,25 @@ const projectData: Project[] = [
         "Aplicación móvil con funcionamiento 100% offline.",
         "Firma electrónica simple según la Ley 19.799.",
       ],
-      process: [],
-      result: null,
+      process: [
+        {
+          title: "Incubación en Chrysalis (PUCV)",
+          description: "El proyecto fue incubado con una beca de Chrysalis, la incubadora de negocios de la Pontificia Universidad Católica de Valparaíso, recorriendo el camino del emprendedor para mirar el negocio desde una perspectiva más profesional.",
+        },
+        {
+          title: "Validación con el sector minero",
+          description: "La idea y los módulos de Núcleo Gestor se validaron con jefes de seguridad, jefes de operaciones, gerentes y expertos del área minera, quienes aportaron a su definición.",
+        },
+        {
+          title: "Mentorías especializadas",
+          description: "El equipo recibió mentorías en finanzas, producto digital, tecnología y marketing, además de mentores con startups propias ya en funcionamiento y generando ingresos.",
+        },
+        {
+          title: "Pilotaje activo en minería",
+          description: "El producto se encuentra en pilotaje activo en la industria minera y se sigue perfeccionando con la retroalimentación de los usuarios.",
+        },
+      ],
+      result: "Los usuarios en pilotaje reportan que pueden acceder a información en terreno sin conexión a internet, generar reportes más rápido, capturar evidencia en el lugar y planificar mejor las tareas de cada persona, dejando atrás el papel.",
       gallery: [
         {
           src: "/mockup-nucleo-gestor.png",

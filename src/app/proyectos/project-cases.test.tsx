@@ -38,7 +38,7 @@ describe("phase 9 project cases", () => {
     for (const project of projects) expect(html).toContain(`/proyectos/${project.slug}`);
   });
 
-  it("renders every case section and labels missing information as editorial", async () => {
+  it("renders every case section for every project", async () => {
     for (const project of projects) {
       const html = await renderProject(project.slug);
 
@@ -53,10 +53,17 @@ describe("phase 9 project cases", () => {
       expect(html).toContain("Qué se puede verificar");
       expect(html).toContain("Galería");
       expect(html).toContain("Servicios relacionados");
-      expect(html).toContain("Pendiente editorial");
       expect(html).toContain(`/contacto?proyecto=${project.slug}`);
       expect(html).not.toContain("Página en evolución");
     }
+  });
+
+  it("labels incomplete fields as pending editorial, and only those", async () => {
+    const nextdrill = await renderProject("nextdrill");
+    const nucleo = await renderProject("nucleo-gestor");
+
+    expect(nextdrill).toContain("Pendiente editorial");
+    expect(nucleo).not.toContain("Pendiente editorial");
   });
 
   it("uses only the project galleries explicitly registered in canonical data", async () => {
@@ -77,12 +84,13 @@ describe("phase 9 project cases", () => {
     }
   });
 
-  it("distinguishes testimonials from pending results", async () => {
+  it("distinguishes testimonials from pending fields, and skips the testimonial placeholder for a client-less own product", async () => {
     const entrena = await renderProject("entrena");
+    const nextdrill = await renderProject("nextdrill");
     const nucleo = await renderProject("nucleo-gestor");
 
     expect(entrena).toContain("Jaime Valero, Coach &amp; Founder");
-    expect(entrena).toContain("Agregar resultados verificables");
-    expect(nucleo).toContain("Validar un testimonio o definir editorialmente si no corresponde");
+    expect(nextdrill).toContain("Validar el problema original con el cliente");
+    expect(nucleo).not.toContain("Validar un testimonio o definir editorialmente si no corresponde");
   });
 });

@@ -138,9 +138,9 @@ export function ProjectCaseStudy({ project, relatedServices, relatedArticles }: 
                   <cite>{project.testimonial.author}</cite>
                 </footer>
               </blockquote>
-            ) : (
+            ) : project.kind === "client" ? (
               <EditorialPlaceholder>Validar un testimonio o definir editorialmente si no corresponde.</EditorialPlaceholder>
-            )}
+            ) : null}
           </div>
         </div>
       </section>
