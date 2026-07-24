@@ -170,6 +170,11 @@ const projectCaseStudySchema = z.strictObject({
   features: z.array(z.string().min(1)),
   process: z.array(contentBlockSchema),
   result: z.string().min(1).nullable(),
+  demoVideo: z.strictObject({
+    src: z.string().min(1),
+    poster: z.string().min(1).optional(),
+    caption: z.string().min(1).optional(),
+  }).optional(),
   gallery: z.array(projectGalleryItemSchema),
   relatedArticles: z.array(z.string().min(1)),
 });

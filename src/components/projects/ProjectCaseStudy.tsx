@@ -148,6 +148,20 @@ export function ProjectCaseStudy({ project, relatedServices, relatedArticles }: 
       <section className="project-case-section project-case-section--tinted" aria-labelledby="project-gallery-heading">
         <div className="service-page-container">
           <SectionHeader eyebrow="Galería" title="El producto en contexto" headingId="project-gallery-heading" />
+          {caseStudy.demoVideo && (
+            <figure className="project-gallery-video">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster={caseStudy.demoVideo.poster}
+                className="project-gallery-video-player"
+              >
+                <source src={caseStudy.demoVideo.src} type="video/mp4" />
+              </video>
+              {caseStudy.demoVideo.caption && <figcaption>{caseStudy.demoVideo.caption}</figcaption>}
+            </figure>
+          )}
           {caseStudy.gallery.length > 0 ? (
             <div className="project-gallery-grid">
               {caseStudy.gallery.map((image) => (
@@ -159,9 +173,9 @@ export function ProjectCaseStudy({ project, relatedServices, relatedArticles }: 
                 </figure>
               ))}
             </div>
-          ) : (
+          ) : !caseStudy.demoVideo ? (
             <EditorialPlaceholder>Agregar capturas o mockups validados del proyecto.</EditorialPlaceholder>
-          )}
+          ) : null}
         </div>
       </section>
 

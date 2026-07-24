@@ -58,21 +58,20 @@ describe("phase 9 project cases", () => {
     }
   });
 
-  it("labels incomplete fields as pending editorial, and only those", async () => {
-    const subtech = await renderProject("subtech");
-    const nucleo = await renderProject("nucleo-gestor");
-
-    expect(subtech).toContain("Pendiente editorial");
-    expect(nucleo).not.toContain("Pendiente editorial");
+  it("shows no pending-editorial placeholder now that every case is complete", async () => {
+    for (const project of projects) {
+      const html = await renderProject(project.slug);
+      expect(html).not.toContain("Pendiente editorial");
+    }
   });
 
-  it("uses only the project galleries explicitly registered in canonical data", async () => {
+  it("uses only the project media explicitly registered in canonical data", async () => {
     const subtech = await renderProject("subtech");
     const entrena = await renderProject("entrena");
     const nextdrill = await renderProject("nextdrill");
     const nucleo = await renderProject("nucleo-gestor");
 
-    expect(subtech).toContain("Agregar capturas o mockups validados");
+    expect(subtech).toContain("/subtech-demo.mp4");
     expect(entrena).toContain("%2Fapp-mobile-entrena-cel.png");
     expect(nextdrill).toContain("%2Fmacbookpro-nexdrill.png");
     expect(nucleo).toContain("%2Fmockup-nucleo-gestor.png");
@@ -80,6 +79,9 @@ describe("phase 9 project cases", () => {
     for (const project of projects) {
       for (const image of project.caseStudy.gallery) {
         expect(existsSync(join(process.cwd(), "public", image.src.replace(/^\//, "")))).toBe(true);
+      }
+      if (project.caseStudy.demoVideo) {
+        expect(existsSync(join(process.cwd(), "public", project.caseStudy.demoVideo.src.replace(/^\//, "")))).toBe(true);
       }
     }
   });

@@ -61,6 +61,10 @@ const projectData: Project[] = [
         },
       ],
       result: "El testimonio del cliente confirma que el trabajo permitió validar el MVP de SubTech.",
+      demoVideo: {
+        src: "/subtech-demo.mp4",
+        caption: "Demo del dashboard de monitoreo en tiempo real de SubTech.",
+      },
       gallery: [],
       relatedArticles: [],
     },
