@@ -59,10 +59,10 @@ describe("phase 9 project cases", () => {
   });
 
   it("labels incomplete fields as pending editorial, and only those", async () => {
-    const nextdrill = await renderProject("nextdrill");
+    const subtech = await renderProject("subtech");
     const nucleo = await renderProject("nucleo-gestor");
 
-    expect(nextdrill).toContain("Pendiente editorial");
+    expect(subtech).toContain("Pendiente editorial");
     expect(nucleo).not.toContain("Pendiente editorial");
   });
 
@@ -84,13 +84,13 @@ describe("phase 9 project cases", () => {
     }
   });
 
-  it("distinguishes testimonials from pending fields, and skips the testimonial placeholder for a client-less own product", async () => {
+  it("renders testimonials when present and skips the placeholder for a client-less own product", async () => {
     const entrena = await renderProject("entrena");
     const nextdrill = await renderProject("nextdrill");
     const nucleo = await renderProject("nucleo-gestor");
 
     expect(entrena).toContain("Jaime Valero, Coach &amp; Founder");
-    expect(nextdrill).toContain("Validar el problema original con el cliente");
+    expect(nextdrill).toContain("Roberto Silva, Gerente General");
     expect(nucleo).not.toContain("Validar un testimonio o definir editorialmente si no corresponde");
   });
 });

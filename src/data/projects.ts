@@ -150,8 +150,8 @@ const projectData: Project[] = [
     relatedServices: ["software-a-medida", "desarrollo-mvp", "aplicaciones-web"],
     caseStudy: {
       context: "Panel financiero para empresas que operan con múltiples centros de costo.",
-      problem: null,
-      previousState: null,
+      problem: "Toda la operación financiera se manejaba en una planilla Excel compartida en Drive: al ser editada por muchas personas, generaba inconsistencias constantes. Tampoco existía forma de notificar el vencimiento de facturas por pagar o por cobrar, por lo que seguir operando desde Excel ya era inviable.",
+      previousState: "Todos los gastos y ventas se registraban en una planilla Excel alojada en la nube (Drive), a la que tenía acceso todo el equipo financiero y también el agente de bodega. Con tantas personas editando el mismo documento, coordinar la operación dependía de Excel y de mensajes por WhatsApp.",
       objective: "Dar visibilidad sobre cuánto entra, cuánto sale y cuánto está proyectado, sin depender de una hoja de cálculo.",
       solution: "Una plataforma con caja proyectada, facturación integrada con SII y visibilidad del flujo financiero.",
       features: [
@@ -160,7 +160,24 @@ const projectData: Project[] = [
         "Facturación integrada con SII.",
         "Visibilidad consolidada del flujo financiero.",
       ],
-      process: [],
+      process: [
+        {
+          title: "Construcción con sprints planificados",
+          description: "El desarrollo se hizo muy de la mano con el cliente, con sprints planificados.",
+        },
+        {
+          title: "MVP primero",
+          description: "Se desarrolló primero un MVP que se puso en práctica muy rápido.",
+        },
+        {
+          title: "Iteración con feedback de los operadores",
+          description: "A partir del uso de los propios operadores financieros se fue obteniendo feedback, se añadieron nuevos módulos y se automatizaron ciertos procesos.",
+        },
+        {
+          title: "Pulido hasta la funcionalidad actual",
+          description: "El producto se fue puliendo hasta llegar a una plataforma funcional.",
+        },
+      ],
       result: "El testimonio del cliente confirma la evolución desde un MVP hasta una plataforma integrada con SII.",
       gallery: [
         {
