@@ -246,13 +246,11 @@ const projectData: Project[] = [
         },
       ],
       result: "Los usuarios en pilotaje reportan que pueden acceder a información en terreno sin conexión a internet, generar reportes más rápido, capturar evidencia en el lugar y planificar mejor las tareas de cada persona, dejando atrás el papel.",
-      gallery: [
-        {
-          src: "/mockup-nucleo-gestor.png",
-          alt: "Mockup de la plataforma Núcleo Gestor",
-          caption: "Mockup disponible del producto propio Núcleo Gestor.",
-        },
-      ],
+      demoVideo: {
+        src: "/nucleo-gestor-demo.mp4",
+        caption: "Demo de la plataforma Núcleo Gestor.",
+      },
+      gallery: [],
       relatedArticles: [],
     },
     editorialStatus: "draft",

@@ -74,7 +74,7 @@ describe("phase 9 project cases", () => {
     expect(subtech).toContain("/subtech-demo.mp4");
     expect(entrena).toContain("%2Fapp-mobile-entrena-cel.png");
     expect(nextdrill).toContain("%2Fmacbookpro-nexdrill.png");
-    expect(nucleo).toContain("%2Fmockup-nucleo-gestor.png");
+    expect(nucleo).toContain("/nucleo-gestor-demo.mp4");
 
     for (const project of projects) {
       for (const image of project.caseStudy.gallery) {

@@ -11,6 +11,13 @@ type ProjectCaseStudyProps = {
   relatedArticles: ArticleMetadata[];
 };
 
+function videoMimeType(src: string) {
+  if (src.endsWith(".webm")) return "video/webm";
+  if (src.endsWith(".ogg") || src.endsWith(".ogv")) return "video/ogg";
+  if (src.endsWith(".mov")) return "video/quicktime";
+  return "video/mp4";
+}
+
 function EditorialPlaceholder({ children }: { children: string }) {
   return (
     <aside className="project-editorial-placeholder">
@@ -157,7 +164,7 @@ export function ProjectCaseStudy({ project, relatedServices, relatedArticles }: 
                 poster={caseStudy.demoVideo.poster}
                 className="project-gallery-video-player"
               >
-                <source src={caseStudy.demoVideo.src} type="video/mp4" />
+                <source src={caseStudy.demoVideo.src} type={videoMimeType(caseStudy.demoVideo.src)} />
               </video>
               {caseStudy.demoVideo.caption && <figcaption>{caseStudy.demoVideo.caption}</figcaption>}
             </figure>
