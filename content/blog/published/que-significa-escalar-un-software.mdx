@@ -92,8 +92,8 @@ Consiste en agregar más servidores en lugar de hacer uno más grande. La carga 
 
 **Desventaja:** Requiere que el software esté diseñado para funcionar en múltiples máquinas. No cualquier aplicación puede simplemente "repartirse" entre servidores sin cambios en su arquitectura.
 
-<Callout variant="tip" title="La mayoría de las empresas empiezan con escalabilidad vertical"
-  >No necesitás una arquitectura distribuida desde el día uno. Para la mayoría de los proyectos en etapa temprana, un solo servidor bien dimensionado es suficiente. La escalabilidad horizontal se vuelve relevante cuando el crecimiento ya es una realidad, no una posibilidad. El artículo sobre [qué es una arquitectura de software](/blog/que-es-una-arquitectura-de-software) explica cómo diseñar pensando en el futuro sin pagar el costo hoy.
+<Callout variant="tip" title="La mayoría de las empresas empiezan con escalabilidad vertical">
+  No necesitás una arquitectura distribuida desde el día uno. Para la mayoría de los proyectos en etapa temprana, un solo servidor bien dimensionado es suficiente. La escalabilidad horizontal se vuelve relevante cuando el crecimiento ya es una realidad, no una posibilidad. El artículo sobre [qué es una arquitectura de software](/blog/que-es-una-arquitectura-de-software) explica cómo diseñar pensando en el futuro sin pagar el costo hoy.
 </Callout>
 
 ## ¿Qué partes del software se escalan?
@@ -118,8 +118,8 @@ No siempre es obvio que el problema sea de escalabilidad. Estas son algunas señ
 - **El sistema falla en momentos de alta demanda.** Fin de mes, campañas promocionales, horas pico. Justo cuando más se necesita, el sistema se cae.
 - **El equipo técnico está constantemente "apagando incendios".** Pasando datos entre servidores, limpiando tablas, reiniciando servicios.
 
-<Callout variant="warning" title="Escalar antes de tiempo es sobreinversión"
-  >Preparar un software para una escala que nunca llega es una forma de desperdicio. La clave está en diseñar de modo que escalar sea posible cuando se necesite, sin pagar el costo completo de una arquitectura distribuida desde el inicio. Preguntale a cualquier founder que construyó para un millón de usuarios y nunca pasó de mil.
+<Callout variant="warning" title="Escalar antes de tiempo es sobreinversión">
+  Preparar un software para una escala que nunca llega es una forma de desperdicio. La clave está en diseñar de modo que escalar sea posible cuando se necesite, sin pagar el costo completo de una arquitectura distribuida desde el inicio. Preguntale a cualquier founder que construyó para un millón de usuarios y nunca pasó de mil.
 </Callout>
 
 ## ¿Cómo se prepara un software para escalar?

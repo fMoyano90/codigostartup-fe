@@ -148,4 +148,12 @@ describe("validateArticleContent", () => {
     expect(draftInPublished.issues.some((issue) => issue.message.includes("no corresponde a la carpeta"))).toBe(true);
     expect(publishedInDrafts.issues.some((issue) => issue.message.includes("no corresponde a la carpeta"))).toBe(true);
   });
+
+  it("flags an unclosed Callout tag", () => {
+    const raw =
+      frontmatterBlock() +
+      `${longEnoughBody()}\n\n<Callout variant="tip" title="Unclosed"\n  Text\n</Callout>\n\n[link](/blog/otro) [link2](/blog/categoria/x)`;
+    const result = validateArticleContent(raw, "titulo-de-prueba", "drafts", ["titulo-de-prueba"]);
+    expect(result.issues.some((issue) => issue.message.includes("Etiqueta <Callout ...> malformada"))).toBe(true);
+  });
 });

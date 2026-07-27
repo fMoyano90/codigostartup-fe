@@ -136,6 +136,14 @@ export function validateArticleContent(
     });
   }
 
+  if (/<Callout[^>\n]*$/m.test(body)) {
+    issues.push({
+      level: "error",
+      message:
+        "Etiqueta <Callout ...> malformada: la etiqueta de apertura debe cerrarse con '>' en la misma línea.",
+    });
+  }
+
   const internalLinks = countInternalLinks(body);
   if (internalLinks < editorialRules.minimumInternalLinks) {
     issues.push({

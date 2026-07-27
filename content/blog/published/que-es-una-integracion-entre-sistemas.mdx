@@ -119,8 +119,8 @@ Un sistema publica un evento ("se creó un pedido") y otros sistemas que están 
 **Ventaja:** Muy flexible. Podés agregar o quitar sistemas sin modificar a los demás.
 **Desventaja:** Más compleja de implementar y de depurar cuando algo sale mal.
 
-<Callout variant="tip" title="No todas las integraciones necesitan ser en tiempo real"
-  >A veces alcanza con una sincronización programada: cada 15 minutos, el sistema A exporta un archivo que el sistema B importa. No es elegante, pero para muchos casos de uso es suficiente. La perfección no debería ser enemiga de lo que funciona.
+<Callout variant="tip" title="No todas las integraciones necesitan ser en tiempo real">
+  A veces alcanza con una sincronización programada: cada 15 minutos, el sistema A exporta un archivo que el sistema B importa. No es elegante, pero para muchos casos de uso es suficiente. La perfección no debería ser enemiga de lo que funciona.
 </Callout>
 
 ## ¿Qué se necesita para integrar dos sistemas?
@@ -147,8 +147,8 @@ Técnicamente, una integración requiere que ambos sistemas tengan la capacidad 
 
 **ERP + bancos.** Las conciliaciones bancarias se automatizan: los movimientos del banco se comparan con los registros del ERP sin que nadie tenga que hacerlo manualmente.
 
-<Callout variant="warning" title="Integrar sin entender los procesos no funciona"
-  >Antes de integrar dos sistemas, hay que entender qué información debe fluir, en qué dirección, con qué frecuencia y qué hacer cuando algo falla. Una integración mal diseñada puede ser peor que no tener integración: puede generar datos inconsistentes que nadie detecta hasta que es demasiado tarde.
+<Callout variant="warning" title="Integrar sin entender los procesos no funciona">
+  Antes de integrar dos sistemas, hay que entender qué información debe fluir, en qué dirección, con qué frecuencia y qué hacer cuando algo falla. Una integración mal diseñada puede ser peor que no tener integración: puede generar datos inconsistentes que nadie detecta hasta que es demasiado tarde.
 </Callout>
 
 ## ¿Integración o automatización?
