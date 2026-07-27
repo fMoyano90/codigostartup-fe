@@ -53,6 +53,30 @@ export const blogCategories: BlogCategory[] = [
     description:
       "Proyectos reales, decisiones tomadas y resultados obtenidos por empresas que ya pasaron por esto.",
   },
+  {
+    slug: "marketing-y-crecimiento-digital",
+    name: "Marketing y crecimiento digital",
+    description:
+      "SEO, LLM SEO, generación de leads, landing pages, contenido, automatización comercial y estrategias para atraer más clientes usando tecnología.",
+  },
+  {
+    slug: "transformacion-digital",
+    name: "Transformación digital",
+    description:
+      "Cómo digitalizar una empresa, modernizar procesos, adoptar nuevas tecnologías y liderar el cambio de forma gradual y sostenible.",
+  },
+  {
+    slug: "conceptos-tecnologicos",
+    name: "Conceptos tecnológicos",
+    description:
+      "Explicaciones simples y sin tecnicismos sobre los conceptos que todo empresario debería conocer para tomar mejores decisiones tecnológicas.",
+  },
+  {
+    slug: "comparativas-y-decisiones",
+    name: "Comparativas y decisiones",
+    description:
+      "Comparaciones objetivas entre tecnologías, herramientas y enfoques para ayudarte a elegir la mejor opción según las necesidades de tu empresa.",
+  },
 ];
 
 export const blogCategorySlugs = blogCategories.map((c) => c.slug);

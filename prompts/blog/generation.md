@@ -25,7 +25,7 @@ Usa este prompt para convertir un tema de `content/sources/topics/*.yml` en un a
 ## Antes de escribir
 
 1. Lee el tema completo en el archivo YAML correspondiente (`id`, `title`, `intent`, `funnelStage`, `audience`, `objective`, `notes`).
-2. Lee las categorías disponibles en `src/config/blog-categories.ts` — usa únicamente una de esas 8 categorías, y que coincida con la `category` del listado de temas.
+2. Lee las categorías disponibles en `src/config/blog-categories.ts` — usa únicamente una de esas 12 categorías, y que coincida con la `category` del listado de temas.
 3. Lee las reglas editoriales en `src/config/editorial-rules.ts` (mínimo/máximo de palabras, mínimo de enlaces internos).
 4. Lee el esquema de frontmatter en `src/lib/blog/article-schema.ts` (`BlogArticleFrontmatter`).
 5. Revisa los artículos ya existentes en `content/blog/drafts/` y `content/blog/published/` para no duplicar tema, título o slug.
@@ -41,7 +41,7 @@ title: "..."
 slug: "<mismo id del tema>"
 description: "..."
 excerpt: "..."
-category: "<una de las 8 categorías válidas, igual a la del listado de temas>"
+category: "<una de las 12 categorías válidas, igual a la del listado de temas>"
 tags: ["..."]
 audience: [...]        # copia el audience del tema
 intent: "..."           # copia el intent del tema

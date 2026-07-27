@@ -1,0 +1,272 @@
+id: transformacion-digital-01
+name: Transformación digital
+category: transformacion-digital
+topics:
+  - id: que-es-la-transformacion-digital
+    title: Qué es la transformación digital
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es la transformación digital en términos de negocio, no
+      técnicos, y por qué va más allá de comprar software o hacer una página
+      web.
+    notes:
+      - Diferenciar entre digitalizar un proceso y transformar el modelo de
+        negocio.
+      - No vender transformación digital como una receta mágica — implica cambio
+        cultural, no solo tecnología.
+  - id: como-comenzar-una-transformacion-digital-en-una-pyme
+    title: Cómo comenzar una transformación digital en una pyme
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Dar un punto de partida concreto para pymes que quieren iniciar su
+      transformación digital sin presupuestos ni equipos grandes.
+    notes:
+      - "Empezar por lo que duele: el proceso más manual, más repetitivo o con
+        más errores."
+      - No recomendar inversiones grandes desde el día uno.
+  - id: que-procesos-digitalizar-primero
+    title: Qué procesos digitalizar primero
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ayudar a identificar qué procesos de la empresa tienen más retorno al
+      ser digitalizados y por dónde empezar.
+    notes:
+      - "Criterios: volumen, repetitividad, costo del error, dependencia de
+        personas clave."
+      - Priorizar procesos que liberen tiempo del equipo.
+  - id: como-eliminar-tareas-manuales-en-tu-empresa
+    title: Cómo eliminar tareas manuales en tu empresa
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Mostrar un método práctico para identificar y reemplazar tareas
+      manuales repetitivas por procesos digitales o automatizados.
+    notes:
+      - Clasificar tareas por frecuencia e impacto.
+      - Diferenciar entre eliminar, automatizar o simplificar.
+  - id: como-identificar-oportunidades-de-automatizacion
+    title: Cómo identificar oportunidades de automatización
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Enseñar a detectar procesos candidatos a automatización sin necesidad
+      de un diagnóstico externo.
+    notes:
+      - "Señales: tareas que una persona hace a diario, que requieren copiar y
+        pegar datos, que generan cuellos de botella."
+  - id: como-reducir-el-uso-de-planillas-excel
+    title: Cómo reducir el uso de planillas Excel
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ayudar a empresas que dependen excesivamente de Excel a migrar a
+      herramientas más adecuadas sin interrumpir la operación.
+    notes:
+      - No demonizar Excel — es una herramienta válida hasta cierto punto.
+      - Dar señales de cuándo Excel ya no es suficiente.
+  - id: como-integrar-las-distintas-areas-de-una-empresa
+    title: Cómo integrar las distintas áreas de una empresa
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar cómo conectar sistemas y procesos entre áreas (ventas,
+      operaciones, finanzas) para eliminar silos de información.
+    notes:
+      - "El problema real no es técnico, es de datos: cada área tiene su propia
+        versión de la verdad."
+  - id: que-indicadores-muestran-que-necesitas-digitalizar-procesos
+    title: Qué indicadores muestran que necesitas digitalizar procesos
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Listar señales cuantitativas y cualitativas que indican que un
+      proceso manual ya no da abasto y justifica una inversión en
+      digitalización.
+    notes:
+      - "Indicadores: tiempo excesivo, errores recurrentes, información
+        duplicada, dependencia de una persona."
+  - id: como-preparar-a-tu-equipo-para-adoptar-nuevas-tecnologias
+    title: Cómo preparar a tu equipo para adoptar nuevas tecnologías
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Guiar en el proceso de gestionar el cambio humano antes, durante y
+      después de implementar una nueva tecnología en la empresa.
+    notes:
+      - Incluir comunicación, capacitación, involucramiento temprano y manejo de
+        resistencia.
+      - El factor humano es la causa más común de fracaso en transformación
+        digital.
+  - id: errores-comunes-en-proyectos-de-transformacion-digital
+    title: Errores comunes en proyectos de transformación digital
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Listar los errores más frecuentes que cometen las empresas al
+      emprender proyectos de transformación digital y cómo evitarlos.
+    notes:
+      - "Errores: empezar sin diagnóstico, comprar software antes de entender el
+        proceso, no involucrar al equipo, medir lo incorrecto."
+  - id: como-priorizar-proyectos-tecnologicos
+    title: Cómo priorizar proyectos tecnológicos
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Dar un marco simple para priorizar iniciativas tecnológicas cuando
+      hay múltiples necesidades y recursos limitados.
+    notes:
+      - "Criterios: impacto en el negocio, urgencia, esfuerzo de implementación,
+        riesgos."
+  - id: como-medir-el-exito-de-una-transformacion-digital
+    title: Cómo medir el éxito de una transformación digital
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué métricas usar para evaluar si un proceso de
+      transformación digital está generando resultados reales.
+    notes:
+      - "Métricas: tiempo ahorrado, errores reducidos, satisfacción del equipo,
+        retorno de inversión."
+      - Diferenciar entre métricas de adopción y métricas de impacto.
+  - id: digitalizacion-vs-automatizacion-cual-es-la-diferencia
+    title: "Digitalización vs automatización: cuál es la diferencia"
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Aclarar la diferencia entre digitalizar un proceso (pasarlo a formato
+      digital) y automatizarlo (que se ejecute sin intervención humana).
+    notes:
+      - Digitalizar es el paso previo a automatizar. No se puede automatizar un
+        proceso que no está digitalizado.
+  - id: como-crear-una-hoja-de-ruta-tecnologica-para-tu-empresa
+    title: Cómo crear una hoja de ruta tecnológica para tu empresa
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Guiar en la creación de un plan tecnológico a mediano plazo que
+      alinee las inversiones en tecnología con los objetivos del negocio.
+    notes:
+      - "Incluir: diagnóstico, prioridades, timeline, presupuesto, responsables."
+      - La hoja de ruta debe ser viva, no un documento que se archiva.
+  - id: como-reducir-costos-mediante-tecnologia
+    title: Cómo reducir costos mediante tecnología
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Mostrar cómo la tecnología puede reducir costos operativos sin
+      requerir grandes inversiones iniciales.
+    notes:
+      - "Áreas: automatización de tareas repetitivas, eliminación de papel,
+        centralización de información, reducción de errores."
+  - id: como-mejorar-la-colaboracion-entre-equipos-con-software
+    title: Cómo mejorar la colaboración entre equipos con software
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - gerentes
+    objective: Explicar cómo elegir y adoptar herramientas digitales que mejoren la
+      colaboración entre equipos sin generar caos ni saturación.
+    notes:
+      - No recomendar herramientas específicas — hablar de criterios y buenas
+        prácticas.
+  - id: que-herramientas-digitales-necesita-una-empresa-en-crecimiento
+    title: Qué herramientas digitales necesita una empresa en crecimiento
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Listar las categorías de herramientas digitales esenciales para una
+      empresa que está creciendo, sin recomendar marcas específicas.
+    notes:
+      - "Categorías: gestión de proyectos, CRM, comunicación, almacenamiento,
+        facturación, reporting."
+  - id: como-evitar-la-resistencia-al-cambio-en-proyectos-tecnologicos
+    title: Cómo evitar la resistencia al cambio en proyectos tecnológicos
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Dar estrategias prácticas para reducir la resistencia del equipo
+      cuando se implementan nuevas tecnologías o procesos digitales.
+    notes:
+      - Incluir comunicación temprana, involucramiento, capacitación y
+        celebración de logros tempranos.
+  - id: casos-de-exito-de-transformacion-digital
+    title: Casos de éxito de transformación digital
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Compartir ejemplos reales (anónimos o con permiso) de empresas que
+      transformaron sus procesos con tecnología y los resultados que obtuvieron.
+    notes:
+      - Enfocar en el problema de negocio, no en la tecnología usada.
+      - Incluir métricas concretas de antes y después.
+  - id: checklist-para-iniciar-la-transformacion-digital-de-una-empresa
+    title: Checklist para iniciar la transformación digital de una empresa
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Proveer un checklist práctico con los pasos clave para iniciar un
+      proceso de transformación digital sin sentirse abrumado.
+    notes:
+      - "Incluir: diagnóstico, priorización, equipo, hoja de ruta, métricas,
+        comunicación."

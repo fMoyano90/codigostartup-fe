@@ -1,0 +1,278 @@
+id: marketing-y-crecimiento-digital-01
+name: Marketing y crecimiento digital
+category: marketing-y-crecimiento-digital
+topics:
+  - id: que-es-el-seo-y-por-que-sigue-siendo-importante
+    title: Qué es el SEO y por qué sigue siendo importante
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es el SEO, cómo funciona y por qué sigue siendo
+      relevante para empresas que quieren ser encontradas en buscadores.
+    notes:
+      - Diferenciar entre SEO on-page, off-page y técnico a nivel conceptual.
+      - No entrar en tecnicismos de programación — enfocar en lógica de negocio.
+  - id: que-es-el-llm-seo-y-como-aparecer-en-chatgpt-gemini-y-claude
+    title: Qué es el LLM SEO y cómo aparecer en ChatGPT, Gemini y Claude
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar el concepto de LLM SEO (optimización para modelos de
+      lenguaje) y cómo las empresas pueden aparecer en respuestas de asistentes
+      de IA.
+    notes:
+      - Diferenciar del SEO tradicional — no son keywords sino autoridad,
+        citabilidad y estructura de datos.
+      - Concepto emergente — mantener tono exploratorio, no dogmático.
+  - id: como-generar-leads-desde-tu-sitio-web
+    title: Cómo generar leads desde tu sitio web
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Mostrar estrategias prácticas para convertir visitantes anónimos del
+      sitio web en contactos calificados.
+    notes:
+      - Incluir CTAs, formularios, contenido descargable, chatbots.
+      - No recomendar herramientas específicas — hablar de criterios y tipos de
+        lead magnet.
+  - id: landing-page-vs-sitio-web-cual-necesita-tu-empresa
+    title: "Landing page vs sitio web: cuál necesita tu empresa"
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Diferenciar entre una landing page y un sitio web completo, y ayudar
+      a decidir cuál usar según el objetivo de negocio.
+    notes:
+      - Landing = conversión específica. Sitio web = presencia general y
+        credibilidad.
+      - No posicionar uno como siempre mejor — depende del objetivo.
+  - id: como-crear-una-landing-que-convierta-visitas-en-clientes
+    title: Cómo crear una landing que convierta visitas en clientes
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: "Dar criterios prácticos para diseñar una landing page efectiva:
+      propuesta de valor, llamado a la acción, pruebas sociales y optimización."
+    notes:
+      - No limitarse al diseño visual — hablar de estructura de mensaje, oferta
+        y confianza.
+  - id: como-medir-si-tu-sitio-web-realmente-vende
+    title: Cómo medir si tu sitio web realmente vende
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué métricas indican si un sitio web está cumpliendo su
+      objetivo comercial y cómo interpretarlas.
+    notes:
+      - "Métricas: tasa de conversión, rebote, tiempo en página, leads
+        generados, costo por lead."
+      - Evitar métricas vanidosas como visitas totales sin contexto.
+  - id: como-crear-una-estrategia-de-contenidos-para-empresas
+    title: Cómo crear una estrategia de contenidos para empresas
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Guiar en la creación de una estrategia de contenidos B2B o B2C que
+      genere tráfico, autoridad y leads.
+    notes:
+      - Incluir planificación editorial, tipos de contenido, canales y medición.
+      - Diferenciar entre contenido para atraer y contenido para convertir.
+  - id: como-convertir-un-articulo-en-diez-piezas-de-contenido
+    title: Cómo convertir un artículo en diez piezas de contenido
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Mostrar cómo reutilizar un artículo de blog en múltiples formatos
+      (redes, video, infografía, newsletter, podcast) para maximizar su alcance.
+    notes:
+      - "Enfoque en eficiencia: crear una vez, publicar en varios canales."
+  - id: como-usar-inteligencia-artificial-para-crear-contenido
+    title: Cómo usar inteligencia artificial para crear contenido
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar cómo las empresas pueden usar IA generativa para crear
+      contenido de marketing sin perder calidad ni voz de marca.
+    notes:
+      - Diferenciar entre contenido asistido por IA y contenido completamente
+        generado.
+      - "Incluir riesgos: alucinaciones, falta de originalidad, dependencia
+        tecnológica."
+  - id: que-metricas-de-marketing-realmente-importan
+    title: Qué métricas de marketing realmente importan
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Separar las métricas que impactan el negocio de las métricas vanity
+      que distraen.
+    notes:
+      - Enfatizar métricas de conversión, costo de adquisición, valor de vida
+        del cliente y retorno.
+      - Relacionar con métricas de sitio web para dar contexto.
+  - id: como-automatizar-el-seguimiento-de-potenciales-clientes
+    title: Cómo automatizar el seguimiento de potenciales clientes
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar cómo implementar secuencias automatizadas de seguimiento
+      comercial sin perder la personalización.
+    notes:
+      - "Diferenciar del artículo existente en automatizacion-e-ia: este se
+        enfoca en estrategia de marketing y ventas."
+      - "Incluir conceptos: lead scoring, email sequences y triggers de
+        comportamiento."
+  - id: como-implementar-un-crm-sin-complicaciones
+    title: Cómo implementar un CRM sin complicaciones
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Guiar a empresas que quieren adoptar un CRM sin procesos engorrosos
+      ni implementaciones frustrantes.
+    notes:
+      - No recomendar CRMs específicos — hablar de criterios de selección y
+        pasos de adopción.
+      - "Incluir factores de éxito: datos limpios, equipo alineado, proceso
+        definido."
+  - id: como-mejorar-la-conversion-de-tu-sitio-web
+    title: Cómo mejorar la conversión de tu sitio web
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Dar un marco de optimización de conversión (CRO) para empresas que ya
+      tienen tráfico pero no convierten lo suficiente.
+    notes:
+      - Incluir pruebas A/B, jerarquía visual, claridad del mensaje y reducción
+        de fricción.
+  - id: que-contenido-publicar-segun-la-etapa-de-tu-negocio
+    title: Qué contenido publicar según la etapa de tu negocio
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+      - empresarios
+    objective: Ayudar a elegir qué tipo de contenido crear según si el negocio está
+      en validación, crecimiento o consolidación.
+    notes:
+      - "Etapa temprana: contenido educativo y de autoridad. Etapa crecimiento:
+        casos de éxito y comparativas. Etapa consolidación: contenido de
+        retención y upselling."
+  - id: errores-comunes-en-el-marketing-digital-para-empresas
+    title: Errores comunes en el marketing digital para empresas
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Listar y explicar los errores más frecuentes que cometen las empresas
+      al hacer marketing digital y cómo evitarlos.
+    notes:
+      - "Errores: no definir audiencia, métricas vanity, falta de consistencia,
+        no medir retorno."
+  - id: como-construir-autoridad-en-internet
+    title: Cómo construir autoridad en Internet
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar cómo una empresa puede construir credibilidad y autoridad
+      digital a través de contenido, pruebas sociales y presencia consistente.
+    notes:
+      - "Incluir conceptos: contenido de valor, guest posting, reseñas, casos de
+        éxito, LinkedIn."
+  - id: como-aprovechar-casos-de-exito-para-vender-mas
+    title: Cómo aprovechar casos de éxito para vender más
+    status: generated
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - empresarios
+      - gerentes
+    objective: Mostrar cómo documentar y usar casos de éxito reales como herramienta
+      de venta y construcción de confianza.
+    notes:
+      - Incluir estructura de caso de éxito, canales de difusión y cómo usarlos
+        en el proceso de venta.
+  - id: como-medir-el-retorno-de-una-estrategia-de-contenidos
+    title: Cómo medir el retorno de una estrategia de contenidos
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: "Explicar cómo calcular el ROI de una estrategia de contenidos más
+      allá de las visitas: leads, ventas atribuidas y valor de vida del
+      cliente."
+    notes:
+      - "Métricas: leads generados por contenido, tasa de cierre, costo por
+        lead, ingresos atribuibles."
+  - id: como-atraer-clientes-sin-depender-de-publicidad-pagada
+    title: Cómo atraer clientes sin depender de publicidad pagada
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Mostrar estrategias orgánicas y de bajo costo para generar clientes
+      potenciales sin invertir en anuncios.
+    notes:
+      - "Estrategias: SEO, contenido, networking digital, referidos,
+        partnerships, LinkedIn."
+  - id: checklist-para-mejorar-el-marketing-digital-de-tu-empresa
+    title: Checklist para mejorar el marketing digital de tu empresa
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Proveer un checklist accionable con puntos clave para diagnosticar y
+      mejorar la estrategia de marketing digital de una empresa.
+    notes:
+      - "Incluir: sitio web, SEO, contenido, redes, leads, conversión, medición,
+        automatización."

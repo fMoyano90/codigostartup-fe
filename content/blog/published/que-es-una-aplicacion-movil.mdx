@@ -1,0 +1,156 @@
+---
+title: Qué es una aplicación móvil
+slug: que-es-una-aplicacion-movil
+description: >-
+  Explicación de qué es una app móvil, los tipos (nativa, híbrida) y cuándo
+  tiene sentido desarrollar una para tu negocio.
+excerpt: >-
+  Una aplicación móvil es un programa diseñado para funcionar en un teléfono o
+  tablet. Existen apps nativas (descargadas de la tienda) e híbridas
+  (multiplataforma). Este artículo explica los tipos y cuándo conviene cada uno.
+category: conceptos-tecnologicos
+tags:
+  - aplicación móvil
+  - app nativa
+  - app híbrida
+  - desarrollo móvil
+  - iOS
+  - Android
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+services:
+  - aplicaciones-moviles
+  - software-a-medida
+  - desarrollo-mvp
+cta:
+  type: service
+  target: aplicaciones-moviles
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-27'
+updatedAt: '2026-07-27'
+approvedAt: '2026-07-27'
+publishedAt: '2026-07-27'
+seo:
+  title: Qué es una aplicación móvil y tipos que existen | Código Startup
+  description: >-
+    Explicación de qué es una aplicación móvil, diferencias entre app nativa,
+    híbrida y web, ventajas de cada tipo y cuándo conviene desarrollar una para
+    tu negocio.
+  primaryKeyword: qué es una aplicación móvil
+  secondaryKeywords:
+    - app nativa
+    - app híbrida
+    - desarrollo de apps
+    - iOS vs Android
+    - aplicación móvil para negocios
+relatedArticles:
+  - que-es-una-aplicacion-web
+  - producto-digital-versus-proyecto-de-software-cual-es-la-diferencia
+reviewStatus: pending
+reviewScore: null
+---
+
+Una aplicación móvil —o app— es un programa diseñado específicamente para funcionar en dispositivos móviles: teléfonos inteligentes y tablets. A diferencia de un sitio web al que se accede desde el navegador, una app se descarga, se instala en el dispositivo y puede acceder a funciones del hardware como la cámara, el GPS, los sensores de movimiento y las notificaciones.
+
+Pero no todas las apps son iguales. La forma en que se construyen determina su rendimiento, su costo de desarrollo y su mantenimiento a largo plazo. Entender estas diferencias ayuda a tomar mejores decisiones cuando se evalúa si desarrollar una app para el negocio.
+
+## App nativa: hecha a la medida del dispositivo
+
+Una aplicación nativa está desarrollada específicamente para un sistema operativo: iOS (iPhone) o Android. Usa el lenguaje de programación y las herramientas que cada plataforma exige: Swift o Objective-C para iOS, Kotlin o Java para Android.
+
+**Ventajas:**
+- **Rendimiento óptimo.** La app corre directamente sobre el sistema operativo, sin capas intermedias. Es la opción más rápida y fluida.
+- **Acceso completo al hardware.** Cámara, GPS, acelerómetro, sensores biométricos, Bluetooth: todo está disponible sin limitaciones.
+- **Experiencia de usuario nativa.** La app se ve y se comporta exactamente como espera el usuario en cada plataforma: los gestos, las animaciones, los patrones de navegación son los que el usuario ya conoce.
+- **Mejor integración con el sistema.** Notificaciones push, widgets, sincronización en segundo plano, integración con servicios como Apple Pay o Google Pay.
+
+**Desventajas:**
+- **Costo mayor.** Desarrollar dos apps (una para iOS y otra para Android) implica duplicar el trabajo. No es el doble exacto porque hay lógica compartida, pero sí es significativamente más caro que una app híbrida.
+- **Mantenimiento independiente.** Cada plataforma requiere actualizaciones y correcciones por separado. Si aparece un bug en iOS, hay que arreglarlo en el código de iOS; si aparece en Android, en el de Android.
+- **Equipos especializados.** Necesitás desarrolladores de iOS y desarrolladores de Android. No es fácil encontrar perfiles que dominen ambas plataformas.
+
+<Callout variant="info" title="Para recordar">
+  Una app nativa es como construir dos casas: una con arquitectura española y otra con arquitectura japonesa. Cada una está perfectamente adaptada a su entorno, pero no podés construir las dos con el mismo plano ni con los mismos materiales.
+</Callout>
+
+## App híbrida o multiplataforma: un código, dos plataformas
+
+Las aplicaciones híbridas se desarrollan con un solo código base que funciona tanto en iOS como en Android. Existen dos enfoques principales:
+
+**Híbridas basadas en web.** La app es básicamente un sitio web envuelto en un contenedor nativo. Se ve y funciona como una app, pero la mayor parte del contenido es HTML, CSS y JavaScript renderizado dentro del dispositivo. Ejemplo clásico: aplicaciones hechas con Ionic o Cordova.
+
+**Híbridas con compilación a código nativo.** El código se escribe una vez pero se compila a código nativo para cada plataforma. Ofrecen mejor rendimiento que las basadas en web y acceso más completo al hardware. Ejemplos: React Native (de Meta), Flutter (de Google), Xamarin (de Microsoft).
+
+**Ventajas:**
+- **Un solo equipo de desarrollo.** Con desarrolladores de React Native o Flutter, tenés cubiertas ambas plataformas.
+- **Costo menor.** Aproximadamente un 30-40% menos que desarrollar dos apps nativas por separado.
+- **Mantenimiento unificado.** Las correcciones y actualizaciones se hacen una vez y se aplican a ambas plataformas.
+- **Tiempo de desarrollo más rápido.** Al escribir un solo código, el ciclo de desarrollo se acorta.
+
+**Desventajas:**
+- **Rendimiento ligeramente inferior.** Para la mayoría de las aplicaciones, la diferencia es imperceptible. Pero para apps que requieren gráficos intensivos (juegos, edición de video) o procesamiento en tiempo real, la app nativa sigue siendo superior.
+- **Acceso al hardware con limitaciones.** Aunque los frameworks modernos cubren la mayoría de las funciones del dispositivo, siempre puede haber una funcionalidad nueva del sistema operativo que no esté disponible para el framework hasta meses después.
+- **Dependencia del framework.** Si React Native o Flutter cambian algo que rompe tu app, tenés que esperar a que el equipo del framework lo resuelva. Con código nativo, tenés control total.
+
+<Callout variant="tip" title="El 90% de las apps funcionan bien con híbridas"
+  >La mayoría de las aplicaciones de negocio —gestión de clientes, catálogos, paneles de control, formularios— no necesitan el rendimiento extremo de una app nativa. Para esos casos, una app híbrida bien hecha ofrece la misma experiencia de usuario a un costo significativamente menor.
+</Callout>
+
+## App web progresiva (PWA): el tercer camino
+
+Existe una tercera opción que no es exactamente una app móvil pero se comporta como tal: las Progressive Web Apps (PWA). Son sitios web que, mediante tecnologías modernas, ofrecen una experiencia similar a una app: pueden funcionar offline, enviar notificaciones y agregarse a la pantalla de inicio del teléfono.
+
+**Ventajas:** No requieren pasar por la tienda de aplicaciones (App Store o Google Play), se actualizan automáticamente y el desarrollo es más económico porque es esencialmente una aplicación web.
+
+**Desventajas:** Acceso limitado al hardware del dispositivo, menos visibilidad (no aparecen en las tiendas de apps) y ciertas funcionalidades de iOS están restringidas para las PWA.
+
+Para muchas aplicaciones de negocio, una PWA puede ser la solución más equilibrada: ofrece buena experiencia móvil sin el costo de una app nativa o híbrida.
+
+## ¿App nativa, híbrida o web?
+
+Al momento de decidir, estas preguntas ayudan a orientarse:
+
+**Desarrollá una app nativa si:**
+- El rendimiento es crítico (juegos, edición, realidad aumentada).
+- Necesitás acceso intensivo al hardware del dispositivo (cámara, GPS, sensores).
+- Querés la mejor experiencia de usuario posible en cada plataforma.
+- Tu app es el producto principal de tu negocio, no un complemento.
+
+**Desarrollá una app híbrida si:**
+- Necesitás estar en iOS y Android con presupuesto limitado.
+- Tu app no exige el máximo rendimiento del hardware.
+- Querés mantener un solo equipo de desarrollo.
+- El tiempo de lanzamiento es una prioridad.
+
+**Considerá una aplicación web si:**
+- La mayoría de los usuarios accederán desde computadora o desde el navegador del teléfono.
+- No necesitás funciones avanzadas del dispositivo (cámara, GPS en segundo plano).
+- Querés evitar el proceso de aprobación de las tiendas de apps. El artículo sobre [qué es una aplicación web](/blog/que-es-una-aplicacion-web) profundiza en este enfoque.
+
+<Callout variant="warning" title="No hagas una app solo porque \"hay que tener app\""
+  >Muchas empresas desarrollan una app móvil sin preguntarse si sus usuarios realmente la necesitan. Si tu audiencia usa principalmente tu servicio desde el computador o desde el navegador del teléfono, una aplicación web bien diseñada puede ser suficiente. Una app no es un indicador de modernidad: es una herramienta que resuelve un problema específico.
+</Callout>
+
+## iOS vs. Android: ¿por cuál empezar?
+
+Si tu presupuesto no alcanza para desarrollar ambas plataformas al mismo tiempo, hay que elegir. La decisión depende del público objetivo. También puede ayudarte a decidir el artículo sobre [producto digital versus proyecto de software](/blog/producto-digital-versus-proyecto-de-software-cual-es-la-diferencia), donde se explica cómo definir el alcance correcto antes de empezar a desarrollar.
+
+**iOS (iPhone).** Es el mercado predominante en Estados Unidos, Canadá, Japón y Europa Occidental. Los usuarios de iOS tienden a gastar más en apps y suscripciones. La fragmentación de dispositivos es menor, lo que facilita el desarrollo y las pruebas.
+
+**Android.** Es dominante en Latinoamérica, Asia y África. Tiene una base de usuarios mucho más grande a nivel global. La fragmentación es mayor (cientos de modelos con distintos tamaños de pantalla y versiones del sistema operativo), lo que requiere más pruebas.
+
+Para un negocio en Chile o Latinoamérica, lo más probable es que la mayoría de tus usuarios usen Android. En ese caso, empezar por Android suele ser la decisión correcta, a menos que tu público objetivo sea específicamente un segmento de alto poder adquisitivo que tiende a usar iPhone.
+
+## El proceso de publicación en tiendas
+
+Un aspecto que a menudo se subestima es el proceso de publicación. Tanto Apple App Store como Google Play Store tienen procesos de revisión:
+
+- **App Store.** Apple revisa cada aplicación manualmente antes de publicarla. El proceso puede tomar desde unas horas hasta varios días. Apple puede rechazar una app por motivos de diseño, funcionalidad, contenido o uso de sus APIs. Las actualizaciones también pasan por revisión.
+- **Google Play.** El proceso es más automático y rápido, pero Google también tiene políticas estrictas. Las actualizaciones suelen publicarse en horas.
+
+Esto significa que corregir un bug urgente en producción no es tan simple como hacer el cambio y subirlo. Si el bug está en iOS, la corrección puede tardar días en llegar a los usuarios. Es un factor a considerar cuando se planifica el mantenimiento de una app.

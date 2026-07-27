@@ -1,0 +1,256 @@
+id: comparativas-y-decisiones-01
+name: Comparativas y decisiones
+category: comparativas-y-decisiones
+topics:
+  - id: software-a-medida-vs-software-comercial
+    title: Software a medida vs software comercial
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar las ventajas y desventajas del software a medida frente al
+      software comercial (estándar) para ayudar a decidir cuál conviene.
+    notes:
+      - Complementar al artículo existente en software-para-empresas con enfoque
+        de comparación y decisión.
+  - id: desarrollar-vs-comprar-sistema
+    title: Desarrollar un sistema propio vs comprar uno existente
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ayudar a decidir si conviene desarrollar un sistema desde cero o
+      comprar una solución existente según el contexto de la empresa.
+    notes:
+      - "Criterios: tiempo, costo, control, personalización, mantenimiento."
+  - id: aplicacion-web-vs-aplicacion-movil
+    title: Aplicación web vs aplicación móvil
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar aplicaciones web y móviles para ayudar a decidir cuál tipo
+      de desarrollo conviene según el producto y los usuarios.
+    notes:
+      - "Factores: alcance, costo, tiempo de desarrollo, acceso a hardware,
+        distribución en stores."
+  - id: flutter-vs-desarrollo-nativo
+    title: Flutter vs desarrollo nativo
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar la diferencia entre desarrollar con Flutter
+      (multiplataforma) y desarrollo nativo (Swift/Kotlin) para ayudar a elegir.
+    notes:
+      - No asumir que una opción es siempre mejor — depende del proyecto.
+  - id: erp-vs-crm
+    title: ERP vs CRM
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Aclarar la diferencia entre un ERP y un CRM, sus funciones y cuándo
+      una empresa necesita cada uno.
+    notes:
+      - Muchas empresas confunden ambos conceptos o piensan que necesitan uno
+        cuando en realidad necesitan el otro.
+  - id: chatgpt-vs-gemini-para-empresas
+    title: ChatGPT vs Gemini para empresas
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: "Comparar ChatGPT (OpenAI) y Gemini (Google) desde una perspectiva
+      empresarial: usos, costos, integraciones y limitaciones."
+    notes:
+      - Comparación práctica, no técnica. Enfocar en casos de uso empresarial.
+  - id: chatgpt-vs-claude-cual-elegir
+    title: "ChatGPT vs Claude: cuál elegir"
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar ChatGPT y Claude para uso empresarial analizando diferencias
+      en precisión, contexto, costo y aplicaciones prácticas.
+    notes:
+      - Evitar sesgo hacia un modelo — presentar fortalezas de cada uno.
+  - id: automatizacion-tradicional-vs-ia
+    title: Automatización tradicional vs inteligencia artificial
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar la automatización basada en reglas fijas con la
+      automatización impulsada por IA para saber cuándo usar cada una.
+    notes:
+      - Complementar al artículo existente en automatizacion-e-ia con enfoque de
+        comparación.
+  - id: n8n-vs-make
+    title: n8n vs Make
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar dos plataformas populares de automatización (n8n y Make)
+      para ayudar a elegir según el perfil técnico del equipo y el presupuesto.
+    notes:
+      - No sesgar hacia una — presentar criterios de selección.
+  - id: make-vs-zapier
+    title: Make vs Zapier
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar Make y Zapier como herramientas de automatización sin código
+      para empresas que buscan conectar aplicaciones.
+    notes:
+      - "Factores: costo, flexibilidad, integraciones disponibles, límites de
+        uso."
+  - id: agencia-vs-freelancer
+    title: Agencia de desarrollo vs freelancer
+    status: generated
+    intent: informational
+    funnelStage: decision
+    audience:
+      - founders
+      - empresarios
+    objective: Comparar trabajar con una agencia de desarrollo versus contratar a un
+      freelancer para decidir según alcance, presupuesto y riesgo.
+    notes:
+      - Complementar al artículo existente con enfoque específico en agencia vs
+        freelancer.
+  - id: equipo-interno-vs-empresa-externa
+    title: Equipo interno vs empresa externa
+    status: generated
+    intent: informational
+    funnelStage: decision
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar las ventajas de tener un equipo de desarrollo interno frente
+      a externalizar el desarrollo con una empresa de software.
+    notes:
+      - "Factores: costo, control, velocidad, conocimiento del negocio,
+        retención de talento."
+  - id: sitio-web-vs-landing-page
+    title: Sitio web corporativo vs landing page
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar un sitio web corporativo completo con una landing page para
+      decidir cuál usar según el objetivo de marketing o ventas.
+    notes:
+      - Complementar al artículo de marketing con enfoque de comparación.
+  - id: pago-unico-vs-suscripcion-software
+    title: Pago único vs suscripción para software
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar los modelos de licenciamiento de software entre pago único y
+      suscripción, analizando cuál conviene según el tipo de uso.
+    notes:
+      - Considerar no solo el costo inicial sino el costo total a largo plazo.
+  - id: desarrollo-por-fases-vs-desarrollo-completo
+    title: Desarrollo por fases vs desarrollo completo
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar la estrategia de desarrollar un producto por etapas frente a
+      construir todo de una vez y cuándo elegir cada enfoque.
+    notes:
+      - Fases reduce riesgo pero puede tomar más tiempo calendario total.
+  - id: monolito-vs-microservicios-para-empresarios
+    title: Monolito vs microservicios (explicado para empresarios)
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar la diferencia entre una arquitectura monolito y
+      microservicios en términos simples, para que un empresario entienda las
+      implicancias.
+    notes:
+      - Usar analogías de un edificio de una sola pieza vs un complejo de
+        edificios conectados.
+  - id: aws-vs-azure-vs-google-cloud
+    title: AWS vs Azure vs Google Cloud
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar los tres principales proveedores de nube para ayudar a
+      decidir cuál usar según el tipo de proyecto y presupuesto.
+    notes:
+      - No entrar en tecnicismos de cada plataforma — enfocar en ecosistema,
+        costo y facilidad de uso.
+  - id: postgresql-vs-mongodb-importa-para-tu-empresa
+    title: "PostgreSQL vs MongoDB: ¿importa para tu empresa?"
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar la diferencia entre bases de datos SQL (relacionales) y
+      NoSQL (como MongoDB) a nivel conceptual y cuándo importa.
+    notes:
+      - La mayoría de las empresas no necesita preocuparse por esto — lo decide
+        el equipo técnico.
+  - id: open-source-vs-software-propietario
+    title: Software open source vs software propietario
+    status: generated
+    intent: informational
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Comparar software open source y propietario analizando costo,
+      libertad, soporte, seguridad y mantenimiento para empresas.
+    notes:
+      - Open source no significa gratis — considerar costos de implementación y
+        soporte.
+  - id: comprar-desarrollar-o-adaptar-como-elegir
+    title: ¿Comprar, desarrollar o adaptar? Cómo elegir la mejor solución tecnológica
+    status: generated
+    intent: commercial
+    funnelStage: decision
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ayudar a decidir entre comprar software existente, desarrollar uno
+      propio o adaptar una solución según el problema y el contexto.
+    notes:
+      - Artículo integrador que resume los criterios de las otras comparativas.

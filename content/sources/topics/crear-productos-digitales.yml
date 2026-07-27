@@ -299,3 +299,20 @@ topics:
       - gerentes
     objective: cómo convertir una necesidad operacional en un proyecto tecnológico.
     notes: []
+  - id: como-hacer-un-mvp-en-chile
+    title: Cómo hacer un MVP en Chile
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - founders
+      - emprendedores
+    objective: Guiar a founders y emprendedores chilenos en el proceso de construir
+      un MVP adaptado al mercado local, cubriendo validación, alcance,
+      presupuesto y elección de socio tecnológico.
+    notes:
+      - "Enfocar en el contexto chileno: ecosistema startup local, opciones de
+        financiamiento, socios tecnológicos."
+      - No dar cifras fijas de costo — hablar de variables y criterios.
+      - Relacionar con los casos de éxito de Código Startup como ejemplos de
+        MVPs reales.

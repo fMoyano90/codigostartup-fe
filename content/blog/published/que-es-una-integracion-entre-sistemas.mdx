@@ -1,0 +1,174 @@
+---
+title: Qué es una integración entre sistemas
+slug: que-es-una-integracion-entre-sistemas
+description: >-
+  Explicación de qué significa integrar dos sistemas, cómo funcionan las
+  conexiones entre software y por qué es clave para eliminar silos de
+  información en tu empresa.
+excerpt: >-
+  Una integración entre sistemas conecta dos o más aplicaciones para que
+  compartan datos automáticamente. Este artículo explica cómo funciona, los
+  tipos de integración y por qué es clave para eliminar los silos de información
+  en tu empresa.
+category: conceptos-tecnologicos
+tags:
+  - integración
+  - APIs
+  - sistemas
+  - silos de información
+  - automatización
+audience:
+  - empresarios
+  - gerentes
+intent: informational
+funnelStage: awareness
+services:
+  - automatizacion-de-procesos
+  - software-a-medida
+  - auditoria-y-evolucion
+cta:
+  type: service
+  target: automatizacion-de-procesos
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-07-27'
+updatedAt: '2026-07-27'
+approvedAt: '2026-07-27'
+publishedAt: '2026-07-27'
+seo:
+  title: Qué es una integración entre sistemas | Código Startup
+  description: >-
+    Explicación simple de qué es integrar sistemas, cómo funcionan las
+    conexiones entre aplicaciones, tipos de integración y por qué es clave para
+    eliminar los silos de información en la empresa.
+  primaryKeyword: qué es una integración entre sistemas
+  secondaryKeywords:
+    - integración de sistemas
+    - silos de información
+    - conectar aplicaciones
+    - automatización empresarial
+    - API
+relatedArticles:
+  - que-es-una-api
+  - que-tareas-se-pueden-automatizar-con-ia
+reviewStatus: pending
+reviewScore: null
+---
+
+Si tu empresa usa más de un programa para operar —y la mayoría de las empresas usan varios—, probablemente tengas un problema de integración sin saberlo.
+
+La situación típica: el equipo de ventas registra clientes en el CRM. El área de facturación emite boletas en otro sistema. El encargado de bodega controla el inventario en una planilla. Y el dueño, para saber cómo va el negocio, tiene que pedir reportes de cada sistema por separado y unificarlos manualmente. Eso, cuando hay tiempo.
+
+Una integración entre sistemas resuelve exactamente eso: conecta dos o más aplicaciones para que compartan información automáticamente, sin que un humano tenga que copiar datos de un lado a otro.
+
+## ¿Qué significa integrar dos sistemas?
+
+Integrar dos sistemas significa hacer que se comuniquen entre sí. Cuando pasa algo en un sistema, el otro se entera y reacciona en consecuencia.
+
+Un ejemplo concreto: imaginá que un cliente compra en tu tienda online. Una integración haría que, automáticamente:
+
+1. El pedido se registre en tu sistema de facturación.
+2. El stock se descuente de tu inventario.
+3. El cliente se agregue a tu CRM como comprador recurrente.
+4. Se envíe un correo de confirmación.
+5. Se genere una orden de despacho en el sistema de logística.
+
+Todo esto sin que ningún ser humano intervenga. Eso es una integración.
+
+<Callout variant="info" title="Para recordar">
+  Si en tu empresa alguien pasa datos de un sistema a otro manualmente —copiando y pegando, reescribiendo, exportando e importando planillas—, esa tarea es candidata a ser reemplazada por una integración.
+</Callout>
+
+## El problema que resuelve: los silos de información
+
+Un silo de información es un sistema que funciona aislado del resto. Los datos que contiene no fluyen hacia otros sistemas, y los datos de otros sistemas no llegan hacia él. Es como si cada departamento hablara un idioma distinto.
+
+Los silos generan problemas concretos:
+
+**Datos inconsistentes.** El CRM dice que el cliente debe $500.000. El sistema de facturación dice que pagó todo. ¿Quién tiene razón? Probablemente nadie, porque los datos no se sincronizaron.
+
+**Trabajo duplicado.** Alguien registra al cliente en el CRM. Otra persona lo registra en el sistema de facturación. Una tercera lo agrega a la lista de correo. Son tres personas haciendo lo mismo, con alto riesgo de que los datos no coincidan.
+
+**Visibilidad limitada.** El dueño de la empresa no puede ver el estado real del negocio en un solo lugar. Tiene que pedir informes a cada área y después unificarlos manualmente. Para cuando tiene la foto completa, ya pasaron semanas.
+
+**Errores humanos.** Cada vez que alguien copia datos de un sistema a otro, existe la posibilidad de que se equivoque: un número mal tipeado, un cliente que se omite, una factura que se duplica.
+
+## Tipos de integración
+
+Existen distintas formas de integrar sistemas, según cómo se conectan y qué tan en tiempo real necesitan ser.
+
+### Integración punto a punto
+
+Es la más directa: el Sistema A se conecta directamente con el Sistema B a través de una [API](/blog/que-es-una-api). Si después necesitás conectar el Sistema A con el Sistema C, creás otra conexión directa.
+
+**Ventaja:** Simple de implementar para pocos sistemas.
+**Desventaja:** Cuando tenés muchos sistemas, las conexiones se multiplican. Cinco sistemas necesitan hasta diez conexiones punto a punto. Diez sistemas necesitan hasta cuarenta y cinco. Se vuelve un enredo difícil de mantener.
+
+### Integración a través de un middleware o bus
+
+En lugar de conectar cada sistema con cada uno, todos los sistemas se conectan a un punto central —un middleware o bus de integración— que se encarga de traducir y enrutar los mensajes entre ellos.
+
+**Ventaja:** Cada sistema solo necesita una conexión (al bus), no una por cada sistema con el que se comunica. Agregar un sistema nuevo es más simple.
+**Desventaja:** El bus se convierte en un punto crítico: si falla, todas las integraciones se caen. Además, requiere más planificación y configuración inicial.
+
+### Integración basada en eventos
+
+Un sistema publica un evento ("se creó un pedido") y otros sistemas que están suscriptos a ese evento reaccionan automáticamente. No hay una llamada directa de un sistema a otro: el que publica no sabe quiénes están escuchando.
+
+**Ventaja:** Muy flexible. Podés agregar o quitar sistemas sin modificar a los demás.
+**Desventaja:** Más compleja de implementar y de depurar cuando algo sale mal.
+
+<Callout variant="tip" title="No todas las integraciones necesitan ser en tiempo real"
+  >A veces alcanza con una sincronización programada: cada 15 minutos, el sistema A exporta un archivo que el sistema B importa. No es elegante, pero para muchos casos de uso es suficiente. La perfección no debería ser enemiga de lo que funciona.
+</Callout>
+
+## ¿Qué se necesita para integrar dos sistemas?
+
+Técnicamente, una integración requiere que ambos sistemas tengan la capacidad de comunicarse. Esto implica, en la mayoría de los casos:
+
+**APIs.** Como se explica en el artículo sobre [qué es una API](/blog/que-es-una-api), una API es la interfaz que un sistema expone para que otros sistemas puedan enviarle y recibir información. Si un sistema no tiene API, integrarlo es más difícil y costoso.
+
+**Formato de datos común.** Los sistemas necesitan ponerse de acuerdo en cómo se estructuran los datos que intercambian. JSON y XML son los formatos más utilizados.
+
+**Autenticación.** La integración debe estar autorizada. Normalmente se usan claves de API, tokens o certificados digitales para que cada sistema verifique la identidad del otro.
+
+**Manejo de errores.** ¿Qué pasa si la integración falla? ¿Si el Sistema B está caído cuando el Sistema A le envía datos? Las integraciones bien diseñadas incluyen mecanismos de reintento, colas de mensajes y registro de errores.
+
+## Ejemplos de integraciones útiles para una empresa
+
+**CRM + facturación.** Cuando un vendedor cierra un trato en el CRM, automáticamente se genera la factura en el sistema contable. El vendedor no necesita saber de facturación.
+
+**Tienda online + inventario.** Cuando se realiza una venta en el ecommerce, el stock se descuenta automáticamente del sistema de inventario. Se evita vender algo que no hay.
+
+**Sistema de gestión + whatsapp.** Cuando un pedido cambia de estado en el sistema, se envía automáticamente un mensaje al cliente con la actualización.
+
+**Formulario web + CRM.** Cuando un prospecto completa un formulario en el sitio web, se crea automáticamente un contacto en el CRM y se asigna al vendedor correspondiente.
+
+**ERP + bancos.** Las conciliaciones bancarias se automatizan: los movimientos del banco se comparan con los registros del ERP sin que nadie tenga que hacerlo manualmente.
+
+<Callout variant="warning" title="Integrar sin entender los procesos no funciona"
+  >Antes de integrar dos sistemas, hay que entender qué información debe fluir, en qué dirección, con qué frecuencia y qué hacer cuando algo falla. Una integración mal diseñada puede ser peor que no tener integración: puede generar datos inconsistentes que nadie detecta hasta que es demasiado tarde.
+</Callout>
+
+## ¿Integración o automatización?
+
+La integración y la automatización son conceptos distintos que suelen ir de la mano.
+
+**Integración** es conectar sistemas para que compartan datos. Sin integración, la automatización no es posible.
+
+**Automatización** es usar esa conexión para ejecutar procesos sin intervención humana. El artículo sobre [qué es una automatización](/blog/que-es-una-automatizacion) explica cómo la integración es la base para que un proceso se ejecute solo: una vez que los sistemas hablan entre sí, se pueden definir reglas que disparen acciones automáticas.
+
+Dicho de otra forma: la integración construye el puente; la automatización hace que los autos crucen ese puente sin conductor.
+
+## Cómo saber si necesitás una integración
+
+Si reconocés alguna de estas señales, probablemente necesitás integrar sistemas:
+
+- **Alguien en tu empresa pasa al menos una hora por día copiando datos de un sistema a otro.** Esa hora es desperdicio productivo que una integración elimina.
+- **Los reportes mensuales requieren consolidar datos de múltiples fuentes.** Si cada mes alguien tiene que pedir exportaciones de varios sistemas y unificarlas en Excel, una integración puede generar ese reporte automáticamente.
+- **Los datos no coinciden entre sistemas.** El inventario del ecommerce no coincide con el inventario real, o la cartera de clientes está desactualizada.
+- **Perdés oportunidades porque los sistemas no se comunican.** Un cliente pide información, pero como el formulario web no está conectado con el CRM, nadie hace seguimiento.
+- **El crecimiento de la empresa está multiplicando la cantidad de sistemas.** Lo que funcionaba con dos programas ahora se complica con cinco, y cada vez es más difícil mantener la información consistente.
+
+La integración no es un lujo tecnológico: es una necesidad operativa para empresas que quieren escalar sin que los procesos se vuelvan un cuello de botella. Cuantos más sistemas uses, más importante es que hablen entre sí.

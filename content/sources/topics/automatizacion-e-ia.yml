@@ -259,3 +259,20 @@ topics:
       - gerentes
     objective: qué procesos comerciales se pueden automatizar sin perder el trato humano.
     notes: []
+  - id: como-automatizar-whatsapp-para-una-pyme
+    title: Cómo automatizar WhatsApp para una pyme
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar cómo una pyme puede automatizar la gestión de consultas,
+      pedidos y notificaciones vía WhatsApp usando herramientas accesibles y
+      desarrollo a medida.
+    notes:
+      - Diferenciar entre WhatsApp Business API, WhatsApp Business App y
+        soluciones no oficiales.
+      - "Enfocar en casos de uso típicos de pymes: catálogo, consultas
+        frecuentes, confirmación de pedidos, recordatorios."
+      - Mencionar ejemplos concretos sin recomendar herramientas específicas.

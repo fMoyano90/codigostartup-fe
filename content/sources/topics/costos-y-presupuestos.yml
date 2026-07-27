@@ -216,3 +216,22 @@ topics:
       - gerentes
     objective: cómo saber si una automatización se paga sola.
     notes: []
+  - id: cuanto-cuesta-desarrollar-una-app-mobile-vs-web
+    title: Cuánto cuesta desarrollar una app
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - founders
+      - empresarios
+    objective: Diferenciar los costos entre desarrollo de apps mobile nativas,
+      híbridas y aplicaciones web, explicando las variables que más impactan el
+      presupuesto.
+    notes:
+      - "No dar cifras fijas — hablar de factores: plataforma (iOS/Android/Web),
+        equipo requerido, integraciones."
+      - Diferenciar claramente entre mobile nativa, híbrida y web app — son
+        productos distintos con costos distintos.
+      - Este artículo se distingue del existente
+        'cuanto-cuesta-desarrollar-una-aplicacion-en-chile' al enfocarse en la
+        comparación mobile vs web.

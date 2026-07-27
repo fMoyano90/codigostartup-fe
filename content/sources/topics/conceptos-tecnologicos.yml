@@ -1,0 +1,255 @@
+id: conceptos-tecnologicos-01
+name: Conceptos tecnológicos
+category: conceptos-tecnologicos
+topics:
+  - id: que-es-una-api
+    title: Qué es una API
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es una API (Interfaz de Programación de Aplicaciones) en
+      términos simples, sin jerga técnica, y por qué es relevante para el
+      negocio.
+    notes:
+      - Usar analogías (mesero, enchufe, traductor) para hacerlo entendible.
+      - "Mostrar ejemplos cotidianos de APIs: pasarelas de pago, envío de
+        correos, mapas."
+  - id: que-es-un-erp
+    title: Qué es un ERP
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es un sistema ERP (Planificación de Recursos
+      Empresariales) y cómo ayuda a centralizar la operación de una empresa.
+    notes:
+      - Diferenciar entre ERP modular y ERP todo-en-uno.
+  - id: que-es-un-crm
+    title: Qué es un CRM
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es un CRM (Customer Relationship Management) y por qué
+      es útil para gestionar clientes y oportunidades de venta.
+    notes:
+      - Diferenciar de un ERP — no son lo mismo aunque a veces se integren.
+  - id: que-es-un-saas
+    title: Qué es un SaaS
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar el modelo de software como servicio (SaaS), cómo funciona la
+      suscripción y qué ventajas tiene frente al software tradicional.
+    notes:
+      - "Ejemplos: Google Workspace, Salesforce, Notion, Slack."
+  - id: que-es-la-computacion-en-la-nube
+    title: Qué es la computación en la nube
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué significa que un software o infraestructura esté "en la
+      nube" y cómo se diferencia de tener servidores físicos en la empresa.
+    notes:
+      - Diferenciar entre nube pública, privada e híbrida a alto nivel.
+  - id: que-es-un-servidor
+    title: Qué es un servidor
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es un servidor, para qué sirve y por qué una empresa
+      puede necesitar uno físico o virtual.
+    notes:
+      - Comparar con una computadora normal pero con funciones específicas.
+  - id: que-es-una-base-de-datos
+    title: Qué es una base de datos
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es una base de datos en términos simples y por qué es el
+      corazón de cualquier sistema digital.
+    notes:
+      - Usar analogía de archivadores, planillas y bibliotecas.
+  - id: que-es-una-aplicacion-web
+    title: Qué es una aplicación web
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es una aplicación web (web app), cómo funciona en el
+      navegador y en qué se diferencia de una página web tradicional.
+    notes:
+      - "Ejemplos: Gmail, Trello, Google Docs."
+  - id: que-es-una-aplicacion-movil
+    title: Qué es una aplicación móvil
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es una app móvil, los tipos (nativa, híbrida) y cuándo
+      tiene sentido desarrollar una para tu negocio.
+    notes:
+      - Diferenciar entre app nativa e híbrida a nivel conceptual.
+  - id: que-es-una-integracion-entre-sistemas
+    title: Qué es una integración entre sistemas
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué significa integrar dos sistemas, cómo funcionan las
+      conexiones entre software y por qué es clave para eliminar silos.
+    notes:
+      - "Usar ejemplos: CRM conectado con facturación, web conectada con
+        inventario."
+  - id: que-es-una-automatizacion
+    title: Qué es una automatización
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es una automatización de procesos, cómo funciona y qué
+      tipos de tareas se pueden automatizar en una empresa.
+    notes:
+      - Diferenciar entre automatización simple (reglas) y automatización con IA.
+  - id: que-es-la-inteligencia-artificial
+    title: Qué es la inteligencia artificial
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es la inteligencia artificial en términos accesibles,
+      separando el hype de la realidad y mostrando aplicaciones prácticas.
+    notes:
+      - Diferenciar entre IA predictiva, generativa y aumentativa.
+  - id: que-es-un-agente-de-ia
+    title: Qué es un agente de IA
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es un agente de inteligencia artificial, cómo se
+      diferencia de un chatbot tradicional y qué puede hacer por una empresa.
+    notes:
+      - Complementar al artículo existente en automatizacion-e-ia con enfoque
+        más conceptual.
+  - id: que-significa-escalar-un-software
+    title: Qué significa escalar un software
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué significa que un software "escalable" y por qué es
+      relevante para empresas que planean crecer.
+    notes:
+      - "Analogías: un puesto de sopa vs una cadena de restaurantes."
+  - id: que-es-un-mvp
+    title: Qué es un MVP
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - founders
+      - emprendedores
+    objective: Explicar qué es un Producto Mínimo Viable, su propósito y cómo se
+      diferencia de un prototipo o de un producto terminado.
+    notes:
+      - Complementar artículos existentes sobre MVP con enfoque puramente
+        conceptual.
+  - id: que-es-una-arquitectura-de-software
+    title: Qué es una arquitectura de software
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es la arquitectura de software en términos que un
+      empresario pueda entender y por qué afecta al negocio.
+    notes:
+      - Usar la analogía de los planos de una casa.
+  - id: que-es-un-dashboard
+    title: Qué es un dashboard
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es un dashboard o tablero de control y cómo ayuda a
+      tomar decisiones basadas en datos.
+    notes:
+      - Diferenciar entre dashboard operativo y estratégico.
+  - id: que-es-un-kpi
+    title: Qué es un KPI
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es un KPI (Indicador Clave de Desempeño), cómo se define
+      y por qué no todo lo que se mide es un KPI.
+    notes:
+      - Diferenciar entre métricas vanity y KPIs reales.
+  - id: que-es-un-chatbot
+    title: Qué es un chatbot
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+    objective: Explicar qué es un chatbot, cómo funciona y en qué casos una empresa
+      puede beneficiarse de implementar uno.
+    notes:
+      - Diferenciar entre chatbot basado en reglas y chatbot con IA generativa.
+  - id: glosario-50-terminos-tecnologicos-para-empresarios
+    title: "Glosario: 50 términos tecnológicos que todo empresario debería conocer"
+    status: generated
+    intent: informational
+    funnelStage: awareness
+    audience:
+      - empresarios
+      - gerentes
+      - founders
+    objective: Crear un glosario de referencia con 50 términos tecnológicos
+      explicados en lenguaje simple, ordenados alfabéticamente.
+    notes:
+      - NO generar como artículo normal — considerar formato de glosario o
+        listado referenciable.
+      - "Términos sugeridos: API, backend, base de datos, chatbot, cloud, CRM,
+        dashboard, deploy, ERP, firewall, frontend, hosting, IA, KPI, landing
+        page, MVP, nube, QA, ROI, SaaS, servidor, UI, UX, VPN, webhook, etc."

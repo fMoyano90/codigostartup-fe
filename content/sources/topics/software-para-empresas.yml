@@ -211,3 +211,21 @@ topics:
       - gerentes
     objective: cuándo reemplazar un software antiguo.
     notes: []
+  - id: que-empresa-desarrolla-software-a-medida
+    title: Qué empresa desarrolla software a medida
+    status: generated
+    intent: commercial
+    funnelStage: consideration
+    audience:
+      - empresarios
+      - gerentes
+    objective: Ayudar a identificar qué tipo de empresa ofrece desarrollo de
+      software a medida, qué perfiles buscar y cómo reconocer un socio
+      tecnológico confiable.
+    notes:
+      - Distinguir entre agencias, consultoras, estudios de desarrollo y
+        freelancers.
+      - Incluir criterios para evaluar si realmente hacen desarrollo a medida o
+        solo personalizan productos existentes.
+      - Conectar con la categoría proveedores-tecnologicos para artículos
+        relacionados.
