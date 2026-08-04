@@ -5021,8 +5021,7 @@ a {
 .home-needs-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--divider-l);
-  border-left: 1px solid var(--divider-l);
+  gap: 1.5rem;
 }
 
 .home-need-card {
@@ -5030,8 +5029,8 @@ a {
   min-height: 390px;
   padding: clamp(1.75rem, 4vw, 3rem);
   overflow: hidden;
-  border-right: 1px solid var(--divider-l);
-  border-bottom: 1px solid var(--divider-l);
+  border: 1px solid var(--divider-l);
+  border-radius: 8px;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012));
   transition: background 0.35s;
 }
@@ -5355,6 +5354,7 @@ a {
   .home-needs-grid,
   .home-solutions-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .home-need-card {
