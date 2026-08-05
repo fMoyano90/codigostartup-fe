@@ -17,10 +17,17 @@
     "blog:review-report": "tsx scripts/blog/review-report.ts",
     "blog:review-summary": "tsx scripts/blog/review-summary.ts",
     "blog:topics": "tsx scripts/blog/topics.ts",
-    "blog:sync-topics": "tsx scripts/blog/sync-topics.ts"
+    "blog:sync-topics": "tsx scripts/blog/sync-topics.ts",
+    "blog-images:analyze": "tsx scripts/blog-images/analyze.ts",
+    "blog-images:prepare": "tsx scripts/blog-images/prepare.ts",
+    "blog-images:sample": "tsx scripts/blog-images/prepare.ts --sample",
+    "blog-images:submit": "tsx scripts/blog-images/submit.ts",
+    "blog-images:status": "tsx scripts/blog-images/status.ts",
+    "blog-images:download": "tsx scripts/blog-images/download.ts"
   },
   "dependencies": {
     "@types/three": "^0.183.1",
+    "dotenv": "^17.4.2",
     "gray-matter": "^4.0.3",
     "gsap": "^3.14.2",
     "lenis": "^1.3.18",
@@ -28,6 +35,7 @@
     "next": "^16.1.6",
     "next-mdx-remote": "^6.0.0",
     "ogl": "^1.0.11",
+    "openai": "^7.4.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "rehype-autolink-headings": "^7.1.0",
