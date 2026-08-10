@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BarChart3, Code2, Compass, FileQuestion, FileSpreadsheet, FileText, Layers, ListTodo, Lock, PenTool, RefreshCw, Repeat2, Rocket, Search, SearchCheck, ShieldCheck, Wrench } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import HomeAnimationsLoader from "@/components/HomeAnimationsLoader";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ArticleCard } from "@/components/blog/ArticleCard";
@@ -31,7 +33,6 @@ const auditService = requireService("auditoria-y-evolucion");
 
 const needs = [
   {
-    number: "01",
     eyebrow: "Presencia digital",
     title: "Necesito un sitio web",
     description: websiteService.shortDescription,
@@ -41,7 +42,6 @@ const needs = [
     ],
   },
   {
-    number: "02",
     eyebrow: "Operación",
     title: "Quiero digitalizar un proceso",
     description: softwareService.shortDescription,
@@ -51,7 +51,6 @@ const needs = [
     ],
   },
   {
-    number: "03",
     eyebrow: "Producto digital",
     title: "Quiero lanzar un producto",
     description: mvpService.shortDescription,
@@ -62,7 +61,6 @@ const needs = [
     ],
   },
   {
-    number: "04",
     eyebrow: "Sistema existente",
     title: "Necesito mejorar lo que ya tengo",
     description: auditService.shortDescription,
@@ -71,14 +69,33 @@ const needs = [
 ];
 
 const homeProblems = [
-  websiteService.problems[1],
-  websiteService.problems[6],
-  softwareService.problems[0],
-  softwareService.problems[4],
-  automationService.problems[0],
-  mvpService.problems[1],
-  auditService.problems[0],
-  auditService.problems[5],
+  { icon: FileQuestion, text: websiteService.problems[1] },
+  { icon: RefreshCw, text: websiteService.problems[6] },
+  { icon: FileSpreadsheet, text: softwareService.problems[0] },
+  { icon: SearchCheck, text: softwareService.problems[4] },
+  { icon: Repeat2, text: automationService.problems[0] },
+  { icon: ListTodo, text: mvpService.problems[1] },
+  { icon: Wrench, text: auditService.problems[0] },
+  { icon: Lock, text: auditService.problems[5] },
+];
+
+const capabilityIcons: Record<string, LucideIcon> = {
+  estrategia: Compass,
+  "ux-ui": PenTool,
+  desarrollo: Code2,
+  contenido: FileText,
+  seo: Search,
+  analitica: BarChart3,
+  arquitectura: Layers,
+  seguridad: ShieldCheck,
+  "lanzamiento-y-evolucion": Rocket,
+};
+
+const teamPrinciples = [
+  { icon: SearchCheck, text: "Diagnóstico antes de construir" },
+  { icon: RefreshCw, text: "Avances y entregas semanales" },
+  { icon: ShieldCheck, text: "Alcance y precio claros" },
+  { icon: FileText, text: "Documentación y traspaso" },
 ];
 
 const homeFaq = [
@@ -108,33 +125,27 @@ export default function Home() {
       <HomeAnimationsLoader />
 
       <section id="hero" className="hero-root">
-        <Image
-          src="/isotipo-blanco.svg"
-          width={620}
-          height={620}
-          className="hero-watermark"
-          aria-hidden="true"
-          alt=""
-          priority
-        />
+        <video className="hero-video" autoPlay muted loop playsInline aria-hidden="true">
+          <source src="/video-hero.mp4" type="video/mp4" />
+        </video>
         <div className="hero-inner">
-          <div className="hero-eyebrow fadein fadein-d1">Desarrollo · Estrategia · Diseño</div>
-          <div className="hero-title-area">
-            <h1 className="hero-title">
-              <span className="reveal-wrap"><span className="reveal reveal-d1">CONSTRUIMOS</span></span>
-              <span className="reveal-wrap"><span className="reveal reveal-d2">PRODUCTOS</span></span>
-              <span className="reveal-wrap"><span className="reveal reveal-d3">QUE <span className="accent">PERDURAN.</span></span></span>
-            </h1>
-          </div>
-          <div className="hero-bottom">
+          <div className="hero-copy">
+            <div className="hero-eyebrow fadein fadein-d1">Desarrollo · Estrategia · Diseño</div>
+            <div className="hero-title-area">
+              <h1 className="hero-title">
+                <span className="reveal-wrap"><span className="reveal reveal-d1">CONSTRUIMOS</span></span>
+                <span className="reveal-wrap"><span className="reveal reveal-d2">PRODUCTOS</span></span>
+                <span className="reveal-wrap"><span className="reveal reveal-d3">QUE <span className="accent">PERDURAN.</span></span></span>
+              </h1>
+            </div>
             <p className="hero-desc fadein fadein-d2">
               Somos el equipo técnico que ejecuta contigo. Te ayudamos a construir presencia digital,
               ordenar tu operación, lanzar un producto o evolucionar un sistema existente.
             </p>
-            <div className="hero-actions fadein fadein-d3">
-              <Link href="/contacto" className="btn-primary">Evaluar mi proyecto</Link>
-              <Link href="/soluciones" className="home-text-link">Explorar soluciones</Link>
-            </div>
+          </div>
+          <div className="hero-actions fadein fadein-d3">
+            <Link href="/contacto" className="btn-primary">Evaluar mi proyecto</Link>
+            <Link href="/soluciones" className="home-text-link">Explorar soluciones</Link>
           </div>
         </div>
       </section>
@@ -146,12 +157,12 @@ export default function Home() {
             title="¿Qué necesitas resolver?"
             description="No necesitas llegar con la solución definida. Empieza por la situación que más se parece a la tuya."
             headingId="needs-heading"
+            align="center"
           />
           <div className="home-needs-grid">
             {needs.map((need) => (
-              <article key={need.number} className="home-need-card">
+              <article key={need.title} className="home-need-card">
                 <div className="home-need-topline">
-                  <span>{need.number}</span>
                   <span>{need.eyebrow}</span>
                 </div>
                 <h3>{need.title}</h3>
@@ -176,9 +187,10 @@ export default function Home() {
             title="Construido. Lanzado. Operando."
             description="Productos digitales que hoy apoyan operaciones, servicios y nuevos negocios."
             headingId="projects-heading"
+            align="center"
           />
           <div className="project-card-grid">
-            {homeClientProjects.map((project) => <ProjectCard key={project.slug} project={project} />)}
+            {homeClientProjects.map((project) => <ProjectCard key={project.slug} project={project} hideTitle />)}
           </div>
           <div className="home-section-action">
             <Link href="/proyectos" className="home-text-link">Ver todos los proyectos →</Link>
@@ -186,7 +198,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-distributor-section" aria-labelledby="problems-heading">
+      <section className="home-distributor-section home-problems-section" aria-labelledby="problems-heading">
         <div className="container home-problems-layout">
           <SectionHeader
             eyebrow="Problemas que resolvemos"
@@ -194,14 +206,16 @@ export default function Home() {
             description="Trabajamos sobre problemas concretos de comunicación, operación, producto y sistemas existentes."
             headingId="problems-heading"
           />
-          <ol className="service-problem-list">
-            {homeProblems.map((problem, index) => (
-              <li key={problem}>
-                <span className="service-problem-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                <span>{problem}</span>
+          <ul className="service-problem-list">
+            {homeProblems.map(({ icon: Icon, text }) => (
+              <li key={text}>
+                <span className="service-problem-icon" aria-hidden="true">
+                  <Icon size={28} strokeWidth={2} />
+                </span>
+                <span>{text}</span>
               </li>
             ))}
-          </ol>
+          </ul>
         </div>
       </section>
 
@@ -210,8 +224,9 @@ export default function Home() {
           <SectionHeader
             eyebrow="Soluciones"
             title="Una ruta para cada etapa"
-            description="Siete soluciones especializadas, conectadas por una misma forma de diagnosticar, construir y evolucionar."
+            description="Ocho soluciones especializadas, conectadas por una misma forma de diagnosticar, construir y evolucionar."
             headingId="solutions-heading"
+            align="center"
           />
           <div className="home-solutions-grid">
             {services.map((service) => (
@@ -239,15 +254,25 @@ export default function Home() {
             title="Todo lo necesario para construir y lanzar"
             description="No son servicios aislados. Son capacidades que combinamos según lo que cada solución realmente necesita."
             headingId="capabilities-heading"
+            align="center"
           />
-          <div className="service-capability-grid">
-            {capabilities.map((capability, index) => (
-              <article key={capability.slug} className="service-capability-item">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{capability.name}</h3>
-                <p>{capability.description}</p>
-              </article>
-            ))}
+          <div className="service-capability-grid home-capability-grid">
+            {capabilities.map((capability) => {
+              const Icon = capabilityIcons[capability.slug];
+              return (
+                <article key={capability.slug} className="service-capability-item home-capability-card">
+                  <div className="home-capability-head">
+                    {Icon && (
+                      <span className="home-capability-icon" aria-hidden="true">
+                        <Icon size={20} strokeWidth={1.75} />
+                      </span>
+                    )}
+                    <h3>{capability.name}</h3>
+                  </div>
+                  <p>{capability.description}</p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -279,24 +304,24 @@ export default function Home() {
 
       <section id="proceso" className="section-wrap process-section" aria-labelledby="process-heading">
         <div className="container">
-          <div className="process-header">
-            <div className="section-tag">Proceso abierto</div>
-            <h2 id="process-heading" className="section-title">SIN SECRETOS<span className="accent">:</span><br />ASÍ CONSTRUIMOS<span className="accent">.</span></h2>
-            <p className="process-desc-text">Entregas semanales, alcance y precio claros, decisiones explicadas, documentación y traspaso.</p>
-          </div>
-          <div className="process-grid">
-            {processSteps.map((step) => (
-              <article key={step.n} className="process-step">
-                <div className="process-step-header">
-                  <span className="process-n">{step.n}</span>
-                  <h3 className="process-title">{step.title}</h3>
-                </div>
-                <p className="process-desc">{step.desc}</p>
-              </article>
-            ))}
-          </div>
-          <div className="home-section-action">
-            <Link href="/proceso" className="home-text-link">Conocer el proceso completo →</Link>
+          <div className="process-stage">
+            <div className="process-header">
+              <div className="section-tag">Proceso abierto</div>
+              <h2 id="process-heading" className="section-title">SIN SECRETOS<span className="accent">:</span><br />ASÍ CONSTRUIMOS<span className="accent">.</span></h2>
+              <p className="process-desc-text">Entregas semanales, alcance y precio claros, decisiones explicadas, documentación y traspaso.</p>
+              <Link href="/proceso" className="home-text-link">Conocer el proceso completo →</Link>
+            </div>
+            <div className="process-grid">
+              {processSteps.map((step) => (
+                <article key={step.n} className="process-step">
+                  <div className="process-step-header">
+                    <span className="process-n">{step.n}</span>
+                    <h3 className="process-title">{step.title}</h3>
+                  </div>
+                  <p className="process-desc">{step.desc}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -305,6 +330,7 @@ export default function Home() {
         <section className="home-distributor-section home-distributor-section--tinted" aria-labelledby="articles-heading">
           <div className="container">
             <SectionHeader
+              align="center"
               eyebrow="Ideas para decidir mejor"
               title="Tecnología explicada desde el negocio"
               description="Guías para evaluar productos digitales, automatización, software y decisiones técnicas con mayor claridad."
@@ -332,10 +358,14 @@ export default function Home() {
             <Link href="/nosotros" className="home-text-link">Conocer cómo trabajamos →</Link>
           </div>
           <ul className="home-team-principles">
-            <li><span>01</span><strong>Diagnóstico antes de construir</strong></li>
-            <li><span>02</span><strong>Avances y entregas semanales</strong></li>
-            <li><span>03</span><strong>Alcance y precio claros</strong></li>
-            <li><span>04</span><strong>Documentación y traspaso</strong></li>
+            {teamPrinciples.map(({ icon: Icon, text }) => (
+              <li key={text}>
+                <span className="home-team-principle-icon" aria-hidden="true">
+                  <Icon size={22} strokeWidth={1.75} />
+                </span>
+                <strong>{text}</strong>
+              </li>
+            ))}
           </ul>
         </div>
       </section>

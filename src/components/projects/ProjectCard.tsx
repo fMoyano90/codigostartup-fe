@@ -2,7 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/commercial/schema";
 
-export function ProjectCard({ project, colorLogo = false }: { project: Project; colorLogo?: boolean }) {
+export function ProjectCard({
+  project,
+  colorLogo = false,
+  hideTitle = false,
+}: {
+  project: Project;
+  colorLogo?: boolean;
+  hideTitle?: boolean;
+}) {
   return (
     <article className="project-card">
       <div className="project-card-topline">
@@ -20,14 +28,16 @@ export function ProjectCard({ project, colorLogo = false }: { project: Project; 
           className={`project-card-logo${colorLogo ? " project-card-logo--color" : ""}`}
         />
       </div>
-      <h3 className="project-card-title">
-        <Link href={`/proyectos/${project.slug}`} prefetch={false}>{project.name}</Link>
-      </h3>
+      {!hideTitle && (
+        <h3 className="project-card-title">
+          <Link href={`/proyectos/${project.slug}`} prefetch={false}>{project.name}</Link>
+        </h3>
+      )}
       <p className="project-card-description">{project.description}</p>
       {project.testimonial?.photo && (
         <div className="project-card-reviewer">
           <span className="testimonial-avatar testimonial-avatar--sm">
-            <Image src={project.testimonial.photo.src} alt={project.testimonial.photo.alt} fill sizes="28px" />
+            <Image src={project.testimonial.photo.src} alt={project.testimonial.photo.alt} fill sizes="40px" />
           </span>
           <span className="project-card-reviewer-name">{project.testimonial.author}</span>
         </div>
