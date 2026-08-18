@@ -7,8 +7,8 @@
 :root {
   --ink: #0a0a0a;
   --parchment: #ede8df;
-  --parch-dim: #8a8278;
-  --parch-faint: #3a3530;
+  --parch-dim: #b3aca3;
+  --parch-faint: #8a837b;
   --volt: #fdc828;
   --volt-dim: #efc459;
   --ember: #ff6a3d;
@@ -33,6 +33,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--ink);
+  overflow-x: clip;
 }
 
 body {
@@ -42,6 +43,7 @@ body {
   font-family: var(--font-dm-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 a {
@@ -198,7 +200,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.35;
+  opacity: 0.25;
   pointer-events: none;
 }
 
@@ -215,12 +217,13 @@ a {
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 70%);
 }
 
-/* Dual ambient glow: volt top-right + violet bottom-left */
+/* Capa oscura degradada + dual ambient glow: volt top-right + violet bottom-left */
 .hero-root::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(180deg, rgba(13, 13, 13, 0.55) 0%, rgba(13, 13, 13, 0.25) 60%, rgba(13, 13, 13, 0.45) 100%),
     radial-gradient(ellipse 700px 700px at 105% -15%, rgba(253, 200, 40, 0.18) 0%, transparent 65%),
     radial-gradient(ellipse 650px 650px at -8% 110%, rgba(124, 58, 237, 0.22) 0%, transparent 65%),
     radial-gradient(ellipse 400px 400px at 50% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
@@ -264,7 +267,7 @@ a {
 
 .hero-title {
   font-family: var(--font-bebas);
-  font-size: clamp(3rem, 8vw, 7.5rem);
+  font-size: clamp(2.5rem, 5.75vw, 5.25rem);
   line-height: 0.86;
   letter-spacing: -0.02em;
   color: var(--parchment);
@@ -278,21 +281,20 @@ a {
 }
 
 .hero-desc {
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   line-height: 1.65;
   color: var(--parch-dim);
-  max-width: 34rem;
+  max-width: 30rem;
   margin: 1.5rem 0 0;
 }
 
 .hero-actions {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.25rem;
-  border-left: 1px solid var(--divider);
-  padding-left: clamp(1.5rem, 3vw, 3rem);
+  margin-top: 2.25rem;
 }
 
 @media (max-width: 768px) {
@@ -301,14 +303,34 @@ a {
     gap: 2rem;
   }
 
+  .hero-eyebrow {
+    font-size: 0.7rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.75rem, 12vw, 3.25rem);
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    margin: 1.5rem 0 0;
+  }
+
   .hero-actions {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     gap: 0.75rem;
-    border-left: none;
-    padding-left: 0;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    font-size: 0.78rem;
+  }
+
+  .hero-video {
+    object-position: 65% 50%;
   }
 }
 
@@ -1693,6 +1715,9 @@ a {
 }
 
 .process-step {
+  display: flex;
+  align-items: stretch;
+  gap: 1.25rem;
   padding: 1.1rem 1.25rem;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -1722,20 +1747,24 @@ a {
     0 0 0 1px rgba(253, 200, 40, 0.08);
 }
 
-.process-step-header {
+.process-step-content {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.4rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 0;
+  flex: 1;
 }
 
 .process-n {
   font-family: var(--font-bebas);
-  font-size: 2.6rem;
-  line-height: 1;
+  font-size: clamp(4.5rem, 11vw, 7rem);
+  line-height: 0.85;
   color: var(--divider-l);
   letter-spacing: -0.04em;
   flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
   transition: color 0.35s;
 }
 
@@ -1808,6 +1837,12 @@ a {
 
   .process-header {
     position: static;
+    align-items: center;
+    text-align: center;
+  }
+
+  .process-desc-text {
+    max-width: none;
   }
 
   .process-grid {
@@ -1815,19 +1850,20 @@ a {
     padding-top: 0;
   }
 
-  .process-step-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+  .process-n {
+    font-size: 5rem;
+    line-height: 0.85;
+    align-items: center;
   }
 
-  .process-n {
-    font-size: 2.2rem;
-    line-height: 0.9;
+  .process-desc {
+    text-align: justify;
   }
 
   .process-step {
     padding: 1.1rem 1.25rem;
+    gap: 1.5rem;
+    text-align: center;
   }
 }
 
@@ -5159,7 +5195,7 @@ a {
 
 .home-need-card h3 {
   max-width: 520px;
-  margin: 0.75rem 0 0.6rem;
+  margin: 1rem 0 0.6rem;
   color: var(--parchment);
   font-family: var(--font-bebas);
   font-size: clamp(2rem, 3.5vw, 3rem);
@@ -5172,7 +5208,7 @@ a {
   max-width: 540px;
   margin: 0;
   color: var(--parch-dim);
-  font-size: 1rem;
+  font-size: 0.85rem;
   line-height: 1.7;
 }
 
@@ -5446,7 +5482,7 @@ a {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 10px;
-  color: var(--volt);
+  color: #a78bfa;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.16);
 }
@@ -5805,10 +5841,46 @@ a {
     gap: 1rem;
   }
 
+  .home-need-card {
+    text-align: center;
+  }
+
+  .home-need-card .workshop-badge {
+    align-self: center;
+  }
+
+  .home-need-card h3,
+  .home-need-card > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-need-card .home-need-links {
+    justify-content: center;
+  }
+
+  .workshop-card {
+    text-align: center;
+  }
+
+  .workshop-card .workshop-badge,
+  .workshop-banner .workshop-badge {
+    align-self: center;
+  }
+
+  .workshop-banner {
+    text-align: center;
+  }
+
   .home-solutions-grid .service-card {
     min-height: 220px;
     padding: 1.75rem;
     width: 100%;
+    text-align: center;
+  }
+
+  .home-solutions-grid .service-card .service-link {
+    align-self: center;
   }
 
   .home-article-grid .article-card {
@@ -5823,6 +5895,11 @@ a {
 
   .home-capabilities-section .home-capability-card {
     height: auto;
+    text-align: center;
+  }
+
+  .home-capabilities-section .home-capability-head {
+    justify-content: center;
   }
 
   .home-featured-metrics {
@@ -5843,8 +5920,8 @@ a {
   }
 
   .home-team-principles li {
-    grid-template-columns: 2rem 1fr;
-    gap: 1rem;
+    grid-template-columns: 2.75rem 1fr;
+    gap: 1.5rem;
   }
 }
 
@@ -7155,5 +7232,354 @@ a {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 0.5rem;
+}
+
+/* ============================================
+   Home: tarjeta destacada (In-Company a medida)
+   ============================================ */
+.home-need-card--featured {
+  border-color: rgba(253, 200, 40, 0.35);
+  background:
+    radial-gradient(120% 120% at 100% 0%, rgba(253, 200, 40, 0.14), transparent 45%),
+    linear-gradient(145deg, rgba(253, 200, 40, 0.10), rgba(253, 200, 40, 0.04));
+}
+
+.home-need-card--featured::before {
+  background: linear-gradient(90deg, transparent, rgba(253, 200, 40, 0.55), transparent);
+}
+
+.home-need-card--featured::after {
+  background: linear-gradient(180deg, rgba(253, 200, 40, 0.5), transparent, rgba(253, 200, 40, 0.16));
+}
+
+/* ============================================
+   Home: sección de talleres corporativos
+   ============================================ */
+.home-workshops-section {
+  background:
+    linear-gradient(180deg, rgba(13, 13, 13, 0.92) 0%, rgba(13, 13, 13, 0.86) 100%),
+    url("/fondo-talleres.jpg") center / cover no-repeat;
+}
+
+.home-workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.workshop-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(1.1rem, 2.2vw, 1.6rem);
+  border: 1px solid rgba(253, 200, 40, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(253, 200, 40, 0.06), rgba(253, 200, 40, 0.025));
+  backdrop-filter: blur(9px) saturate(1.4);
+  -webkit-backdrop-filter: blur(9px) saturate(1.4);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 4px 2px rgba(253, 200, 40, 0.06);
+  transition: background 0.35s, border-color 0.25s, transform 0.25s;
+}
+
+.workshop-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(253, 200, 40, 0.4), transparent);
+}
+
+.workshop-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(253, 200, 40, 0.35), transparent, rgba(253, 200, 40, 0.12));
+}
+
+@media (hover: hover) {
+  .workshop-card:hover {
+    border-color: rgba(253, 200, 40, 0.38);
+    background: linear-gradient(145deg, rgba(253, 200, 40, 0.12), rgba(253, 200, 40, 0.05));
+    transform: translateY(-3px);
+  }
+}
+
+.workshop-badge {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--volt);
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(253, 200, 40, 0.3);
+  border-radius: 999px;
+  background: rgba(253, 200, 40, 0.06);
+}
+
+.workshop-badge--violet {
+  color: #a78bfa;
+  border-color: rgba(167, 139, 250, 0.35);
+  background: rgba(124, 58, 237, 0.14);
+}
+
+.workshop-card h3 {
+  margin: 1rem 0 0.75rem;
+  color: var(--parchment);
+  font-family: var(--font-bebas);
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.workshop-card p {
+  margin: 0;
+  color: var(--parch-dim);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.workshop-card .workshop-audience {
+  margin-bottom: 0.6rem;
+}
+
+.workshop-audience strong {
+  color: var(--parchment);
+}
+
+.workshop-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: clamp(190px, 18vw, 210px);
+  padding: clamp(1.1rem, 2.2vw, 1.6rem);
+  border: 1px solid rgba(253, 200, 40, 0.3);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(253, 200, 40, 0.09), rgba(253, 200, 40, 0.03));
+  backdrop-filter: blur(9px) saturate(1.4);
+  -webkit-backdrop-filter: blur(9px) saturate(1.4);
+}
+
+.workshop-banner h3 {
+  margin: 1rem 0 0.75rem;
+  color: var(--parchment);
+  font-family: var(--font-bebas);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.workshop-banner p {
+  max-width: 640px;
+  margin: 0;
+  color: var(--parch-dim);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .home-workshop-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 901px) {
+  .home-workshop-grid {
+    grid-auto-rows: 1fr;
+  }
+}
+
+/* ============================================
+   Home: refinamiento de tamaños (escalado Windows 125% y pantallas grandes)
+   Solo aplica a main.home — otras páginas intactas
+   ============================================ */
+
+/* Títulos y descripciones de sección */
+.home .content-section-title {
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+}
+
+.home .content-section-description {
+  font-size: 0.95rem;
+}
+
+.home .content-section-header {
+  margin-bottom: 2.5rem;
+}
+
+.home .home-problems-layout .content-section-header {
+  margin-bottom: 0;
+}
+
+/* Padding vertical de secciones */
+.home .home-distributor-section,
+.home .home-team-section,
+.home .home-capabilities-section,
+.home .home-featured-case {
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+}
+
+.home .home-section-action {
+  margin-top: 2rem;
+}
+
+/* Títulos grandes (proceso IDEA y caso destacado) */
+.home .section-title {
+  font-size: clamp(2.25rem, 4.75vw, 4.25rem);
+}
+
+.home .home-featured-case-copy > p {
+  font-size: 0.95rem;
+}
+
+.home .home-featured-metrics strong {
+  font-size: 1.35rem;
+}
+
+/* Proceso IDEA */
+.home .process-section .section-title .accent {
+  color: var(--parchment);
+}
+
+.home .process-step:nth-child(odd) .process-n {
+  color: var(--violet);
+}
+
+.home .process-step:nth-child(even) .process-n {
+  color: var(--volt);
+}
+
+.home .process-title {
+  font-size: 1.5rem;
+}
+
+.home .process-desc-text {
+  font-size: 0.9rem;
+}
+
+/* CTA final */
+.home .cta-root {
+  padding: 5rem clamp(2rem, 5vw, 4rem) 4rem;
+}
+
+.home .cta-title {
+  font-size: clamp(2.5rem, 5.75vw, 5.25rem);
+}
+
+.home .cta-desc {
+  font-size: 0.9rem;
+}
+
+/* Cards de necesidades */
+.home .home-need-card {
+  padding: clamp(1.1rem, 2.2vw, 1.6rem);
+}
+
+.home .home-need-card h3 {
+  font-size: clamp(1.55rem, 2.3vw, 2rem);
+}
+
+/* Cards de talleres */
+.home .workshop-card h3 {
+  font-size: clamp(1.25rem, 1.9vw, 1.6rem);
+}
+
+.home .workshop-card p {
+  font-size: 0.85rem;
+}
+
+.home .workshop-banner h3 {
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+}
+
+.home .workshop-banner p {
+  font-size: 0.88rem;
+}
+
+/* Grid de servicios */
+.home .home-solutions-grid .service-card {
+  min-height: 220px;
+}
+
+.home .service-name {
+  font-size: 1.3rem;
+}
+
+.home .service-desc {
+  font-size: 0.84rem;
+}
+
+/* Problemas */
+.home .home-problems-section .service-problem-list li {
+  height: auto;
+  min-height: 76px;
+  font-size: 0.85rem;
+}
+
+.home .home-problems-section .service-problem-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Capacidades */
+.home .home-capabilities-section .home-capability-card {
+  height: 136px;
+}
+
+.home .home-capabilities-section .home-capability-head h3 {
+  font-size: 1.3rem;
+}
+
+/* Portafolio y blog */
+.home .project-card-title {
+  font-size: 2.2rem;
+}
+
+.home .article-card-title {
+  font-size: 1.05rem;
+}
+
+/* FAQ */
+.home .service-faq-item summary {
+  font-size: 0.95rem;
+}
+
+/* Equipo */
+.home .home-team-principles strong {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+}
+
+.home .home-team-principles li {
+  padding: 0.9rem 1.2rem;
+}
+
+@media (max-width: 680px) {
+  .home-team-grid > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home .home-team-principles li {
+    gap: 1.5rem;
+  }
+
+  .home .home-team-principles strong {
+    font-size: 1.35rem;
+  }
 }
 

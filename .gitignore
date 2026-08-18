@@ -12,3 +12,5 @@ pnpm-debug.log*
 !.env.example
 .playwright-mcp/
 .antigravitycli
+# Local Netlify folder
+.netlify

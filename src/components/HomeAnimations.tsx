@@ -11,6 +11,8 @@ const REVEAL_SELECTOR = [
   ".service-card",
   ".project-card",
   ".article-card",
+  ".workshop-card",
+  ".workshop-banner",
 ].join(", ");
 
 export default function HomeAnimations() {
@@ -98,6 +100,9 @@ export default function HomeAnimations() {
         });
       });
     });
+
+    document.fonts.ready.then(() => ScrollTrigger.refresh());
+    window.addEventListener("load", () => ScrollTrigger.refresh());
 
     return () => ctx.revert();
   }, []);
