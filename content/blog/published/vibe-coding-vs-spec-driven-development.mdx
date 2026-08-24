@@ -1,0 +1,302 @@
+---
+title: >-
+  Vibe Coding vs Spec-Driven Development: cómo está cambiando el desarrollo de
+  software con IA
+slug: vibe-coding-vs-spec-driven-development
+description: >-
+  La IA puede generar software cada vez más rápido, pero el desafío ya no es
+  solo escribir código. Conoce qué es Spec-Driven Development y por qué está
+  ganando terreno frente al vibe coding.
+excerpt: >-
+  El desarrollo guiado por especificaciones (SDD) está ganando terreno frente al
+  vibe coding: por qué un contrato claro sobre el comportamiento del software es
+  la clave cuando los agentes de IA escriben cada vez más código.
+category: automatizacion-e-ia
+tags:
+  - inteligencia artificial
+  - vibe coding
+  - spec-driven development
+  - desarrollo de software
+  - agentes de programación
+  - productividad
+audience:
+  - founders
+  - emprendedores
+  - gerentes
+intent: informational
+funnelStage: awareness
+services:
+  - software-a-medida
+  - desarrollo-mvp
+cta:
+  type: service
+  target: software-a-medida
+image:
+  src: /images/blog/vibe-coding-vs-spec-driven-development.webp
+  alt: >-
+    Portada del artículo vibe-coding-vs-spec-driven-development: comparación
+    entre vibe coding y desarrollo guiado por especificaciones con IA.
+author: Código Startup
+status: published
+featured: false
+createdAt: '2026-08-11'
+updatedAt: '2026-08-11'
+approvedAt: '2026-08-11'
+publishedAt: '2026-08-11'
+seo:
+  title: 'Vibe Coding vs Spec-Driven Development: desarrollo con IA en 2026'
+  description: >-
+    La IA puede generar software cada vez más rápido, pero el desafío ya no es
+    solo escribir código. Conoce qué es Spec-Driven Development y por qué está
+    ganando terreno frente al vibe coding.
+  primaryKeyword: vibe coding vs spec-driven development
+  secondaryKeywords:
+    - spec-driven development
+    - desarrollo guiado por especificaciones
+    - desarrollo de software con IA
+    - context engineering
+relatedArticles:
+  - riesgos-de-usar-ia-sin-supervision
+  - que-validar-antes-de-desarrollar-una-aplicacion
+reviewStatus: pending
+reviewScore: null
+---
+
+Hace poco, desarrollar una aplicación con inteligencia artificial significaba pedirle a un asistente que completara una función, explicara un error o generara algunas líneas de código.
+
+Eso está cambiando rápidamente.
+
+Hoy existen agentes de programación capaces de analizar un repositorio completo, modificar múltiples archivos, ejecutar comandos, correr pruebas y trabajar durante varios pasos antes de volver a pedir intervención humana.
+
+La conversación ya no es solamente:
+
+**"¿Puede la IA programar?"**
+
+La pregunta empieza a ser otra:
+
+**"¿Cómo hacemos para que construya exactamente el software que necesitamos?"**
+
+Y ahí aparece una tendencia que está ganando fuerza entre desarrolladores: **Spec-Driven Development o desarrollo guiado por especificaciones**.
+
+## Primero llegó el vibe coding
+
+El concepto de *vibe coding* popularizó una manera extremadamente simple de desarrollar software:
+
+describes lo que quieres, la inteligencia artificial genera código, pruebas el resultado y continúas haciendo ajustes mediante prompts.
+
+Por ejemplo:
+
+> "Créame un sistema para reservar horas, con usuarios, pagos y un panel administrador."
+
+Un agente puede comenzar a construirlo prácticamente de inmediato.
+
+Para prototipos, pruebas de concepto, herramientas internas o experimentos rápidos, esta forma de trabajar puede ser tremendamente útil.
+
+El problema aparece cuando el software empieza a crecer.
+
+¿Qué ocurre si el sistema debe manejar permisos?
+
+¿Quién puede modificar una reserva?
+
+¿Qué pasa si falla un pago?
+
+¿Cómo se manejan los datos personales?
+
+¿Qué ocurre cuando dos usuarios reservan simultáneamente?
+
+¿Qué arquitectura debería utilizarse?
+
+¿Cómo sabremos que una funcionalidad está realmente terminada?
+
+Esas decisiones siguen existiendo aunque la inteligencia artificial sea capaz de escribir el código.
+
+## El problema ya no es generar código
+
+Los modelos actuales pueden producir código a una velocidad que hace pocos años habría parecido absurda.
+
+De hecho, el estudio State of Code 2026 de Sonar encontró que los desarrolladores encuestados estiman que aproximadamente un **42% del código que entregan actualmente está generado o significativamente asistido por IA**.
+
+Pero existe una paradoja.
+
+El mismo estudio indica que **96% de los desarrolladores no confía completamente en el código generado por inteligencia artificial**.
+
+Es decir:
+
+**podemos producir código más rápido, pero seguimos necesitando asegurarnos de que sea el código correcto.**
+
+Ahí comienza a cambiar el trabajo del desarrollador.
+
+## Qué es Spec-Driven Development
+
+Spec-Driven Development, normalmente abreviado como **SDD**, propone invertir parte del proceso.
+
+En lugar de empezar diciendo:
+
+> "Construye esta aplicación."
+
+primero se crea una especificación suficientemente clara de cómo debería funcionar.
+
+Por ejemplo:
+
+### Funcionalidad
+
+El usuario puede reservar una hora disponible.
+
+### Reglas
+
+* Una hora reservada deja de estar disponible inmediatamente.
+* Un usuario no puede tener dos reservas simultáneas.
+* La reserva solo queda confirmada después del pago.
+* Si el pago falla, el horario vuelve a estar disponible.
+* El administrador puede cancelar una reserva.
+* Toda cancelación debe quedar registrada.
+
+### Criterios de aceptación
+
+* Dos usuarios no pueden reservar el mismo horario.
+* Una reserva debe aparecer en el panel administrativo.
+* El sistema debe enviar confirmación después del pago.
+* Un pago fallido no puede generar una reserva confirmada.
+
+Ahora el agente tiene algo mucho más poderoso que un simple prompt.
+
+Tiene **un contrato sobre cómo debería comportarse el software**.
+
+El concepto está ganando relevancia precisamente por el crecimiento de los agentes de programación, y ya se está estudiando como una metodología específica para trabajar con desarrollo asistido por IA.
+
+## Del prompt engineering al context engineering
+
+También está cambiando otra idea.
+
+Durante los primeros años de la IA generativa se hablaba constantemente de **prompt engineering**.
+
+¿Cómo escribimos el mejor prompt?
+
+Con los agentes actuales, eso empieza a quedarse corto.
+
+Un agente que trabaja sobre un proyecto durante horas necesita mucho más que un buen prompt.
+
+Necesita entender:
+
+* la arquitectura del sistema;
+* las tecnologías utilizadas;
+* convenciones de código;
+* reglas del negocio;
+* restricciones;
+* APIs disponibles;
+* estructura de la base de datos;
+* pruebas existentes;
+* criterios de seguridad;
+* documentación del proyecto.
+
+Por eso está tomando fuerza otro concepto:
+
+**context engineering.**
+
+En lugar de preocuparnos únicamente del mensaje que enviamos al modelo, diseñamos todo el contexto que tendrá disponible mientras trabaja.
+
+Investigaciones recientes sobre miles de repositorios ya muestran el crecimiento de mecanismos como archivos de contexto, skills y subagentes para configurar agentes de desarrollo.
+
+## Entonces, ¿se acabó el vibe coding?
+
+No necesariamente.
+
+El vibe coding sigue siendo extremadamente útil.
+
+El problema es utilizarlo para situaciones donde las consecuencias de una mala decisión técnica son importantes.
+
+### Vibe coding puede funcionar muy bien para:
+
+* prototipos;
+* demos;
+* landing pages;
+* experimentos;
+* scripts internos;
+* herramientas personales;
+* validar rápidamente una idea.
+
+### Un enfoque más estructurado es necesario para:
+
+* sistemas empresariales;
+* plataformas con múltiples usuarios;
+* e-commerce;
+* aplicaciones que manejan pagos;
+* software que procesa información sensible;
+* integraciones con otros sistemas;
+* productos que deberán mantenerse durante años.
+
+Mientras mayor sea la importancia del software para una empresa, mayor debería ser la claridad de sus especificaciones.
+
+## La IA no elimina la ingeniería de software
+
+Este probablemente sea uno de los cambios más interesantes que estamos viviendo.
+
+Durante años, gran parte del esfuerzo de desarrollar software estaba directamente relacionado con escribir código.
+
+Ahora una parte creciente de ese trabajo puede automatizarse.
+
+Pero eso no elimina otros problemas.
+
+Al contrario, hace que sean más visibles.
+
+Antes de escribir una línea de código todavía necesitamos responder preguntas como:
+
+**¿Qué problema queremos resolver?**
+
+**¿Cómo debería funcionar el sistema?**
+
+**¿Qué ocurre cuando algo sale mal?**
+
+**¿Cómo protegemos la información?**
+
+**¿Cómo sabemos que la solución realmente funciona?**
+
+La inteligencia artificial puede generar veinte archivos en pocos minutos.
+
+Pero producir veinte archivos equivocados más rápido no crea un mejor producto.
+
+## El nuevo rol de los equipos de software
+
+En este escenario, el valor de un equipo de desarrollo empieza a desplazarse.
+
+Menos tiempo escribiendo código repetitivo.
+
+Más tiempo:
+
+* entendiendo procesos;
+* diseñando soluciones;
+* definiendo especificaciones;
+* tomando decisiones de arquitectura;
+* revisando resultados;
+* creando pruebas;
+* evaluando seguridad;
+* integrando sistemas;
+* entendiendo el negocio.
+
+Los agentes de IA se convierten en una nueva capa dentro del proceso de desarrollo.
+
+No necesariamente reemplazan el proceso.
+
+**Lo aceleran.**
+
+Y cuando esa aceleración está acompañada de buenas especificaciones, arquitectura y controles, podemos construir software considerablemente más rápido sin convertir cada proyecto en un experimento.
+
+## Lo importante para las empresas
+
+Para una empresa que quiere desarrollar una plataforma, automatizar un proceso o crear una nueva aplicación, la pregunta ya no debería ser:
+
+**"¿Van a utilizar IA para programarla?"**
+
+Probablemente la respuesta será sí.
+
+Una mejor pregunta sería:
+
+**"¿Qué proceso utilizan para asegurarse de que la IA construya correctamente lo que mi empresa necesita?"**
+
+Antes de responderla, conviene saber [qué validar antes de desarrollar una aplicación](/blog/que-validar-antes-de-desarrollar-una-aplicacion) y entender [qué riesgos trae usar IA sin supervisión](/blog/riesgos-de-usar-ia-sin-supervision).
+
+Porque en los próximos años escribir código probablemente será cada vez más barato.
+
+Pero entender un negocio, transformar un problema en una solución y construir software confiable seguirá siendo la parte realmente importante.
+
+Y posiblemente ahí esté el verdadero cambio que está provocando la inteligencia artificial en el desarrollo de software.

@@ -14,3 +14,5 @@ pnpm-debug.log*
 .antigravitycli
 # Local Netlify folder
 .netlify
+# Artefactos temporales del pipeline de imágenes de blog (OpenAI Batch)
+.blog-images/
