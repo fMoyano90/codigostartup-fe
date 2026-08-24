@@ -18,7 +18,7 @@ const projectData: Project[] = [
       { val: "Industrial", label: "Escala" },
       { val: "Minería", label: "Sector" },
     ],
-    logo: "/SS_LOGO_WHITE.png",
+    logo: "/SS_LOGO_WHITE.svg",
     externalUrl: null,
     homeCard: null,
     testimonial: {

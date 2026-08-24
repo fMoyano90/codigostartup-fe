@@ -12,5 +12,7 @@ pnpm-debug.log*
 !.env.example
 .playwright-mcp/
 .antigravitycli
+# Local Netlify folder
+.netlify
 # Artefactos temporales del pipeline de imágenes de blog (OpenAI Batch)
 .blog-images/

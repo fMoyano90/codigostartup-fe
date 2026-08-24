@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BarChart3, Bot, Code2, Compass, FileSearch, FileSpreadsheet, FileText, Layers, MessageSquare, PenTool, RefreshCw, Repeat2, Rocket, Search, SearchCheck, ShieldAlert, ShieldCheck, Wrench } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import HomeAnimationsLoader from "@/components/HomeAnimationsLoader";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ArticleCard } from "@/components/blog/ArticleCard";
@@ -7,9 +8,8 @@ import { ProjectCard } from "@/components/projects/ProjectCard";
 import {
   capabilities,
   homeClientProjects,
-  homeOwnProduct,
-  processSteps,
   services,
+  siteConfig,
 } from "@/data/commercial";
 import { getAllPublishedArticles } from "@/lib/blog/article-loader";
 import type { ServiceSlug } from "@/lib/commercial/schema";
@@ -20,83 +20,204 @@ function requireService(slug: ServiceSlug) {
   return service;
 }
 
-const websiteService = requireService("sitios-web");
-const storeService = requireService("tiendas-online");
 const softwareService = requireService("software-a-medida");
 const automationService = requireService("automatizacion-de-procesos");
 const mvpService = requireService("desarrollo-mvp");
-const webAppService = requireService("aplicaciones-web");
-const mobileAppService = requireService("aplicaciones-moviles");
 const auditService = requireService("auditoria-y-evolucion");
+
+const hiddenServiceSlugs = [
+  "sitios-web",
+  "tiendas-online",
+  "aplicaciones-web",
+  "aplicaciones-moviles",
+] as const satisfies ReadonlyArray<ServiceSlug>;
+
+const engineeringServices = services.filter(
+  ({ slug }) => !hiddenServiceSlugs.includes(slug as (typeof hiddenServiceSlugs)[number]),
+);
 
 const needs = [
   {
-    number: "01",
-    eyebrow: "Presencia digital",
-    title: "Necesito un sitio web",
-    description: websiteService.shortDescription,
+    eyebrow: "Capacitación & Talleres",
+    title: "Quiero capacitar a mi equipo",
+    description: "Talleres prácticos para que tu equipo implemente IA en sus procesos reales de trabajo.",
+    links: [{ label: "Ver talleres corporativos", href: "#talleres" }],
+  },
+  {
+    eyebrow: "Automatización e IA",
+    title: "Quiero automatizar un proceso",
+    description: automationService.shortDescription,
     links: [
-      { label: websiteService.name, slug: websiteService.slug },
-      { label: storeService.name, slug: storeService.slug },
+      { label: "Automatización tradicional", href: `/soluciones/${automationService.slug}` },
+      { label: "Automatización con IA", href: "/contacto" },
     ],
   },
   {
-    number: "02",
-    eyebrow: "Operación",
-    title: "Quiero digitalizar un proceso",
+    eyebrow: "Software y productos",
+    title: "Necesito software a medida",
     description: softwareService.shortDescription,
     links: [
-      { label: softwareService.name, slug: softwareService.slug },
-      { label: automationService.name, slug: automationService.slug },
+      { label: softwareService.name, href: `/soluciones/${softwareService.slug}` },
+      { label: mvpService.name, href: `/soluciones/${mvpService.slug}` },
     ],
   },
   {
-    number: "03",
-    eyebrow: "Producto digital",
-    title: "Quiero lanzar un producto",
-    description: mvpService.shortDescription,
-    links: [
-      { label: mvpService.name, slug: mvpService.slug },
-      { label: webAppService.name, slug: webAppService.slug },
-      { label: mobileAppService.name, slug: mobileAppService.slug },
-    ],
-  },
-  {
-    number: "04",
-    eyebrow: "Sistema existente",
-    title: "Necesito mejorar lo que ya tengo",
+    eyebrow: "Sistemas existentes",
+    title: "Quiero revisar un sistema existente",
     description: auditService.shortDescription,
-    links: [{ label: auditService.name, slug: auditService.slug }],
+    links: [{ label: auditService.name, href: `/soluciones/${auditService.slug}` }],
   },
 ];
 
+const workshops = [
+  {
+    category: "Productividad Administrativa",
+    title: "IA para Productividad Administrativa",
+    audience: "Equipos administrativos, contabilidad, RR.HH., profesionales y jefaturas.",
+    result: "Ordenar tu bandeja de correo, crear documentos y resumir reuniones con IA, liberando tiempo de tareas repetitivas. Incluye el módulo crítico de ciberseguridad: qué información NO poner en una IA pública.",
+  },
+  {
+    category: "Automatización e IA",
+    title: "Automatización de Procesos con IA",
+    audience: "Equipos operativos y jefaturas.",
+    result: "Detectar tareas repetitivas, descubrir en qué gasta más tiempo tu equipo y diseñar automatizaciones que conecten correo, planillas, formularios y CRM, listas para implementar en tu operación. Con buenas prácticas de ciberseguridad incluidas.",
+  },
+  {
+    category: "Recursos Humanos",
+    title: "IA para Recursos Humanos",
+    audience: "Equipos de RR.HH. y People.",
+    result: "Descripciones de cargo, guiones de entrevistas, comunicaciones internas, evaluación de currículums y apoyo a onboarding y capacitaciones con IA. Con buenas prácticas de ciberseguridad incluidas.",
+  },
+  {
+    category: "Comercial y Ventas",
+    title: "IA para Equipos Comerciales",
+    audience: "Equipos de ventas y desarrollo comercial.",
+    result: "Calificar prospectos, preparar reuniones y redactar correos y propuestas comerciales con IA: el mismo playbook que usamos en nuestro propio proceso comercial. Con buenas prácticas de ciberseguridad incluidas.",
+  },
+  {
+    category: "Marketing",
+    title: "IA para Marketing",
+    audience: "Equipos de marketing y creadores de contenido.",
+    result: "Campañas de correo, anuncios, investigación de mercado y contenido para redes sociales, incluyendo videos UGC y videos animados generados con IA. Con buenas prácticas de ciberseguridad incluidas.",
+  },
+  {
+    category: "Liderazgo",
+    title: "IA para Líderes y Jefaturas",
+    audience: "Jefaturas, gerentes y líderes de equipo.",
+    result: "Preparar reuniones, analizar información, delegar y dar seguimiento con asistentes de IA para tomar decisiones más informadas. Con buenas prácticas de ciberseguridad incluidas.",
+  },
+  {
+    category: "Gestión de Proyectos",
+    title: "IA para Gestión de Proyectos",
+    audience: "PMO, product y equipos de proyecto.",
+    result: "Planificar, gestionar riesgos, redactar historias de usuario y conectar con herramientas como Jira. Con buenas prácticas de ciberseguridad incluidas.",
+  },
+];
+
+const talleresCard = {
+  name: "Talleres de IA Corporativos",
+  category: "Capacitación & Talleres",
+  description: "Capacitación práctica para que tu equipo implemente IA en sus procesos reales: productividad administrativa, automatización, recursos humanos, comercial, marketing, liderazgo y gestión de proyectos.",
+  href: "#talleres",
+  ctaLabel: "Ver talleres",
+};
+
+const agentesCard = {
+  name: "Agentes de IA y Bases de Conocimiento",
+  category: "Automatización e IA",
+  description: "Asistentes internos entrenados con los manuales, procedimientos y contratos de tu empresa, con búsqueda semántica (RAG) sobre tu propia información.",
+  href: "/contacto",
+  ctaLabel: "Evaluar mi caso",
+};
+
+const homeServiceCategories: Record<string, string> = {
+  "automatizacion-de-procesos": "Automatización e IA",
+  "software-a-medida": "Ingeniería y software",
+  "desarrollo-mvp": "Productos y plataformas",
+  "auditoria-y-evolucion": "Sistemas existentes",
+};
+
+const homeServiceCards = [
+  talleresCard,
+  ...engineeringServices.map((service) => ({
+    name: service.name,
+    category: homeServiceCategories[service.slug] ?? service.hero.eyebrow,
+    description: service.shortDescription,
+    href: `/soluciones/${service.slug}`,
+    ctaLabel: "Ver solución",
+  })),
+  agentesCard,
+];
+
 const homeProblems = [
-  websiteService.problems[1],
-  websiteService.problems[6],
-  softwareService.problems[0],
-  softwareService.problems[4],
-  automationService.problems[0],
-  mvpService.problems[1],
-  auditService.problems[0],
-  auditService.problems[5],
+  { icon: FileSpreadsheet, text: "Horas procesando planillas a mano, con datos duplicados entre sistemas." },
+  { icon: MessageSquare, text: "Procesos administrados por correo y WhatsApp, sin trazabilidad de aprobaciones." },
+  { icon: BarChart3, text: "Reportes y seguimientos preparados manualmente cada semana." },
+  { icon: Repeat2, text: "Sistemas que no se comunican entre sí: hay que copiar y pegar todo dos veces." },
+  { icon: Wrench, text: "Herramientas genéricas que no se adaptan a la forma real de trabajar." },
+  { icon: Bot, text: "Equipos que usan la IA solo como redactor de textos, sin conectarla a los procesos." },
+  { icon: ShieldAlert, text: "Dudas sobre qué información se puede subir a una IA sin arriesgar la privacidad." },
+  { icon: FileSearch, text: "Equipos ahogados en PDFs buscando cláusulas y preparando informes a mano." },
+];
+
+const capabilityIcons: Record<string, LucideIcon> = {
+  estrategia: Compass,
+  "ux-ui": PenTool,
+  desarrollo: Code2,
+  contenido: FileText,
+  seo: Search,
+  analitica: BarChart3,
+  arquitectura: Layers,
+  seguridad: ShieldCheck,
+  "lanzamiento-y-evolucion": Rocket,
+};
+
+const teamPrinciples = [
+  { icon: SearchCheck, text: "Diagnóstico antes de proponer" },
+  { icon: RefreshCw, text: "Talleres 100% prácticos" },
+  { icon: ShieldCheck, text: "Entregables claros y medibles" },
+  { icon: FileText, text: "Seguridad de datos primero" },
+];
+
+const ideaSteps = [
+  {
+    n: "I",
+    title: "Identificar",
+    desc: "Talleres y sesiones estratégicas para mapear ineficiencias y priorizar oportunidades por impacto.",
+  },
+  {
+    n: "D",
+    title: "Diagnosticar",
+    desc: "Levantamiento del proceso actual, medición de tiempos y diseño de la arquitectura técnica del proceso futuro.",
+  },
+  {
+    n: "E",
+    title: "Ejecutar",
+    desc: "Desarrollo, integración de sistemas, entrenamiento de modelos de IA y puesta en producción.",
+  },
+  {
+    n: "A",
+    title: "Acompañar",
+    desc: "Medición de horas ahorradas, soporte técnico continuo y escalamiento de la solución.",
+  },
 ];
 
 const homeFaq = [
   {
-    question: "¿Qué pasa si todavía no sé qué solución necesito?",
-    answer: "Partimos con un diagnóstico para entender el problema real. Desde ahí definimos una ruta, un alcance, tiempos y precio claros antes de construir.",
+    question: "¿Cómo garantizan la seguridad de los datos corporativos al usar IA?",
+    answer: "En nuestros talleres y desarrollos partimos por la gobernanza: enseñamos e implementamos arquitecturas privadas y protocolos claros de qué información puede procesarse. La información confidencial de tu empresa no se utiliza para entrenar modelos públicos.",
   },
   {
-    question: "¿Cómo puedo seguir el avance del proyecto?",
-    answer: "Trabajamos con avances y entregas semanales. Siempre sabes qué se construyó, qué viene y por qué se tomó cada decisión.",
+    question: "¿Los talleres son teóricos o prácticos?",
+    answer: "Son 100% prácticos, manos a la obra. Los participantes trabajan con casos reales de su día a día y aplican soluciones desde el primer bloque.",
   },
   {
-    question: "¿Qué recibo al terminar?",
-    answer: "Entregamos el producto acordado junto con la documentación y el traspaso necesarios para que pueda operar y evolucionar.",
+    question: "¿Qué pasa si después del taller necesitamos una solución más compleja?",
+    answer: "Es una conversación que se da de forma natural si llega. Algunos equipos profundizan por su cuenta con lo aprendido; otros nos piden apoyo puntual para flujos que requieren integración técnica. Cuando llegue ese momento, lo conversamos sin compromiso.",
   },
   {
-    question: "¿Pueden revisar o continuar un sistema existente?",
-    answer: "Sí. La línea de auditoría y evolución permite revisar deuda técnica, rendimiento, arquitectura, seguridad y capacidad de evolución antes de definir los próximos pasos.",
+    question: "¿Tienen experiencia en industrias exigentes o reguladas?",
+    answer: "Sí. Hemos desarrollado sistemas operacionales en terreno, plataformas de inspección geotécnica, control de perforación minera y software SaaS propio de gestión de proyectos.",
   },
 ];
 
@@ -108,32 +229,26 @@ export default function Home() {
       <HomeAnimationsLoader />
 
       <section id="hero" className="hero-root">
-        <Image
-          src="/isotipo-blanco.svg"
-          width={620}
-          height={620}
-          className="hero-watermark"
-          aria-hidden="true"
-          alt=""
-          priority
-        />
+        <video className="hero-video" autoPlay muted loop playsInline aria-hidden="true">
+          <source src="/video-hero.mp4" type="video/mp4" />
+        </video>
         <div className="hero-inner">
-          <div className="hero-eyebrow fadein fadein-d1">Desarrollo · Estrategia · Diseño</div>
-          <div className="hero-title-area">
-            <h1 className="hero-title">
-              <span className="reveal-wrap"><span className="reveal reveal-d1">CONSTRUIMOS</span></span>
-              <span className="reveal-wrap"><span className="reveal reveal-d2">PRODUCTOS</span></span>
-              <span className="reveal-wrap"><span className="reveal reveal-d3">QUE <span className="accent">PERDURAN.</span></span></span>
-            </h1>
-          </div>
-          <div className="hero-bottom">
+          <div className="hero-copy">
+            <div className="hero-eyebrow fadein fadein-d1">Automatización · Inteligencia Artificial · Capacitación</div>
+            <div className="hero-title-area">
+              <h1 className="hero-title">
+                <span className="reveal-wrap"><span className="reveal reveal-d1">OPTIMIZAMOS EL TRABAJO MANUAL</span></span>
+                <span className="reveal-wrap"><span className="reveal reveal-d2">DE TU OPERACIÓN CON IA <span className="accent">APLICADA.</span></span></span>
+              </h1>
+            </div>
             <p className="hero-desc fadein fadein-d2">
-              Somos el equipo técnico que ejecuta contigo. Te ayudamos a construir presencia digital,
-              ordenar tu operación, lanzar un producto o evolucionar un sistema existente.
+              De la teoría a procesos funcionando. Capacitamos a tu equipo y desarrollamos soluciones
+              a medida para reducir tiempos, eliminar errores y liberar a tu personal de las tareas
+              administrativas repetitivas.
             </p>
             <div className="hero-actions fadein fadein-d3">
-              <Link href="/contacto" className="btn-primary">Evaluar mi proyecto</Link>
-              <Link href="/soluciones" className="home-text-link">Explorar soluciones</Link>
+              <Link href="#talleres" className="btn-primary">Ver talleres corporativos</Link>
+              <Link href="/contacto" className="home-text-link">Agendar diagnóstico</Link>
             </div>
           </div>
         </div>
@@ -146,19 +261,17 @@ export default function Home() {
             title="¿Qué necesitas resolver?"
             description="No necesitas llegar con la solución definida. Empieza por la situación que más se parece a la tuya."
             headingId="needs-heading"
+            align="center"
           />
           <div className="home-needs-grid">
             {needs.map((need) => (
-              <article key={need.number} className="home-need-card">
-                <div className="home-need-topline">
-                  <span>{need.number}</span>
-                  <span>{need.eyebrow}</span>
-                </div>
+              <article key={need.title} className="home-need-card">
+                <span className="workshop-badge workshop-badge--violet">{need.eyebrow}</span>
                 <h3>{need.title}</h3>
                 <p>{need.description}</p>
                 <div className="home-need-links">
                   {need.links.map((link) => (
-                    <Link key={link.slug} href={`/soluciones/${link.slug}`} prefetch={false}>
+                    <Link key={link.href} href={link.href} prefetch={false}>
                       {link.label} <span aria-hidden="true">→</span>
                     </Link>
                   ))}
@@ -169,16 +282,47 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="talleres" className="home-distributor-section home-workshops-section" aria-labelledby="workshops-heading">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Talleres corporativos"
+            title="Talleres de IA Aplicada: capacitación práctica en procesos reales"
+            description="Formaciones in-company 'manos a la obra' donde tu equipo resuelve tareas diarias con IA y detecta oportunidades de automatización."
+            headingId="workshops-heading"
+            align="center"
+          />
+          <div className="home-workshop-grid">
+            {workshops.map((workshop) => (
+              <article key={workshop.title} className="workshop-card">
+                <span className="workshop-badge">{workshop.category}</span>
+                <h3>{workshop.title}</h3>
+                <p className="workshop-audience"><strong>Para quién:</strong> {workshop.audience}</p>
+                <p className="workshop-result">{workshop.result}</p>
+              </article>
+            ))}
+            <div className="workshop-banner">
+              <span className="workshop-badge">Programas In-Company a medida</span>
+              <h3>Capacitaciones adaptadas a tu sector</h3>
+              <p>
+                Diseñamos talleres a medida para tu empresa: el contenido, los ejemplos y los
+                ejercicios se adaptan al área, los procesos y el nivel de tu equipo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="portafolio" className="home-distributor-section home-distributor-section--tinted" aria-labelledby="projects-heading">
         <div className="container">
           <SectionHeader
             eyebrow="Proyectos reales"
             title="Construido. Lanzado. Operando."
-            description="Productos digitales que hoy apoyan operaciones, servicios y nuevos negocios."
+            description="Sistemas y plataformas operando en industrias reales."
             headingId="projects-heading"
+            align="center"
           />
           <div className="project-card-grid">
-            {homeClientProjects.map((project) => <ProjectCard key={project.slug} project={project} />)}
+            {homeClientProjects.map((project) => <ProjectCard key={project.slug} project={project} hideTitle />)}
           </div>
           <div className="home-section-action">
             <Link href="/proyectos" className="home-text-link">Ver todos los proyectos →</Link>
@@ -186,22 +330,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-distributor-section" aria-labelledby="problems-heading">
+      <section className="home-distributor-section home-problems-section" aria-labelledby="problems-heading">
         <div className="container home-problems-layout">
           <SectionHeader
-            eyebrow="Problemas que resolvemos"
-            title="La tecnología debe quitar fricción, no agregarla"
-            description="Trabajamos sobre problemas concretos de comunicación, operación, producto y sistemas existentes."
+            eyebrow="La realidad operativa"
+            title="Los bloqueos operativos que frenan la productividad de tu empresa"
+            description="Trabajamos sobre los problemas concretos que generan trabajo manual, errores y demoras en la operación."
             headingId="problems-heading"
           />
-          <ol className="service-problem-list">
-            {homeProblems.map((problem, index) => (
-              <li key={problem}>
-                <span className="service-problem-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                <span>{problem}</span>
+          <ul className="service-problem-list">
+            {homeProblems.map(({ icon: Icon, text }) => (
+              <li key={text}>
+                <span className="service-problem-icon" aria-hidden="true">
+                  <Icon size={28} strokeWidth={2} />
+                </span>
+                <span>{text}</span>
               </li>
             ))}
-          </ol>
+          </ul>
         </div>
       </section>
 
@@ -210,18 +356,19 @@ export default function Home() {
           <SectionHeader
             eyebrow="Soluciones"
             title="Una ruta para cada etapa"
-            description="Siete soluciones especializadas, conectadas por una misma forma de diagnosticar, construir y evolucionar."
+            description="Capacitación, automatización e ingeniería para transformar los procesos de tu empresa."
             headingId="solutions-heading"
+            align="center"
           />
           <div className="home-solutions-grid">
-            {services.map((service) => (
-              <article key={service.slug} className="service-card">
-                <div className="service-category">{service.hero.eyebrow}</div>
-                <h3 className="service-name">{service.name}</h3>
+            {homeServiceCards.map((card) => (
+              <article key={card.name} className="service-card">
+                <div className="service-category">{card.category}</div>
+                <h3 className="service-name">{card.name}</h3>
                 <hr className="service-divider" />
-                <p className="service-desc">{service.shortDescription}</p>
-                <Link href={`/soluciones/${service.slug}`} prefetch={false} className="service-link service-link--outer">
-                  Ver solución
+                <p className="service-desc">{card.description}</p>
+                <Link href={card.href} prefetch={false} className="service-link service-link--outer">
+                  {card.ctaLabel}
                 </Link>
               </article>
             ))}
@@ -234,69 +381,53 @@ export default function Home() {
 
       <section className="home-capabilities-section" aria-labelledby="capabilities-heading">
         <div className="container">
-          <SectionHeader
-            eyebrow="Capacidades transversales"
-            title="Todo lo necesario para construir y lanzar"
-            description="No son servicios aislados. Son capacidades que combinamos según lo que cada solución realmente necesita."
-            headingId="capabilities-heading"
-          />
-          <div className="service-capability-grid">
-            {capabilities.map((capability, index) => (
-              <article key={capability.slug} className="service-capability-item">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{capability.name}</h3>
-                <p>{capability.description}</p>
-              </article>
-            ))}
+            <SectionHeader
+              eyebrow="Capacidades transversales"
+              title="Todo lo necesario para construir y lanzar"
+              description="Capacidades para diagnosticar, construir y operar: las combinamos según lo que cada solución realmente necesita."
+              headingId="capabilities-heading"
+              align="center"
+            />
+          <div className="service-capability-grid home-capability-grid">
+            {capabilities.map((capability) => {
+              const Icon = capabilityIcons[capability.slug];
+              return (
+                <article key={capability.slug} className="service-capability-item home-capability-card">
+                  <div className="home-capability-head">
+                    {Icon && (
+                      <span className="home-capability-icon" aria-hidden="true">
+                        <Icon size={20} strokeWidth={1.75} />
+                      </span>
+                    )}
+                    <h3>{capability.name}</h3>
+                  </div>
+                  <p>{capability.description}</p>
+                </article>
+              );
+            })}
           </div>
-        </div>
-      </section>
-
-      <section id="nucleo" className="home-featured-case" aria-labelledby="featured-case-heading">
-        <div className="container home-featured-case-grid">
-          <div className="home-featured-case-copy">
-            <div className="section-tag">Caso destacado · Producto propio</div>
-            <h2 id="featured-case-heading" className="section-title">CONSTRUIMOS PORQUE TAMBIÉN EMPRENDEMOS<span className="accent">.</span></h2>
-            <p>{homeOwnProduct.hook}</p>
-            <Link href={`/proyectos/${homeOwnProduct.slug}`} prefetch={false} className="home-text-link">
-              Ver el proyecto →
-            </Link>
-          </div>
-          <article className="home-featured-case-card">
-            <Image src={homeOwnProduct.logo} alt={homeOwnProduct.name} width={260} height={90} className="home-featured-case-logo" />
-            <p>{homeOwnProduct.description}</p>
-            <div className="home-featured-metrics">
-              {homeOwnProduct.metrics.map((metric) => (
-                <div key={metric.label}>
-                  <strong>{metric.val}</strong>
-                  <span>{metric.label}</span>
-                </div>
-              ))}
-            </div>
-          </article>
         </div>
       </section>
 
       <section id="proceso" className="section-wrap process-section" aria-labelledby="process-heading">
         <div className="container">
-          <div className="process-header">
-            <div className="section-tag">Proceso abierto</div>
-            <h2 id="process-heading" className="section-title">SIN SECRETOS<span className="accent">:</span><br />ASÍ CONSTRUIMOS<span className="accent">.</span></h2>
-            <p className="process-desc-text">Entregas semanales, alcance y precio claros, decisiones explicadas, documentación y traspaso.</p>
-          </div>
-          <div className="process-grid">
-            {processSteps.map((step) => (
-              <article key={step.n} className="process-step">
-                <div className="process-step-header">
-                  <span className="process-n">{step.n}</span>
-                  <h3 className="process-title">{step.title}</h3>
-                </div>
-                <p className="process-desc">{step.desc}</p>
-              </article>
-            ))}
-          </div>
-          <div className="home-section-action">
-            <Link href="/proceso" className="home-text-link">Conocer el proceso completo →</Link>
+          <div className="process-stage">
+            <div className="process-header">
+              <div className="section-tag">Metodología</div>
+              <h2 id="process-heading" className="section-title">CÓMO TRABAJAMOS<span className="accent">:</span><br />EL MÉTODO IDEA<span className="accent">.</span></h2>
+              <p className="process-desc-text">Capacitamos, diagnosticamos, ejecutamos y acompañamos: cada etapa tiene entregables claros y medibles.</p>
+            </div>
+            <div className="process-grid">
+              {ideaSteps.map((step) => (
+                <article key={step.n} className="process-step">
+                  <span className="process-n" aria-hidden="true">{step.n}</span>
+                  <div className="process-step-content">
+                    <h3 className="process-title">{step.title}</h3>
+                    <p className="process-desc">{step.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -305,9 +436,10 @@ export default function Home() {
         <section className="home-distributor-section home-distributor-section--tinted" aria-labelledby="articles-heading">
           <div className="container">
             <SectionHeader
-              eyebrow="Ideas para decidir mejor"
-              title="Tecnología explicada desde el negocio"
-              description="Guías para evaluar productos digitales, automatización, software y decisiones técnicas con mayor claridad."
+              align="center"
+              eyebrow="Nuestro blog"
+              title="Información, conocimiento y opinión"
+              description="Un espacio donde compartimos artículos, análisis y criterio propio para evaluar automatización, IA y software con mayor claridad."
               headingId="articles-heading"
             />
             <div className="article-grid home-article-grid">
@@ -332,10 +464,14 @@ export default function Home() {
             <Link href="/nosotros" className="home-text-link">Conocer cómo trabajamos →</Link>
           </div>
           <ul className="home-team-principles">
-            <li><span>01</span><strong>Diagnóstico antes de construir</strong></li>
-            <li><span>02</span><strong>Avances y entregas semanales</strong></li>
-            <li><span>03</span><strong>Alcance y precio claros</strong></li>
-            <li><span>04</span><strong>Documentación y traspaso</strong></li>
+            {teamPrinciples.map(({ icon: Icon, text }) => (
+              <li key={text}>
+                <span className="home-team-principle-icon" aria-hidden="true">
+                  <Icon size={22} strokeWidth={1.75} />
+                </span>
+                <strong>{text}</strong>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
@@ -359,10 +495,12 @@ export default function Home() {
 
       <section id="cta" className="cta-root">
         <div className="cta-label">Siguiente paso</div>
-        <h2 className="cta-title">CUÉNTANOS QUÉ<br />NECESITAS RESOLVER.</h2>
-        <p className="cta-desc">Revisamos tu situación y te respondemos con una ruta clara, sin propuestas genéricas ni una solución definida de antemano.</p>
+        <h2 className="cta-title">LLEVAMOS LA EFICIENCIA<br />OPERACIONAL A TU EMPRESA.</h2>
+        <p className="cta-desc">Conversemos sobre los procesos que hoy ralentizan a tu equipo y diseñemos la mejor ruta para automatizarlos.</p>
         <div className="cta-actions">
-          <Link href="/contacto" className="btn-dark">Evaluar mi proyecto</Link>
+          <a href={siteConfig.contact.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-dark">
+            Agendar reunión diagnóstica
+          </a>
         </div>
       </section>
     </main>
