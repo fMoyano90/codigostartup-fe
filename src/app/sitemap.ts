@@ -3,6 +3,7 @@ import { blogCategories } from "@/config/blog-categories";
 import { siteConfig } from "@/config/site";
 import { projects } from "@/data/projects";
 import { services } from "@/data/services";
+import { talleres } from "@/data/talleres";
 import { getAllPublishedArticles } from "@/lib/blog/article-loader";
 import { getArticleCanonicalUrl, isInternalCanonicalUrl } from "@/lib/blog/article-urls";
 
@@ -39,6 +40,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const tallerEntries: MetadataRoute.Sitemap = talleres.map((taller) => ({
+    url: `${BASE_URL}/talleres/${taller.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   return [
     {
       url: BASE_URL,
@@ -50,6 +57,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/talleres`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     ...["soluciones", "proyectos", "nosotros", "proceso", "contacto"].map((path) => ({
       url: `${BASE_URL}/${path}`,
       changeFrequency: "monthly" as const,
@@ -57,6 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...serviceEntries,
     ...projectEntries,
+    ...tallerEntries,
     ...categoryEntries,
     ...articleEntries,
   ];

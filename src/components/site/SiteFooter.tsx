@@ -5,6 +5,10 @@ import { ANALYTICS_EVENTS } from "@/lib/analytics/events";
 import { siteConfig } from "@/config/site";
 import { services } from "@/data/services";
 
+const whatsappUrl = `${siteConfig.contact.whatsappUrl}?text=${encodeURIComponent(
+  "Hola Código Startup, quiero conversar sobre un proyecto.",
+)}`;
+
 const companyLinks = [
   { label: "Proyectos", href: "/proyectos" },
   { label: "Blog", href: "/blog" },
@@ -22,9 +26,9 @@ export function SiteFooter() {
             <Image src="/isotipo.svg" alt="Código Startup" width={48} height={43} />
           </Link>
           <p>Construimos productos digitales que perduran.</p>
-          <Link href="/contacto" className="site-footer-evaluate">
-            Evaluar proyecto
-          </Link>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="site-footer-evaluate">
+            Hablemos
+          </a>
         </div>
 
         <nav className="site-footer-column" aria-label="Soluciones en el footer">

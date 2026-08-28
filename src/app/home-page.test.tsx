@@ -1,6 +1,7 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
-import { capabilities, homeClientProjects, services } from "@/data/commercial";
+import { homeClientProjects, services } from "@/data/commercial";
+import { talleres } from "@/data/talleres";
 import Home from "./page";
 
 vi.mock("@/components/HomeAnimationsLoader", () => ({ default: () => null }));
@@ -18,7 +19,6 @@ describe("home distributor", () => {
     expect(html).toContain("Los bloqueos operativos que frenan la productividad de tu empresa");
     expect(html).toContain("Talleres de IA Aplicada");
     expect(html).toContain("EL MÉTODO IDEA");
-    expect(html).toContain("Todo lo necesario para construir y lanzar");
     expect(html).toContain("Información, conocimiento y opinión");
     expect(html).toContain("El equipo técnico que ejecuta contigo");
     expect(html).toContain("Antes de dar el siguiente paso");
@@ -44,18 +44,19 @@ describe("home distributor", () => {
     expect(html).toContain("Agentes de IA y Bases de Conocimiento");
     expect(html).toContain("Programas In-Company a medida");
 
+    for (const taller of talleres) {
+      expect(html).toContain(`/talleres/${taller.slug}`);
+      expect(html).toContain(taller.titulo);
+    }
+
     for (const project of homeClientProjects) {
       expect(html).toContain(`/proyectos/${project.slug}`);
       expect(html).toContain(project.name);
     }
   });
 
-  it("presents marketing disciplines as capabilities instead of a service", () => {
+  it("does not present marketing as a service and renders FAQ accordion", () => {
     const html = renderToStaticMarkup(<Home />);
-
-    for (const capability of capabilities) {
-      expect(html).toContain(capability.name);
-    }
 
     expect(html).not.toContain("Marketing y publicidad digital");
     expect(html.match(/<details/g)).toHaveLength(4);
