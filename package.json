@@ -14,6 +14,7 @@
     "blog:approve": "tsx scripts/blog/approve.ts",
     "blog:publish": "tsx scripts/blog/publish.ts",
     "blog:reject": "tsx scripts/blog/reject.ts",
+    "talleres:kit": "tsx scripts/talleres/generar-kit.ts",
     "blog:review-report": "tsx scripts/blog/review-report.ts",
     "blog:review-summary": "tsx scripts/blog/review-summary.ts",
     "blog:topics": "tsx scripts/blog/topics.ts",

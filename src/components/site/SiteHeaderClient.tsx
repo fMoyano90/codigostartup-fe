@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { siteConfig } from "@/config/site";
 import { isRouteActive, type SolutionNavGroup } from "./site-navigation";
 
 const primaryLinks = [
@@ -12,6 +13,10 @@ const primaryLinks = [
   { label: "Nosotros", href: "/nosotros" },
   { label: "Contacto", href: "/contacto" },
 ] as const;
+
+const whatsappUrl = `${siteConfig.contact.whatsappUrl}?text=${encodeURIComponent(
+  "Hola Código Startup, quiero conversar sobre un proyecto.",
+)}`;
 
 export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionNavGroup[] }) {
   const pathname = usePathname();
@@ -133,11 +138,12 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
   }, [mobileOpen]);
 
   const solutionsActive = isRouteActive(pathname, "/soluciones");
+  const isTalleres = pathname.startsWith("/talleres");
 
   return (
     <header
       ref={headerRef}
-      className={`site-header${isScrolled || pathname !== "/" ? " site-header--solid" : ""}${mobileOpen ? " site-header--menu-open" : ""}`}
+      className={`site-header${isScrolled || pathname !== "/" ? " site-header--solid" : ""}${isTalleres ? " site-header--violet" : ""}${mobileOpen ? " site-header--menu-open" : ""}`}
     >
       <div className="site-header-bar">
         <Link href="/" prefetch={false} className="site-header-logo" aria-label="Código Startup, inicio">
@@ -208,9 +214,14 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
           ))}
         </nav>
 
-        <Link href="/contacto" className="site-header-cta">
-          Evaluar proyecto
-        </Link>
+        <div className="site-header-actions">
+          <Link href="/talleres" className="site-header-cta site-header-cta--violet">
+            Talleres
+          </Link>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="site-header-cta">
+            Hablemos
+          </a>
+        </div>
 
         <button
           ref={mobileToggleRef}
@@ -274,7 +285,8 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
             {link.label}
           </Link>
         ))}
-        <Link href="/contacto" className="site-mobile-cta">Evaluar proyecto</Link>
+        <Link href="/talleres" className="site-mobile-cta site-mobile-cta--violet">Talleres</Link>
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="site-mobile-cta">Hablemos</a>
       </nav>
     </header>
   );

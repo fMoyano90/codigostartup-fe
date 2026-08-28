@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import {
   projectSlugSchema,
   serviceSlugSchema,
+  tallerSlugSchema,
   type ServiceSlug,
 } from "@/lib/commercial/schema";
 
@@ -16,6 +17,7 @@ export const leadFormTypeValues = [
   "aplicaciones-web",
   "aplicaciones-moviles",
   "auditoria",
+  "talleres",
 ] as const;
 
 export type LeadFormType = (typeof leadFormTypeValues)[number];
@@ -37,11 +39,11 @@ const optionalTextSchema = cleanTextSchema.optional().default("");
 const optionalUrlSchema = z.union([z.literal(""), z.string().trim().url().max(500)]).optional().default("");
 
 const trackingSchema = z.object({
-  source: z.enum(["contact-page", "service-page"]),
+  source: z.enum(["contact-page", "service-page", "taller-page"]),
   sourcePath: z.string().trim().max(300).optional().default(""),
   cta: z.string().trim().min(1).max(100),
   origin: z.string().trim().max(100).optional().default(""),
-  service: z.union([z.literal(""), serviceSlugSchema]).optional().default(""),
+  service: z.union([z.literal(""), serviceSlugSchema, tallerSlugSchema]).optional().default(""),
   project: z.union([z.literal(""), projectSlugSchema]).optional().default(""),
   utmSource: z.string().trim().max(200).optional().default(""),
   utmMedium: z.string().trim().max(200).optional().default(""),
@@ -110,6 +112,7 @@ const fieldsByFormType = {
   "aplicaciones-web": ["appProblem", "appUsers", "appStage", "coreFunctions"],
   "aplicaciones-moviles": ["mobileUsers", "useContext", "connectivity", "mobileFunctions"],
   auditoria: ["systemProblem", "technologies", "codeAccess", "documentation"],
+  talleres: ["participants", "whatsapp", "description"],
 } as const satisfies Record<LeadFormType, ReadonlyArray<keyof typeof fieldSchemas>>;
 
 const serviceByFormType: Partial<Record<LeadFormType, ServiceSlug>> = {
@@ -241,6 +244,7 @@ const formTypeNames: Record<LeadFormType, string> = {
   "aplicaciones-web": "Aplicaciones web",
   "aplicaciones-moviles": "Aplicaciones móviles",
   auditoria: "Auditoría y evolución",
+  talleres: "Talleres de IA Aplicada",
 };
 
 export function buildLeadEmail(lead: ParsedLead) {

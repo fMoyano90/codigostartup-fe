@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { BarChart3, Bot, Code2, Compass, FileSearch, FileSpreadsheet, FileText, Layers, MessageSquare, PenTool, RefreshCw, Repeat2, Rocket, Search, SearchCheck, ShieldAlert, ShieldCheck, Wrench } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { BarChart3, Bot, FileSearch, FileSpreadsheet, FileText, MessageSquare, RefreshCw, Repeat2, SearchCheck, ShieldAlert, ShieldCheck, Wrench } from "lucide-react";
 import HomeAnimationsLoader from "@/components/HomeAnimationsLoader";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ArticleCard } from "@/components/blog/ArticleCard";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import {
-  capabilities,
   homeClientProjects,
   services,
   siteConfig,
@@ -71,46 +69,67 @@ const needs = [
 
 const workshops = [
   {
+    slug: "videos-ugc-con-ia",
+    category: "Emprendimiento",
+    title: "Videos UGC con IA para emprendedores",
+    audience: "Emprendedores y pequeñas empresas que quieran crear contenido para redes sociales sin experiencia previa en diseño, video o IA.",
+    result: "Aprende a crear un video para promocionar tu negocio con herramientas de IA, desde la idea inicial hasta el video listo para publicar.",
+  },
+  {
+    slug: "ia-para-productividad-administrativa",
     category: "Productividad Administrativa",
     title: "IA para Productividad Administrativa",
     audience: "Equipos administrativos, contabilidad, RR.HH., profesionales y jefaturas.",
     result: "Ordenar tu bandeja de correo, crear documentos y resumir reuniones con IA, liberando tiempo de tareas repetitivas. Incluye el módulo crítico de ciberseguridad: qué información NO poner en una IA pública.",
   },
   {
+    slug: "automatizacion-de-procesos-con-ia",
     category: "Automatización e IA",
     title: "Automatización de Procesos con IA",
     audience: "Equipos operativos y jefaturas.",
     result: "Detectar tareas repetitivas, descubrir en qué gasta más tiempo tu equipo y diseñar automatizaciones que conecten correo, planillas, formularios y CRM, listas para implementar en tu operación. Con buenas prácticas de ciberseguridad incluidas.",
   },
   {
+    slug: "ia-para-recursos-humanos",
     category: "Recursos Humanos",
     title: "IA para Recursos Humanos",
     audience: "Equipos de RR.HH. y People.",
     result: "Descripciones de cargo, guiones de entrevistas, comunicaciones internas, evaluación de currículums y apoyo a onboarding y capacitaciones con IA. Con buenas prácticas de ciberseguridad incluidas.",
   },
   {
+    slug: "ia-para-equipos-comerciales",
     category: "Comercial y Ventas",
     title: "IA para Equipos Comerciales",
     audience: "Equipos de ventas y desarrollo comercial.",
     result: "Calificar prospectos, preparar reuniones y redactar correos y propuestas comerciales con IA: el mismo playbook que usamos en nuestro propio proceso comercial. Con buenas prácticas de ciberseguridad incluidas.",
   },
   {
+    slug: "ia-para-marketing",
     category: "Marketing",
     title: "IA para Marketing",
     audience: "Equipos de marketing y creadores de contenido.",
     result: "Campañas de correo, anuncios, investigación de mercado y contenido para redes sociales, incluyendo videos UGC y videos animados generados con IA. Con buenas prácticas de ciberseguridad incluidas.",
   },
   {
+    slug: "ia-para-lideres-y-jefaturas",
     category: "Liderazgo",
     title: "IA para Líderes y Jefaturas",
     audience: "Jefaturas, gerentes y líderes de equipo.",
     result: "Preparar reuniones, analizar información, delegar y dar seguimiento con asistentes de IA para tomar decisiones más informadas. Con buenas prácticas de ciberseguridad incluidas.",
   },
   {
+    slug: "ia-para-gestion-de-proyectos",
     category: "Gestión de Proyectos",
     title: "IA para Gestión de Proyectos",
     audience: "PMO, product y equipos de proyecto.",
     result: "Planificar, gestionar riesgos, redactar historias de usuario y conectar con herramientas como Jira. Con buenas prácticas de ciberseguridad incluidas.",
+  },
+  {
+    slug: "ia-para-operaciones-y-faenas",
+    category: "Operaciones y Faenas",
+    title: "IA para Operaciones y Faenas",
+    audience: "Supervisores, jefaturas de operación, oficinas técnicas y equipos de faena en industrias y minería.",
+    result: "Generar reportes de operación, documentar normativa DS44/ISO, preparar licitaciones y planificar mantención con IA, reduciendo trabajo manual en terreno y oficina técnica.",
   },
 ];
 
@@ -167,18 +186,6 @@ const homeProblems = [
   { icon: ShieldAlert, text: "Dudas sobre qué información se puede subir a una IA sin arriesgar la privacidad." },
   { icon: FileSearch, text: "Equipos ahogados en PDFs buscando cláusulas y preparando informes a mano." },
 ];
-
-const capabilityIcons: Record<string, LucideIcon> = {
-  estrategia: Compass,
-  "ux-ui": PenTool,
-  desarrollo: Code2,
-  contenido: FileText,
-  seo: Search,
-  analitica: BarChart3,
-  arquitectura: Layers,
-  seguridad: ShieldCheck,
-  "lanzamiento-y-evolucion": Rocket,
-};
 
 const teamPrinciples = [
   { icon: SearchCheck, text: "Diagnóstico antes de proponer" },
@@ -249,14 +256,16 @@ export default function Home() {
                 <span className="reveal-wrap"><span className="reveal reveal-d2">DE TU OPERACIÓN CON IA <span className="accent">APLICADA.</span></span></span>
               </h1>
             </div>
-            <p className="hero-desc fadein fadein-d2">
-              De la teoría a procesos funcionando. Capacitamos a tu equipo y desarrollamos soluciones
-              a medida para reducir tiempos, eliminar errores y liberar a tu personal de las tareas
-              administrativas repetitivas.
-            </p>
-            <div className="hero-actions fadein fadein-d3">
-              <Link href="#talleres" className="btn-primary">Ver talleres corporativos</Link>
-              <Link href="/contacto" className="home-text-link">Agendar diagnóstico</Link>
+            <div className="hero-sub">
+              <p className="hero-desc fadein fadein-d2">
+                De la teoría a procesos funcionando. Capacitamos a tu equipo y desarrollamos soluciones
+                a medida para reducir tiempos, eliminar errores y liberar a tu personal de las tareas
+                administrativas repetitivas.
+              </p>
+              <div className="hero-actions fadein fadein-d3">
+                <Link href="#talleres" className="btn-primary">Ver talleres corporativos</Link>
+                <Link href="/contacto" className="home-text-link">Agendar diagnóstico</Link>
+              </div>
             </div>
           </div>
         </div>
@@ -301,20 +310,24 @@ export default function Home() {
           />
           <div className="home-workshop-grid">
             {workshops.map((workshop) => (
-              <article key={workshop.title} className="workshop-card">
-                <span className="workshop-badge">{workshop.category}</span>
-                <h3>{workshop.title}</h3>
-                <p className="workshop-audience"><strong>Para quién:</strong> {workshop.audience}</p>
-                <p className="workshop-result">{workshop.result}</p>
+              <article key={workshop.slug} className="workshop-card">
+                <Link href={`/talleres/${workshop.slug}`} className="workshop-card-link">
+                  <span className="workshop-badge">{workshop.category}</span>
+                  <h3>{workshop.title}</h3>
+                  <span className="workshop-card-go">
+                    ver taller
+                    <span aria-hidden="true">→</span>
+                  </span>
+                </Link>
               </article>
             ))}
             <div className="workshop-banner">
               <span className="workshop-badge">Programas In-Company a medida</span>
               <h3>Capacitaciones adaptadas a tu sector</h3>
-              <p>
-                Diseñamos talleres a medida para tu empresa: el contenido, los ejemplos y los
-                ejercicios se adaptan al área, los procesos y el nivel de tu equipo.
-              </p>
+              <span className="workshop-card-go">
+                Diseñamos talleres a medida
+                <span aria-hidden="true">→</span>
+              </span>
             </div>
           </div>
         </div>
@@ -386,36 +399,6 @@ export default function Home() {
           </div>
           <div className="home-section-action">
             <Link href="/soluciones" className="home-text-link">Comparar todas las soluciones →</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="home-capabilities-section" aria-labelledby="capabilities-heading">
-        <div className="container">
-            <SectionHeader
-              eyebrow="Capacidades transversales"
-              title="Todo lo necesario para construir y lanzar"
-              description="Capacidades para diagnosticar, construir y operar: las combinamos según lo que cada solución realmente necesita."
-              headingId="capabilities-heading"
-              align="center"
-            />
-          <div className="service-capability-grid home-capability-grid">
-            {capabilities.map((capability) => {
-              const Icon = capabilityIcons[capability.slug];
-              return (
-                <article key={capability.slug} className="service-capability-item home-capability-card">
-                  <div className="home-capability-head">
-                    {Icon && (
-                      <span className="home-capability-icon" aria-hidden="true">
-                        <Icon size={20} strokeWidth={1.75} />
-                      </span>
-                    )}
-                    <h3>{capability.name}</h3>
-                  </div>
-                  <p>{capability.description}</p>
-                </article>
-              );
-            })}
           </div>
         </div>
       </section>
