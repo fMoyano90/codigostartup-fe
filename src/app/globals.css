@@ -839,6 +839,29 @@ a {
   }
 }
 
+/* Card con imagen de fondo (ej. Talleres de IA Corporativos) */
+.service-card--image {
+  background-image:
+    linear-gradient(180deg,
+      rgba(13, 13, 13, 0.78) 0%,
+      rgba(13, 13, 13, 0.55) 50%,
+      rgba(13, 13, 13, 0.88) 100%),
+    url("/images/talleres-corporativos.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (hover: hover) {
+  .service-card--image:hover {
+    background-image:
+      linear-gradient(180deg,
+        rgba(13, 13, 13, 0.84) 0%,
+        rgba(13, 13, 13, 0.62) 50%,
+        rgba(13, 13, 13, 0.92) 100%),
+      url("/images/talleres-corporativos.jpg");
+  }
+}
+
 /* ─────────────────────────────────────────
    LABORATORIO DE IDEAS
 ───────────────────────────────────────── */

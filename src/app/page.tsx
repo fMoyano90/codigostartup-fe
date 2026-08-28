@@ -120,6 +120,7 @@ const talleresCard = {
   description: "Capacitación práctica para que tu equipo implemente IA en sus procesos reales: productividad administrativa, automatización, recursos humanos, comercial, marketing, liderazgo y gestión de proyectos.",
   href: "#talleres",
   ctaLabel: "Ver talleres",
+  image: "/images/talleres-corporativos.jpg",
 };
 
 const agentesCard = {
@@ -137,7 +138,14 @@ const homeServiceCategories: Record<string, string> = {
   "auditoria-y-evolucion": "Sistemas existentes",
 };
 
-const homeServiceCards = [
+const homeServiceCards: {
+  name: string;
+  category: string;
+  description: string;
+  href: string;
+  ctaLabel: string;
+  image?: string;
+}[] = [
   talleresCard,
   ...engineeringServices.map((service) => ({
     name: service.name,
@@ -362,7 +370,10 @@ export default function Home() {
           />
           <div className="home-solutions-grid">
             {homeServiceCards.map((card) => (
-              <article key={card.name} className="service-card">
+              <article
+                key={card.name}
+                className={`service-card${card.image ? " service-card--image" : ""}`}
+              >
                 <div className="service-category">{card.category}</div>
                 <h3 className="service-name">{card.name}</h3>
                 <hr className="service-divider" />
