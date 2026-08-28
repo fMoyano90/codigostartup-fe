@@ -10,7 +10,7 @@ import {
 import { TalleresCatalogo } from "@/components/talleres/TalleresCatalogo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/config/site";
-import { talleres, totalHorasTalleres } from "@/data/talleres";
+import { talleres } from "@/data/talleres";
 import { createPageMetadata } from "@/lib/metadata";
 import { buildBreadcrumbSchema, buildFaqPageSchema } from "@/lib/seo/structured-data";
 
@@ -76,13 +76,6 @@ const faqs = [
     answer:
       "Escríbenos por WhatsApp al +56 9 6607 3259 o a hola@codigostartup.com. Coordinamos una reunión breve para definir talleres, modalidad, fechas y resolver dudas.",
   },
-];
-
-const datosRapidos = [
-  { label: "Talleres disponibles", value: "9" },
-  { label: "De formación práctica", value: `${totalHorasTalleres(talleres)} h` },
-  { label: "Modalidades de dictación", value: "2" },
-  { label: "Prácticos, con entregable", value: "100%" },
 ];
 
 export default function TalleresPage() {
