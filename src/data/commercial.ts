@@ -4,6 +4,12 @@ import { homeClientProjects, homeOwnProduct, homeServiceGroups, techLogos } from
 import { processSteps } from "@/data/process";
 import { projects } from "@/data/projects";
 import { services } from "@/data/services";
+import type { ServiceSlug } from "@/lib/commercial/schema";
+
+export const hiddenServiceSlugs: ReadonlyArray<ServiceSlug> = [
+  "sitios-web",
+  "tiendas-online",
+];
 
 function assertReferences() {
   const serviceSlugs = new Set(services.map(({ slug }) => slug));

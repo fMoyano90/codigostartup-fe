@@ -7,12 +7,11 @@ describe("site navigation", () => {
     const groups = buildSolutionNavGroups(services);
 
     expect(groups.map(({ label }) => label)).toEqual([
-      "Presencia digital",
       "Operación",
       "Productos digitales",
       "Sistemas existentes",
     ]);
-    expect(groups.flatMap(({ items }) => items)).toHaveLength(8);
+    expect(groups.flatMap(({ items }) => items)).toHaveLength(6);
   });
 
   it("never exposes marketing as an independent solution", () => {

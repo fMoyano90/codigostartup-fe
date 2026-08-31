@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
-import { BarChart3, Bot, Calendar, FileSearch, FileSpreadsheet, FileText, MessageCircle, MessageSquare, RefreshCw, Repeat2, SearchCheck, ShieldAlert, ShieldCheck, Wrench } from "lucide-react";
+import { BarChart3, Bot, BrainCircuit, CalendarDays, FileSearch, FileSpreadsheet, FileText, MessageCircle, MessageSquare, RefreshCw, Repeat2, SearchCheck, ShieldAlert, ShieldCheck, Wrench } from "lucide-react";
 import HomeAnimationsLoader from "@/components/HomeAnimationsLoader";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ArticleCard } from "@/components/blog/ArticleCard";
@@ -282,8 +282,14 @@ export default function Home() {
                 administrativas repetitivas.
               </p>
               <div className="hero-actions fadein fadein-d3">
-                <Link href="#talleres" className="btn-primary">Ver talleres corporativos</Link>
-                <Link href="/contacto" className="home-text-link">Agendar diagnóstico</Link>
+                <Link href="#talleres" className="btn-primary btn-primary--violet">
+                  <BrainCircuit size={16} />
+                  Ver talleres IA
+                </Link>
+                <Link href="/contacto" className="btn-primary">
+                  <CalendarDays size={16} />
+                  Agendar reunión
+                </Link>
               </div>
             </div>
           </div>
@@ -514,7 +520,7 @@ export default function Home() {
         <p className="cta-desc">Conversemos sobre los procesos que hoy ralentizan a tu equipo y diseñemos la mejor ruta para automatizarlos.</p>
         <div className="cta-actions">
           <a href={siteConfig.contact.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
-            <Calendar size={16} />
+            <CalendarDays size={16} />
             Agendar reunión
           </a>
           <a href={whatsappUrl(WHATSAPP_MENSAJE)} target="_blank" rel="noopener noreferrer" className="btn-dark">

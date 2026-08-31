@@ -1,5 +1,6 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
+import { hiddenServiceSlugs } from "@/data/commercial";
 import { services } from "@/data/services";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeaderClient } from "./SiteHeaderClient";
@@ -30,7 +31,8 @@ describe("global site shell", () => {
     );
 
     for (const service of services) {
-      expect(html.split(`/soluciones/${service.slug}`)).toHaveLength(3);
+      const occurrences = html.split(`/soluciones/${service.slug}`).length - 1;
+      expect(occurrences).toBe(hiddenServiceSlugs.includes(service.slug) ? 0 : 2);
     }
   });
 

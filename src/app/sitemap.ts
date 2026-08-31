@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { blogCategories } from "@/config/blog-categories";
 import { siteConfig } from "@/config/site";
+import { hiddenServiceSlugs } from "@/data/commercial";
 import { projects } from "@/data/projects";
 import { services } from "@/data/services";
 import { talleres } from "@/data/talleres";
@@ -28,11 +29,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  const serviceEntries: MetadataRoute.Sitemap = services.map((service) => ({
-    url: `${BASE_URL}/soluciones/${service.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
+  const serviceEntries: MetadataRoute.Sitemap = services
+    .filter(({ slug }) => !hiddenServiceSlugs.includes(slug))
+    .map((service) => ({
+      url: `${BASE_URL}/soluciones/${service.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    }));
 
   const projectEntries: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${BASE_URL}/proyectos/${project.slug}`,

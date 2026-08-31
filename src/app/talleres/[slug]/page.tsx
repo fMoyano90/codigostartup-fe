@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   AlertTriangle,
-  ArrowRight,
   Award,
-  Calendar,
+  CalendarDays,
   Check,
   ImagePlus,
-  MessageCircle,
+  MessagesSquare,
   ShieldCheck,
 } from "lucide-react";
 import { submitLead } from "@/app/actions/submit-lead";
@@ -57,25 +55,14 @@ const leadFields: LeadFormField[] = [
   { name: "name", label: "Nombre", type: "text", required: true, autoComplete: "name" },
   { name: "company", label: "Empresa", type: "text", autoComplete: "organization" },
   { name: "email", label: "Correo", type: "email", required: true, autoComplete: "email" },
-  {
-    name: "participants",
-    label: "¿Cuántos participantes?",
-    type: "select",
-    options: [
-      { label: "1 a 5", value: "1-5" },
-      { label: "6 a 20", value: "6-20" },
-      { label: "Más de 20", value: "21+" },
-      { label: "Por definir", value: "por-definir" },
-    ],
-  },
   { name: "whatsapp", label: "WhatsApp", type: "tel", autoComplete: "tel", placeholder: "+56 9" },
   {
     name: "description",
-    label: "¿Qué quieres lograr con este taller?",
+    label: "¿En qué te ayudamos?",
     type: "textarea",
     required: true,
     rows: 4,
-    placeholder: "Cuéntanos el contexto de tu equipo y lo que esperan conseguir.",
+    placeholder: "Ej.: dudas sobre el taller, fechas, precios, lo que necesites consultar.",
   },
 ];
 
@@ -165,14 +152,14 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
               <strong>{taller.resumen}</strong>
             </p>
             <div className="talleres-ficha-actions">
-              <a className="talleres-cta" href={whatsappUrl(whatsappMensaje)} target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={16} />
-                Solicitar información
+              <a className="talleres-cta talleres-cta--violet" href={whatsappUrl(whatsappMensaje)} target="_blank" rel="noopener noreferrer">
+                <MessagesSquare size={16} />
+                Hablar por WhatsApp
               </a>
-              <Link className="talleres-cta talleres-cta--ghost" href="/talleres">
-                Ver todos los talleres
-                <ArrowRight size={16} />
-              </Link>
+              <a className="talleres-cta" href={siteConfig.contact.bookingUrl} target="_blank" rel="noopener noreferrer">
+                <CalendarDays size={16} />
+                Agendar reunión
+              </a>
             </div>
             <div className="talleres-ficha-chips">
               <div className="talleres-chips">
@@ -202,14 +189,14 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
               <strong>{taller.resumen}</strong>
             </p>
             <div className="talleres-ficha-actions">
-              <a className="talleres-cta" href={whatsappUrl(whatsappMensaje)} target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={16} />
-                Solicitar información
+              <a className="talleres-cta talleres-cta--violet" href={whatsappUrl(whatsappMensaje)} target="_blank" rel="noopener noreferrer">
+                <MessagesSquare size={16} />
+                Hablar por WhatsApp
               </a>
-              <Link className="talleres-cta talleres-cta--ghost" href="/talleres">
-                Ver todos los talleres
-                <ArrowRight size={16} />
-              </Link>
+              <a className="talleres-cta" href={siteConfig.contact.bookingUrl} target="_blank" rel="noopener noreferrer">
+                <CalendarDays size={16} />
+                Agendar reunión
+              </a>
             </div>
 
             <div className="talleres-ficha-chips">
@@ -505,8 +492,8 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
         action={submitLead}
         idPrefix={taller.slug}
         sectionId={sectionId}
-        title="Solicita información de este taller"
-        description={`Cuéntanos quién participaría y qué quieren lograr con "${taller.titulo}": te respondemos con una propuesta a tu medida.`}
+        title="¿En qué te ayudamos?"
+        description="Cuéntanos tu consulta o lo que necesitas, sobre este taller o cualquier otro tema: te respondemos con la información que necesitas."
       />
 
       {/* CTA FINAL */}
@@ -523,11 +510,11 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
         </p>
         <div className="cta-actions">
           <a className="btn-primary" href={siteConfig.contact.bookingUrl} target="_blank" rel="noopener noreferrer">
-            <Calendar size={16} />
+            <CalendarDays size={16} />
             Agendar reunión
           </a>
           <a className="btn-dark" href={whatsappUrl(whatsappMensaje)} target="_blank" rel="noopener noreferrer">
-            <MessageCircle size={16} />
+            <MessagesSquare size={16} />
             Hablar por WhatsApp
           </a>
         </div>

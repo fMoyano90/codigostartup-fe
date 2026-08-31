@@ -3,6 +3,7 @@ import Link from "next/link";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { ANALYTICS_EVENTS } from "@/lib/analytics/events";
 import { siteConfig } from "@/config/site";
+import { hiddenServiceSlugs } from "@/data/commercial";
 import { services } from "@/data/services";
 
 const whatsappUrl = `${siteConfig.contact.whatsappUrl}?text=${encodeURIComponent(
@@ -10,12 +11,17 @@ const whatsappUrl = `${siteConfig.contact.whatsappUrl}?text=${encodeURIComponent
 )}`;
 
 const companyLinks = [
+  { label: "Talleres", href: "/talleres" },
   { label: "Proyectos", href: "/proyectos" },
   { label: "Blog", href: "/blog" },
   { label: "Nosotros", href: "/nosotros" },
   { label: "Proceso", href: "/proceso" },
   { label: "Contacto", href: "/contacto" },
 ] as const;
+
+const visibleServices = services.filter(
+  ({ slug }) => !hiddenServiceSlugs.includes(slug),
+);
 
 export function SiteFooter() {
   return (
@@ -33,7 +39,7 @@ export function SiteFooter() {
 
         <nav className="site-footer-column" aria-label="Soluciones en el footer">
           <span className="site-footer-heading">Soluciones</span>
-          {services.map((service) => (
+          {visibleServices.map((service) => (
             <Link key={service.slug} href={`/soluciones/${service.slug}`}>{service.name}</Link>
           ))}
         </nav>

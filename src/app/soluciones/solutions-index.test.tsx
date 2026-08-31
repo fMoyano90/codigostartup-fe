@@ -1,23 +1,26 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { capabilities, projects, services } from "@/data/commercial";
+import { capabilities, hiddenServiceSlugs, projects, services } from "@/data/commercial";
 import SolutionsIndexPage from "./page";
 
 describe("solutions index", () => {
-  it("organizes the offer around the four business needs", () => {
+  it("organizes the offer around the business needs", () => {
     const html = renderToStaticMarkup(<SolutionsIndexPage />);
 
     expect(html.match(/<h1/g)).toHaveLength(1);
-    expect(html).toContain("Necesito atraer clientes");
     expect(html).toContain("Necesito ordenar mi operación");
     expect(html).toContain("Quiero lanzar un producto");
     expect(html).toContain("Mi sistema necesita mejorar");
+    for (const hiddenSlug of hiddenServiceSlugs) {
+      expect(html).not.toContain(`/soluciones/${hiddenSlug}`);
+    }
   });
 
-  it("includes every service with situations, detail link, and contextual CTA", () => {
+  it("includes every visible service with situations, detail link, and contextual CTA", () => {
     const html = renderToStaticMarkup(<SolutionsIndexPage />);
 
     for (const service of services) {
+      if (hiddenServiceSlugs.includes(service.slug)) continue;
       expect(html).toContain(service.name);
       expect(html).toContain(service.shortDescription);
       expect(html).toContain(service.problems[0]);

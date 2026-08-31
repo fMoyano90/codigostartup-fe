@@ -2,6 +2,7 @@
 
 import type { ComponentProps } from "react";
 import { useActionState, useEffect, useRef } from "react";
+import { CalendarDays, MessagesSquare } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { siteConfig } from "@/config/site";
 import { ANALYTICS_EVENTS } from "@/lib/analytics/events";
@@ -57,6 +58,8 @@ type LeadFormProps = {
   origin?: string;
   submitLabel?: string;
   submitHint?: string;
+  variant?: "default" | "taller";
+  eyebrow?: string;
 };
 
 function setHiddenValue(form: HTMLFormElement, name: string, value: string) {
@@ -79,6 +82,8 @@ export function LeadForm({
   origin = "",
   submitLabel = "Enviar evaluación",
   submitHint,
+  variant = "default",
+  eyebrow = "Evaluar proyecto",
 }: LeadFormProps) {
   const fieldNames = fields.map(({ name }) => name);
   if (new Set(fieldNames).size !== fieldNames.length) {
@@ -130,7 +135,33 @@ export function LeadForm({
   return (
     <section id={sectionId} className="service-content-section service-lead-section" aria-labelledby={headingId}>
       <div className="service-page-container service-lead-layout">
-        <SectionHeader eyebrow="Evaluar proyecto" title={title} description={description} headingId={headingId} />
+        <div className="service-lead-copy">
+          <SectionHeader eyebrow={eyebrow} title={title} description={description} headingId={headingId} />
+          {variant === "taller" && state.status !== "success" && (
+            <div className="lead-quick-actions lead-quick-actions--above">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="talleres-cta talleres-cta--violet"
+                onClick={() => trackEvent(ANALYTICS_EVENTS.clickWhatsapp, { ...eventContext, cta_position: "lead-form" })}
+              >
+                <MessagesSquare size={16} />
+                Hablar por WhatsApp
+              </a>
+              <a
+                href={siteConfig.contact.bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="talleres-cta"
+                onClick={() => trackEvent(ANALYTICS_EVENTS.scheduleMeeting, { ...eventContext, cta_position: "lead-form" })}
+              >
+                <CalendarDays size={16} />
+                Agendar reunión
+              </a>
+            </div>
+          )}
+        </div>
         <form ref={formRef} id={formId} className="service-lead-form" action={formAction} aria-describedby={instructionsId} onFocus={handleFormStart}>
           <p id={instructionsId} className="sr-only">Los campos marcados como obligatorios deben completarse.</p>
           <input type="hidden" name="submissionId" value="" readOnly />
@@ -237,6 +268,15 @@ export function LeadForm({
                 Agendar una reunión <span aria-hidden="true">↗</span>
               </a>
             </div>
+          ) : variant === "taller" ? (
+            <>
+              <div className="lead-submit-actions lead-submit-actions--split">
+                <button type="submit" className="btn-primary" disabled={isPending}>
+                  {isPending ? "Enviando…" : submitLabel}
+                </button>
+              </div>
+              {submitHint && <p className="service-form-submit-hint">{submitHint}</p>}
+            </>
           ) : (
             <>
               <div className="lead-submit-actions">

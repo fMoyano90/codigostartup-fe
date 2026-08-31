@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
-  ArrowRight,
   Building2,
-  Calendar,
+  CalendarDays,
   Laptop,
-  MessageCircle,
+  MessagesSquare,
 } from "lucide-react";
 import { TalleresCatalogo } from "@/components/talleres/TalleresCatalogo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -112,18 +111,15 @@ export default function TalleresPage() {
               reales de tu organización. Presencial in-company u online en vivo, con certificado por participante.
             </p>
             <div className="talleres-hero-actions">
-              <a className="btn-primary" href={whatsappUrl(WHATSAPP_MENSAJE)} target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={16} />
-                Solicitar información
+              <a className="btn-primary btn-primary--violet" href={whatsappUrl(WHATSAPP_MENSAJE)} target="_blank" rel="noopener noreferrer">
+                <MessagesSquare size={16} />
+                Hablar por WhatsApp
               </a>
-              <a className="talleres-cta talleres-cta--ghost" href="#catalogo">
-                Explorar los talleres
-                <ArrowRight size={16} />
+              <a className="btn-primary" href={siteConfig.contact.bookingUrl} target="_blank" rel="noopener noreferrer">
+                <CalendarDays size={16} />
+                Agendar reunión
               </a>
             </div>
-            <p className="talleres-hero-note">
-              Para empresas · Cupos de 8 a 20 participantes · Sin conocimientos previos
-            </p>
           </div>
         </div>
       </section>
@@ -160,20 +156,24 @@ export default function TalleresPage() {
           </header>
           <div className="talleres-mods-grid">
             <article className="talleres-mod-card">
-              <span className="talleres-card-icon">
-                <Building2 />
-              </span>
-              <h3>Presencial in-company</h3>
+              <div className="talleres-mod-head">
+                <span className="talleres-card-icon">
+                  <Building2 />
+                </span>
+                <h3>Presencial in-company</h3>
+              </div>
               <p>
                 El relator se traslada a las instalaciones del cliente. Requiere sala con proyector o pantalla,
                 internet y un computador por participante (o uno cada dos). Ideal para faenas e industrias.
               </p>
             </article>
             <article className="talleres-mod-card">
-              <span className="talleres-card-icon talleres-card-icon--volt">
-                <Laptop />
-              </span>
-              <h3>Online en vivo</h3>
+              <div className="talleres-mod-head">
+                <span className="talleres-card-icon talleres-card-icon--volt">
+                  <Laptop />
+                </span>
+                <h3>Online en vivo</h3>
+              </div>
               <p>
                 Sesión por videoconferencia con ejercicios en tiempo real. Requiere computador con internet, cámara y
                 micrófono. Incluye seguimiento práctico durante la sesión.
@@ -237,11 +237,11 @@ export default function TalleresPage() {
         </p>
         <div className="cta-actions">
           <a className="btn-primary" href={siteConfig.contact.bookingUrl} target="_blank" rel="noopener noreferrer">
-            <Calendar size={16} />
+            <CalendarDays size={16} />
             Agendar reunión
           </a>
           <a className="btn-dark" href={whatsappUrl(WHATSAPP_MENSAJE)} target="_blank" rel="noopener noreferrer">
-            <MessageCircle size={16} />
+            <MessagesSquare size={16} />
             Hablar por WhatsApp
           </a>
         </div>

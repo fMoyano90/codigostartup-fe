@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { BrainCircuit, MessagesSquare } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { isRouteActive, type SolutionNavGroup } from "./site-navigation";
 
@@ -212,16 +213,18 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
               {link.label}
             </Link>
           ))}
-        </nav>
 
-        <div className="site-header-actions">
-          <Link href="/talleres" className="site-header-cta site-header-cta--violet">
-            Talleres
-          </Link>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="site-header-cta">
-            Hablemos
-          </a>
-        </div>
+          <div className="site-header-actions">
+            <Link href="/talleres" className="site-header-cta site-header-cta--volt">
+              <BrainCircuit size={14} />
+              Talleres
+            </Link>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="site-header-cta site-header-cta--violet">
+              <MessagesSquare size={14} />
+              Hablemos
+            </a>
+          </div>
+        </nav>
 
         <button
           ref={mobileToggleRef}
@@ -285,8 +288,14 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
             {link.label}
           </Link>
         ))}
-        <Link href="/talleres" className="site-mobile-cta site-mobile-cta--violet">Talleres</Link>
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="site-mobile-cta">Hablemos</a>
+        <Link href="/talleres" className="site-mobile-cta site-mobile-cta--volt">
+          <BrainCircuit size={16} />
+          Talleres
+        </Link>
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="site-mobile-cta site-mobile-cta--violet">
+          <MessagesSquare size={16} />
+          Hablemos
+        </a>
       </nav>
     </header>
   );

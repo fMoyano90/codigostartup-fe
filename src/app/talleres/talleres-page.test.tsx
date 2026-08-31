@@ -10,7 +10,8 @@ describe("página de talleres (catálogo)", () => {
     expect(html.match(/<h1/g)).toHaveLength(1);
     expect(html).toContain("Capacita a tu equipo");
     expect(html).toContain(String(totalHorasTalleres(talleres)));
-    expect(html).toContain("Solicitar información");
+    expect(html).toContain("Hablar por WhatsApp");
+    expect(html).toContain("Agendar reunión");
     expect(html).toContain("wa.me/56966073259");
   });
 

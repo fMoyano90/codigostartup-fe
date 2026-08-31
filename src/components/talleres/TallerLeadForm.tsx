@@ -10,6 +10,7 @@ type TallerLeadFormProps = {
   sectionId?: string;
   title?: string;
   description?: string;
+  eyebrow?: string;
 };
 
 export function TallerLeadForm({
@@ -18,8 +19,9 @@ export function TallerLeadForm({
   action,
   idPrefix,
   sectionId,
-  title = "Solicita información de este taller",
-  description = "Cuéntanos quién participaría y qué quieren lograr: te respondemos con una propuesta a tu medida.",
+  title = "¿En qué te ayudamos?",
+  description = "Cuéntanos tu consulta o lo que necesitas, sobre este taller o cualquier otro tema: te respondemos con la información que necesitas.",
+  eyebrow = "Conversemos",
 }: TallerLeadFormProps) {
   return (
     <LeadForm
@@ -33,7 +35,9 @@ export function TallerLeadForm({
       service={taller.slug}
       title={title}
       description={description}
-      submitLabel="Solicitar información del taller"
+      submitLabel="Enviar"
+      variant="taller"
+      eyebrow={eyebrow}
     />
   );
 }

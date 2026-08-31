@@ -20,12 +20,14 @@ describe("ficha de taller (formato UANDES)", () => {
   it("todas las fichas presentan hero con CTA, chips de datos y formulario", async () => {
     const html = await renderTaller("videos-ugc-con-ia");
 
-    expect(html).toContain("Solicitar información");
+    expect(html).toContain("Hablar por WhatsApp");
+    expect(html).toContain("Agendar reunión");
+    expect(html).toContain("Enviar");
     expect(html).toContain("wa.me/56966073259");
     expect(html).toContain("Duración");
     expect(html).toContain("Modalidad");
     expect(html).toContain("Certificado");
-    expect(html).toContain('name="participants"');
+    expect(html).toContain('name="whatsapp"');
     expect(html).toContain('name="description"');
     expect(html).toContain('value="talleres"');
     expect(html).toContain('value="taller-page"');

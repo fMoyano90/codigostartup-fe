@@ -15,11 +15,6 @@ export const metadata: Metadata = createPageMetadata({
 
 const needs = [
   {
-    key: "presencia-digital",
-    label: "Necesito atraer clientes",
-    description: "Construye una presencia profesional que explique tus servicios, genere confianza y facilite el contacto.",
-  },
-  {
     key: "operacion",
     label: "Necesito ordenar mi operación",
     description: "Centraliza información, reemplaza tareas manuales y adapta la tecnología a la forma real en que trabaja tu empresa.",

@@ -11,7 +11,6 @@ export type SolutionNavGroup = {
 };
 
 const groupDefinitions = [
-  { need: "presencia-digital", label: "Presencia digital" },
   { need: "operacion", label: "Operación" },
   { need: "productos-digitales", label: "Productos digitales" },
   { need: "sistemas-existentes", label: "Sistemas existentes" },
