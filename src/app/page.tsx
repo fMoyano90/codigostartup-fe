@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
-import { BarChart3, Bot, FileSearch, FileSpreadsheet, FileText, MessageSquare, RefreshCw, Repeat2, SearchCheck, ShieldAlert, ShieldCheck, Wrench } from "lucide-react";
+import { BarChart3, Bot, Calendar, FileSearch, FileSpreadsheet, FileText, MessageCircle, MessageSquare, RefreshCw, Repeat2, SearchCheck, ShieldAlert, ShieldCheck, Wrench } from "lucide-react";
 import HomeAnimationsLoader from "@/components/HomeAnimationsLoader";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ArticleCard } from "@/components/blog/ArticleCard";
@@ -12,6 +12,13 @@ import {
 } from "@/data/commercial";
 import { getAllPublishedArticles } from "@/lib/blog/article-loader";
 import type { ServiceSlug } from "@/lib/commercial/schema";
+
+const WHATSAPP_MENSAJE =
+  "Quiero información de los servicios de Código Startup para mi empresa u organización.";
+
+function whatsappUrl(mensaje: string): string {
+  return `${siteConfig.contact.whatsappUrl}?text=${encodeURIComponent(mensaje)}`;
+}
 
 function requireService(slug: ServiceSlug) {
   const service = services.find((item) => item.slug === slug);
@@ -506,8 +513,13 @@ export default function Home() {
         <h2 className="cta-title">LLEVAMOS LA EFICIENCIA<br />OPERACIONAL A TU EMPRESA.</h2>
         <p className="cta-desc">Conversemos sobre los procesos que hoy ralentizan a tu equipo y diseñemos la mejor ruta para automatizarlos.</p>
         <div className="cta-actions">
-          <a href={siteConfig.contact.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-dark">
-            Agendar reunión diagnóstica
+          <a href={siteConfig.contact.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <Calendar size={16} />
+            Agendar reunión
+          </a>
+          <a href={whatsappUrl(WHATSAPP_MENSAJE)} target="_blank" rel="noopener noreferrer" className="btn-dark">
+            <MessageCircle size={16} />
+            Hablar por WhatsApp
           </a>
         </div>
       </section>

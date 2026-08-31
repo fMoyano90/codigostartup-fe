@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { ArrowRight, Search, X } from "lucide-react";
 import type { Taller } from "@/lib/commercial/schema";
@@ -16,9 +16,14 @@ export function TalleresCatalogo({ talleres }: TalleresCatalogoProps) {
   const [categoria, setCategoria] = useState("");
   const [duracion, setDuracion] = useState("");
 
+  const ordenados = useMemo(
+    () => [...talleres].sort((a, b) => a.titulo.localeCompare(b.titulo, "es")),
+    [talleres],
+  );
+
   const resultados = useMemo(
-    () => filtrarTalleres(talleres, { texto, categoria, duracion }),
-    [talleres, texto, categoria, duracion],
+    () => filtrarTalleres(ordenados, { texto, categoria, duracion }),
+    [ordenados, texto, categoria, duracion],
   );
   const hayFiltros = texto !== "" || categoria !== "" || duracion !== "";
 
@@ -89,6 +94,21 @@ export function TalleresCatalogo({ talleres }: TalleresCatalogoProps) {
                   ? "talleres-catalog-card--adm"
                   : ""
               } ${taller.slug === "automatizacion-de-procesos-con-ia" ? "talleres-catalog-card--auto" : ""}`}
+              style={
+                taller.slug === "ia-para-recursos-humanos"
+                  ? ({ "--card-bg": `url("/images/recursos-humanos-taller.jpg")` } as CSSProperties)
+                  : taller.slug === "ia-para-equipos-comerciales"
+                    ? ({ "--card-bg": `url("/images/recursos-humanos-taller.jpg")` } as CSSProperties)
+                    : taller.slug === "ia-para-gestion-de-proyectos"
+                      ? ({ "--card-bg": `url("/images/gestion-de-proyectos-taller.jpg")` } as CSSProperties)
+                      : taller.slug === "ia-para-lideres-y-jefaturas"
+                        ? ({ "--card-bg": `url("/images/lideres-y-jefaturas.jpg")` } as CSSProperties)
+                        : taller.slug === "ia-para-marketing"
+                          ? ({ "--card-bg": `url("/images/marketing-taller-ia.jpg")` } as CSSProperties)
+                          : taller.slug === "ia-para-operaciones-y-faenas"
+                            ? ({ "--card-bg": `url("/images/operaciones-y-faenas.jpg")` } as CSSProperties)
+                            : undefined
+              }
             >
               <span className="talleres-cat-badge">{taller.categoria}</span>
               <h3>{taller.titulo}</h3>

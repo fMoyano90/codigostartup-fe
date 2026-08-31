@@ -3,8 +3,8 @@ import Image from "next/image";
 import {
   ArrowRight,
   Building2,
+  Calendar,
   Laptop,
-  Mail,
   MessageCircle,
 } from "lucide-react";
 import { TalleresCatalogo } from "@/components/talleres/TalleresCatalogo";
@@ -31,7 +31,7 @@ function whatsappUrl(mensaje: string): string {
 }
 
 const WHATSAPP_MENSAJE =
-  "Hola Código Startup, quiero información de los Talleres de IA Aplicada para mi empresa u organización.";
+  "Quiero información de los Talleres de IA Aplicada para mi empresa u organización.";
 
 const formatos = [
   { formato: "Jornada completa", distribucion: "1 día · 8 h con pausas" },
@@ -236,13 +236,13 @@ export default function TalleresPage() {
           formato, fechas y contenido adaptado a tu rubro.
         </p>
         <div className="cta-actions">
+          <a className="btn-primary" href={siteConfig.contact.bookingUrl} target="_blank" rel="noopener noreferrer">
+            <Calendar size={16} />
+            Agendar reunión
+          </a>
           <a className="btn-dark" href={whatsappUrl(WHATSAPP_MENSAJE)} target="_blank" rel="noopener noreferrer">
             <MessageCircle size={16} />
-            Escribir por WhatsApp
-          </a>
-          <a className="btn-ghost" href={`mailto:${siteConfig.contact.email}`}>
-            <Mail size={16} />
-            {siteConfig.contact.email}
+            Hablar por WhatsApp
           </a>
         </div>
       </section>

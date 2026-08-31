@@ -6,9 +6,9 @@ import {
   AlertTriangle,
   ArrowRight,
   Award,
+  Calendar,
   Check,
   ImagePlus,
-  Mail,
   MessageCircle,
   ShieldCheck,
 } from "lucide-react";
@@ -87,7 +87,7 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
   const config = tallerFichaConfig[taller.slug];
   const esBorrador = taller.estado === "borrador";
   const minutosTotales = taller.modulos.reduce((acc, modulo) => acc + modulo.minutos, 0);
-  const whatsappMensaje = `Hola Código Startup, quiero información del taller "${taller.titulo}".`;
+  const whatsappMensaje = `Quiero información del taller "${taller.titulo}".`;
   const sectionId = `${taller.slug}-solicitar-info`;
 
   const breadcrumb = buildBreadcrumbSchema([
@@ -438,23 +438,21 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
               <h3>Requisitos</h3>
               <p>{taller.requisitos}</p>
             </article>
-            {taller.herramientas && taller.herramientas.length > 0 && (
-              <article className="talleres-dato talleres-dato--side">
-                <h3>Herramientas por etapa</h3>
-                <p>Se priorizan herramientas simples, de acceso gratuito o de bajo costo.</p>
+            <article className="talleres-dato talleres-dato--side">
+              <h3>Herramientas por etapa</h3>
+              <p>Se priorizan herramientas simples, de acceso gratuito o de bajo costo.</p>
+              {taller.herramientas && taller.herramientas.length > 0 ? (
                 <ul className="talleres-ficha-list">
                   {taller.herramientas.map((herramienta) => (
                     <li key={herramienta}>{herramienta}</li>
                   ))}
                 </ul>
-              </article>
-            )}
-            {esBorrador && (
-              <article className="talleres-dato">
-                <h3>Programa detallado</h3>
-                <p>La malla de bloques, actividades y minutos de este taller está en preparación y se publicará pronto.</p>
-              </article>
-            )}
+              ) : (
+                <ul className="talleres-ficha-list">
+                  <li>Las herramientas específicas se ajustan al rubro y a los procesos del taller.</li>
+                </ul>
+              )}
+            </article>
           </div>
         </div>
       </section>
@@ -524,13 +522,13 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
           contenido adaptado a tu rubro.
         </p>
         <div className="cta-actions">
+          <a className="btn-primary" href={siteConfig.contact.bookingUrl} target="_blank" rel="noopener noreferrer">
+            <Calendar size={16} />
+            Agendar reunión
+          </a>
           <a className="btn-dark" href={whatsappUrl(whatsappMensaje)} target="_blank" rel="noopener noreferrer">
             <MessageCircle size={16} />
-            Escribir por WhatsApp
-          </a>
-          <a className="btn-ghost" href={`mailto:${siteConfig.contact.email}`}>
-            <Mail size={16} />
-            {siteConfig.contact.email}
+            Hablar por WhatsApp
           </a>
         </div>
       </section>

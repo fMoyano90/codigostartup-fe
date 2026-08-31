@@ -78,7 +78,7 @@ export function LeadForm({
   project = "",
   origin = "",
   submitLabel = "Enviar evaluación",
-  submitHint = "Recibiremos esta información por correo. Luego podrás continuar por WhatsApp o reservar una reunión.",
+  submitHint,
 }: LeadFormProps) {
   const fieldNames = fields.map(({ name }) => name);
   if (new Set(fieldNames).size !== fieldNames.length) {
@@ -253,7 +253,7 @@ export function LeadForm({
                   Prefiero agendar una reunión <span aria-hidden="true">↗</span>
                 </a>
               </div>
-              <p className="service-form-submit-hint">{submitHint}</p>
+              {submitHint && <p className="service-form-submit-hint">{submitHint}</p>}
             </>
           )}
         </form>

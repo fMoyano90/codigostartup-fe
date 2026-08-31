@@ -10,7 +10,6 @@ type TallerLeadFormProps = {
   sectionId?: string;
   title?: string;
   description?: string;
-  submitHint?: string;
 };
 
 export function TallerLeadForm({
@@ -21,7 +20,6 @@ export function TallerLeadForm({
   sectionId,
   title = "Solicita información de este taller",
   description = "Cuéntanos quién participaría y qué quieren lograr: te respondemos con una propuesta a tu medida.",
-  submitHint = "Recibiremos esta información por correo. Luego podrás continuar por WhatsApp o reservar una reunión.",
 }: TallerLeadFormProps) {
   return (
     <LeadForm
@@ -36,7 +34,6 @@ export function TallerLeadForm({
       title={title}
       description={description}
       submitLabel="Solicitar información del taller"
-      submitHint={submitHint}
     />
   );
 }
