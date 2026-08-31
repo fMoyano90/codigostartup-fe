@@ -359,7 +359,7 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
           <div className="talleres-split-copy">
             <p className="talleres-eyebrow">La experiencia</p>
             <h2 id="ficha-vivencia-title" className="talleres-section-title">
-              Así se vive <span className="accent">el taller</span>
+              Cómo funciona <span className="accent">el taller</span>
             </h2>
             <p>
               <strong>Metodología:</strong> {taller.metodologia}
@@ -383,7 +383,17 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
             </ul>
           </div>
           <div className="talleres-split-media">
-            <ImagenSlot archivo={`${taller.slug}-sesion.jpg`} ratio="4/3" />
+            {taller.slug === "videos-ugc-con-ia" ? (
+              <Image
+                src="/images/nuestro-metodo.jpg"
+                alt="Recorrido del taller: de la idea comercial al video listo para publicar"
+                width={1448}
+                height={1086}
+                className="talleres-img talleres-img--flat"
+              />
+            ) : (
+              <ImagenSlot archivo={`${taller.slug}-sesion.jpg`} ratio="4/3" />
+            )}
           </div>
         </div>
       </section>
@@ -398,9 +408,12 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
                 Sales con <span className="accent">algo hecho</span>
               </h2>
             </header>
-            <ul className="talleres-ficha-list" style={{ maxWidth: "40rem", margin: "0 auto" }}>
+            <ul className="talleres-results-pills">
               {taller.resultados.map((resultado) => (
-                <li key={resultado}>{resultado}</li>
+                <li key={resultado}>
+                  <span className="talleres-results-pills-check"><Check /></span>
+                  {resultado}
+                </li>
               ))}
             </ul>
           </div>
@@ -417,16 +430,16 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
             </h2>
           </header>
           <div className="talleres-datos">
-            <article className="talleres-dato">
+            <article className="talleres-dato talleres-dato--col">
               <h3>¿Para quién?</h3>
               <p>{taller.publico}</p>
             </article>
-            <article className="talleres-dato">
+            <article className="talleres-dato talleres-dato--col">
               <h3>Requisitos</h3>
               <p>{taller.requisitos}</p>
             </article>
             {taller.herramientas && taller.herramientas.length > 0 && (
-              <article className="talleres-dato">
+              <article className="talleres-dato talleres-dato--side">
                 <h3>Herramientas por etapa</h3>
                 <p>Se priorizan herramientas simples, de acceso gratuito o de bajo costo.</p>
                 <ul className="talleres-ficha-list">

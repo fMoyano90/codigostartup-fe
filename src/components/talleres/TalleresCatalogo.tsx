@@ -82,14 +82,34 @@ export function TalleresCatalogo({ talleres }: TalleresCatalogoProps) {
           {resultados.map((taller) => (
             <article
               key={taller.slug}
-              className={`talleres-catalog-card ${taller.estado === "aprobado" ? "talleres-catalog-card--aprobado" : ""}`}
+              className={`talleres-catalog-card ${
+                taller.estado === "aprobado" ? "talleres-catalog-card--aprobado" : ""
+              } ${taller.slug === "videos-ugc-con-ia" ? "talleres-catalog-card--ugc" : ""} ${
+                taller.slug === "ia-para-productividad-administrativa"
+                  ? "talleres-catalog-card--adm"
+                  : ""
+              } ${taller.slug === "automatizacion-de-procesos-con-ia" ? "talleres-catalog-card--auto" : ""}`}
             >
               <span className="talleres-cat-badge">{taller.categoria}</span>
               <h3>{taller.titulo}</h3>
               <p className="talleres-cat-dur">{taller.duracionHoras} h · Taller práctico</p>
-              <p className="talleres-cat-desc">{taller.resumen}</p>
+              <div className="talleres-cat-box">
+                <p className="talleres-cat-desc">{taller.resumen}</p>
+              </div>
               <p className="talleres-cat-aud">
-                <span>Público:</span> {taller.publico}
+                <span className="talleres-cat-aud-label">Público:</span>
+                <span className="talleres-cat-pills">
+                  {taller.publico
+                    .split(",")
+                    .map((item) => item.trim())
+                    .filter(Boolean)
+                    .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
+                    .map((item) => (
+                      <span key={item} className="talleres-cat-pill">
+                        {item}
+                      </span>
+                    ))}
+                </span>
               </p>
               <Link className="talleres-cat-link" href={`/talleres/${taller.slug}`}>
                 Ver ficha del taller

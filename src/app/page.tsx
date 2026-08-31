@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { BarChart3, Bot, FileSearch, FileSpreadsheet, FileText, MessageSquare, RefreshCw, Repeat2, SearchCheck, ShieldAlert, ShieldCheck, Wrench } from "lucide-react";
 import HomeAnimationsLoader from "@/components/HomeAnimationsLoader";
@@ -148,6 +149,7 @@ const agentesCard = {
   description: "Asistentes internos entrenados con los manuales, procedimientos y contratos de tu empresa, con búsqueda semántica (RAG) sobre tu propia información.",
   href: "/contacto",
   ctaLabel: "Evaluar mi caso",
+  image: "/images/agentes-ia.jpg",
 };
 
 const homeServiceCategories: Record<string, string> = {
@@ -172,6 +174,16 @@ const homeServiceCards: {
     description: service.shortDescription,
     href: `/soluciones/${service.slug}`,
     ctaLabel: "Ver solución",
+    image:
+      service.slug === "automatizacion-de-procesos"
+        ? "/images/automatizacion-de-procesos.jpg"
+        : service.slug === "software-a-medida"
+          ? "/images/software-a-medida.jpg"
+          : service.slug === "desarrollo-mvp"
+            ? "/images/desarrollo-de-mvp.jpg"
+            : service.slug === "auditoria-y-evolucion"
+              ? "/images/auditoria.jpg"
+              : undefined,
   })),
   agentesCard,
 ];
@@ -386,7 +398,9 @@ export default function Home() {
               <article
                 key={card.name}
                 className={`service-card${card.image ? " service-card--image" : ""}`}
+                style={card.image ? ({ "--card-bg": `url("${card.image}")` } as CSSProperties) : undefined}
               >
+                {card.image && <div className="service-card-bg" aria-hidden="true" />}
                 <div className="service-category">{card.category}</div>
                 <h3 className="service-name">{card.name}</h3>
                 <hr className="service-divider" />

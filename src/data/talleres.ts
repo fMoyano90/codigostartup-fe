@@ -29,8 +29,7 @@ export const talleres = tallerSchema.array().parse([
       "Aprende a crear un video para promocionar tu negocio utilizando herramientas de inteligencia artificial, desde la idea inicial hasta el video listo para publicar.",
     descripcion:
       "Un taller práctico de cuatro horas orientado a personas emprendedoras y pequeñas empresas que necesitan producir contenido para redes sociales sin depender de conocimientos avanzados de diseño, producción audiovisual o inteligencia artificial. La metodología utiliza un solo proyecto transversal: cada participante parte con una idea comercial y, a través de los cuatro bloques, construye el guion, el storyboard, los recursos visuales, los clips, el audio, la edición y la exportación del mismo video.",
-    publico:
-      "Emprendedores y pequeñas empresas que quieran crear contenido para redes sociales sin necesitar experiencia previa en diseño, video o inteligencia artificial.",
+    publico: "Emprendedores, PYMES, equipos de MKT.",
     requisitos:
       "Computador con conexión a Internet, cuenta Google y teléfono celular. No se requieren conocimientos previos.",
     nivel: "Inicial · sin conocimientos previos",

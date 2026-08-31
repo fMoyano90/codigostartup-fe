@@ -41,8 +41,7 @@ export const talleres: Taller[] = [
     duracionHoras: 4,
     resumen:
       "Aprende a crear un video para promocionar tu negocio utilizando herramientas de inteligencia artificial, desde la idea inicial hasta el video listo para publicar.",
-    publico:
-      "Emprendedores y pequeñas empresas que quieran crear contenido para redes sociales sin necesitar experiencia previa en diseño, video o inteligencia artificial.",
+    publico: "Emprendedores, PYMES, equipos de MKT.",
     requisitos:
       "Computador con conexión a Internet, cuenta Google y teléfono celular. No se requieren conocimientos previos.",
     modulos: [
