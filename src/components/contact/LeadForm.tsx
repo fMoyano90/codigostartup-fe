@@ -137,30 +137,6 @@ export function LeadForm({
       <div className="service-page-container service-lead-layout">
         <div className="service-lead-copy">
           <SectionHeader eyebrow={eyebrow} title={title} description={description} headingId={headingId} />
-          {variant === "taller" && state.status !== "success" && (
-            <div className="lead-quick-actions lead-quick-actions--above">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="talleres-cta talleres-cta--violet"
-                onClick={() => trackEvent(ANALYTICS_EVENTS.clickWhatsapp, { ...eventContext, cta_position: "lead-form" })}
-              >
-                <MessagesSquare size={16} />
-                Hablar por WhatsApp
-              </a>
-              <a
-                href={siteConfig.contact.bookingUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="talleres-cta"
-                onClick={() => trackEvent(ANALYTICS_EVENTS.scheduleMeeting, { ...eventContext, cta_position: "lead-form" })}
-              >
-                <CalendarDays size={16} />
-                Agendar reunión
-              </a>
-            </div>
-          )}
         </div>
         <form ref={formRef} id={formId} className="service-lead-form" action={formAction} aria-describedby={instructionsId} onFocus={handleFormStart}>
           <p id={instructionsId} className="sr-only">Los campos marcados como obligatorios deben completarse.</p>
@@ -297,6 +273,30 @@ export function LeadForm({
             </>
           )}
         </form>
+        {variant === "taller" && state.status !== "success" && (
+          <div className="lead-quick-actions lead-quick-actions--above">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="talleres-cta talleres-cta--violet"
+              onClick={() => trackEvent(ANALYTICS_EVENTS.clickWhatsapp, { ...eventContext, cta_position: "lead-form" })}
+            >
+              <MessagesSquare size={16} />
+              Hablar por WhatsApp
+            </a>
+            <a
+              href={siteConfig.contact.bookingUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="talleres-cta"
+              onClick={() => trackEvent(ANALYTICS_EVENTS.scheduleMeeting, { ...eventContext, cta_position: "lead-form" })}
+            >
+              <CalendarDays size={16} />
+              Agendar reunión
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

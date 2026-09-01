@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { BrainCircuit, MessagesSquare } from "lucide-react";
+import { BrainCircuit, Home, MessagesSquare } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { talleres } from "@/data/talleres";
 import { isRouteActive, type SolutionNavGroup } from "./site-navigation";
 
 const primaryLinks = [
@@ -240,62 +241,101 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
         </button>
       </div>
 
+      {mobileOpen && (
+        <div
+          className="site-nav-scrim"
+          aria-hidden="true"
+          onClick={() => { setMobileOpen(false); setMobileSolutionsOpen(false); }}
+        />
+      )}
       <nav id="mobile-navigation" className="site-nav-mobile" aria-label="Navegación móvil" hidden={!mobileOpen}>
-        <button
-          type="button"
-          className={`site-mobile-link site-mobile-solutions-trigger${solutionsActive ? " is-active" : ""}`}
-          aria-expanded={mobileSolutionsOpen}
-          aria-controls="mobile-solutions-menu"
-          onClick={() => setMobileSolutionsOpen((open) => !open)}
-        >
-          <span>Soluciones</span>
-          <span aria-hidden="true">{mobileSolutionsOpen ? "−" : "+"}</span>
-        </button>
+        {isTalleres ? (
+          <>
+            {pathname !== "/talleres" && (
+              <Link href="/talleres" className="site-mobile-link">
+                <span className="site-mobile-index">01</span>
+                Todos los talleres
+              </Link>
+            )}
+            {talleres.map((taller, index) => (
+              <Link
+                key={taller.slug}
+                href={`/talleres/${taller.slug}`}
+                className={`site-mobile-link${pathname === `/talleres/${taller.slug}` ? " is-active" : ""}`}
+                aria-current={pathname === `/talleres/${taller.slug}` ? "page" : undefined}
+              >
+                <span className="site-mobile-index">{pathname === "/talleres" ? String(index + 1).padStart(2, "0") : String(index + 2).padStart(2, "0")}</span>
+                {taller.titulo}
+              </Link>
+            ))}
+            <Link href="/" className="site-mobile-cta site-mobile-cta--volt">
+              <Home size={16} />
+              Inicio
+            </Link>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="site-mobile-cta site-mobile-cta--violet">
+              <MessagesSquare size={16} />
+              Hablemos
+            </a>
+          </>
+        ) : (
+          <>
+            <button
+              type="button"
+              className={`site-mobile-link site-mobile-solutions-trigger${solutionsActive ? " is-active" : ""}`}
+              aria-expanded={mobileSolutionsOpen}
+              aria-controls="mobile-solutions-menu"
+              onClick={() => setMobileSolutionsOpen((open) => !open)}
+            >
+              <span>Soluciones</span>
+              <span aria-hidden="true">{mobileSolutionsOpen ? "−" : "+"}</span>
+            </button>
 
-        <div id="mobile-solutions-menu" className="site-mobile-solutions" hidden={!mobileSolutionsOpen}>
-          <Link
-            href="/soluciones"
-            className={`site-mobile-all-solutions${pathname === "/soluciones" ? " is-active" : ""}`}
-            aria-current={pathname === "/soluciones" ? "page" : undefined}
-          >
-            Ver todas las soluciones
-          </Link>
-          {solutionGroups.map((group) => (
-            <div key={group.label}>
-              <span>{group.label}</span>
-              {group.items.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={isRouteActive(pathname, item.href) ? "is-active" : undefined}
-                  aria-current={isRouteActive(pathname, item.href) ? "page" : undefined}
-                >
-                  {item.label}
-                </Link>
+            <div id="mobile-solutions-menu" className="site-mobile-solutions" hidden={!mobileSolutionsOpen}>
+              <Link
+                href="/soluciones"
+                className={`site-mobile-all-solutions${pathname === "/soluciones" ? " is-active" : ""}`}
+                aria-current={pathname === "/soluciones" ? "page" : undefined}
+              >
+                Ver todas las soluciones
+              </Link>
+              {solutionGroups.map((group) => (
+                <div key={group.label}>
+                  <span>{group.label}</span>
+                  {group.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={isRouteActive(pathname, item.href) ? "is-active" : undefined}
+                      aria-current={isRouteActive(pathname, item.href) ? "page" : undefined}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               ))}
             </div>
-          ))}
-        </div>
 
-        {primaryLinks.map((link, index) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={`site-mobile-link${isRouteActive(pathname, link.href) ? " is-active" : ""}`}
-            aria-current={isRouteActive(pathname, link.href) ? "page" : undefined}
-          >
-            <span className="site-mobile-index">0{index + 2}</span>
-            {link.label}
-          </Link>
-        ))}
-        <Link href="/talleres" className="site-mobile-cta site-mobile-cta--volt">
-          <BrainCircuit size={16} />
-          Talleres
-        </Link>
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="site-mobile-cta site-mobile-cta--violet">
-          <MessagesSquare size={16} />
-          Hablemos
-        </a>
+            {primaryLinks.map((link, index) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`site-mobile-link${isRouteActive(pathname, link.href) ? " is-active" : ""}`}
+                aria-current={isRouteActive(pathname, link.href) ? "page" : undefined}
+              >
+                <span className="site-mobile-index">0{index + 2}</span>
+                {link.label}
+              </Link>
+            ))}
+            <Link href="/talleres" className="site-mobile-cta site-mobile-cta--volt">
+              <BrainCircuit size={16} />
+              Talleres
+            </Link>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="site-mobile-cta site-mobile-cta--violet">
+              <MessagesSquare size={16} />
+              Hablemos
+            </a>
+          </>
+        )}
       </nav>
     </header>
   );

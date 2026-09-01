@@ -112,12 +112,11 @@ export function TalleresCatalogo({ talleres }: TalleresCatalogoProps) {
             >
               <span className="talleres-cat-badge">{taller.categoria}</span>
               <h3>{taller.titulo}</h3>
-              <p className="talleres-cat-dur">{taller.duracionHoras} h · Taller práctico</p>
               <div className="talleres-cat-box">
                 <p className="talleres-cat-desc">{taller.resumen}</p>
               </div>
               <p className="talleres-cat-aud">
-                <span className="talleres-cat-aud-label">Público:</span>
+                <span className="talleres-cat-aud-label">Dirigido a:</span>
                 <span className="talleres-cat-pills">
                   {taller.publico
                     .split(",")

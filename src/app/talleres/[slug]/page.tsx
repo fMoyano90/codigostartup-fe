@@ -240,7 +240,7 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
       <section className="talleres-section" aria-labelledby="ficha-descripcion-title">
         <div className="talleres-section-inner talleres-split">
           <div className="talleres-split-copy">
-            <p className="talleres-eyebrow">Talleres de IA Aplicada · Código Startup</p>
+            <p className="talleres-eyebrow">Talleres de IA Aplicada</p>
             <h2 id="ficha-descripcion-title" className="talleres-section-title">
               Sobre <span className="accent">el taller</span>
             </h2>
@@ -308,6 +308,21 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
                   ))}
                 </tbody>
               </table>
+            </div>
+            <div className="talleres-modulos talleres-modulos--mobile">
+              {taller.modulos.map((modulo, index) => (
+                <div key={modulo.titulo} className="talleres-modulo">
+                  <div className="talleres-modulo-head">
+                    <b>{index + 1}. {modulo.titulo}</b>
+                    <span className="min">{modulo.minutos} min</span>
+                  </div>
+                  <ol>
+                    {modulo.contenido?.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
             </div>
           </div>
         </section>
