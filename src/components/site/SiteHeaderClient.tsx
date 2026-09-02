@@ -253,7 +253,7 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
           <>
             {pathname !== "/talleres" && (
               <Link href="/talleres" className="site-mobile-link">
-                <span className="site-mobile-index">01</span>
+                <span className="site-mobile-arrow" aria-hidden="true">→</span>
                 Todos los talleres
               </Link>
             )}
@@ -264,18 +264,18 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
                 className={`site-mobile-link${pathname === `/talleres/${taller.slug}` ? " is-active" : ""}`}
                 aria-current={pathname === `/talleres/${taller.slug}` ? "page" : undefined}
               >
-                <span className="site-mobile-index">{pathname === "/talleres" ? String(index + 1).padStart(2, "0") : String(index + 2).padStart(2, "0")}</span>
+                <span className="site-mobile-arrow" aria-hidden="true">→</span>
                 {taller.titulo}
               </Link>
             ))}
-            <Link href="/" className="site-mobile-cta site-mobile-cta--volt">
-              <Home size={16} />
-              Inicio
-            </Link>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="site-mobile-cta site-mobile-cta--violet">
-              <MessagesSquare size={16} />
+              <MessagesSquare size={20} />
               Hablemos
             </a>
+            <Link href="/" className="site-mobile-cta site-mobile-cta--volt">
+              <Home size={20} />
+              Inicio
+            </Link>
           </>
         ) : (
           <>
@@ -315,14 +315,14 @@ export function SiteHeaderClient({ solutionGroups }: { solutionGroups: SolutionN
               ))}
             </div>
 
-            {primaryLinks.map((link, index) => (
+            {primaryLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`site-mobile-link${isRouteActive(pathname, link.href) ? " is-active" : ""}`}
                 aria-current={isRouteActive(pathname, link.href) ? "page" : undefined}
               >
-                <span className="site-mobile-index">0{index + 2}</span>
+                <span className="site-mobile-arrow" aria-hidden="true">→</span>
                 {link.label}
               </Link>
             ))}
