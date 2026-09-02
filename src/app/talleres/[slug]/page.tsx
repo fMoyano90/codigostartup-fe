@@ -394,7 +394,7 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
                 className="talleres-img talleres-img--flat"
               />
             ) : (
-              <ImagenSlot archivo={`${taller.slug}-sesion.jpg`} ratio="4/3" />
+              <ImagenSlot archivo={`${taller.slug}-sesion.jpg`} ratio="4/3" className="talleres-img--flat" />
             )}
           </div>
         </div>
@@ -459,8 +459,8 @@ export default async function TallerRoutePage({ params }: { params: Promise<Para
         </div>
       </section>
 
-      {/* TESTIMONIOS (solo talleres aprobados) */}
-      {!esBorrador && (
+      {/* TESTIMONIOS — oculto hasta tener testimonios reales (activate con !esBorrador) */}
+      {false && (
         <section className="talleres-section" aria-labelledby="ficha-testimonios-title">
           <div className="talleres-section-inner">
             <header className="talleres-section-head">
