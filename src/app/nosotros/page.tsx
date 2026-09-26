@@ -77,7 +77,7 @@ export default function AboutPage() {
             headingId="about-team-heading"
           />
           <div className="founders-grid">
-            {founders.map((founder) => (
+            {founders.filter((founder) => !founder.hidden).map((founder) => (
               <div key={founder.name} className="founder-card">
                 <div className="founder-photo">
                   <Image src={founder.image.src} alt={founder.image.alt} fill sizes="64px" />

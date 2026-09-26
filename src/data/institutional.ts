@@ -103,6 +103,8 @@ export type Founder = {
   bio: string;
   location: string;
   image: { src: string; alt: string };
+  /** Pausa temporal de visibilidad en la página Nosotros; el perfil sigue en datos. */
+  hidden?: boolean;
 };
 
 export const founders: Founder[] = [
@@ -119,6 +121,7 @@ export const founders: Founder[] = [
     bio: "+10 años diseñando y construyendo soluciones tecnológicas para minería, aeronáutica, retail y transformación digital empresarial.",
     location: "Chile",
     image: { src: "/founders/felipe-moyano.png", alt: "Felipe Moyano, cofundador de Código Startup" },
+    hidden: true,
   },
 ];
 

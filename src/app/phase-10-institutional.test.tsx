@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { capabilities } from "@/data/capabilities";
-import { processCapabilitySlugs, processPhases, teamGallery } from "@/data/institutional";
+import { founders, processCapabilitySlugs, processPhases, teamGallery } from "@/data/institutional";
 import { projects } from "@/data/projects";
 import AboutPage from "./nosotros/page";
 import ProcessPage from "./proceso/page";
@@ -56,7 +56,10 @@ describe("phase 10 institutional pages", () => {
     expect(html).toContain("Producto propio");
     expect(html).toContain("Valores");
     expect(html).toContain("Andres Rojas");
-    expect(html).toContain("Felipe Moyano");
+    for (const founder of founders) {
+      if (founder.hidden) expect(html).not.toContain(founder.name);
+      else expect(html).toContain(founder.name);
+    }
     expect(html).not.toContain("Página en evolución");
     expect(html).toContain("/contacto?origen=nosotros");
 
